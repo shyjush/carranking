@@ -1,9 +1,5 @@
 begin;
 
--- Transparent launch content for the current value-retention top 5.
--- These are editorial reference reviews, NOT owner submissions and NOT ratings.
--- They intentionally do not insert into public.ratings and therefore never affect owner scores/ranking.
-
 create table if not exists public.editorial_reference_reviews (
   id uuid primary key default gen_random_uuid(),
   generation_id uuid not null references public.generations(id) on delete cascade,
@@ -15,17 +11,16 @@ create table if not exists public.editorial_reference_reviews (
   created_at timestamptz not null default now(),
   unique(generation_id, slot)
 );
-
 alter table public.editorial_reference_reviews enable row level security;
 grant select on public.editorial_reference_reviews to anon, authenticated;
 drop policy if exists "editorial reference reviews public read" on public.editorial_reference_reviews;
 create policy "editorial reference reviews public read" on public.editorial_reference_reviews for select to anon, authenticated using (true);
 
 with top5 as (
-  select generation_id, row_number() over(order by retention_rate desc nulls last) as rn
-  from public.web_value_ranking
-  where generation_id is not null and retention_rate is not null
-  order by retention_rate desc nulls last
+  select dm.generation_id, dm.retention_rate
+  from public.depreciation_metrics dm
+  where dm.retention_rate is not null
+  order by dm.retention_rate desc nulls last
   limit 5
 ), templates(slot,title,body) as (
   values
@@ -36,14 +31,11 @@ with top5 as (
 )
 insert into public.editorial_reference_reviews(generation_id,slot,title,body)
 select t.generation_id,x.slot,x.title,x.body from top5 t cross join templates x
-on conflict(generation_id,slot) do update set title=excluded.title, body=excluded.body, source_label='CarRanking 초기 참고리뷰', is_reference=true;
+on conflict(generation_id,slot) do update set title=excluded.title,body=excluded.body,source_label='CarRanking 초기 참고리뷰',is_reference=true;
 
-create or replace view public.web_review_feed
-with (security_invoker = true) as
-select r.id, r.generation_id, r.title, r.body, r.created_at,
-       coalesce(p.display_name,'익명 오너') display_name,
-       mf.name brand, cm.name model, g.name generation, g.generation_code,
-       false as is_reference, '오너리뷰'::text as review_type
+create or replace view public.web_review_feed with (security_invoker=true) as
+select r.id,r.generation_id,r.title,r.body,r.created_at,coalesce(p.display_name,'익명 오너') display_name,
+       mf.name brand,cm.name model,g.name generation,g.generation_code,false as is_reference,'오너리뷰'::text as review_type
 from public.reviews r
 join public.generations g on g.id=r.generation_id
 join public.car_models cm on cm.id=g.car_model_id
@@ -51,15 +43,11 @@ join public.manufacturers mf on mf.id=cm.manufacturer_id
 left join public.profiles p on p.user_id=r.user_id
 where r.status='published'
 union all
-select e.id,e.generation_id,e.title,e.body,e.created_at,
-       e.source_label as display_name,
-       mf.name brand,cm.name model,g.name generation,g.generation_code,
-       true as is_reference,'초기 참고리뷰'::text as review_type
+select e.id,e.generation_id,e.title,e.body,e.created_at,e.source_label,
+       mf.name,cm.name,g.name,g.generation_code,true,'초기 참고리뷰'::text
 from public.editorial_reference_reviews e
 join public.generations g on g.id=e.generation_id
 join public.car_models cm on cm.id=g.car_model_id
 join public.manufacturers mf on mf.id=cm.manufacturer_id;
-
 grant select on public.web_review_feed to anon, authenticated;
-
 commit;
