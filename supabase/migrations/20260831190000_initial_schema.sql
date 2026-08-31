@@ -200,31 +200,51 @@ grant select on public.manufacturers, public.car_models, public.generations, pub
 grant select, insert, update, delete on public.ratings, public.reviews to authenticated;
 grant select, update on public.profiles to authenticated;
 
+drop policy if exists "public read manufacturers" on public.manufacturers;
 create policy "public read manufacturers" on public.manufacturers for select to anon, authenticated using (true);
+drop policy if exists "public read car_models" on public.car_models;
 create policy "public read car_models" on public.car_models for select to anon, authenticated using (true);
+drop policy if exists "public read generations" on public.generations;
 create policy "public read generations" on public.generations for select to anon, authenticated using (true);
+drop policy if exists "public read powertrains" on public.powertrains;
 create policy "public read powertrains" on public.powertrains for select to anon, authenticated using (true);
+drop policy if exists "public read trims" on public.trims;
 create policy "public read trims" on public.trims for select to anon, authenticated using (true);
+drop policy if exists "public read vehicle_specs" on public.vehicle_specs;
 create policy "public read vehicle_specs" on public.vehicle_specs for select to anon, authenticated using (true);
+drop policy if exists "public read market_snapshots" on public.market_snapshots;
 create policy "public read market_snapshots" on public.market_snapshots for select to anon, authenticated using (true);
+drop policy if exists "public read depreciation_metrics" on public.depreciation_metrics;
 create policy "public read depreciation_metrics" on public.depreciation_metrics for select to anon, authenticated using (true);
+drop policy if exists "public read known_issues" on public.known_issues;
 create policy "public read known_issues" on public.known_issues for select to anon, authenticated using (true);
+drop policy if exists "public read source_records" on public.source_records;
 create policy "public read source_records" on public.source_records for select to anon, authenticated using (true);
 
+drop policy if exists "profiles select own" on public.profiles;
 create policy "profiles select own" on public.profiles for select to authenticated using ((select auth.uid()) = user_id);
+drop policy if exists "profiles update own" on public.profiles;
 create policy "profiles update own" on public.profiles for update to authenticated
   using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
 
+drop policy if exists "ratings public read" on public.ratings;
 create policy "ratings public read" on public.ratings for select to anon, authenticated using (true);
+drop policy if exists "ratings insert own" on public.ratings;
 create policy "ratings insert own" on public.ratings for insert to authenticated with check ((select auth.uid()) = user_id);
+drop policy if exists "ratings update own" on public.ratings;
 create policy "ratings update own" on public.ratings for update to authenticated
   using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
+drop policy if exists "ratings delete own" on public.ratings;
 create policy "ratings delete own" on public.ratings for delete to authenticated using ((select auth.uid()) = user_id);
 
+drop policy if exists "reviews public published" on public.reviews;
 create policy "reviews public published" on public.reviews for select to anon, authenticated using (status = 'published');
+drop policy if exists "reviews insert own" on public.reviews;
 create policy "reviews insert own" on public.reviews for insert to authenticated with check ((select auth.uid()) = user_id);
+drop policy if exists "reviews update own" on public.reviews;
 create policy "reviews update own" on public.reviews for update to authenticated
   using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
+drop policy if exists "reviews delete own" on public.reviews;
 create policy "reviews delete own" on public.reviews for delete to authenticated using ((select auth.uid()) = user_id);
 
 create or replace view public.web_depreciation_ranking
