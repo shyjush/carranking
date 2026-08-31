@@ -1,0 +1,32 @@
+name: Audit CarRanking Supabase data
+
+on:
+  push:
+    paths:
+      - '.github/workflows/audit-supabase.yml'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    env:
+      PGPASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+    steps:
+      - name: Audit database counts
+        shell: bash
+        run: |
+          set -euo pipefail
+          CONN="host=aws-0-ap-northeast-2.pooler.supabase.com port=5432 dbname=postgres user=postgres.ikhyadzboorscjwcrhcz sslmode=require"
+          echo "=== CarRanking Supabase audit ==="
+          psql "$CONN" -Atc "select 'manufacturers='||count(*) from public.manufacturers;"
+          psql "$CONN" -Atc "select 'models='||count(*) from public.car_models;"
+          psql "$CONN" -Atc "select 'generations='||count(*) from public.generations;"
+          psql "$CONN" -Atc "select 'current_generations='||count(*) from public.generations where current=true;"
+          psql "$CONN" -Atc "select 'vehicle_specs='||count(*) from public.vehicle_specs;"
+          psql "$CONN" -Atc "select 'depreciation_metrics='||count(*) from public.depreciation_metrics;"
+          psql "$CONN" -Atc "select 'value_ranking_rows='||count(*) from public.web_value_ranking;"
+          psql "$CONN" -Atc "select 'vehicle_detail_rows='||count(*) from public.web_vehicle_detail;"
+          psql "$CONN" -Atc "select 'compare_rows='||count(*) from public.web_compare_base;"
+          psql "$CONN" -Atc "select 'missing_specs_generations='||count(*) from public.generations g where not exists (select 1 from public.vehicle_specs s where s.generation_id=g.id);"
+          psql "$CONN" -Atc "select 'ratings='||count(*) from public.ratings;"
+          psql "$CONN" -Atc "select 'reviews='||count(*) from public.reviews;"
