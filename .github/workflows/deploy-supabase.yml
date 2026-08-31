@@ -23,10 +23,11 @@ jobs:
 
       - name: Push database migrations
         env:
-          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
         run: |
-          if [ -z "$SUPABASE_DB_URL" ]; then
-            echo "SUPABASE_DB_URL secret is not configured."
+          if [ -z "$SUPABASE_DB_PASSWORD" ]; then
+            echo "SUPABASE_DB_PASSWORD secret is not configured."
             exit 1
           fi
-          supabase db push --db-url "$SUPABASE_DB_URL"
+          DB_URL="postgresql://postgres.ikhyadzboorscjwcrhcz:${SUPABASE_DB_PASSWORD}@aws-0-ap-northeast-2.pooler.supabase.com:5432/postgres"
+          supabase db push --db-url "$DB_URL"
