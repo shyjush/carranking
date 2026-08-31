@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>자동차랭킹 | CarRanking</title>
+  <meta name="description" content="자동차 가치보존율, 감가율, 오너평점과 차량 비교">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">CarRanking <span>자동차랭킹</span></div>
+  <nav>
+    <a href="#ranking">랭킹</a>
+    <a href="#compare">차량비교</a>
+    <a href="#score">내 차 몇 점?</a>
+    <a href="#reviews">리뷰</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">자동차 데이터 평가 플랫폼</p>
+    <h1>어떤 차가<br>가치를 더 오래 지킬까?</h1>
+    <p class="sub">신차가·중고시세·가치보존율·오너평가를 한 곳에서 비교합니다.</p>
+    <div class="actions">
+      <a class="btn primary" href="#ranking">자동차 랭킹 보기</a>
+      <a class="btn" href="#score">내 차 몇 점?</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="metric-label">가치보존율 1위</div>
+    <div class="car-name">현대 팰리세이드 LX2</div>
+    <div class="big">78.0%</div>
+    <div class="muted">2019년식 · 참고 데이터</div>
+  </div>
+</section>
+
+<section id="ranking" class="section">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">VALUE RETENTION RANKING</p>
+      <h2>가치보존율 랭킹</h2>
+    </div>
+    <div class="filters">
+      <select id="brandFilter"><option value="">전체 브랜드</option></select>
+      <select id="categoryFilter"><option value="">전체 차급</option></select>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>순위</th><th>차량</th><th>연식</th><th>가치보존율</th><th>감가율</th><th>표본</th></tr></thead>
+      <tbody id="rankingBody"></tbody>
+    </table>
+  </div>
+  <p class="footnote">※ 초기 랭킹은 당시 기준 신차가와 해당 연식 전체 중고 실매물 평균을 결합한 참고값입니다.</p>
+</section>
+
+<section id="compare" class="section cards">
+  <div class="section-head"><div><p class="eyebrow">COMPARE</p><h2>인기 비교</h2></div></div>
+  <div class="grid">
+    <article class="compare-card"><strong>그랜저</strong><span>vs</span><strong>K8</strong><button>비교하기</button></article>
+    <article class="compare-card"><strong>쏘렌토</strong><span>vs</span><strong>싼타페</strong><button>비교하기</button></article>
+    <article class="compare-card"><strong>G80</strong><span>vs</span><strong>5 Series</strong><button>비교하기</button></article>
+  </div>
+</section>
+
+<section id="score" class="section scorebox">
+  <div>
+    <p class="eyebrow">MY CAR SCORE</p>
+    <h2>내 차 몇 점?</h2>
+    <p>차량을 선택하면 가치보존율, 예상 감가, 오너평점 데이터를 연결해 보여줍니다.</p>
+  </div>
+  <div class="score-form">
+    <select><option>브랜드 선택</option><option>현대</option><option>기아</option><option>제네시스</option></select>
+    <select><option>모델 선택</option></select>
+    <button class="btn primary">점수 확인</button>
+  </div>
+</section>
+
+<section id="reviews" class="section">
+  <div class="empty">
+    <h2>오너 리뷰</h2>
+    <p>실제 사용자 평가가 쌓이면 차량별 평점과 리뷰를 공개합니다.</p>
+    <strong>평가 데이터 부족</strong>
+  </div>
+</section>
+</main>
+
+<footer>© CarRanking · 자동차랭킹</footer>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
