@@ -1,7 +1,7 @@
 // CarRanking runtime configuration
-// Fill these values only after the CarRanking Supabase project is created.
+// Publishable key is intentionally safe for browser use; RLS protects exposed data.
 window.CARRANKING_CONFIG = {
-  supabaseUrl: "",
-  supabasePublishableKey: "",
-  useSupabase: false
+  supabaseUrl: "https://ikhyadzboorscjwcrhcz.supabase.co",
+  supabasePublishableKey: "sb_publishable_1A7C4NeKlg9-mC_9mUjmKg_-wKK_Btw",
+  useSupabase: true
 };
