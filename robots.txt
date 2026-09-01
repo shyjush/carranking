@@ -4,6 +4,9 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
+User-agent: NaverBot
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 
