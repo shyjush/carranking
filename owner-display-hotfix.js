@@ -1,12 +1,13 @@
-/* CarRanking owner display hotfix v2 */
+/* CarRanking owner display hotfix v3 */
 (()=>{
 'use strict';
 const C=window.CARRANKING_CONFIG||{},BASE=String(C.supabaseUrl||'').replace(/\/+$/,''),KEY=C.supabasePublishableKey||'';
-const H={apikey:KEY,Authorization:`Bearer ${KEY}`,'Cache-Control':'no-cache'};
+// Supabase sb_publishable_* keys are sent as apikey only for public views.
+// Do NOT send them as Bearer tokens; PostgREST treats that as an invalid JWT.
+const H={apikey:KEY,'Cache-Control':'no-cache'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 async function get(view,q='select=*'){
- const sep=q.includes('?')?'&':'&';
- const r=await fetch(`${BASE}/rest/v1/${view}?${q}${sep}_=${Date.now()}`,{headers:H,cache:'no-store'});
+ const r=await fetch(`${BASE}/rest/v1/${view}?${q}&_=${Date.now()}`,{headers:H,cache:'no-store'});
  if(!r.ok){const t=await r.text();throw new Error(`${view} ${r.status} ${t}`)}
  return r.json();
 }
@@ -44,9 +45,8 @@ async function refreshOwnerDisplay(){
 }
 function boot(){
  refreshOwnerDisplay();
- [700,1800,4500,9000].forEach(ms=>setTimeout(refreshOwnerDisplay,ms));
- setInterval(refreshOwnerDisplay,30000);
- window.addEventListener('cr-review-saved',()=>setTimeout(refreshOwnerDisplay,250));
+ [500,1200,3000,7000].forEach(ms=>setTimeout(refreshOwnerDisplay,ms));
+ window.addEventListener('cr-review-saved',()=>setTimeout(refreshOwnerDisplay,150));
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshOwnerDisplay()});
  window.addEventListener('pageshow',refreshOwnerDisplay);
 }
