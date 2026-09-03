@@ -14,7 +14,7 @@ document.body.appendChild(homeFixesScript);
 
 // Member reputation UX: email login, points/levels/badges, long-term owner fields and helpful votes.
 const reputationScript=document.createElement('script');
-reputationScript.src='car-reputation.js?v=1.1';
+reputationScript.src='car-reputation.js?v=1.2';
 reputationScript.defer=true;
 document.body.appendChild(reputationScript);
 
