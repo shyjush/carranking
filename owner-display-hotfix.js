@@ -1,13 +1,14 @@
-/* CarRanking owner display hotfix v3 */
+/* CarRanking owner display hotfix v4 */
 (()=>{
 'use strict';
 const C=window.CARRANKING_CONFIG||{},BASE=String(C.supabaseUrl||'').replace(/\/+$/,''),KEY=C.supabasePublishableKey||'';
-// Supabase sb_publishable_* keys are sent as apikey only for public views.
-// Do NOT send them as Bearer tokens; PostgREST treats that as an invalid JWT.
-const H={apikey:KEY,'Cache-Control':'no-cache'};
+// Public Supabase views: send publishable key as apikey only.
+// IMPORTANT: never append arbitrary cache-buster query params to PostgREST;
+// every query param is parsed as a filter and can cause a 400 response.
+const H={apikey:KEY,'Cache-Control':'no-cache','Pragma':'no-cache'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 async function get(view,q='select=*'){
- const r=await fetch(`${BASE}/rest/v1/${view}?${q}&_=${Date.now()}`,{headers:H,cache:'no-store'});
+ const r=await fetch(`${BASE}/rest/v1/${view}?${q}`,{headers:H,cache:'no-store'});
  if(!r.ok){const t=await r.text();throw new Error(`${view} ${r.status} ${t}`)}
  return r.json();
 }
@@ -45,7 +46,7 @@ async function refreshOwnerDisplay(){
 }
 function boot(){
  refreshOwnerDisplay();
- [500,1200,3000,7000].forEach(ms=>setTimeout(refreshOwnerDisplay,ms));
+ [500,1200,3000].forEach(ms=>setTimeout(refreshOwnerDisplay,ms));
  window.addEventListener('cr-review-saved',()=>setTimeout(refreshOwnerDisplay,150));
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshOwnerDisplay()});
  window.addEventListener('pageshow',refreshOwnerDisplay);
