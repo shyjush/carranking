@@ -31,3 +31,9 @@ const ownerDisplayHotfix=document.createElement('script');
 ownerDisplayHotfix.src='owner-display-hotfix.js?v=7';
 ownerDisplayHotfix.defer=true;
 document.body.appendChild(ownerDisplayHotfix);
+
+// Simplify review form: remove optional one-line title and proof-link field.
+const reviewFormCleanup=document.createElement('script');
+reviewFormCleanup.src='review-form-cleanup-v1.js?v=1';
+reviewFormCleanup.defer=true;
+document.body.appendChild(reviewFormCleanup);
