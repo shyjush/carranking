@@ -23,3 +23,9 @@ const engagementScript=document.createElement('script');
 engagementScript.src='car-engagement-v120.js?v=1.20';
 engagementScript.defer=true;
 document.body.appendChild(engagementScript);
+
+// Review save feedback: show clear success/failure notification after submission.
+const reviewFeedbackScript=document.createElement('script');
+reviewFeedbackScript.src='review-submit-feedback.js?v=1';
+reviewFeedbackScript.defer=true;
+document.body.appendChild(reviewFeedbackScript);
