@@ -29,3 +29,9 @@ const reviewFeedbackScript=document.createElement('script');
 reviewFeedbackScript.src='review-submit-feedback.js?v=1';
 reviewFeedbackScript.defer=true;
 document.body.appendChild(reviewFeedbackScript);
+
+// Force owner ranking/review display to refresh independently from optional homepage APIs.
+const ownerDisplayHotfix=document.createElement('script');
+ownerDisplayHotfix.src='owner-display-hotfix.js?v=1';
+ownerDisplayHotfix.defer=true;
+document.body.appendChild(ownerDisplayHotfix);
