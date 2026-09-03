@@ -26,8 +26,8 @@ reviewFeedbackScript.src='review-submit-feedback.js?v=1';
 reviewFeedbackScript.defer=true;
 document.body.appendChild(reviewFeedbackScript);
 
-// Public owner dashboard v6 keeps count, ranking and published reviews in sync.
+// Stable public owner dashboard: no MutationObserver loop, no repaint interval.
 const ownerDisplayHotfix=document.createElement('script');
-ownerDisplayHotfix.src='owner-display-hotfix.js?v=6';
+ownerDisplayHotfix.src='owner-display-hotfix.js?v=7';
 ownerDisplayHotfix.defer=true;
 document.body.appendChild(ownerDisplayHotfix);
