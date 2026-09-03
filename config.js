@@ -37,3 +37,9 @@ const reviewFormCleanup=document.createElement('script');
 reviewFormCleanup.src='review-form-cleanup-v1.js?v=1';
 reviewFormCleanup.defer=true;
 document.body.appendChild(reviewFormCleanup);
+
+// Navigation audit: keep every public hash link tied to the intended section.
+const linkAuditScript=document.createElement('script');
+linkAuditScript.src='link-audit.js?v=1';
+linkAuditScript.defer=true;
+document.body.appendChild(linkAuditScript);
