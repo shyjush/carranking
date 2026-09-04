@@ -57,3 +57,9 @@ const rankingBrandExpansion=document.createElement('script');
 rankingBrandExpansion.src='ranking-brand-expansion.js?v=1';
 rankingBrandExpansion.defer=true;
 document.body.appendChild(rankingBrandExpansion);
+
+// Keep the homepage ranking and hero card synced directly to the live Supabase ranking view.
+const liveRankingSync=document.createElement('script');
+liveRankingSync.src='live-ranking-sync.js?v=1';
+liveRankingSync.defer=true;
+document.body.appendChild(liveRankingSync);
