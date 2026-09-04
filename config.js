@@ -51,3 +51,9 @@ const simpleSignupScript=document.createElement('script');
 simpleSignupScript.src='simple-signup-v1.js?v=1';
 simpleSignupScript.defer=true;
 document.body.appendChild(simpleSignupScript);
+
+// Ranking filter uses the full domestic/import vehicle catalog while value-ranking rows remain verified-only.
+const rankingBrandExpansion=document.createElement('script');
+rankingBrandExpansion.src='ranking-brand-expansion.js?v=1';
+rankingBrandExpansion.defer=true;
+document.body.appendChild(rankingBrandExpansion);
