@@ -43,3 +43,9 @@ const linkAuditScript=document.createElement('script');
 linkAuditScript.src='link-audit.js?v=1';
 linkAuditScript.defer=true;
 document.body.appendChild(linkAuditScript);
+
+// Runtime QA: prevent dead selectors/links and make review validation explicit.
+const runtimeQaScript=document.createElement('script');
+runtimeQaScript.src='runtime-qa.js?v=1';
+runtimeQaScript.defer=true;
+document.body.appendChild(runtimeQaScript);
