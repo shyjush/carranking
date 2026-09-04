@@ -26,26 +26,28 @@ reviewFeedbackScript.src='review-submit-feedback.js?v=1';
 reviewFeedbackScript.defer=true;
 document.body.appendChild(reviewFeedbackScript);
 
-// Stable public owner dashboard: no MutationObserver loop, no repaint interval.
 const ownerDisplayHotfix=document.createElement('script');
 ownerDisplayHotfix.src='owner-display-hotfix.js?v=7';
 ownerDisplayHotfix.defer=true;
 document.body.appendChild(ownerDisplayHotfix);
 
-// Simplify review form: remove optional one-line title and proof-link field.
 const reviewFormCleanup=document.createElement('script');
 reviewFormCleanup.src='review-form-cleanup-v1.js?v=1';
 reviewFormCleanup.defer=true;
 document.body.appendChild(reviewFormCleanup);
 
-// Navigation audit: keep every public hash link tied to the intended section.
 const linkAuditScript=document.createElement('script');
 linkAuditScript.src='link-audit.js?v=1';
 linkAuditScript.defer=true;
 document.body.appendChild(linkAuditScript);
 
-// Runtime QA: prevent dead selectors/links and make review validation explicit.
 const runtimeQaScript=document.createElement('script');
 runtimeQaScript.src='runtime-qa.js?v=1';
 runtimeQaScript.defer=true;
 document.body.appendChild(runtimeQaScript);
+
+// Instant signup: existing email logs in; new email is created without confirmation mail, then logged in.
+const simpleSignupScript=document.createElement('script');
+simpleSignupScript.src='simple-signup-v1.js?v=1';
+simpleSignupScript.defer=true;
+document.body.appendChild(simpleSignupScript);
