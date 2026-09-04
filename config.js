@@ -63,3 +63,9 @@ const liveRankingSync=document.createElement('script');
 liveRankingSync.src='live-ranking-sync.js?v=1';
 liveRankingSync.defer=true;
 document.body.appendChild(liveRankingSync);
+
+// MY screen: show reviews written by the currently authenticated member.
+const myReviewsScript=document.createElement('script');
+myReviewsScript.src='my-reviews-v1.js?v=1';
+myReviewsScript.defer=true;
+document.body.appendChild(myReviewsScript);
