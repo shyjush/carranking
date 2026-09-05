@@ -10,8 +10,25 @@ let ANNUAL=[];
 function injectCss(){
   if(document.querySelector('link[data-cr-home-fixes]'))return;
   const l=document.createElement('link');
-  l.rel='stylesheet'; l.href='home-fixes.css?v=6'; l.dataset.crHomeFixes='1';
+  l.rel='stylesheet'; l.href='home-fixes.css?v=7'; l.dataset.crHomeFixes='1';
   document.head.appendChild(l);
+}
+
+function renderGuide(){
+  if(document.getElementById('rankingGuide'))return;
+  const hero=document.querySelector('.hero');
+  const ranking=document.getElementById('ranking');
+  if(!hero||!ranking)return;
+  const sec=document.createElement('section');
+  sec.id='rankingGuide';
+  sec.className='section ranking-guide-section';
+  sec.innerHTML=`<div class="section-head"><div><p class="eyebrow">HOW TO READ CARRANKING</p><h2>CarRanking 지표 보는 법</h2><p class="muted-dark">순위를 볼 때 아래 3가지만 알면 됩니다.</p></div></div>
+  <div class="ranking-guide-grid">
+    <article class="ranking-guide-card"><b>① 연식 보정 가치보존</b><strong>차량 연령을 보정한 주 랭킹 기준</strong><p>현재 가치보존율을 차량 연령으로 보정해 <em>1년 기준으로 얼마나 가치가 유지됐는지</em> 비교합니다. 2021년식과 2024년식을 같은 기준에서 비교하기 위한 지표이며, BEST/WORST의 기본 순위에 사용합니다.</p></article>
+    <article class="ranking-guide-card"><b>② 현재 가치보존</b><strong>신차가격 대비 지금 남아 있는 가치</strong><p><em>현재 중고 실매물 평균가격 ÷ 당시 신차가격</em>입니다. 예를 들어 현재 가치보존 80%라면 신차가격의 약 80% 수준이 현재 중고가격으로 남아 있다는 뜻입니다.</p></article>
+    <article class="ranking-guide-card"><b>③ 데이터 등급 A · B · C</b><strong>가격 데이터의 신뢰도 표시</strong><p><em>A</em>는 표본과 교차검증이 매우 충분한 데이터, <em>B</em>는 동일 연식·세대·파워트레인·트림이 확인되고 공개랭킹에 사용할 수 있는 데이터입니다. <em>C</em>는 표본 부족·트림 불일치·100% 초과 이상치 등 추가 검증이 필요한 데이터로 공개랭킹에서 제외합니다.</p></article>
+  </div>`;
+  hero.insertAdjacentElement('afterend',sec);
 }
 
 async function loadAnnual(){
@@ -79,6 +96,7 @@ function showError(){
 
 async function run(){
   injectCss();
+  renderGuide();
   const old=document.getElementById('editorialPreview'); if(old)old.remove();
   try{ANNUAL=await loadAnnual();renderMainRanking();renderBestWorst();bindFilters();enforceForStartupRace()}catch(e){console.warn('Annual ranking load failed',e);showError()}
 }
