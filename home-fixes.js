@@ -3,23 +3,21 @@
 const C=window.CARRANKING_CONFIG||{};
 const BASE=String(C.supabaseUrl||'').replace(/\/+$/,'');
 const KEY=C.supabasePublishableKey||'';
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
 const pct=v=>v==null?'—':`${(Number(v)*100).toFixed(1)}%`;
 let ANNUAL=[];
 
 function injectCss(){
   if(document.querySelector('link[data-cr-home-fixes]'))return;
   const l=document.createElement('link');
-  l.rel='stylesheet'; l.href='home-fixes.css?v=5'; l.dataset.crHomeFixes='1';
+  l.rel='stylesheet'; l.href='home-fixes.css?v=6'; l.dataset.crHomeFixes='1';
   document.head.appendChild(l);
 }
 
 async function loadAnnual(){
   if(!BASE||!KEY)throw new Error('Supabase config missing');
   const q='select=rank,brand,model,generation,generation_code,category,model_year,retention_rate,depreciation_rate,annual_retention_rate,annual_depreciation_rate,age_years,sample_size,confidence&order=annual_retention_rate.desc';
-  const r=await fetch(`${BASE}/rest/v1/web_annualized_value_ranking?${q}`,{
-    headers:{apikey:KEY,Authorization:`Bearer ${KEY}`},cache:'no-store'
-  });
+  const r=await fetch(`${BASE}/rest/v1/web_annualized_value_ranking?${q}`,{headers:{apikey:KEY,Authorization:`Bearer ${KEY}`},cache:'no-store'});
   if(!r.ok)throw new Error(`web_annualized_value_ranking HTTP ${r.status}`);
   return r.json();
 }
@@ -28,6 +26,12 @@ function filteredRows(){
   const b=document.getElementById('brandFilter')?.value||'';
   const c=document.getElementById('categoryFilter')?.value||'';
   return ANNUAL.filter(x=>(!b||x.brand===b)&&(!c||x.category===c));
+}
+
+function renderHero(){
+  const x=ANNUAL[0],hero=document.getElementById('heroCard');
+  if(!x||!hero)return;
+  hero.innerHTML=`<div class="metric-label">연식 보정 가치보존 1위</div><div class="car-name">${esc(x.brand)} ${esc(x.model)} ${esc(x.generation_code||'')}</div><div class="big">${pct(x.annual_retention_rate)}</div><div class="muted">${esc(x.model_year)}년식 · 현재 가치보존 ${pct(x.retention_rate)}</div>`;
 }
 
 function renderMainRanking(){
@@ -43,12 +47,11 @@ function renderMainRanking(){
   if(note)note.textContent='※ 동일 연식·세대·파워트레인·트림의 신차가와 중고 실매물 평균을 비교하고, 차량 연령을 연평균 기준으로 보정한 A·B등급 데이터만 순위에 반영합니다.';
   const rows=filteredRows();
   body.innerHTML=rows.map((x,i)=>`<tr class="annual-rank-row"><td><strong>#${x.rank??i+1}</strong></td><td><strong>${esc(x.brand)} ${esc(x.model)}</strong><span class="muted-dark small">${esc(x.generation_code||x.generation||'')}</span></td><td>${esc(x.model_year||'-')}</td><td><span class="badge">${pct(x.annual_retention_rate)}</span><span class="muted-dark small">현재 ${pct(x.retention_rate)}</span></td><td>${pct(x.annual_depreciation_rate)}</td><td>${esc(x.sample_size??'미확보')}</td></tr>`).join('');
-  const x=ANNUAL[0],hero=document.getElementById('heroCard');
-  if(x&&hero)hero.innerHTML=`<div class="metric-label">연식 보정 가치보존 1위</div><div class="car-name">${esc(x.brand)} ${esc(x.model)} ${esc(x.generation_code||'')}</div><div class="big">${pct(x.annual_retention_rate)}</div><div class="muted">${esc(x.model_year)}년식 · 현재 가치보존 ${pct(x.retention_rate)}</div>`;
+  renderHero();
 }
 
 function renderBestWorst(){
-  const ranking=document.getElementById('ranking'); if(!ranking)return;
+  const ranking=document.getElementById('ranking'); if(!ranking||!ANNUAL.length)return;
   let sec=document.getElementById('editorialPreview');
   if(!sec){sec=document.createElement('section');sec.id='editorialPreview';sec.className='section editorial-preview-section';ranking.insertAdjacentElement('afterend',sec)}
   const best=ANNUAL.slice(0,10),worst=[...ANNUAL].sort((a,b)=>Number(a.annual_retention_rate)-Number(b.annual_retention_rate)).slice(0,10);
@@ -57,7 +60,14 @@ function renderBestWorst(){
 }
 
 function bindFilters(){
-  ['brandFilter','categoryFilter'].forEach(id=>document.getElementById(id)?.addEventListener('change',()=>setTimeout(renderMainRanking,0)));
+  ['brandFilter','categoryFilter'].forEach(id=>{
+    const el=document.getElementById(id); if(!el||el.dataset.annualBound)return;
+    el.dataset.annualBound='1'; el.addEventListener('change',()=>setTimeout(renderMainRanking,0));
+  });
+}
+
+function enforceForStartupRace(){
+  [150,500,1000,1800,3000,5000].forEach(ms=>setTimeout(()=>{renderMainRanking();renderHero()},ms));
 }
 
 function showError(){
@@ -70,7 +80,7 @@ function showError(){
 async function run(){
   injectCss();
   const old=document.getElementById('editorialPreview'); if(old)old.remove();
-  try{ANNUAL=await loadAnnual();renderMainRanking();renderBestWorst();bindFilters()}catch(e){console.warn('Annual ranking load failed',e);showError()}
+  try{ANNUAL=await loadAnnual();renderMainRanking();renderBestWorst();bindFilters();enforceForStartupRace()}catch(e){console.warn('Annual ranking load failed',e);showError()}
 }
 
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});else run();
