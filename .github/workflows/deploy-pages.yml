@@ -32,7 +32,7 @@ jobs:
           sed -i 's/car-reputation.js?v=1.2/car-reputation.js?v=1.3/g' index.html
           sed -i 's/car-reputation-hotfix.js?v=1/car-reputation-hotfix.js?v=2/g' index.html
           sed -i 's/owner-display-hotfix.js?v=2/owner-display-hotfix.js?v=7/g' index.html
-          sed -i 's#</body></html>#<script src="home-fixes.js?v=7"></script><script src="review-form-cleanup-v2.js?v=3"></script></body></html>#' index.html
+          sed -i 's#</body></html>#<script src="home-fixes.js?v=8"></script><script src="review-form-cleanup-v2.js?v=3"></script></body></html>#' index.html
           sed -i 's#</body></html>#<script src="admin-cleanup.js?v=1"></script><script src="../admin-session-fix.js?v=1"></script><script src="../admin-login-fix-v2.js?v=2"></script></body></html>#' admin/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
