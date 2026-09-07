@@ -7,8 +7,8 @@ window.CARRANKING_CONFIG = {
 };
 
 // The public account UI can keep its session in sessionStorage, while the legacy
-// admin page reads localStorage. On /admin, synchronously bridge the active session
-// before the admin script runs, and do not load public-page enhancement scripts.
+// admin page reads localStorage. On /admin, bridge both stores and transparently
+// refresh/substitute the latest bearer token before the legacy admin code runs.
 const isAdminPage=/^\/admin(?:\/|$)/.test(location.pathname);
 if(isAdminPage){
   const ACCESS='carranking_access_token', REFRESH='carranking_refresh_token';
@@ -16,6 +16,52 @@ if(isAdminPage){
   const sessionRefresh=sessionStorage.getItem(REFRESH);
   if(sessionAccess)localStorage.setItem(ACCESS,sessionAccess);
   if(sessionRefresh)localStorage.setItem(REFRESH,sessionRefresh);
+
+  const nativeFetch=window.fetch.bind(window);
+  const supabaseOrigin=new URL(window.CARRANKING_CONFIG.supabaseUrl).origin;
+  const latestAccess=()=>localStorage.getItem(ACCESS)||sessionStorage.getItem(ACCESS)||'';
+  const latestRefresh=()=>localStorage.getItem(REFRESH)||sessionStorage.getItem(REFRESH)||'';
+  let refreshPromise=null;
+
+  async function refreshAdminSession(){
+    if(refreshPromise)return refreshPromise;
+    const rt=latestRefresh();
+    if(!rt)return null;
+    refreshPromise=(async()=>{
+      try{
+        const r=await nativeFetch(supabaseOrigin+'/auth/v1/token?grant_type=refresh_token',{
+          method:'POST',
+          headers:{apikey:window.CARRANKING_CONFIG.supabasePublishableKey,'Content-Type':'application/json'},
+          body:JSON.stringify({refresh_token:rt})
+        });
+        if(!r.ok)return null;
+        const d=await r.json();
+        if(!d?.access_token)return null;
+        localStorage.setItem(ACCESS,d.access_token);
+        if(d.refresh_token)localStorage.setItem(REFRESH,d.refresh_token);
+        return d.access_token;
+      }catch(_){return null}
+      finally{refreshPromise=null}
+    })();
+    return refreshPromise;
+  }
+
+  window.fetch=async function(input,init={}){
+    const url=typeof input==='string'?input:input?.url||'';
+    if(!url.startsWith(supabaseOrigin))return nativeFetch(input,init);
+    const headers=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});
+    const current=latestAccess();
+    if(current && headers.has('Authorization'))headers.set('Authorization','Bearer '+current);
+    let response=await nativeFetch(input,{...init,headers});
+    if((response.status===401||response.status===403) && headers.has('Authorization')){
+      const refreshed=await refreshAdminSession();
+      if(refreshed){
+        headers.set('Authorization','Bearer '+refreshed);
+        response=await nativeFetch(input,{...init,headers});
+      }
+    }
+    return response;
+  };
 }else{
   const homeFixesScript=document.createElement('script');
   homeFixesScript.src='home-fixes.js';
