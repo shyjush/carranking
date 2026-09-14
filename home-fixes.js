@@ -63,7 +63,8 @@ function renderMainRanking(){
   const note=ranking.querySelector('.footnote');
   if(note)note.textContent='※ 동일 연식·세대·파워트레인·트림의 신차가와 중고 실매물 평균을 비교하고, 차량 연령을 연평균 기준으로 보정한 A·B등급 데이터만 순위에 반영합니다.';
   const rows=filteredRows();
-  body.innerHTML=rows.map((x,i)=>`<tr class="annual-rank-row"><td><strong>#${x.rank??i+1}</strong></td><td><strong>${esc(x.brand)} ${esc(x.model)}</strong><span class="muted-dark small">${esc(x.generation_code||x.generation||'')}</span></td><td>${esc(x.model_year||'-')}</td><td><span class="badge">${pct(x.annual_retention_rate)}</span><span class="muted-dark small">현재 ${pct(x.retention_rate)}</span></td><td>${pct(x.annual_depreciation_rate)}</td><td>${esc(x.sample_size??'미확보')}</td></tr>`).join('');
+  body.innerHTML=rows.map((x,i)=>`<tr class="annual-rank-row clickable-row" data-brand="${esc(x.brand)}" data-model="${esc(x.model)}" data-generation="${esc(x.generation_code||x.generation||'')}"><td><strong>#${x.rank??i+1}</strong></td><td><strong>${esc(x.brand)} ${esc(x.model)}</strong><span class="muted-dark small">${esc(x.generation_code||x.generation||'')}</span></td><td>${esc(x.model_year||'-')}</td><td><span class="badge">${pct(x.annual_retention_rate)}</span><span class="muted-dark small">현재 ${pct(x.retention_rate)}</span></td><td>${pct(x.annual_depreciation_rate)}</td><td>${esc(x.sample_size??'미확보')}</td></tr>`).join('');
+  body.querySelectorAll('.annual-rank-row').forEach(row=>row.addEventListener('click',()=>window.CARRANKING_OPEN_DETAIL?.(row.dataset.brand,row.dataset.model,row.dataset.generation)));
   renderHero();
 }
 
