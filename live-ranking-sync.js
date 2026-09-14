@@ -13,7 +13,8 @@ async function load(){
   const rows=await r.json(); if(!Array.isArray(rows)||!rows.length)return;
   window.CR_LIVE_RANKING=rows;
   window.CR_LIVE_RANKING_COUNT=rows.length;
-  body.innerHTML=rows.map((x,i)=>`<tr><td><strong>#${x.rank??i+1}</strong></td><td><strong>${esc(x.brand)} ${esc(x.model)}</strong><span class="muted-dark small">${esc(x.generation_code||x.generation||'')}</span></td><td>${esc(x.model_year??'-')}</td><td><span class="badge">${pct(x.retention_rate)}</span></td><td>${pct(x.depreciation_rate)}</td><td>${esc(x.sample_size??'미확보')}</td></tr>`).join('');
+  body.innerHTML=rows.map((x,i)=>`<tr class="clickable-row" data-brand="${esc(x.brand)}" data-model="${esc(x.model)}" data-generation="${esc(x.generation_code||x.generation||'')}"><td><strong>#${x.rank??i+1}</strong></td><td><strong>${esc(x.brand)} ${esc(x.model)}</strong><span class="muted-dark small">${esc(x.generation_code||x.generation||'')}</span></td><td>${esc(x.model_year??'-')}</td><td><span class="badge">${pct(x.retention_rate)}</span></td><td>${pct(x.depreciation_rate)}</td><td>${esc(x.sample_size??'미확보')}</td></tr>`).join('');
+  body.querySelectorAll('.clickable-row').forEach(row=>row.addEventListener('click',()=>window.CARRANKING_OPEN_DETAIL?.(row.dataset.brand,row.dataset.model,row.dataset.generation)));
   const top=rows[0];
   if(hero&&top)hero.innerHTML=`<div class="metric-label">가치보존율 1위</div><div class="car-name">${esc(top.brand)} ${esc(top.model)} ${esc(top.generation_code||top.generation||'')}</div><div class="big">${pct(top.retention_rate)}</div><div class="muted">${esc(top.model_year??'-')}년식 · 실시간 DB 기준</div>`;
   document.documentElement.dataset.rankingRows=String(rows.length);
