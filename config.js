@@ -72,7 +72,7 @@ if(isAdminPage){
   document.body.appendChild(rankingBrandExpansion);
 
   const liveRankingSync=document.createElement('script');
-  liveRankingSync.src='live-ranking-sync.js?v=1';
+  liveRankingSync.src='live-ranking-sync.js?v=3';
   liveRankingSync.defer=true;
   document.body.appendChild(liveRankingSync);
 
