@@ -5,16 +5,21 @@ const PICKRANK_KEY='sb_publishable_QdAdkaQJNLf-9yY53_i_AA_EEjLl0gW';
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const pct=v=>v==null?'정보 없음':(Number(v)*100).toFixed(1)+'%';
 function parseIdentity(row){
- const year=Number(row.metadata?.model_year)||null;
+ const meta=row.metadata||{},year=Number(meta.model_year)||Number(String(row.item_name||'').match(/(20\d{2})/)?.[1])||null;
+ const named=String(row.item_name||'').match(/^The\s+20\d{2}\s+(.+)$/i);
+ if(meta.manufacturer||meta.model||named){
+  const brand=meta.manufacturer||String(row.region||'').split(/\s+/)[0]||'';
+  return {brand,model:meta.model||named?.[1]||String(row.item_name||''),generation:meta.generation||'',year};
+ }
  const label=String(row.item_name||'').replace(/\s+\d{4}년식\s*$/,'').trim();
  const parts=label.split(/\s+/);
  return {brand:parts.shift()||'',generation:parts.length>1?parts.pop():'',model:parts.join(' '),year};
 }
 function normalize(row){
- const id=parseIdentity(row),retention=Number(row.metadata?.raw_score??row.score/100);
+ const id=parseIdentity(row),raw=row.metadata?.raw_score??(row.score==null?null:row.score/100),retention=raw==null?null:Number(raw);
  return {rank:Number(row.rank_no),brand:id.brand,model:id.model,generation_code:id.generation,
   model_year:id.year,retention_rate:retention,
-  depreciation_rate:Number(row.metadata?.depreciation_rate??1-retention),
+  depreciation_rate:row.metadata?.depreciation_rate==null?(retention==null?null:1-retention):Number(row.metadata.depreciation_rate),
   sample_size:Number(row.review_count)||0,category:row.region||row.metadata?.category||'',
   data_as_of:row.data_as_of,external_key:row.external_key,pickrank_canonical:true};
 }
