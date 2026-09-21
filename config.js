@@ -21,10 +21,6 @@ if(isAdminPage){
   adminRecovery.defer=true;
   document.head.appendChild(adminRecovery);
 }else{
-  const homeFixesScript=document.createElement('script');
-  homeFixesScript.src='home-fixes.js';
-  homeFixesScript.defer=true;
-  document.body.appendChild(homeFixesScript);
 
   const reputationScript=document.createElement('script');
   reputationScript.src='car-reputation.js?v=1.2';
@@ -71,10 +67,6 @@ if(isAdminPage){
   rankingBrandExpansion.defer=true;
   document.body.appendChild(rankingBrandExpansion);
 
-  const liveRankingSync=document.createElement('script');
-  liveRankingSync.src='live-ranking-sync.js?v=3';
-  liveRankingSync.defer=true;
-  document.body.appendChild(liveRankingSync);
 
   const myReviewsScript=document.createElement('script');
   myReviewsScript.src='my-reviews-v1.js?v=1';
