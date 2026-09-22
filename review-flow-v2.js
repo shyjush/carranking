@@ -13,7 +13,8 @@ const CRITERIA=['ride_comfort','quietness','performance','fuel_efficiency','main
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 function visitorId(){let v=localStorage.getItem('carranking_visitor');if(!v){v=(crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${Math.random().toString(36).slice(2)}`);localStorage.setItem('carranking_visitor',v)}return v}
-function apiHeaders(){const token=localStorage.getItem(TOKEN);return {apikey:KEY,Authorization:`Bearer ${token||KEY}`,'Content-Type':'application/json'}}
+function accessToken(){return localStorage.getItem(TOKEN)||sessionStorage.getItem(TOKEN)||''}
+function apiHeaders(){const token=accessToken();return {apikey:KEY,Authorization:`Bearer ${token||KEY}`,'Content-Type':'application/json'}}
 function publicHeaders(){return {apikey:KEY,Authorization:`Bearer ${KEY}`}}
 function message(text,ok=false){const box=$('#reviewMessage');if(!box)return;box.innerHTML=`<div style="margin-top:12px;padding:14px 16px;border-radius:14px;font-weight:800;line-height:1.45;background:${ok?'#edf9f2':'#fff4f2'};border:1px solid ${ok?'#bfe6ce':'#f0c7c0'}">${text}</div>`;box.scrollIntoView({behavior:'smooth',block:'nearest'})}
 async function rpc(name,payload){const r=await fetch(`${BASE}/rest/v1/rpc/${name}`,{method:'POST',headers:apiHeaders(),body:JSON.stringify(payload)});const t=await r.text();let d=null;try{d=t?JSON.parse(t):null}catch(_){}if(!r.ok){const raw=d?.message||d?.hint||t||`HTTP ${r.status}`;throw new Error(raw)}return d}
@@ -70,7 +71,7 @@ async function loadMyReviews(){
  const panel=$('#crMyPanel');if(!panel)return;
  let box=$('#crMyReviews');
  if(!box){box=document.createElement('section');box.id='crMyReviews';box.style.cssText='margin-top:22px;padding-top:18px;border-top:1px solid #e5e9ef';const logout=$('#crLogout');(logout?.parentElement||panel).appendChild(box)}
- const token=localStorage.getItem(TOKEN);
+ const token=accessToken();
  if(!token){box.innerHTML='';return}
  box.innerHTML='<h3 style="margin:0 0 12px">내 오너리뷰</h3><p>불러오는 중…</p>';
  try{

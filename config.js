@@ -22,11 +22,6 @@ if(isAdminPage){
   document.head.appendChild(adminRecovery);
 }else{
 
-  const reputationScript=document.createElement('script');
-  reputationScript.src='car-reputation.js?v=1.2';
-  reputationScript.defer=true;
-  document.body.appendChild(reputationScript);
-
   const engagementScript=document.createElement('script');
   engagementScript.src='car-engagement-v120.js?v=1.20';
   engagementScript.defer=true;
@@ -67,9 +62,14 @@ if(isAdminPage){
   rankingBrandExpansion.defer=true;
   document.body.appendChild(rankingBrandExpansion);
 
+  const vehicleSearch=document.createElement('script');
+  vehicleSearch.src='vehicle-search-v1.js?v=1';
+  vehicleSearch.defer=true;
+  document.body.appendChild(vehicleSearch);
+
 
   const myReviewsScript=document.createElement('script');
-  myReviewsScript.src='my-reviews-v1.js?v=1';
+  myReviewsScript.src='my-reviews-v1.js?v=2';
   myReviewsScript.defer=true;
   document.body.appendChild(myReviewsScript);
 }
