@@ -36,4 +36,6 @@ jobs:
           psql "$CONN" -Atc "select 'reviews='||count(*) from public.reviews;"
           psql "$CONN" -Atc "select 'new_verified_market_snapshots='||count(*) from public.market_snapshots where confidence in ('A','B') and source_url like 'https://%' and listing_count > 0 and created_at >= now()-interval '7 days';"
           psql "$CONN" -Atc "select 'markets_missing_source_or_sample='||count(*) from public.market_snapshots where source_url is null or listing_count is null or listing_count < 1;"
-          psql "$CONN" -Atc "select 'metrics_without_matching_market_snapshots='||count(*) from public.depreciation_metrics d where d.confidence in ('A','B') and not exists(select 1 from public.market_snapshots s where s.generation_id=d.generation_id and s.model_year=d.model_year and s.as_of_date=d.as_of_date and s.confidence in ('A','B'));"
+          UNSUPPORTED=$(psql "$CONN" -Atc "select count(*) from public.depreciation_metrics d where d.confidence in ('A','B') and not exists(select 1 from public.market_snapshots s where s.generation_id=d.generation_id and s.model_year=d.model_year and s.as_of_date=d.as_of_date and s.confidence in ('A','B'));")
+          echo "metrics_without_matching_market_snapshots=$UNSUPPORTED"
+          if [ "$UNSUPPORTED" -gt 0 ]; then echo "::warning::$UNSUPPORTED A/B depreciation metrics lack a matching verified market snapshot. Do not recalculate or advance evidence date."; fi
