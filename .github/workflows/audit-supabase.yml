@@ -5,6 +5,9 @@ on:
     paths:
       - '.github/workflows/audit-supabase.yml'
   workflow_dispatch:
+  schedule:
+    # 03:50 KST daily; audit only, no synthetic depreciation data.
+    - cron: '50 18 * * *'
 
 jobs:
   audit:
@@ -16,6 +19,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          if [ -z "$PGPASSWORD" ]; then echo 'BLOCKED: SUPABASE_DB_PASSWORD is missing' >&2; exit 2; fi
           CONN="host=aws-0-ap-northeast-2.pooler.supabase.com port=5432 dbname=postgres user=postgres.ikhyadzboorscjwcrhcz sslmode=require"
           echo "=== CarRanking Supabase audit ==="
           psql "$CONN" -Atc "select 'manufacturers='||count(*) from public.manufacturers;"
@@ -30,3 +34,6 @@ jobs:
           psql "$CONN" -Atc "select 'missing_specs_generations='||count(*) from public.generations g where not exists (select 1 from public.vehicle_specs s where s.generation_id=g.id);"
           psql "$CONN" -Atc "select 'ratings='||count(*) from public.ratings;"
           psql "$CONN" -Atc "select 'reviews='||count(*) from public.reviews;"
+          psql "$CONN" -Atc "select 'new_verified_market_snapshots='||count(*) from public.market_snapshots where confidence in ('A','B') and source_url like 'https://%' and listing_count > 0 and created_at >= now()-interval '7 days';"
+          psql "$CONN" -Atc "select 'markets_missing_source_or_sample='||count(*) from public.market_snapshots where source_url is null or listing_count is null or listing_count < 1;"
+          psql "$CONN" -Atc "select 'metrics_without_matching_market_snapshots='||count(*) from public.depreciation_metrics d where d.confidence in ('A','B') and not exists(select 1 from public.market_snapshots s where s.generation_id=d.generation_id and s.model_year=d.model_year and s.as_of_date=d.as_of_date and s.confidence in ('A','B'));"
