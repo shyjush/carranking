@@ -31,8 +31,24 @@ async function refreshSession(){
  return d;
 }
 function syncAccountButton(){const b=$('#crAccountBtn');if(!b)return;b.textContent=currentUser?'MY':'로그인·간편가입';b.dataset.mode=currentUser?'my':'login'}
+function ensureAdminLink(){
+ const panel=$('#crMyPanel');if(!panel)return null;
+ let link=$('#crAdminLink');if(link)return link;
+ link=document.createElement('a');link.id='crAdminLink';link.href='/admin/';link.className='btn primary hidden';link.textContent='관리자 메뉴';link.style.cssText='display:none;text-align:center;text-decoration:none;margin:10px 0';
+ $('#crLogout')?.insertAdjacentElement('beforebegin',link);return link;
+}
+async function syncAdminLink(){
+ const link=ensureAdminLink();if(!link)return;
+ link.classList.add('hidden');link.style.display='none';
+ if(!currentUser||!getAccess())return;
+ try{
+  const r=await fetch(BASE+'/rest/v1/rpc/admin_session_status',{method:'POST',headers:{apikey:KEY,Authorization:'Bearer '+getAccess(),'Content-Type':'application/json'},body:'{}',cache:'no-store'});
+  if(!r.ok)return;const status=await r.json();const x=Array.isArray(status)?status[0]:status;
+  if(x?.authenticated&&x?.is_admin){link.classList.remove('hidden');link.style.display='block'}
+ }catch(_){/* 일반 회원에게는 관리자 링크를 표시하지 않는다. */}
+}
 function showPanel(my){$('#crLoginPanel')?.classList.toggle('hidden',my);$('#crMyPanel')?.classList.toggle('hidden',!my);if(my)$('#crMyEmail').textContent=currentUser?.email||'로그인 사용자'}
-function open(mode){const my=mode==='my'&&currentUser;showPanel(Boolean(my));$('#crAuthModal')?.classList.remove('hidden');setTimeout(()=>$(my?'#crCurrentPassword':'#crAuthEmail')?.focus(),30)}
+function open(mode){const my=mode==='my'&&currentUser;showPanel(Boolean(my));if(my)syncAdminLink();$('#crAuthModal')?.classList.remove('hidden');setTimeout(()=>$(my?'#crCurrentPassword':'#crAuthEmail')?.focus(),30)}
 function close(){$('#crAuthModal')?.classList.add('hidden')}
 function installRememberUI(){
  const panel=$('#crLoginPanel');if(!panel||$('#crRememberLogin'))return;
@@ -51,6 +67,7 @@ async function restore(){
   catch(__){clearTokens();currentUser=null}
  }
  syncAccountButton();
+ await syncAdminLink();
 }
 async function submit(){
  const email=$('#crAuthEmail')?.value.trim().toLowerCase(),password=$('#crAuthPassword')?.value||'',b=$('#crAuthSubmit'),remember=Boolean($('#crRememberLogin')?.checked);
@@ -60,10 +77,10 @@ async function submit(){
  try{
   try{
    const d=await auth('token?grant_type=password',{method:'POST',body:JSON.stringify({email,password})},'');
-   if(d.access_token){saveSession(d,remember);if(remember)localStorage.setItem(EMAIL,email);else localStorage.removeItem(EMAIL);currentUser=d.user||await auth('user',{method:'GET'});syncAccountButton();close();alert(remember?'로그인되었습니다. 다음 접속부터 로그인 상태를 유지합니다.':'로그인되었습니다.');return}
+   if(d.access_token){saveSession(d,remember);if(remember)localStorage.setItem(EMAIL,email);else localStorage.removeItem(EMAIL);currentUser=d.user||await auth('user',{method:'GET'});syncAccountButton();await syncAdminLink();close();alert(remember?'로그인되었습니다. 다음 접속부터 로그인 상태를 유지합니다.':'로그인되었습니다.');return}
   }catch(loginError){if(!/invalid login credentials/i.test(loginError.message))throw loginError}
   const d=await auth('signup',{method:'POST',body:JSON.stringify({email,password,data:{display_name:'오너'}})},'');
-  if(d.access_token){saveSession(d,remember);if(remember)localStorage.setItem(EMAIL,email);currentUser=d.user||await auth('user',{method:'GET'});syncAccountButton();close();alert('간편회원가입과 로그인이 완료되었습니다.');return}
+  if(d.access_token){saveSession(d,remember);if(remember)localStorage.setItem(EMAIL,email);currentUser=d.user||await auth('user',{method:'GET'});syncAccountButton();await syncAdminLink();close();alert('간편회원가입과 로그인이 완료되었습니다.');return}
   const isNew=Array.isArray(d.user?.identities)&&d.user.identities.length>0;
   alert(isNew?'가입 확인 메일을 보냈습니다. 이메일 확인 후 같은 화면에서 로그인해주세요.':'등록된 이메일입니다. 비밀번호가 틀렸다면 비밀번호 재설정을 이용해주세요.');
  }catch(e){alert(e.message==='email rate limit exceeded'?'이메일 발송 한도를 초과했습니다. 잠시 후 다시 시도해주세요.':'로그인·가입 오류: '+e.message)}
@@ -77,7 +94,7 @@ async function changePassword(){
  catch(e){alert('비밀번호 변경 오류: '+(/invalid login credentials/i.test(e.message)?'현재 비밀번호가 올바르지 않습니다.':e.message))}
  finally{b.disabled=false;b.textContent='비밀번호 변경'}
 }
-async function logout(){try{await auth('logout',{method:'POST'})}catch(_){}clearTokens();currentUser=null;syncAccountButton();close();alert('로그아웃되었습니다.')}
+async function logout(){try{await auth('logout',{method:'POST'})}catch(_){}clearTokens();currentUser=null;syncAccountButton();await syncAdminLink();close();alert('로그아웃되었습니다.')}
 async function resetPassword(){const email=$('#crAuthEmail')?.value.trim();if(!email)return alert('이메일을 먼저 입력해주세요.');try{await auth('recover?redirect_to='+encodeURIComponent('https://carranking.kr/'),{method:'POST',body:JSON.stringify({email})},'');alert('비밀번호 재설정 메일을 보냈습니다.')}catch(e){alert(e.message==='email rate limit exceeded'?'이메일 발송 한도를 초과했습니다. 잠시 후 다시 시도해주세요.':'재설정 메일 오류: '+e.message)}}
 function share(){const text=encodeURIComponent('CarRanking - 자동차 순위·가치보존율·오너평점\n'+location.href),route=encodeURIComponent(location.hostname||'carranking.kr');if(/Android|iPhone|iPad/i.test(navigator.userAgent)){location.href='bandapp://create/post?text='+text+'&route='+route;setTimeout(()=>window.open('https://band.us/plugin/share?body='+text+'&route='+route,'share_band','width=410,height=540,resizable=yes'),700)}else window.open('https://band.us/plugin/share?body='+text+'&route='+route,'share_band','width=410,height=540,resizable=yes')}
 document.addEventListener('DOMContentLoaded',()=>{installRememberUI();restore();document.querySelectorAll('.cr-auth-open').forEach(b=>b.onclick=()=>open(b.dataset.mode));document.querySelectorAll('[data-cr-close]').forEach(b=>b.onclick=close);$('#crAuthSubmit').onclick=submit;$('#crAuthReset').onclick=resetPassword;$('#crChangePassword').onclick=changePassword;$('#crLogout').onclick=logout;['crAuthEmail','crAuthPassword'].forEach(id=>$('#'+id).onkeydown=e=>{if(e.key==='Enter')submit()});['crCurrentPassword','crNewPassword','crConfirmPassword'].forEach(id=>$('#'+id).onkeydown=e=>{if(e.key==='Enter')changePassword()});$('#crBandShare').onclick=share;document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})});
