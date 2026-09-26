@@ -1,4 +1,4 @@
-/* CarRanking public ranking sync: PICKRANK is canonical, local DB is fallback */
+/* CarRanking public ranking sync: specialist DB is authoritative */
 (()=>{'use strict';
 const PICKRANK_URL='https://umreaxukykowauxkauyd.supabase.co';
 const PICKRANK_KEY='sb_publishable_QdAdkaQJNLf-9yY53_i_AA_EEjLl0gW';
@@ -47,17 +47,17 @@ function render(rows,canonical){
  }
  body.querySelectorAll('.clickable-row').forEach(row=>row.onclick=()=>window.CARRANKING_OPEN_DETAIL?.(row.dataset.brand,row.dataset.model,row.dataset.generation));
  const top=rows[0],date=top?.data_as_of?new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'numeric',day:'numeric'}).format(new Date(top.data_as_of)):'';
- if(hero&&top)hero.innerHTML='<div class="metric-label">가치보존율 1위</div><div class="car-name">'+esc(top.brand)+' '+esc(top.model)+' '+esc(top.generation_code||'')+'</div><div class="big">'+pct(top.retention_rate)+'</div><div class="muted">'+esc(top.model_year??'-')+'년식 · '+(canonical?'PICKRANK 중앙 확정 순위':'CarRanking 임시 순위')+(date?' · '+date+' 기준':'')+'</div>';
+ if(hero&&top)hero.innerHTML='<div class="metric-label">가치보존율 1위</div><div class="car-name">'+esc(top.brand)+' '+esc(top.model)+' '+esc(top.generation_code||'')+'</div><div class="big">'+pct(top.retention_rate)+'</div><div class="muted">'+esc(top.model_year??'-')+'년식 · '+(canonical?'PICKRANK 중앙 확정 순위':'CarRanking 자체 순위')+(date?' · '+date+' 기준':'')+'</div>';
  document.documentElement.dataset.rankingRows=String(rows.length);
  document.documentElement.dataset.rankingSource=canonical?'pickrank':'carranking-fallback';
  const note=document.querySelector('#ranking .footnote');
  if(note)note.textContent=canonical
   ?'※ PICKRANK 중앙 DB에서 검증·확정한 자동차 가치보존율 순위 '+rows.length+'개를 동일하게 표시합니다.'
-  :'※ PICKRANK 중앙 순위를 불러오지 못해 CarRanking의 최근 데이터를 임시 표시합니다.';
+  :'※ CarRanking에서 검증한 자체 가치보존 순위를 표시합니다.';
 }
 async function load(){
- try{render(await pickrankRows(),true)}
- catch(e){console.warn('PICKRANK car ranking unavailable; using CarRanking fallback.',e);try{render(await localRows(),false)}catch(f){console.warn('CarRanking fallback unavailable.',f)}}
+ try{render(await localRows(),false)}
+ catch(e){console.warn('CarRanking ranking unavailable.',e)}
 }
 function start(){load();setInterval(load,300000)}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(start,1200),{once:true});else setTimeout(start,1200);
