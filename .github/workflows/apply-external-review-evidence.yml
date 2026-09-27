@@ -50,11 +50,12 @@ jobs:
           TOTAL=$(wc -l < /tmp/carranking_urls.txt | tr -d ' ')
           echo "approved_urls_total=$TOTAL"
           : > /tmp/url_failures.txt
-          while IFS= read -r u; do
-            [ -z "$u" ] && continue
-            code=$(curl -L -sS -o /dev/null -w '%{http_code}' --connect-timeout 8 --max-time 15 -A 'Mozilla/5.0 CarRankingAudit/1.0' "$u" || echo 000)
-            case "$code" in 200|201|202|203|204|206|301|302|303|307|308) ;; *) echo "$code | $u" >> /tmp/url_failures.txt ;; esac
-          done < /tmp/carranking_urls.txt
+          export FAIL_FILE=/tmp/url_failures.txt
+          cat /tmp/carranking_urls.txt | xargs -r -P 12 -I{} bash -c '
+            u="$1"
+            code=$(curl -L -sS -o /dev/null -w "%{http_code}" --connect-timeout 5 --max-time 10 -A "Mozilla/5.0 CarRankingAudit/1.0" "$u" || echo 000)
+            case "$code" in 200|201|202|203|204|206|301|302|303|307|308) ;; *) printf "%s | %s\n" "$code" "$u" >> "$FAIL_FILE" ;; esac
+          ' _ {}
           FAIL=$(wc -l < /tmp/url_failures.txt | tr -d ' ')
           echo "approved_url_failures=$FAIL"
           cat /tmp/url_failures.txt || true
