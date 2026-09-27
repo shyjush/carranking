@@ -33,8 +33,6 @@ comment on table public.external_review_sources is
   'External professional evaluations and unverified owner-report references. Never feeds owner score or value-retention score.';
 comment on column public.external_review_sources.source_confidence is
   'Confidence for external reference quality only; independent from value-retention A/B market-evidence qualification.';
-comment on column public.external_review_sources.owner_report_unverified is null;
-
 create index if not exists external_review_generation_idx
   on public.external_review_sources(generation_id, published_date desc);
 create index if not exists external_review_status_idx
