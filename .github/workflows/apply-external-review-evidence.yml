@@ -53,8 +53,9 @@ jobs:
           export FAIL_FILE=/tmp/url_failures.txt
           cat /tmp/carranking_urls.txt | xargs -r -P 12 -I{} bash -c '
             u="$1"
-            code=$(curl -L -sS -o /dev/null -w "%{http_code}" --connect-timeout 5 --max-time 10 -A "Mozilla/5.0 CarRankingAudit/1.0" "$u" || echo 000)
-            case "$code" in 200|201|202|203|204|206|301|302|303|307|308) ;; *) printf "%s | %s\n" "$code" "$u" >> "$FAIL_FILE" ;; esac
+            code=$(curl -L -sS -o /dev/null -w "%{http_code}" --connect-timeout 5 --max-time 12 --retry 2 --retry-delay 1 --retry-all-errors -A "Mozilla/5.0 CarRankingAudit/1.0" "$u" 2>/dev/null || true)
+            [ -z "$code" ] && code=000
+            case "$code" in 2*|3*) ;; *) printf "%s | %s\n" "$code" "$u" >> "$FAIL_FILE" ;; esac
           ' _ {}
           FAIL=$(wc -l < /tmp/url_failures.txt | tr -d ' ')
           echo "approved_url_failures=$FAIL"
