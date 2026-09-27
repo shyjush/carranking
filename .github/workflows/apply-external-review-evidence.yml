@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'supabase/migrations/20260927*_external_review_sources_batch*.sql'
+      - 'supabase/migrations/20260927*_external_owner_reports_batch*.sql'
       - '.github/workflows/apply-external-review-evidence.yml'
 
 jobs:
@@ -28,7 +29,7 @@ jobs:
             exit 2
           fi
           CONN="host=aws-0-ap-northeast-2.pooler.supabase.com port=5432 dbname=postgres user=postgres.ikhyadzboorscjwcrhcz sslmode=require"
-          for f in $(ls supabase/migrations/20260927*_external_review_sources_batch*.sql | sort); do
+          for f in $(find supabase/migrations -maxdepth 1 -type f \( -name '20260927*_external_review_sources_batch*.sql' -o -name '20260927*_external_owner_reports_batch*.sql' \) | sort); do
             echo "Applying $f"
             psql "$CONN" -v ON_ERROR_STOP=1 -f "$f"
           done
