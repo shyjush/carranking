@@ -42,5 +42,21 @@ jobs:
           echo "=== current generations without approved external references ==="
           psql "$CONN" -F ' | ' -Atc "select mf.name,cm.name,coalesce(g.generation_code,g.name) from public.generations g join public.car_models cm on cm.id=g.car_model_id join public.manufacturers mf on mf.id=cm.manufacturer_id where g.current=true and not exists(select 1 from public.external_review_sources e where e.generation_id=g.id and e.approval_status='approved_reference') order by mf.name,cm.name;"
           psql "$CONN" -Atc "select 'current_generations_without_external_reference='||count(*) from public.generations g where g.current=true and not exists(select 1 from public.external_review_sources e where e.generation_id=g.id and e.approval_status='approved_reference');"
+          echo "=== historical generations without approved external references ==="
+          psql "$CONN" -F ' | ' -Atc "select mf.name,cm.name,coalesce(g.generation_code,g.name),coalesce(g.start_year,0),coalesce(g.end_year,0) from public.generations g join public.car_models cm on cm.id=g.car_model_id join public.manufacturers mf on mf.id=cm.manufacturer_id where g.current=false and not exists(select 1 from public.external_review_sources e where e.generation_id=g.id and e.approval_status='approved_reference') order by mf.name,cm.name,g.start_year desc;"
+          psql "$CONN" -Atc "select 'historical_generations_without_external_reference='||count(*) from public.generations g where g.current=false and not exists(select 1 from public.external_review_sources e where e.generation_id=g.id and e.approval_status='approved_reference');"
+          echo "=== approved source urls ==="
+          psql "$CONN" -Atc "select canonical_url from public.external_review_sources where approval_status='approved_reference' order by canonical_url;" > /tmp/carranking_urls.txt
+          TOTAL=$(wc -l < /tmp/carranking_urls.txt | tr -d ' ')
+          echo "approved_urls_total=$TOTAL"
+          : > /tmp/url_failures.txt
+          while IFS= read -r u; do
+            [ -z "$u" ] && continue
+            code=$(curl -L -sS -o /dev/null -w '%{http_code}' --connect-timeout 8 --max-time 15 -A 'Mozilla/5.0 CarRankingAudit/1.0' "$u" || echo 000)
+            case "$code" in 200|201|202|203|204|206|301|302|303|307|308) ;; *) echo "$code | $u" >> /tmp/url_failures.txt ;; esac
+          done < /tmp/carranking_urls.txt
+          FAIL=$(wc -l < /tmp/url_failures.txt | tr -d ' ')
+          echo "approved_url_failures=$FAIL"
+          cat /tmp/url_failures.txt || true
           echo "=== target generation identity debug ==="
           psql "$CONN" -F ' | ' -Atc "select mf.name,cm.name,g.name,coalesce(g.generation_code,'NULL'),g.id::text from public.generations g join public.car_models cm on cm.id=g.car_model_id join public.manufacturers mf on mf.id=cm.manufacturer_id where (mf.name,cm.name) in (('기아','EV4'),('기아','EV5'),('현대','캐스퍼'),('KGM','코란도'),('KGM','티볼리')) order by mf.name,cm.name,g.current desc,g.start_year desc;"
