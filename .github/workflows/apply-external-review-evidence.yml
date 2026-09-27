@@ -1,5 +1,9 @@
 name: Apply CarRanking external review evidence
 
+concurrency:
+  group: carranking-external-evidence-apply
+  cancel-in-progress: true
+
 on:
   workflow_dispatch:
   push:
