@@ -39,3 +39,6 @@ jobs:
           psql "$CONN" -Atc "select 'score_eligible_rows='||count(*) from public.external_review_sources where owner_score_eligible or value_score_eligible;"
           psql "$CONN" -Atc "select 'duplicate_rows='||count(*) from public.external_review_sources where dedupe_status='duplicate';"
           psql "$CONN" -Atc "select 'public_feed='||count(*) from public.web_external_review_feed;"
+          echo "=== current generations without approved external references ==="
+          psql "$CONN" -F ' | ' -Atc "select mf.name,cm.name,coalesce(g.generation_code,g.name) from public.generations g join public.car_models cm on cm.id=g.car_model_id join public.manufacturers mf on mf.id=cm.manufacturer_id where g.current=true and not exists(select 1 from public.external_review_sources e where e.generation_id=g.id and e.approval_status='approved_reference') order by mf.name,cm.name;"
+          psql "$CONN" -Atc "select 'current_generations_without_external_reference='||count(*) from public.generations g where g.current=true and not exists(select 1 from public.external_review_sources e where e.generation_id=g.id and e.approval_status='approved_reference');"
