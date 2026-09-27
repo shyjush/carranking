@@ -1,0 +1,38 @@
+name: Apply CarRanking external review evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'supabase/migrations/20260927141000_external_review_sources_batch1.sql'
+      - '.github/workflows/apply-external-review-evidence.yml'
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      PGPASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Apply isolated external-evidence SQL
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$PGPASSWORD" ]; then
+            echo 'BLOCKED: SUPABASE_DB_PASSWORD is missing' >&2
+            exit 2
+          fi
+          CONN="host=aws-0-ap-northeast-2.pooler.supabase.com port=5432 dbname=postgres user=postgres.ikhyadzboorscjwcrhcz sslmode=require"
+          psql "$CONN" -v ON_ERROR_STOP=1 -f supabase/migrations/20260927141000_external_review_sources_batch1.sql
+          echo "=== verify external review evidence ==="
+          psql "$CONN" -Atc "select 'external_total='||count(*) from public.external_review_sources;"
+          psql "$CONN" -Atc "select 'approved_reference='||count(*) from public.external_review_sources where approval_status='approved_reference';"
+          psql "$CONN" -Atc "select 'held_owner_reports='||count(*) from public.external_review_sources where approval_status='hold' and source_type='owner_report_unverified';"
+          psql "$CONN" -Atc "select 'score_eligible_rows='||count(*) from public.external_review_sources where owner_score_eligible or value_score_eligible;"
+          psql "$CONN" -Atc "select 'duplicate_rows='||count(*) from public.external_review_sources where dedupe_status='duplicate';"
+          psql "$CONN" -Atc "select 'public_feed='||count(*) from public.web_external_review_feed;"
