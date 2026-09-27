@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'supabase/migrations/20260927141000_external_review_sources_batch1.sql'
+      - 'supabase/migrations/20260927*_external_review_sources_batch*.sql'
       - '.github/workflows/apply-external-review-evidence.yml'
 
 jobs:
@@ -28,7 +28,10 @@ jobs:
             exit 2
           fi
           CONN="host=aws-0-ap-northeast-2.pooler.supabase.com port=5432 dbname=postgres user=postgres.ikhyadzboorscjwcrhcz sslmode=require"
-          psql "$CONN" -v ON_ERROR_STOP=1 -f supabase/migrations/20260927141000_external_review_sources_batch1.sql
+          for f in $(ls supabase/migrations/20260927*_external_review_sources_batch*.sql | sort); do
+            echo "Applying $f"
+            psql "$CONN" -v ON_ERROR_STOP=1 -f "$f"
+          done
           echo "=== verify external review evidence ==="
           psql "$CONN" -Atc "select 'external_total='||count(*) from public.external_review_sources;"
           psql "$CONN" -Atc "select 'approved_reference='||count(*) from public.external_review_sources where approval_status='approved_reference';"
