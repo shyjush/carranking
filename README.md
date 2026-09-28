@@ -23,3 +23,10 @@ CarRanking Supabase 프로젝트가 생성되면 `config.js`의:
 웹은 `web_value_ranking` View를 REST로 조회하도록 준비되어 있습니다.
 
 주의: publishable key만 프론트에 사용하고 service_role/secret key는 절대 넣지 않습니다.
+
+## Data authority policy
+
+CarRanking is the source of truth for vehicle identity, specifications, verified market snapshots, value-retention rankings, owner reviews, and professional evidence. It does not import or synchronize PICKRANK ranking/common data. PICKRANK may link users to CarRanking, and CarRanking may keep ordinary navigation links, but no cross-site data read, outbound sync, central ranking sync, or shared canonical feed is part of the runtime.
+
+The scheduled GitHub audit remains CarRanking-local: it verifies the specialist database and blocks reintroduction of PICKRANK data dependencies.
+
