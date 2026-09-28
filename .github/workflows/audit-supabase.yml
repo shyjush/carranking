@@ -15,6 +15,20 @@ jobs:
     env:
       PGPASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Guard specialist-site independence
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE 'latest_published_rankings|canonical-feed\?category=car|umreaxukykowauxkauyd\.supabase\.co|PICKRANK_URL|PICKRANK_KEY' \
+            --include='*.html' --include='*.js' .; then
+            echo 'BLOCKED: CarRanking must not read or sync PICKRANK data. Direct navigation links to pickrank.kr are allowed.' >&2
+            exit 1
+          fi
+          echo 'OK: no PICKRANK data dependency in CarRanking runtime.'
+
       - name: Audit database counts
         shell: bash
         run: |
