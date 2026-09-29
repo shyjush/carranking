@@ -34,9 +34,23 @@ async function submit(e){
    const name=(user.user_metadata?.display_name||user.email?.split('@')[0]||'회원').slice(0,40);
    const r=await fetch(BASE+'/rest/v1/community_posts',{method:'POST',headers:{...headers(true),'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({author_user_id:user.id,author_name:name,title,body,post_type:'free',is_system:false,is_published:true})});
    if(!r.ok){const t=await r.text();throw new Error(t)}
-   $('#communityForm').reset();m.textContent='등록되었습니다.';await loadPosts();
+   $('#communityForm').reset();m.textContent='등록되었습니다.';await loadPosts();setComposer(false);
  }catch(e){console.error(e);m.textContent='등록하지 못했습니다. 다시 시도해 주세요.'}
  finally{b.disabled=false}
 }
-document.addEventListener('DOMContentLoaded',()=>{loadPosts();$('#communityRefresh').onclick=loadPosts;$('#communityForm').addEventListener('submit',submit)});
+function setComposer(open){
+ const panel=$('#communityComposePanel'),toggle=$('#communityComposeToggle');
+ if(!panel||!toggle)return;
+ panel.classList.toggle('hidden',!open);
+ toggle.setAttribute('aria-expanded',open?'true':'false');
+ toggle.textContent=open?'글쓰기 닫기':'새 글 쓰기';
+ if(open)setTimeout(()=>$('#communityTitle')?.focus(),30);
+}
+document.addEventListener('DOMContentLoaded',()=>{
+ loadPosts();
+ $('#communityRefresh').onclick=loadPosts;
+ $('#communityComposeToggle').onclick=()=>setComposer($('#communityComposePanel').classList.contains('hidden'));
+ $('#communityComposeClose').onclick=()=>setComposer(false);
+ $('#communityForm').addEventListener('submit',submit);
+});
 })();
