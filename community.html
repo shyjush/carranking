@@ -29,23 +29,20 @@
     <p class="sub">자동차 이야기, 일상 이야기, 가벼운 유머를 편하게 나누는 공간입니다.</p>
   </section>
 
-  <section class="section community-layout">
-    <div>
-      <div class="section-head">
-        <div>
-          <h2>게시글</h2>
-          <p class="muted-dark">최신 글부터 표시합니다.</p>
-        </div>
-        <button id="communityRefresh" class="btn">새로고침</button>
-      </div>
-      <div id="communityList" class="community-list">
-        <div class="empty">게시글을 불러오는 중입니다.</div>
-      </div>
+  <section class="section community-board">
+    <div class="community-toolbar">
+      <button id="communityComposeToggle" class="btn primary" type="button" aria-expanded="false">새 글 쓰기</button>
+      <button id="communityRefresh" class="btn" type="button">새로고침</button>
     </div>
 
-    <aside class="community-compose">
-      <h2>글쓰기</h2>
-      <p class="muted-dark">로그인 회원만 글을 등록할 수 있습니다.</p>
+    <div id="communityComposePanel" class="community-compose hidden">
+      <div class="community-compose-head">
+        <div>
+          <h2>새 글 쓰기</h2>
+          <p class="muted-dark">로그인 회원만 글을 등록할 수 있습니다.</p>
+        </div>
+        <button id="communityComposeClose" class="text-btn" type="button">닫기</button>
+      </div>
       <form id="communityForm">
         <input id="communityTitle" maxlength="120" placeholder="제목" required>
         <textarea id="communityBody" maxlength="5000" minlength="2" placeholder="내용을 입력하세요." required></textarea>
@@ -56,7 +53,15 @@
         <strong>게시판 운영 안내</strong>
         <p>비방, 개인정보 노출, 불법정보, 광고성 도배는 제한될 수 있습니다. 자동 유머글은 ‘CarRanking 운영자’로 표시됩니다.</p>
       </div>
-    </aside>
+    </div>
+
+    <div class="community-list-head">
+      <h2>게시글</h2>
+      <p class="muted-dark">최신 글부터 표시합니다.</p>
+    </div>
+    <div id="communityList" class="community-list">
+      <div class="empty">게시글을 불러오는 중입니다.</div>
+    </div>
   </section>
 </main>
 
@@ -91,6 +96,6 @@
 
 <script src="config.js?v=10"></script>
 <script src="header-actions.js?v=6"></script>
-<script src="community.js?v=1"></script>
+<script src="community.js?v=2"></script>
 </body>
 </html>
