@@ -3,6 +3,7 @@ const C=window.CARRANKING_CONFIG||{},BASE=String(C.supabaseUrl||'').replace(/\/+
 const ACCESS='carranking_access_token';
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const normalizeBody=s=>String(s??'').split(String.fromCharCode(92)+'n').join(String.fromCharCode(10));
 const token=()=>localStorage.getItem(ACCESS)||sessionStorage.getItem(ACCESS)||'';
 function headers(auth=false){const h={apikey:KEY};if(auth&&token())h.Authorization='Bearer '+token();return h}
 function fmtDate(x){try{return new Intl.DateTimeFormat('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(x))}catch(_){return x||''}}
@@ -15,7 +16,7 @@ async function loadPosts(){
   if(!rows.length){box.innerHTML='<div class="empty">아직 게시글이 없습니다.</div>';return}
   box.innerHTML=rows.map(x=>'<article class="community-post'+(x.is_system?' system-post':'')+'">'+
    '<div class="community-post-meta"><span>'+(x.is_system?'오늘의 성인유머':'자유글')+'</span><span>'+esc(x.author_name)+' · '+esc(fmtDate(x.created_at))+'</span></div>'+
-   '<h3>'+esc(x.title)+'</h3><p>'+esc(String(x.body||'').replace(/\\\\n/g,'\\n'))+'</p></article>').join('');
+   '<h3>'+esc(x.title)+'</h3><p>'+esc(normalizeBody(x.body))+'</p></article>').join('');
  }catch(e){box.innerHTML='<div class="empty">게시글을 불러오지 못했습니다.</div>';console.warn(e)}
 }
 async function currentUser(){
