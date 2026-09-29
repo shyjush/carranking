@@ -9,3 +9,24 @@
 
 .mobile-board-btn{display:none}
 @media(max-width:1120px){.mobile-board-btn{display:flex}}
+
+/* Community board compact list-first layout */
+.community-board{padding-top:10px;max-width:980px;margin:0 auto}
+.community-toolbar{display:flex;gap:10px;align-items:center;margin-bottom:14px}
+.community-toolbar .btn.primary{min-width:128px}
+.community-list-head{margin:6px 0 14px}
+.community-list-head h2{margin:0 0 5px;font-size:28px}
+.community-list-head p{margin:0}
+.community-board .community-compose{position:static;top:auto;margin:0 0 16px;padding:20px}
+.community-compose-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px}
+.community-compose-head h2{margin:0 0 5px}
+.community-compose-head p{margin:0}
+.community-board .community-compose form{display:grid;gap:12px}
+.community-board .community-compose.hidden{display:none}
+@media(max-width:800px){
+ .community-board{padding-top:4px}
+ .community-toolbar{display:grid;grid-template-columns:1fr auto}
+ .community-toolbar .btn{padding:12px 14px}
+ .community-list-head h2{font-size:25px}
+ .community-board .community-compose{padding:16px}
+}
