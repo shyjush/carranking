@@ -15,7 +15,7 @@ async function loadPosts(){
   if(!rows.length){box.innerHTML='<div class="empty">아직 게시글이 없습니다.</div>';return}
   box.innerHTML=rows.map(x=>'<article class="community-post'+(x.is_system?' system-post':'')+'">'+
    '<div class="community-post-meta"><span>'+(x.is_system?'오늘의 성인유머':'자유글')+'</span><span>'+esc(x.author_name)+' · '+esc(fmtDate(x.created_at))+'</span></div>'+
-   '<h3>'+esc(x.title)+'</h3><p>'+esc(x.body)+'</p></article>').join('');
+   '<h3>'+esc(x.title)+'</h3><p>'+esc(String(x.body||'').replace(/\\\\n/g,'\\n'))+'</p></article>').join('');
  }catch(e){box.innerHTML='<div class="empty">게시글을 불러오지 못했습니다.</div>';console.warn(e)}
 }
 async function currentUser(){
