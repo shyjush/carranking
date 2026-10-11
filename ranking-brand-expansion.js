@@ -27,7 +27,7 @@ async function boot(){
        return;
      }
      body.innerHTML=rows.map((x,i)=>`<tr class="clickable-row" data-brand="${esc(x.brand)}" data-model="${esc(x.model)}" data-generation="${esc(x.generation_code||x.generation||'')}"><td><strong>#${x.rank??i+1}</strong></td><td><strong>${esc(x.brand)} ${esc(x.model)}</strong><span class="muted-dark small">${esc(x.generation_code||x.generation||'')}</span></td><td>${esc(x.model_year??'-')}</td><td><span class="badge">${pct(x.retention_rate)}</span></td><td>${pct(x.depreciation_rate)}</td><td>${esc(x.sample_size??'미확보')}</td></tr>`).join('');
-     document.querySelectorAll('#rankingBody .clickable-row').forEach(r=>r.onclick=()=>{const v=(window.VEHICLES||[]).find?.(x=>x.brand===r.dataset.brand&&x.model===r.dataset.model);if(v&&typeof window.openDetail==='function')window.openDetail(v.brand,v.model,v.generation_code||v.generation);});
+     document.querySelectorAll('#rankingBody .clickable-row').forEach((r,i)=>r.onclick=()=>{const x=rows[i];if(x&&typeof window.CARRANKING_OPEN_DETAIL==='function')window.CARRANKING_OPEN_DETAIL(x.brand,x.model,x.generation_code||x.generation,x);});
    }
    filter.addEventListener('change',()=>setTimeout(render,0));
    cat?.addEventListener('change',()=>setTimeout(render,0));
