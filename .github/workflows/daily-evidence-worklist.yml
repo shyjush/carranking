@@ -1,6 +1,10 @@
 name: CarRanking daily source-evidence worklist
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/daily-evidence-worklist.yml'
   schedule:
     # 03:30 Korea time. Internal investigation queue, not a second report reminder.
     - cron: '30 18 * * *'
