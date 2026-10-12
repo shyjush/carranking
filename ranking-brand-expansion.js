@@ -20,7 +20,7 @@ async function boot(){
    if(cat){cat.innerHTML='<option value="">전체 차급</option>'+categories.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');if(currentCat&&categories.includes(currentCat))cat.value=currentCat;}
    function render(){
      const b=filter.value,c=cat?.value||'';
-     const rows=ranking.filter(x=>(!b||x.brand===b)&&(!c||x.category===c));
+     const rows=ranking.filter(x=>Number(x.sample_size)>0&&['A','B'].includes(String(x.confidence||'').toUpperCase())&&(!b||x.brand===b)&&(!c||x.category===c));
      if(!rows.length){
        const label=b?`${esc(b)}의 가치보존율 랭킹 데이터는 현재 수집·검증 중입니다.`:'선택 조건에 맞는 가치보존율 데이터가 아직 없습니다.';
        body.innerHTML=`<tr><td colspan="6" style="padding:28px;text-align:center"><strong>${label}</strong><br><span style="color:#64748b">차량 검색·비교·오너평가는 이용할 수 있으며, 검증된 중고시세가 확보되는 순서대로 랭킹에 추가됩니다.</span></td></tr>`;
