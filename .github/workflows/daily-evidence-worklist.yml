@@ -17,7 +17,7 @@ jobs:
       PGPASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
     steps:
       - uses: actions/checkout@v6
-      - name: Build top-10 actual unresolved matching and spec queues
+      - name: Generate complete unresolved evidence and specification queues
         shell: bash
         run: |
           set -euo pipefail
@@ -41,9 +41,9 @@ jobs:
               SELECT 1 FROM public.market_snapshots s WHERE s.generation_id=d.generation_id
                 AND s.model_year=d.model_year AND s.as_of_date=d.as_of_date AND s.confidence IN ('A','B'))
             ORDER BY CASE WHEN d.sample_size>=5 THEN 0 ELSE 1 END,d.sample_size DESC NULLS LAST,d.as_of_date DESC
-            LIMIT 10
+            
           ) TO STDOUT WITH (FORMAT csv, HEADER true);
-          " > evidence-worklist/unmatched-value-top10.csv
+          " > evidence-worklist/unmatched-value-all.csv
           psql "$CONN" -v ON_ERROR_STOP=1 -c "
           COPY (
             SELECT mf.name AS manufacturer,cm.name AS model,coalesce(g.generation_code,g.name) AS generation,
@@ -55,13 +55,20 @@ jobs:
             JOIN public.car_models cm ON cm.id=g.car_model_id
             JOIN public.manufacturers mf ON mf.id=cm.manufacturer_id
             WHERE NOT EXISTS(SELECT 1 FROM public.vehicle_specs s WHERE s.generation_id=g.id)
-            ORDER BY g.current DESC,g.start_year DESC,mf.name,cm.name LIMIT 10
+            ORDER BY g.current DESC,g.start_year DESC,mf.name,cm.name 
           ) TO STDOUT WITH (FORMAT csv, HEADER true);
-          " > evidence-worklist/missing-specs-top10.csv
+          " > evidence-worklist/missing-specs-all.csv
+          # Retain the whole unresolved inventory AND a compact priority batch for daily review.
+          head -n 11 evidence-worklist/unmatched-value-all.csv > evidence-worklist/unmatched-value-top10.csv
+          head -n 11 evidence-worklist/missing-specs-all.csv > evidence-worklist/missing-specs-top10.csv
+          VALUE_ROWS=$(($(wc -l < evidence-worklist/unmatched-value-all.csv)-1))
+          SPEC_ROWS=$(($(wc -l < evidence-worklist/missing-specs-all.csv)-1))
           {
             echo '## CarRanking evidence investigation queue'
             echo "Unmatched value metrics: $(psql "$CONN" -Atc "SELECT count(*) FROM public.depreciation_metrics d WHERE d.confidence IN ('A','B') AND NOT EXISTS(SELECT 1 FROM public.market_snapshots s WHERE s.generation_id=d.generation_id AND s.model_year=d.model_year AND s.as_of_date=d.as_of_date AND s.confidence IN ('A','B'))")"
             echo "Missing-spec generations: $(psql "$CONN" -Atc "SELECT count(*) FROM public.generations g WHERE NOT EXISTS(SELECT 1 FROM public.vehicle_specs s WHERE s.generation_id=g.id)")"
+            echo "Full evidence queue: $VALUE_ROWS rows; missing spec queue: $SPEC_ROWS generations."
+            echo 'Priority review sample: first 10 from each full inventory; all candidates retained as CSV artifacts.'
             echo 'This worklist never auto-approves sources, fabricates listing URLs, or modifies public ranking rows.'
           } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
