@@ -33,7 +33,7 @@ function renderGuide(){
 
 async function loadAnnual(){
   if(!BASE||!KEY)throw new Error('Supabase config missing');
-  const q='select=rank,brand,model,generation,generation_code,category,model_year,retention_rate,depreciation_rate,annual_retention_rate,annual_depreciation_rate,age_years,sample_size,confidence&order=annual_retention_rate.desc';
+  const q='select=rank,brand,model,generation,generation_code,category,model_year,retention_rate,depreciation_rate,annual_retention_rate,annual_depreciation_rate,age_years,sample_size,as_of_date,original_price_krw,used_price_krw,confidence&order=annual_retention_rate.desc';
   const r=await fetch(`${BASE}/rest/v1/web_annualized_value_ranking?${q}`,{headers:{apikey:KEY,Authorization:`Bearer ${KEY}`},cache:'no-store'});
   if(!r.ok)throw new Error(`web_annualized_value_ranking HTTP ${r.status}`);
   return r.json();
@@ -99,7 +99,14 @@ async function run(){
   injectCss();
   renderGuide();
   const old=document.getElementById('editorialPreview'); if(old)old.remove();
-  try{ANNUAL=await loadAnnual();renderMainRanking();renderBestWorst();bindFilters();enforceForStartupRace()}catch(e){console.warn('Annual ranking load failed',e);showError()}
+  try{
+    const annual=await loadAnnual();
+    // The core app validates the actual listing and historical-trim evidence first.
+    if(window.CARRANKING_VERIFIED_READY)await window.CARRANKING_VERIFIED_READY;
+    const keys=new Set((window.CARRANKING_VERIFIED_RANKING||[]).map(v=>[v.brand,v.model,v.generation_code||v.generation,v.model_year,v.as_of_date,v.original_price_krw,v.used_price_krw,v.sample_size].join('|')));
+    ANNUAL=annual.filter(v=>keys.has([v.brand,v.model,v.generation_code||v.generation,v.model_year,v.as_of_date,v.original_price_krw,v.used_price_krw,v.sample_size].join('|')));
+    renderMainRanking();renderBestWorst();bindFilters();enforceForStartupRace();
+  }catch(e){console.warn('Annual ranking load failed',e);showError()}
 }
 
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});else run();

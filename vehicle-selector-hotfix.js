@@ -69,7 +69,8 @@ async function showScoreHotfix(){
   if(!v){if(out)out.innerHTML='<p class="notice">차량을 선택해 주세요.</p>';return}
   if(out)out.innerHTML='<p class="notice">점수를 불러오는 중입니다.</p>';
   const r=await getRating(id);
-  const retention=v.retention_rate!=null?pct(v.retention_rate):'정보 없음';
+  const vetted=(window.CARRANKING_VERIFIED_RANKING||[]).find(x=>x.brand===v.brand&&x.model===v.model&&(x.generation_code||x.generation)===(v.generation_code||v.generation));
+   const retention=vetted?pct(vetted.retention_rate):'정보 없음';
   const rating=r&&Number.isFinite(Number(r.overall_score))?`${Number(r.overall_score).toFixed(1)} / 10 (${Number(r.rating_count||0)}명)`:'평가 데이터 부족';
   if(out)out.innerHTML=`<div class="score-summary"><strong>${esc(label(v))}</strong><span>가치보존율 ${esc(retention)}</span><span>오너 종합평점 ${esc(rating)}</span>${r?`<span>신뢰성 ${Number(r.reliability||0).toFixed(1)} · 승차감 ${Number(r.ride_comfort||0).toFixed(1)} · 재구매 ${Number(r.repurchase_intent||0).toFixed(1)}</span>`:''}</div>`;
 }

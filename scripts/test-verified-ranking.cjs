@@ -14,3 +14,8 @@ for(const patch of [{confidence:'C'},{source_url:null},{listing_count:0},{avg_pr
 assert(!verify({...m,sample_size:0},v,[s],t,p));
 assert(!verify(m,v,[s],[],p));
 console.log('PASS verified-only CarRanking rank gate');
+
+const annual=fs.readFileSync('home-fixes.js','utf8'),selectors=fs.readFileSync('vehicle-selector-hotfix.js','utf8'),expansion=fs.readFileSync('ranking-brand-expansion.js','utf8');
+assert(annual.includes('CARRANKING_VERIFIED_READY')&&annual.includes('CARRANKING_VERIFIED_RANKING'),'Annual best/worst must share verified source');
+assert(selectors.includes('CARRANKING_VERIFIED_RANKING')&&!selectors.includes('const retention=v.retention_rate'),'Selector must not expose legacy metrics');
+assert(expansion.includes('CARRANKING_VERIFIED_RANKING'),'Brand ranking extension must share verified data gate');
