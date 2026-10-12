@@ -45,3 +45,21 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Install headless browser controller
+        run: |
+          npm install --prefix "$RUNNER_TEMP/carranking-playwright" --no-save --ignore-scripts --no-audit --no-fund playwright-core@1.56.1
+          CHROME_BIN="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          test -x "$CHROME_BIN" || { echo "Chrome not found: cannot claim live-site verified"; exit 1; }
+          echo "CHROME_BIN=$CHROME_BIN" >> "$GITHUB_ENV"
+      - name: Verify deployed desktop and mobile CarRanking screens
+        env:
+          CARRANKING_LIVE_URL: https://carranking.kr/
+        run: node scripts/live-site-smoke.cjs
+      - name: Preserve actual-screen proof and QA result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: carranking-production-visual-QA
+          path: site-smoke-artifacts/
+          if-no-files-found: warn
+          retention-days: 14
