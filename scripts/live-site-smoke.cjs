@@ -6,6 +6,8 @@ const {chromium}=require(process.env.PLAYWRIGHT_CORE_PATH ||
  path.join(process.env.RUNNER_TEMP||'/tmp','carranking-playwright','node_modules','playwright-core'));
 
 const URL=process.env.CARRANKING_LIVE_URL||'https://carranking.kr/';
+const expectedAppVersion=fs.readFileSync('index.html','utf8').match(/app\.js\?v=\d+/)?.[0];
+assert(expectedAppVersion,'Repo index.html does not declare a versioned app.js');
 const CHROME=process.env.CHROME_BIN||'/usr/bin/google-chrome';
 const outDir=path.join(process.cwd(),'site-smoke-artifacts');
 fs.mkdirSync(outDir,{recursive:true});
@@ -53,7 +55,7 @@ async function testViewport(name,width,height){
   });
   result.dom=dom;
   assert(dom.title.includes('CarRanking'),'Wrong website or missing page title');
-  assert(dom.jsVersion.includes('app.js?v=6'),'Stale CarRanking app script on live site');
+  assert(dom.jsVersion.includes(expectedAppVersion),'Stale CarRanking app script on live site: expected '+expectedAppVersion);
   assert(dom.menuLinks>0,'Site navigation not rendered');
   assert(dom.compareOptions>1&&dom.reviewOptions>1,'Car model selectors not populated from own DB');
   assert.equal(dom.visibleRows,dom.verifiedCount,'Public ranking differs from verified DB rows');
@@ -71,7 +73,7 @@ async function testViewport(name,width,height){
       text:document.querySelector('#detailContent')?.innerText||'',
       title:document.querySelector('#detailTitle')?.innerText||''};
   });
-  result.detail={visible:detail.visible,title:detail.title,hasReferenceDate:detail.text.includes('2026-10-13'),
+  result.detail={visible:detail.visible,title:detail.title,hasReferenceDate:/공통정보 기준일\s+\d{4}-\d{2}-\d{2}\s*검증/.test(detail.text),
     hasDimension:detail.text.includes('4,990')||detail.text.includes('4990')};
   assert(detail.visible,'G80 DH detail panel not visible');
   assert(detail.title.includes('G80'),'Wrong G80 DH details');
