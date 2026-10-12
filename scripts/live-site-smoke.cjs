@@ -80,6 +80,30 @@ async function testViewport(name,width,height){
   assert(result.detail.hasDimension,'New verified G80 DH specifications missing from actual detail screen');
   assert(result.detail.hasReferenceDate,'G80 DH common information verification date missing');
   await page.screenshot({path:path.join(outDir,name+'-G80-DH-detail.png'),fullPage:true});
+  const newSpecModels=[
+    ['현대','캐스퍼','AX1','3,595'],['현대','스타리아','US4','5,255'],
+    ['현대','아이오닉 6','CE','4,855'],['제네시스','G90','RS4','5,275'],
+    ['BMW','X3','G45','4,755'],['렉서스','NX','AZ20','4,660'],
+    ['현대','투싼','TL','4,480'],['현대','팰리세이드','LX2','4,980'],
+    ['현대','싼타페','TM','4,770'],['현대','베뉴','QX','4,040'],
+    ['현대','넥쏘','FE','4,670']
+  ];
+  const verifiedSpecs=await page.evaluate((expectations)=>{
+    const result=[];
+    for(const [brand,model,generation,dimension] of expectations){
+      window.CARRANKING_OPEN_DETAIL(brand,model,generation);
+      const title=document.querySelector('#detailTitle')?.innerText||'';
+      const body=document.querySelector('#detailContent')?.innerText||'';
+      result.push({brand,model,generation,dimension,visible:title.includes(model)&&title.includes(generation),
+        dimensionMatched:body.includes(dimension),basisPresent:/공통정보 기준일\s+\d{4}-\d{2}-\d{2}\s*검증/.test(body)});
+    }
+    return result;
+  },newSpecModels);
+  result.bulkSpecs={checked:verifiedSpecs.length,passed:verifiedSpecs.filter(x=>x.visible&&x.dimensionMatched&&x.basisPresent).length,
+    failed:verifiedSpecs.filter(x=>!(x.visible&&x.dimensionMatched&&x.basisPresent))};
+  assert.equal(result.bulkSpecs.passed,newSpecModels.length,
+    'Not every new official-source specification is visible on the real website: '+JSON.stringify(result.bulkSpecs.failed));
+
   if(width<600)assert(dom.pageWidth<=dom.viewportWidth+24,'Mobile page overflows horizontal viewport');
   result.status='pass';
  }catch(e){
