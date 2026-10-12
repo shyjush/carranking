@@ -4,7 +4,7 @@ on:
     paths: [app.js, home-fixes.js, vehicle-selector-hotfix.js, ranking-brand-expansion.js, scripts/test-verified-ranking.cjs, .github/workflows/verify-ranking.yml]
   push:
     branches: [main]
-    paths: [app.js, scripts/test-verified-ranking.cjs, .github/workflows/verify-ranking.yml]
+    paths: [app.js, home-fixes.js, vehicle-selector-hotfix.js, ranking-brand-expansion.js, scripts/test-verified-ranking.cjs, .github/workflows/verify-ranking.yml]
   workflow_dispatch:
 permissions:
   contents: read
