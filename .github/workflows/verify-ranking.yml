@@ -1,0 +1,19 @@
+name: Verify CarRanking ranking source integrity
+on:
+  pull_request:
+    paths: [app.js, scripts/test-verified-ranking.cjs, .github/workflows/verify-ranking.yml]
+  push:
+    branches: [main]
+    paths: [app.js, scripts/test-verified-ranking.cjs, .github/workflows/verify-ranking.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Syntax check
+        run: node --check app.js
+      - name: Source and trim evidence gate tests
+        run: node scripts/test-verified-ranking.cjs
