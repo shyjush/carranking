@@ -1,10 +1,10 @@
 name: Verify CarRanking ranking source integrity
 on:
   pull_request:
-    paths: [app.js, home-fixes.js, vehicle-selector-hotfix.js, ranking-brand-expansion.js, scripts/test-verified-ranking.cjs, .github/workflows/verify-ranking.yml]
+    paths: [app.js, home-fixes.js, vehicle-selector-hotfix.js, ranking-brand-expansion.js, scripts/test-verified-ranking.cjs, scripts/live-site-smoke.cjs, .github/workflows/verify-ranking.yml, .github/workflows/deploy-pages.yml, .github/workflows/daily-evidence-worklist.yml]
   push:
     branches: [main]
-    paths: [app.js, home-fixes.js, vehicle-selector-hotfix.js, ranking-brand-expansion.js, scripts/test-verified-ranking.cjs, .github/workflows/verify-ranking.yml]
+    paths: [app.js, home-fixes.js, vehicle-selector-hotfix.js, ranking-brand-expansion.js, scripts/test-verified-ranking.cjs, scripts/live-site-smoke.cjs, .github/workflows/verify-ranking.yml, .github/workflows/deploy-pages.yml, .github/workflows/daily-evidence-worklist.yml]
   workflow_dispatch:
 permissions:
   contents: read
@@ -19,5 +19,6 @@ jobs:
           node --check home-fixes.js
           node --check vehicle-selector-hotfix.js
           node --check ranking-brand-expansion.js
+          node --check scripts/live-site-smoke.cjs
       - name: Source and trim evidence gate tests
         run: node scripts/test-verified-ranking.cjs
