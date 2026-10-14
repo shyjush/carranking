@@ -19,7 +19,8 @@ async function load(){
 function search(){
  const input=document.getElementById('crVehicleSearchInput'),out=document.getElementById('crVehicleSearchResults');if(!input||!out)return;
  const q=input.value.trim().toLocaleLowerCase('ko-KR');if(!q){out.innerHTML='<div class="cr-search-empty">검색할 차량명을 입력해 주세요.</div>';return}
- const found=rows.filter(x=>String(x.search_text||[x.brand,x.model,x.generation,x.generation_code].join(' ')).toLocaleLowerCase('ko-KR').includes(q)).slice(0,12);
+ const tokens=q.split(/\s+/).filter(Boolean);
+ const found=rows.filter(x=>{const hay=[x.search_text,x.brand,x.model,x.generation,x.generation_code].filter(Boolean).join(' ').toLocaleLowerCase('ko-KR');return tokens.every(token=>hay.includes(token))}).slice(0,12);
  out.innerHTML=found.length?found.map((x,i)=>`<button class="cr-search-result" type="button" data-i="${i}"><strong>${esc(x.brand)} ${esc(x.model)}</strong> <span>${esc(x.generation_code||x.generation||'')}</span></button>`).join(''):'<div class="cr-search-empty">검색 결과가 없습니다. 차량명 일부만 입력해 보세요.</div>';
  out.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{const x=found[Number(b.dataset.i)];window.CARRANKING_OPEN_DETAIL?.(x.brand,x.model,x.generation_code||x.generation)});
 }
