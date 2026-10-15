@@ -21,7 +21,7 @@ jobs:
         with:
           version: latest
 
-      - name: Push database migrations
+      - name: Sync remote migration history
         env:
           SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
         run: |
@@ -29,5 +29,12 @@ jobs:
             echo "SUPABASE_DB_PASSWORD secret is not configured."
             exit 1
           fi
+          DB_URL="postgresql://postgres.ikhyadzboorscjwcrhcz:${SUPABASE_DB_PASSWORD}@aws-0-ap-northeast-2.pooler.supabase.com:5432/postgres"
+          supabase migration fetch --db-url "$DB_URL" --yes
+
+      - name: Push database migrations
+        env:
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+        run: |
           DB_URL="postgresql://postgres.ikhyadzboorscjwcrhcz:${SUPABASE_DB_PASSWORD}@aws-0-ap-northeast-2.pooler.supabase.com:5432/postgres"
           supabase db push --db-url "$DB_URL"
