@@ -1,5 +1,7 @@
 begin;
 
+-- Deployment is idempotent; remote history is synchronized read-only in CI before push.
+
 -- Toyota RAV4 XA60: official Korean-market 2026 HEV LIMITED evidence.
 -- Source page states the material is based on July 2026 specifications.
 -- Match the exact manufacturer/model/generation/year and never overwrite existing approved rows.
