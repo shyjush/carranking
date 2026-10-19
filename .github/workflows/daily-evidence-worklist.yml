@@ -6,8 +6,8 @@ on:
     paths:
       - '.github/workflows/daily-evidence-worklist.yml'
   schedule:
-    # 03:30 Korea time. Internal investigation queue, not a second report reminder.
-    - cron: '30 18 * * *'
+    # 01:30 Korea time (previous day 16:30 UTC). CarRanking-only source evidence queue.
+    - cron: '30 16 * * *'
 permissions:
   contents: read
 jobs:
