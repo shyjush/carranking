@@ -24,6 +24,17 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
  assert(!hidden,'Source selector should be hidden in manual mode');
  const parsed=await page.evaluate(()=>[parseEfficiency('복합 9.0 km/L (2WD 18인치 기준)'),parseEfficiency('5.1 km/kWh (19-inch)'),parseEfficiency('미확인')]);
  assert(parsed[0]?.eff===9&&parsed[0]?.unit==='gas'&&parsed[1]?.eff===5.1&&parsed[1]?.unit==='ev'&&parsed[2]===null,'Efficiency parsing incorrect '+JSON.stringify(parsed));
+ await page.waitForFunction(()=>document.querySelector('#pickA').options.length>0,{timeout:15000});
+ const options=await page.locator('#pickA option').allTextContents();
+ assert(options.some(x=>x.includes('K5')&&x.includes('2.0 가솔린')),'K5 powertrain-specific efficiency not selectable');
+ assert(options.some(x=>x.includes('아이오닉 5')&&x.includes('Long Range')),'Ioniq 5 powertrain-specific efficiency not selectable');
+ await page.selectOption('#modeA','db');
+ assert(await page.locator('#pickWrapA').isVisible(),'DB selector failed to show');
+ const k5index=options.findIndex(x=>x.includes('K5')&&x.includes('2.0 가솔린'));
+ await page.selectOption('#pickA',String(k5index));
+ const linked=await page.evaluate(()=>({eff:Number(document.querySelector('#effA').value),fuel:document.querySelector('#fuelA').value,source:document.querySelector('#sourceA').innerText}));
+ assert(linked.eff===12.6&&linked.fuel==='gas'&&linked.source.includes('kia.com'),'Exact K5 economy source did not match: '+JSON.stringify(linked));
+ await page.selectOption('#modeA','manual');
  const viewport=await page.evaluate(()=>({width:document.documentElement.scrollWidth,inner:innerWidth}));
  assert(viewport.width<=viewport.inner+24,'Horizontal mobile overflow');
  results.push({name,status:'pass',sourceSelectorHidden:hidden,costValidated:true,evValidated:true,parsingValidated:true});
