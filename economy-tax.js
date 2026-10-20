@@ -17,6 +17,26 @@ function updateTaxType(k){
  inp.closest('label').style.opacity=zero?'.5':'1';
  for(const p of ['age1','age2'])document.getElementById(p+k).disabled=zero;
 }
+window.CARRANKING_SYNC_TAX=(k,vehicle)=>{
+ if(!['A','B'].includes(k)||!vehicle)return;
+ const type=document.getElementById('taxType'+k);
+ const cc=document.getElementById('cc'+k);
+ const info=document.getElementById('taxSource'+k);
+ const isEv=vehicle.fuel==='ev';
+ const displacement=Number(vehicle.cc);
+ type.value=isEv?'zero':'engine';
+ updateTaxType(k);
+ if(isEv){
+  info.textContent='전기차 과세유형 자동 적용 · 차령 경감 없음 · '+vehicle.label;
+ }else if(Number.isInteger(displacement)&&displacement>0&&displacement<=10000){
+  cc.value=String(displacement);
+  info.textContent='CarRanking 파워트레인 DB 배기량 '+displacement.toLocaleString('ko-KR')+'cc 적용 · '+vehicle.label;
+ }else{
+  cc.value='';
+  info.textContent='배기량 미확인 · 차량등록증의 배기량을 직접 입력해야 합니다. '+vehicle.label;
+ }
+ document.getElementById('taxResults').textContent='';
+};
 for(const k of ['A','B']){
  document.getElementById('taxType'+k).addEventListener('change',()=>updateTaxType(k));
  updateTaxType(k);
