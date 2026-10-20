@@ -35,6 +35,18 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
  const linked=await page.evaluate(()=>({eff:Number(document.querySelector('#effA').value),fuel:document.querySelector('#fuelA').value,source:document.querySelector('#sourceA').innerText}));
  assert(linked.eff===12.6&&linked.fuel==='gas'&&linked.source.includes('kia.com'),'Exact K5 economy source did not match: '+JSON.stringify(linked));
  await page.selectOption('#modeA','manual');
+ await page.click('#calculateTax');
+ let taxes=await page.locator('#taxResults').innerText();
+ assert(taxes.includes('519,740원')&&taxes.includes('290,836원'),'2026 1999cc and 1598cc passenger tax mismatch: '+taxes);
+ await page.selectOption('#taxTypeA','zero');
+ await page.click('#calculateTax');
+ taxes=await page.locator('#taxResults').innerText();
+ assert(taxes.includes('130,000원'),'2026 electric passenger tax mismatch: '+taxes);
+ await page.selectOption('#taxTypeA','engine');
+ await page.fill('#age1A','12');await page.fill('#age2A','12');
+ await page.click('#calculateTax');
+ taxes=await page.locator('#taxResults').innerText();
+ assert(taxes.includes('259,870원'),'12-year automobile reduction incorrect: '+taxes);
  const viewport=await page.evaluate(()=>({width:document.documentElement.scrollWidth,inner:innerWidth}));
  assert(viewport.width<=viewport.inner+24,'Horizontal mobile overflow');
  results.push({name,status:'pass',sourceSelectorHidden:hidden,costValidated:true,evValidated:true,parsingValidated:true});
