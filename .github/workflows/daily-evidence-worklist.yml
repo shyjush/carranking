@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/daily-evidence-worklist.yml'
       - 'scripts/validate-market-evidence.cjs'
+      - 'scripts/audit-original-market-pages.cjs'
       - 'scripts/apply-reviewed-market-evidence.cjs'
       - 'evidence/inbox/value-listings.json'
   schedule:
@@ -76,6 +77,9 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
       - name: Validate submitted individual listing evidence (fail closed)
         run: node scripts/validate-market-evidence.cjs
+
+      - name: Check public original individual listing pages (fail closed)
+        run: node scripts/audit-original-market-pages.cjs
 
       - name: Apply independently approved evidence to CarRanking database only
         env:
