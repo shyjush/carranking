@@ -67,6 +67,15 @@ async function testViewport(name,width,height){
     assert(dom.hero.includes('예시 연료 단가'),'Economy homepage missing partial-cost disclaimer');
     assert.equal(dom.bestWorstCards,0,'Unverified BEST/WORST content leaked into public site');
   }
+  const reviewFormState=await page.evaluate(()=>{
+    const form=document.querySelector('#reviewForm'),toggle=document.querySelector('#reviewFormToggle');
+    return {initiallyHidden:form?.hidden,button:toggle?.getAttribute('aria-expanded'),redundantCard:!!document.querySelector('.cr-cost-explainer,.cr-service-cards'),bottomRankButton:[...document.querySelectorAll('section[aria-label="자동차 정보 안내"] a')].some(a=>a.href.includes('basic-cost-ranking.html'))};
+  });
+  assert(reviewFormState.initiallyHidden&&reviewFormState.button==='false'&&!reviewFormState.redundantCard&&!reviewFormState.bottomRankButton,'Collapsed review form or duplicate ranking links incorrect: '+JSON.stringify(reviewFormState));
+  await page.locator('#reviewFormToggle').click();
+  assert(await page.locator('#reviewForm').isVisible(),'Owner review form did not expand on click');
+  await page.locator('#reviewFormToggle').click();
+  assert(!(await page.locator('#reviewForm').isVisible()),'Owner review form did not collapse on second click');
   await page.screenshot({path:path.join(outDir,name+'-ranking.png'),fullPage:true});
   const detail=await page.evaluate(()=>{
     const opener=window.CARRANKING_OPEN_DETAIL;
