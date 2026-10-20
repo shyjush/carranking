@@ -34,6 +34,14 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
  await page.selectOption('#pickA',String(k5index));
  const linked=await page.evaluate(()=>({eff:Number(document.querySelector('#effA').value),fuel:document.querySelector('#fuelA').value,source:document.querySelector('#sourceA').innerText}));
  assert(linked.eff===12.6&&linked.fuel==='gas'&&linked.source.includes('kia.com'),'Exact K5 economy source did not match: '+JSON.stringify(linked));
+ const taxLinked=await page.evaluate(()=>({cc:document.querySelector('#ccA').value,type:document.querySelector('#taxTypeA').value,source:document.querySelector('#taxSourceA').innerText}));
+ assert(taxLinked.cc==='1999'&&taxLinked.type==='engine'&&taxLinked.source.includes('K5'),'K5 tax engine linkage incorrect: '+JSON.stringify(taxLinked));
+ const evIndex=options.findIndex(x=>x.includes('아이오닉 5')&&x.includes('Long Range'));
+ await page.selectOption('#pickA',String(evIndex));
+ const taxEv=await page.evaluate(()=>({type:document.querySelector('#taxTypeA').value,source:document.querySelector('#taxSourceA').innerText}));
+ assert(taxEv.type==='zero'&&taxEv.source.includes('전기차'),'EV tax type linkage incorrect: '+JSON.stringify(taxEv));
+ await page.selectOption('#pickA',String(k5index));
+
  await page.selectOption('#modeA','manual');
  await page.click('#calculateTax');
  let taxes=await page.locator('#taxResults').innerText();
