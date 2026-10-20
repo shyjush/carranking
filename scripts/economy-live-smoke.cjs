@@ -56,6 +56,21 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
  await page.click('#calculateTax');
  taxes=await page.locator('#taxResults').innerText();
  assert(taxes.includes('259,870원'),'12-year automobile reduction incorrect: '+taxes);
+
+ await page.fill('#distance','15000');
+ for(const k of ['A','B']){
+  await page.fill('#maint-'+k+'-oil-cost',k==='A'?'120000':'90000');
+  await page.fill('#maint-'+k+'-oil-cycle','10000');
+  await page.fill('#maint-'+k+'-tires-cost',k==='A'?'800000':'600000');
+  await page.fill('#maint-'+k+'-tires-cycle','40000');
+ }
+ await page.click('#maintCalculate');
+ let maint=await page.locator('#maintResults').innerText();
+ assert(maint.includes('480,000원')&&maint.includes('360,000원')&&maint.includes('120,000원'),'Maintenance annualization incorrect: '+maint);
+ await page.fill('#maint-A-oil-cycle','0');
+ await page.click('#maintCalculate');
+ maint=await page.locator('#maintResults').innerText();
+ assert(maint.includes('확인해 주세요'),'Invalid consumable replacement interval was accepted: '+maint);
  const viewport=await page.evaluate(()=>({width:document.documentElement.scrollWidth,inner:innerWidth}));
  assert(viewport.width<=viewport.inner+24,'Horizontal mobile overflow');
  results.push({name,status:'pass',sourceSelectorHidden:hidden,costValidated:true,evValidated:true,parsingValidated:true});
