@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/daily-evidence-worklist.yml'
       - 'scripts/validate-market-evidence.cjs'
+      - 'scripts/apply-reviewed-market-evidence.cjs'
       - 'evidence/inbox/value-listings.json'
   schedule:
     # 01:30 Korea time (previous day 16:30 UTC). CarRanking-only source evidence queue.
@@ -75,6 +76,11 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
       - name: Validate submitted individual listing evidence (fail closed)
         run: node scripts/validate-market-evidence.cjs
+
+      - name: Apply independently approved evidence to CarRanking database only
+        env:
+          PGPASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+        run: node scripts/apply-reviewed-market-evidence.cjs
 
       - name: Report evidence verification results
         shell: bash
