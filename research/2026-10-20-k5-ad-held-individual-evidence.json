@@ -1,0 +1,77 @@
+{
+  "schema_version": "carranking-investigation-v1",
+  "checked_on": "2026-10-20",
+  "publication_status": "C_HOLD_DO_NOT_IMPORT",
+  "vehicles": [
+    {
+      "brand": "기아",
+      "model": "K5",
+      "generation": "DL3",
+      "model_year": 2020,
+      "powertrain": "2.0 가솔린",
+      "trim": "프레스티지",
+      "official_reference_price_krw": 26400000,
+      "official_reference_url": "https://www.kia.com/content/dam/kwcms/kr/ko/files/XJF/price/price_newk5.pdf",
+      "individual_listing_leads": [
+        {
+          "url": "https://m.kbchachacha.com/public/web/car/detail.kbc?carSeq=27010334",
+          "price_krw": 17300000,
+          "page_year": "2020-02 (2020 model year)",
+          "indexed_age": "~1.4 years"
+        },
+        {
+          "url": "https://m.kbchachacha.com/public/web/car/detail.kbc?carSeq=27162505",
+          "price_krw": 13770000,
+          "page_year": "2020-05 (2020 model year)",
+          "indexed_age": "~1.3 years"
+        },
+        {
+          "url": "https://m.kbchachacha.com/public/web/car/detail.kbc?carSeq=28053155",
+          "price_krw": 17800000,
+          "page_year": "2020-04 (2020 model year)",
+          "indexed_age": "~3 months"
+        },
+        {
+          "url": "https://m.kbchachacha.com/public/web/car/detail.kbc?carSeq=28513876",
+          "price_krw": 15300000,
+          "page_year": "2020-06 (2020 model year)",
+          "indexed_age": "~3 months"
+        },
+        {
+          "url": "https://www.kbchachacha.com/public/car/detail.kbc?carSeq=27137794",
+          "price_krw": 19000000,
+          "page_year": "2020 stated by seller; verify",
+          "indexed_age": "~1.3 years"
+        },
+        {
+          "url": "https://www.kbchachacha.com/public/car/detail.kbc?carSeq=28169893",
+          "price_krw": 21500000,
+          "page_year": "model year not independently confirmed",
+          "indexed_age": "~1 month"
+        }
+      ],
+      "sample_size_verified": 0,
+      "duplicate_removal_verified": false,
+      "exact_trim_match_from_page": "candidate_only",
+      "grade": "C",
+      "hold_reason": "Listings do not have a common independently verified observation date, all identifiers/cross-channel fingerprints not confirmed, some pages stale. Do not average or publish."
+    },
+    {
+      "brand": "현대",
+      "model": "아반떼",
+      "generation": "AD",
+      "model_year": 2015,
+      "powertrain": "1.6 GDi",
+      "trim": "스타일",
+      "original_price_news_krw": 15310000,
+      "source_url": "https://m.etnews.com/20150909000110",
+      "aggregation_url": "https://pricelog.kr/model.php?badge=1.6+GDI+%EC%8A%A4%ED%83%80%EC%9D%BC&mfr=%ED%98%84%EB%8C%80&model=%EC%95%84%EB%B0%98%EB%96%BC+AD",
+      "aggregated_2015_count": 8,
+      "aggregated_2015_mean_krw": 6250000,
+      "sample_size_verified": 0,
+      "duplicate_removal_verified": false,
+      "grade": "C",
+      "hold_reason": "2015 AD official catalog still needed and eight individual sale listing URLs/unique IDs not validated. Avoid confusing 2015 MD 1.6GDi 1531만원 with new AD."
+    }
+  ]
+}
