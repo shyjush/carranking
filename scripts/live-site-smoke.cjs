@@ -42,7 +42,7 @@ async function testViewport(name,width,height){
     title:document.title,
     hero:q('#economyHeroCard')?.innerText||'',
     legacyHidden:['historicalRanking','ranking','heroCard'].every(id=>{const el=document.getElementById(id);return !!el&&getComputedStyle(el).display==='none'}),
-    economyPrimary:!!document.querySelector('.hero .actions a.btn.primary[href="/economy.html"]'),
+    economyPrimary:!!document.querySelector('.hero .actions a.btn.primary[href="/basic-cost-ranking.html"]'),
     ranking:q('#rankingBody')?.innerText||'',
     visibleRows:document.querySelectorAll('#rankingBody tr.clickable-row').length,
     verifiedCount:verified.length,
