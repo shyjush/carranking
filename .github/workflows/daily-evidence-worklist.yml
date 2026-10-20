@@ -1,14 +1,6 @@
 name: CarRanking daily source-evidence worklist
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/daily-evidence-worklist.yml'
-      - 'scripts/validate-market-evidence.cjs'
-      - 'scripts/audit-original-market-pages.cjs'
-      - 'scripts/apply-reviewed-market-evidence.cjs'
-      - 'evidence/inbox/value-listings.json'
   # B-plan: historical used-listing validation is manual only; no daily scheduler.
 permissions:
   contents: read
