@@ -28,6 +28,7 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
  const options=await page.locator('#pickA option').allTextContents();
  assert(options.some(x=>x.includes('K5')&&x.includes('2.0 가솔린')),'K5 powertrain-specific efficiency not selectable');
  assert(options.some(x=>x.includes('아이오닉 5')&&x.includes('Long Range')),'Ioniq 5 powertrain-specific efficiency not selectable');
+ assert(options.some(x=>x.includes('G80')&&x.includes('가솔린 2.5 터보 2WD')&&x.includes('10.6 km/L')),'New officially sourced Genesis G80 2WD 10.6 km/L missing from live selector');
  await page.selectOption('#modeA','db');
  assert(await page.locator('#pickWrapA').isVisible(),'DB selector failed to show');
  const k5index=options.findIndex(x=>x.includes('K5')&&x.includes('2.0 가솔린'));
