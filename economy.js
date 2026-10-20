@@ -12,8 +12,8 @@ function parseEfficiency(value){
 const money=n=>Math.round(n).toLocaleString('ko-KR')+'원';
 function assign(k){const r=rows[Number($('pick'+k).value)];if(!r)return;
  $('eff'+k).value=r.eff;
- $('fuel'+k).value=r.unit;
- $('source'+k).textContent=r.label+' · '+r.raw+' · '+r.url;
+ $('fuel'+k).value=r.fuel;
+ $('source'+k).textContent=r.label+' · '+r.raw+' · '+r.url+' (구동·휠 사양 확인 필요)';
 }
 function mode(k){const active=$('mode'+k).value==='db';$('pickWrap'+k).hidden=!active;$('eff'+k).readOnly=active;$('fuel'+k).disabled=active;
  if(active){assign(k);}else{$('source'+k).textContent='사용자 직접 입력값 (공식 검증 연비 아님)';}}
@@ -38,10 +38,18 @@ $('calculate').addEventListener('click',()=>{
   const headers={apikey:c.supabasePublishableKey,Authorization:'Bearer '+c.supabasePublishableKey};
   const base=c.supabaseUrl+'/rest/v1/';
   const get=async path=>{const r=await fetch(base+path,{headers});if(!r.ok)throw Error('DB HTTP '+r.status);return r.json();};
-  const [specs,vehicles]=await Promise.all([get('vehicle_specs?select=generation_id,combined_efficiency,source_url&limit=1000'),get('web_vehicle_detail?select=generation_id,brand,model,generation_code&limit=1000')]);
+  const [specs,vehicles,powertrains]=await Promise.all([get('vehicle_specs?select=generation_id,powertrain_id,combined_efficiency,source_url&limit=1000'),get('web_vehicle_detail?select=generation_id,brand,model,generation_code&limit=1000'),get('powertrains?select=id,generation_id,name,fuel_type&limit=1000')]);
   const labels=new Map(vehicles.map(v=>[String(v.generation_id),[v.brand,v.model,v.generation_code].filter(Boolean).join(' ')]));
-  for(const s of specs){const e=parseEfficiency(s.combined_efficiency);if(!e||!/^https:\/\//.test(s.source_url||'')||!labels.has(String(s.generation_id)))continue;
-   rows.push({...e,url:s.source_url,label:labels.get(String(s.generation_id))});}
+  const powers=new Map(powertrains.map(p=>[String(p.id),p]));
+  for(const spec of specs){
+   const e=parseEfficiency(spec.combined_efficiency);
+   const power=powers.get(String(spec.powertrain_id));
+   if(!e||!power||String(power.generation_id)!==String(spec.generation_id)||!/^https:\/\//.test(spec.source_url||'')||!labels.has(String(spec.generation_id)))continue;
+   const kind=String(power.fuel_type||'').toLowerCase();
+   const fuel=e.unit==='ev'?'ev':/lpg|액화석유/.test(kind)?'lpg':/diesel|디젤|경유/.test(kind)?'diesel':/gasoline|가솔린|휘발유|하이브리드|hybrid/.test(kind)?'gas':null;
+   if(!fuel||(fuel==='ev')!==(e.unit==='ev'))continue;
+   rows.push({...e,fuel,url:spec.source_url,label:labels.get(String(spec.generation_id))+' · '+power.name});
+  }
   rows.sort((a,b)=>a.label.localeCompare(b.label,'ko'));
   for(const k of ['A','B']){$('pick'+k).innerHTML=rows.map((r,i)=>'<option value="'+i+'">'+r.label+' · '+r.raw+'</option>').join('');if(rows.length===0)$('mode'+k).querySelector('[value="db"]').disabled=true;}
  }catch(e){for(const k of ['A','B'])$('mode'+k).querySelector('[value="db"]').disabled=true;console.warn('Official efficiency selector unavailable',e);}
