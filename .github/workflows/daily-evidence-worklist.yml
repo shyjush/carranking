@@ -9,9 +9,7 @@ on:
       - 'scripts/audit-original-market-pages.cjs'
       - 'scripts/apply-reviewed-market-evidence.cjs'
       - 'evidence/inbox/value-listings.json'
-  schedule:
-    # 01:30 Korea time (previous day 16:30 UTC). CarRanking-only source evidence queue.
-    - cron: '30 16 * * *'
+  # B-plan: historical used-listing validation is manual only; no daily scheduler.
 permissions:
   contents: read
 jobs:
