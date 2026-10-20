@@ -94,6 +94,22 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
  await page.click('#summaryCalculate');
  summary=await page.locator('#summaryResults').innerText();
  assert(summary.includes('미입력 소모품')&&summary.includes('부분합계'),'Missing component warning absent: '+summary);
+
+ const rank=await browser.newPage({viewport:{width,height:844}});
+ const rankResponse=await rank.goto('https://carranking.kr/basic-cost-ranking.html',{waitUntil:'domcontentloaded',timeout:45000});
+ assert(rankResponse.ok(),'Basic cost ranking page failed HTTP '+rankResponse.status());
+ await rank.waitForFunction(()=>document.querySelectorAll('#cards article.vehicle').length>2,{timeout:20000});
+ const ranked=await rank.evaluate(()=>({count:document.querySelectorAll('#cards article.vehicle').length,values:[...document.querySelectorAll('#cards article.vehicle')].map(n=>Number(n.querySelector('.cost').innerText.replace(/[^0-9]/g,''))),text:document.querySelector('#status').innerText}));
+ assert(ranked.values.every((x,i,a)=>i===0||x>=a[i-1]),'Annual basic cost ranking out of order: '+JSON.stringify(ranked));
+ assert(ranked.text.includes('예시 단가'),'Sample pricing disclaimer missing');
+ await rank.fill('#search','G80');
+ const g80=await rank.locator('#cards').innerText();
+ assert(g80.includes('G80')&&!g80.includes('K5'),'G80 search filter does not work: '+g80);
+ await rank.locator('.vehicle button').first().click();
+ assert(await rank.locator('.vehicle .detail').first().isVisible(),'Cost source disclosure did not open');
+ await rank.selectOption('#fuelFilter','ev');
+ assert.equal(await rank.locator('.vehicle').count(),0,'Gasoline vehicle leaked into electric-only filter');
+ await rank.close();
  const viewport=await page.evaluate(()=>({width:document.documentElement.scrollWidth,inner:innerWidth}));
  assert(viewport.width<=viewport.inner+24,'Horizontal mobile overflow');
  results.push({name,status:'pass',sourceSelectorHidden:hidden,costValidated:true,evValidated:true,parsingValidated:true});
