@@ -19,6 +19,7 @@ function assign(k){const r=rows[Number($('pick'+k).value)];if(!r)return;
  $('eff'+k).value=r.eff;
  $('fuel'+k).value=r.fuel;
  suggestUnitPrice(k);
+ if(typeof window.CARRANKING_SYNC_TAX==='function')window.CARRANKING_SYNC_TAX(k,{fuel:r.fuel,cc:r.displacement_cc,label:r.label});
  $('source'+k).textContent=r.label+' · '+r.raw+' · '+r.url+' (구동·휠 사양 확인 필요)';
 }
 function mode(k){const active=$('mode'+k).value==='db';$('pickWrap'+k).hidden=!active;$('eff'+k).readOnly=active;$('fuel'+k).disabled=active;
@@ -44,7 +45,7 @@ $('calculate').addEventListener('click',()=>{
   const headers={apikey:c.supabasePublishableKey,Authorization:'Bearer '+c.supabasePublishableKey};
   const base=c.supabaseUrl+'/rest/v1/';
   const get=async path=>{const r=await fetch(base+path,{headers});if(!r.ok)throw Error('DB HTTP '+r.status);return r.json();};
-  const [specs,vehicles,powertrains]=await Promise.all([get('vehicle_specs?select=generation_id,powertrain_id,combined_efficiency,source_url&limit=1000'),get('web_vehicle_detail?select=generation_id,brand,model,generation_code&limit=1000'),get('powertrains?select=id,generation_id,name,fuel_type&limit=1000')]);
+  const [specs,vehicles,powertrains]=await Promise.all([get('vehicle_specs?select=generation_id,powertrain_id,combined_efficiency,source_url&limit=1000'),get('web_vehicle_detail?select=generation_id,brand,model,generation_code&limit=1000'),get('powertrains?select=id,generation_id,name,fuel_type,displacement_cc&limit=1000')]);
   const labels=new Map(vehicles.map(v=>[String(v.generation_id),[v.brand,v.model,v.generation_code].filter(Boolean).join(' ')]));
   const powers=new Map(powertrains.map(p=>[String(p.id),p]));
   for(const spec of specs){
@@ -55,7 +56,7 @@ $('calculate').addEventListener('click',()=>{
    const declared=/전기|electric|\bev\b/.test(kind)?'ev':/lpg|액화석유/.test(kind)?'lpg':/diesel|디젤|경유/.test(kind)?'diesel':/gasoline|가솔린|휘발유|하이브리드|hybrid/.test(kind)?'gas':null;
    if(!declared||(declared==='ev')!==(e.unit==='ev'))continue;
    const fuel=declared;
-   rows.push({...e,fuel,url:spec.source_url,label:labels.get(String(spec.generation_id))+' · '+power.name});
+   rows.push({...e,fuel,displacement_cc:power.displacement_cc,url:spec.source_url,label:labels.get(String(spec.generation_id))+' · '+power.name});
   }
   rows.sort((a,b)=>a.label.localeCompare(b.label,'ko'));
   for(const k of ['A','B']){$('pick'+k).innerHTML=rows.map((r,i)=>'<option value="'+i+'">'+r.label+' · '+r.raw+'</option>').join('');if(rows.length===0)$('mode'+k).querySelector('[value="db"]').disabled=true;}
