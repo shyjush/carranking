@@ -52,8 +52,9 @@ $('calculate').addEventListener('click',()=>{
    const power=powers.get(String(spec.powertrain_id));
    if(!e||!power||String(power.generation_id)!==String(spec.generation_id)||!/^https:\/\//.test(spec.source_url||'')||!labels.has(String(spec.generation_id)))continue;
    const kind=String(power.fuel_type||'').toLowerCase();
-   const fuel=e.unit==='ev'?'ev':/lpg|액화석유/.test(kind)?'lpg':/diesel|디젤|경유/.test(kind)?'diesel':/gasoline|가솔린|휘발유|하이브리드|hybrid/.test(kind)?'gas':null;
-   if(!fuel||(fuel==='ev')!==(e.unit==='ev'))continue;
+   const declared=/전기|electric|\bev\b/.test(kind)?'ev':/lpg|액화석유/.test(kind)?'lpg':/diesel|디젤|경유/.test(kind)?'diesel':/gasoline|가솔린|휘발유|하이브리드|hybrid/.test(kind)?'gas':null;
+   if(!declared||(declared==='ev')!==(e.unit==='ev'))continue;
+   const fuel=declared;
    rows.push({...e,fuel,url:spec.source_url,label:labels.get(String(spec.generation_id))+' · '+power.name});
   }
   rows.sort((a,b)=>a.label.localeCompare(b.label,'ko'));
