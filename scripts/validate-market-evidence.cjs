@@ -36,5 +36,5 @@ for(const [i,r] of rows.entries()){
  const digest=crypto.createHash('sha256').update(JSON.stringify(r)).digest('hex');
  report.approved.push({candidate_id:id,generation_id,model_year,trim_id,trim_name,powertrain_name,original_price_krw,original_source_url,observed_on,sample_size:prices.length,avg_price_krw:avg,grade,source_urls:listings.map(x=>x.url),dedupe_verified:true,trim_matched:true,evidence_sha256:digest});
 }
-fs.writeFileSync(result,JSON.stringify(report,null,2)+'\\n');
+fs.writeFileSync(result,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({checked:report.checked,eligible:report.approved.length,held:report.held.length,report:result}));
