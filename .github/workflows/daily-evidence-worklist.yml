@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/daily-evidence-worklist.yml'
+      - 'scripts/validate-market-evidence.cjs'
+      - 'evidence/inbox/value-listings.json'
   schedule:
     # 01:30 Korea time (previous day 16:30 UTC). CarRanking-only source evidence queue.
     - cron: '30 16 * * *'
@@ -71,6 +73,23 @@ jobs:
             echo 'Priority review sample: first 10 from each full inventory; all candidates retained as CSV artifacts.'
             echo 'This worklist never auto-approves sources, fabricates listing URLs, or modifies public ranking rows.'
           } >> "$GITHUB_STEP_SUMMARY"
+      - name: Validate submitted individual listing evidence (fail closed)
+        run: node scripts/validate-market-evidence.cjs
+
+      - name: Report evidence verification results
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const report=require('./evidence-worklist/validated-listings.json');
+          const fs=require('fs');
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,
+            '\n### Independent listing evidence validation\n' +
+            '- Submitted cases: '+report.checked+'\n' +
+            '- Structurally eligible: '+report.approved.length+' (not automatically published)\n' +
+            '- Held: '+report.held.length+'\n' +
+            '- Zero submissions means no original listings were verified.\n');
+          NODE
+
       - uses: actions/upload-artifact@v4
         with:
           name: carranking-daily-evidence-worklist
