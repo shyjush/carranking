@@ -40,7 +40,9 @@ async function testViewport(name,width,height){
    const verified=window.CARRANKING_VERIFIED_RANKING||[];
    return {
     title:document.title,
-    hero:q('#heroCard')?.innerText||'',
+    hero:q('#economyHeroCard')?.innerText||'',
+    legacyHidden:['historicalRanking','ranking','heroCard'].every(id=>{const el=document.getElementById(id);return !!el&&getComputedStyle(el).display==='none'}),
+    economyPrimary:!!document.querySelector('.hero .actions a.btn.primary[href="/economy.html"]'),
     ranking:q('#rankingBody')?.innerText||'',
     visibleRows:document.querySelectorAll('#rankingBody tr.clickable-row').length,
     verifiedCount:verified.length,
@@ -55,13 +57,14 @@ async function testViewport(name,width,height){
   });
   result.dom=dom;
   assert(dom.title.includes('CarRanking'),'Wrong website or missing page title');
+  assert(dom.legacyHidden&&dom.economyPrimary&&dom.hero.includes('운영비'),'Old ranking visible or new economy hero missing');
   assert(dom.jsVersion.includes(expectedAppVersion),'Stale CarRanking app script on live site: expected '+expectedAppVersion);
   assert(dom.menuLinks>0,'Site navigation not rendered');
   assert(dom.compareOptions>1&&dom.reviewOptions>1,'Car model selectors not populated from own DB');
   assert.equal(dom.visibleRows,dom.verifiedCount,'Public ranking differs from verified DB rows');
   if(dom.verifiedCount===0){
     assert(dom.ranking.includes('검증'),'Zero-evidence state not disclosed in ranking table');
-    assert(dom.hero.includes('검증'),'Zero-evidence state not disclosed in hero');
+    assert(dom.hero.includes('보험·감가상각 제외'),'Economy homepage missing partial-cost disclaimer');
     assert.equal(dom.bestWorstCards,0,'Unverified BEST/WORST content leaked into public site');
   }
   await page.screenshot({path:path.join(outDir,name+'-ranking.png'),fullPage:true});
