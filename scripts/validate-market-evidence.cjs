@@ -8,10 +8,10 @@ const result='evidence-worklist/validated-listings.json';
 fs.mkdirSync('evidence-worklist',{recursive:true});
 const report={checked:0,approved:[],held:[],source:input};
 function reject(id,reason){report.held.push({id,reason});}
-const clean=x=>String(x??'').normalize('NFKC').trim().replace(/\\s+/g,' ').toLowerCase();
+const clean=x=>String(x??'').normalize('NFKC').trim().replace(/\s+/g,' ').toLowerCase();
 const validUrl=x=>{try{const u=new URL(x);return u.protocol==='https:'&&!!u.hostname&&!['example.com','localhost'].includes(u.hostname)}catch{return false}};
-const canonical=x=>{const u=new URL(x);u.hash='';for(const k of [...u.searchParams.keys()])if(/^utm_/i.test(k)||['fbclid','gclid'].includes(k.toLowerCase()))u.searchParams.delete(k);u.searchParams.sort();return u.toString().replace(/\\/$/,'')};
-const date=x=>/^\\d{4}-\\d{2}-\\d{2}$/.test(x)&&!isNaN(Date.parse(x))&&x<=new Date().toISOString().slice(0,10);
+const canonical=x=>{const u=new URL(x);u.hash='';for(const k of [...u.searchParams.keys()])if(/^utm_/i.test(k)||['fbclid','gclid'].includes(k.toLowerCase()))u.searchParams.delete(k);u.searchParams.sort();return u.toString().replace(/\/$/,'')};
+const date=x=>/^\d{4}-\d{2}-\d{2}$/.test(x)&&!isNaN(Date.parse(x))&&x<=new Date().toISOString().slice(0,10);
 let rows=[];
 try{if(fs.existsSync(input)){const raw=JSON.parse(fs.readFileSync(input,'utf8'));if(!Array.isArray(raw))throw Error('Input must be an array');rows=raw}}catch(e){console.error('Invalid evidence input',e.message);process.exit(2)}
 for(const [i,r] of rows.entries()){
