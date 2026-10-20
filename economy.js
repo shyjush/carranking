@@ -4,20 +4,26 @@ const rows=[];
 function parseEfficiency(value){
  const s=String(value||'');
  const matches=[...s.matchAll(/(\d+(?:\.\d+)?)\s*(km\s*\/\s*kWh|km\s*\/\s*L)/gi)];
- if(matches.length!==1)return null;
+ if(matches.length!==1||/최대\s*복합|최소\s*복합/i.test(s))return null;
  const m=matches[0],n=Number(m[1]);
  if(!Number.isFinite(n)||n<=0)return null;
  return {eff:n,unit:/kwh/i.test(m[2])?'ev':'gas',raw:s};
 }
 const money=n=>Math.round(n).toLocaleString('ko-KR')+'원';
+const fuelPrices={gas:1700,diesel:1550,lpg:1000,ev:300};
+function suggestUnitPrice(k){
+ const kind=$('fuel'+k).value;
+ $('price'+k).value=fuelPrices[kind]||1700;
+}
 function assign(k){const r=rows[Number($('pick'+k).value)];if(!r)return;
  $('eff'+k).value=r.eff;
  $('fuel'+k).value=r.fuel;
+ suggestUnitPrice(k);
  $('source'+k).textContent=r.label+' · '+r.raw+' · '+r.url+' (구동·휠 사양 확인 필요)';
 }
 function mode(k){const active=$('mode'+k).value==='db';$('pickWrap'+k).hidden=!active;$('eff'+k).readOnly=active;$('fuel'+k).disabled=active;
  if(active){assign(k);}else{$('source'+k).textContent='사용자 직접 입력값 (공식 검증 연비 아님)';}}
-for(const k of ['A','B']){$('mode'+k).addEventListener('change',()=>mode(k));$('pick'+k).addEventListener('change',()=>assign(k));$('eff'+k).addEventListener('input',()=>{if($('mode'+k).value==='manual')$('source'+k).textContent='사용자 직접 입력값 (공식 검증 연비 아님)';});}
+for(const k of ['A','B']){$('fuel'+k).addEventListener('change',()=>suggestUnitPrice(k));$('mode'+k).addEventListener('change',()=>mode(k));$('pick'+k).addEventListener('change',()=>assign(k));$('eff'+k).addEventListener('input',()=>{if($('mode'+k).value==='manual')$('source'+k).textContent='사용자 직접 입력값 (공식 검증 연비 아님)';});}
 $('unitPrice').addEventListener('change',()=>{for(const k of ['A','B'])$('price'+k).value=$('unitPrice').value;});
 $('calculate').addEventListener('click',()=>{
  const km=Number($('distance').value),values=[];
