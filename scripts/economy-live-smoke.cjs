@@ -102,6 +102,11 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
  const ranked=await rank.evaluate(()=>({count:document.querySelectorAll('#cards article.vehicle').length,values:[...document.querySelectorAll('#cards article.vehicle')].map(n=>Number(n.querySelector('.cost').innerText.replace(/[^0-9]/g,''))),text:document.querySelector('#status').innerText}));
  assert(ranked.values.every((x,i,a)=>i===0||x>=a[i-1]),'Annual basic cost ranking out of order: '+JSON.stringify(ranked));
  assert(ranked.text.includes('예시 단가'),'Sample pricing disclaimer missing');
+ const cardUi=await rank.evaluate(()=>{const c=[...document.querySelectorAll('#cards article.vehicle')];return {classes:c.slice(0,4).map(x=>x.className),cells:c.slice(0,3).map(x=>x.querySelectorAll('.details>div').length),notion:c.slice(0,3).some(x=>x.innerText.includes('합산 범위'))}});
+ assert(cardUi.classes[0].includes('rank-first')&&cardUi.classes[1].includes('rank-second')&&cardUi.classes[2].includes('rank-third'),'Ranking color classes absent: '+JSON.stringify(cardUi));
+ assert(cardUi.cells.every(n=>n===2)&&!cardUi.notion,'Redundant sum scope card remains: '+JSON.stringify(cardUi));
+ assert(await rank.locator('details').count()>0,'Advanced direct-input calculator not collapsed');
+
  await rank.fill('#search','G80');
  const g80=await rank.locator('#cards').innerText();
  assert(g80.includes('G80')&&!g80.includes('K5'),'G80 search filter does not work: '+g80);
