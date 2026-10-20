@@ -6,8 +6,8 @@ on:
       - '.github/workflows/audit-supabase.yml'
   workflow_dispatch:
   schedule:
-    # 03:50 KST daily; audit only, no synthetic depreciation data.
-    - cron: '50 18 * * *'
+    # Sundays 03:50 KST; weekly read-only specialist DB integrity and coverage audit.
+    - cron: '50 18 * * 6'
 
 jobs:
   audit:
