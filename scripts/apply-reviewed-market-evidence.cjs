@@ -2,12 +2,17 @@
 // Only independently reviewed evidence can be written. Never overwrite legacy records.
 const fs=require('fs'),cp=require('child_process');
 const report=JSON.parse(fs.readFileSync('evidence-worklist/validated-listings.json','utf8'));
+const originalAudit=JSON.parse(fs.readFileSync('evidence-worklist/original-fetch-audit.json','utf8'));
+const originalById=new Map(originalAudit.verified.map(x=>[String(x.id),x]));
 const raw=fs.existsSync('evidence/inbox/value-listings.json')?JSON.parse(fs.readFileSync('evidence/inbox/value-listings.json','utf8')):[];
 const byId=new Map(raw.map(x=>[String(x.candidate_id),x]));
 const q=x=>"'"+String(x).replace(/'/g,"''")+"'";
 const approved=report.approved.filter(a=>{
  const r=byId.get(String(a.candidate_id));
- return r?.independent_source_review?.status==='approved' &&
+ const audit=originalById.get(String(a.candidate_id));
+ return audit?.originals?.length===a.sample_size &&
+ audit.originals.every((doc,i)=>doc.year_trim_price_confirmed===true&&doc.url===r?.listings?.[i]?.url) &&
+ r?.independent_source_review?.status==='approved' &&
  r.independent_source_review.original_content_verified===true &&
  r.independent_source_review.cross_channel_dedupe_verified===true &&
  /^https:\/\/[^ ]+/.test(String(r.independent_source_review.evidence_report_url||'')) &&
