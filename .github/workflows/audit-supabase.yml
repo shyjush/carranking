@@ -41,6 +41,8 @@ jobs:
           psql "$CONN" -Atc "select 'generations='||count(*) from public.generations;"
           psql "$CONN" -Atc "select 'current_generations='||count(*) from public.generations where current=true;"
           psql "$CONN" -Atc "select 'vehicle_specs='||count(*) from public.vehicle_specs;"
+          psql "$CONN" -Atc "select 'economy_powertrain_matched_efficiency='||count(*) from public.vehicle_specs s join public.powertrains p on p.id=s.powertrain_id and p.generation_id=s.generation_id where s.combined_efficiency ~* '[0-9]+(\\.[0-9]+)?[[:space:]]*km[[:space:]]*/[[:space:]]*(L|kWh)' and s.source_url like 'https://%';"
+          psql "$CONN" -Atc "select 'economy_efficiency_without_powertrain='||count(*) from public.vehicle_specs where coalesce(combined_efficiency,'')<>'' and powertrain_id is null;"
           psql "$CONN" -Atc "select 'depreciation_metrics='||count(*) from public.depreciation_metrics;"
           psql "$CONN" -Atc "select 'value_ranking_rows='||count(*) from public.web_value_ranking;"
           psql "$CONN" -Atc "select 'vehicle_detail_rows='||count(*) from public.web_vehicle_detail;"
