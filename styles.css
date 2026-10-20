@@ -41,3 +41,17 @@
  .topbar .header-actions{order:3;display:grid;width:100%;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:0}
  .topbar .head-btn{min-width:0;max-width:100%;font-size:12px;white-space:nowrap}
 }
+
+
+/* Mobile usability: static header never overlays content while scrolling. */
+@media(max-width:800px){
+ .topbar{position:relative!important;top:auto!important;background:#fff!important;z-index:1}
+ .topbar .brand{order:0}
+ .topbar nav{order:1}
+ .topbar .header-actions{order:2}
+ main#top{position:relative;z-index:0}
+ .hero{padding-top:28px!important}
+ #historicalRanking{padding-top:32px}
+ #historicalRanking .table-wrap{overflow-x:auto}
+ #historicalRanking table{min-width:650px}
+}
