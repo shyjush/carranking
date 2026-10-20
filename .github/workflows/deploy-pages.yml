@@ -55,6 +55,8 @@ jobs:
         env:
           CARRANKING_LIVE_URL: https://carranking.kr/
         run: node scripts/live-site-smoke.cjs
+      - name: Verify live economic calculator numbers on desktop and mobile
+        run: node scripts/economy-live-smoke.cjs
       - name: Preserve actual-screen proof and QA result
         if: always()
         uses: actions/upload-artifact@v4
