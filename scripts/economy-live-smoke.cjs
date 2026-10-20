@@ -9,6 +9,13 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
  const page=await browser.newPage({viewport:{width,height:844}});
  const resp=await page.goto('https://carranking.kr/economy.html',{waitUntil:'domcontentloaded',timeout:45000});
  assert(resp.ok(),'economy page HTTP '+resp.status());
+ const jumpCount=await page.locator('nav.econ-jumps a').count();
+ assert.equal(jumpCount,4,'Four economy navigation anchors expected');
+ const jumpTargets=await page.locator('nav.econ-jumps a').evaluateAll(nodes=>nodes.every(a=>a.hash&&document.querySelector(a.hash)));
+ assert(jumpTargets,'One or more economy nav links broken');
+ const buttonSizes=await page.locator('#calculate,#calculateTax,#maintCalculate,#summaryCalculate').evaluateAll(nodes=>nodes.map(n=>Math.round(n.getBoundingClientRect().height)));
+ assert(buttonSizes.every(h=>h>=44),'Small mobile action target(s): '+JSON.stringify(buttonSizes));
+
  await page.fill('#distance','15000');
  await page.fill('#effA','10');await page.fill('#effB','15');
  await page.fill('#priceA','1700');await page.fill('#priceB','1700');
