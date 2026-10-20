@@ -3,7 +3,7 @@ const $=id=>document.getElementById(id);
 const rows=[];
 function parseEfficiency(value){
  const s=String(value||'');
- const matches=[...s.matchAll(/(\\d+(?:\\.\\d+)?)\\s*(km\\s*\\/\\s*kWh|km\\s*\\/\\s*L)/gi)];
+ const matches=[...s.matchAll(/(\d+(?:\.\d+)?)\s*(km\s*\/\s*kWh|km\s*\/\s*L)/gi)];
  if(matches.length!==1)return null;
  const m=matches[0],n=Number(m[1]);
  if(!Number.isFinite(n)||n<=0)return null;
