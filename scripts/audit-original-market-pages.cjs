@@ -7,10 +7,10 @@ fs.mkdirSync('evidence-worklist',{recursive:true});
 const rows=fs.existsSync(input)?JSON.parse(fs.readFileSync(input,'utf8')):[];
 if(!Array.isArray(rows))throw Error('Expected candidate array');
 const report={checked:0,verified:[],held:[]};
-const words=x=>String(x||'').normalize('NFKC').replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ').replace(/\\s+/g,' ').trim().toLowerCase();
+const words=x=>String(x||'').normalize('NFKC').replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim().toLowerCase();
 function safeUrl(raw){
  const u=new URL(raw);
- if(u.protocol!=='https:'||u.username||u.password||u.port&&u.port!=='443'||!u.hostname.includes('.')||/^(localhost|127\\.|10\\.|192\\.168\\.|169\\.254\\.)/.test(u.hostname))throw Error('URL policy');
+ if(u.protocol!=='https:'||u.username||u.password||u.port&&u.port!=='443'||!u.hostname.includes('.')||/^(localhost|127\.|10\.|192\.168\\.|169\.254\\.)/.test(u.hostname))throw Error('URL policy');
  return u;
 }
 async function fetchOriginal(url){
@@ -43,6 +43,6 @@ async function fetchOriginal(url){
   if(reason)report.held.push({id,reason});
   else report.verified.push({id,originals:docs,review_status:'pending_independent_dedupe_and_trim_review'});
  }
- fs.writeFileSync(out,JSON.stringify(report,null,2)+'\\n');
+ fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');
  console.log(JSON.stringify({checked:report.checked,original_pages_verified:report.verified.length,held:report.held.length}));
 })().catch(e=>{console.error(e);process.exit(1)});
