@@ -37,20 +37,20 @@ function render(){
  const container=$('cards');container.replaceChildren();
  if(!items.length){const p=document.createElement('p');p.textContent='조건에 맞는 등록 차량이 없습니다. 다른 검색어를 입력해 주세요.';container.append(p);return;}
  items.forEach((item,i)=>{
-  const card=document.createElement('article');card.className='vehicle';
+  const card=document.createElement('article');card.className='vehicle '+(i===0?'rank-first':i===1?'rank-second':i===2?'rank-third':'rank-other');
   const head=document.createElement('h3');
   const num=document.createElement('span');num.className='rank-number';num.textContent=(i+1)+'위';
   head.append(num,document.createTextNode(item.name));card.append(head);
   const amount=document.createElement('div');amount.className='cost';amount.textContent=won(item.total)+' / 년';card.append(amount);
   const d=document.createElement('div');d.className='details';
-  for(const [title,price] of [['연료·전력비',item.fuelCost],['자동차세·교육세',item.taxCost],['합산 범위','보험·감가 제외']]){
+  for(const [title,price] of [['연료·전력비',item.fuelCost],['자동차세·교육세',item.taxCost]]){
    const cell=document.createElement('div');const b=document.createElement('b');b.textContent=typeof price==='number'?won(price):price;cell.append(document.createTextNode(title),b);d.append(cell);
   }card.append(d);
   const btn=document.createElement('button');btn.type='button';btn.textContent='산출 근거 확인';btn.setAttribute('aria-expanded','false');
   const detail=document.createElement('div');detail.className='detail';detail.hidden=true;
   const text=document.createElement('p');text.textContent='공식자료 표기 연비: '+item.raw+' / '+(item.cc?('DB 배기량: '+item.cc+'cc'):'전기차 정액 자동차세')+' / 연간 15,000km · 예시 단가 '+prices[item.fuel].toLocaleString('ko-KR')+(item.fuel==='ev'?'원/kWh':'원/L');
   const source=document.createElement('a');source.href=item.source;source.target='_blank';source.rel='noopener noreferrer';source.textContent='연비 원자료 열기 ↗';
-  const note=document.createElement('p');note.textContent='이 차량의 특정 제원·연비 조건을 사용한 기본 운영비 추정치입니다. 보험·감가상각·정비비는 미포함입니다.';
+  const note=document.createElement('p');note.textContent='표시된 특정 제원·연비 조건에 따른 기본 운영비 추정치입니다.';
   detail.append(text,source,note);btn.addEventListener('click',()=>{detail.hidden=!detail.hidden;btn.setAttribute('aria-expanded',String(!detail.hidden));});
   card.append(btn,detail);container.append(card);
  });
