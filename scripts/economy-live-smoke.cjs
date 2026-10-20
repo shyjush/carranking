@@ -71,6 +71,22 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
  await page.click('#maintCalculate');
  maint=await page.locator('#maintResults').innerText();
  assert(maint.includes('확인해 주세요'),'Invalid consumable replacement interval was accepted: '+maint);
+
+ await page.fill('#maint-A-oil-cycle','10000');
+ await page.fill('#effA','10');await page.fill('#effB','15');
+ await page.fill('#priceA','1700');await page.fill('#priceB','1700');
+ await page.selectOption('#taxTypeA','engine');
+ await page.fill('#age1A','2');await page.fill('#age2A','2');
+ await page.click('#summaryCalculate');
+ let summary=await page.locator('#summaryResults').innerText();
+ assert(summary.includes('3,549,740원')&&summary.includes('2,350,836원'),'Annual partial cost wrong: '+summary);
+ assert(summary.includes('10,649,220원')&&summary.includes('7,052,508원'),'3-year scenario wrong: '+summary);
+ assert(summary.includes('17,748,700원')&&summary.includes('11,754,180원'),'5-year scenario wrong: '+summary);
+ assert(summary.includes('총보유비용(TCO)이 아닙니다'),'Missing non-TCO warning');
+ await page.fill('#maint-A-oil-cycle','');
+ await page.click('#summaryCalculate');
+ summary=await page.locator('#summaryResults').innerText();
+ assert(summary.includes('미입력 소모품')&&summary.includes('부분합계'),'Missing component warning absent: '+summary);
  const viewport=await page.evaluate(()=>({width:document.documentElement.scrollWidth,inner:innerWidth}));
  assert(viewport.width<=viewport.inner+24,'Horizontal mobile overflow');
  results.push({name,status:'pass',sourceSelectorHidden:hidden,costValidated:true,evValidated:true,parsingValidated:true});
