@@ -2,6 +2,7 @@
 const $=id=>document.getElementById(id);
 const prices={gas:1700,diesel:1550,lpg:1000,ev:300};
 let listed=[];
+let registered=[];
 function parseRated(s){
  const text=String(s||'');
  if(/최대\s*복합|최소\s*복합/i.test(text))return null;
@@ -28,14 +29,28 @@ function buildRow(spec,power,label){
  const annualFuel=15000/rated.eff*prices[fuel];
  const base=fuel==='ev'?100000:cc*(cc<=1000?80:cc<=1600?140:200);
  const annualTax=base*1.3;
- return {name:label+' · '+power.name,raw:String(spec.combined_efficiency),fuel,cc: fuel==='ev'?null:cc,eff:rated.eff,source:spec.source_url,fuelCost:annualFuel,taxCost:annualTax,total:annualFuel+annualTax};
+ return {generation_id:String(spec.generation_id),name:label+' · '+power.name,raw:String(spec.combined_efficiency),fuel,cc: fuel==='ev'?null:cc,eff:rated.eff,source:spec.source_url,fuelCost:annualFuel,taxCost:annualTax,total:annualFuel+annualTax};
 }
 function render(){
  const query=$('search').value.trim().toLowerCase(),filter=$('fuelFilter').value;
  const items=listed.filter(x=>(!query||x.name.toLowerCase().includes(query))&&(filter==='all'||(filter==='ev'?x.fuel==='ev':x.fuel!=='ev')));
  $('status').textContent='공식 연비·배기량 조건을 충족하는 차량 '+listed.length+'건 · 검색 결과 '+items.length+'건 · 예시 단가 기준';
  const container=$('cards');container.replaceChildren();
- if(!items.length){const p=document.createElement('p');p.textContent='조건에 맞는 등록 차량이 없습니다. 다른 검색어를 입력해 주세요.';container.append(p);return;}
+ const missing=$('unranked');missing.replaceChildren();
+ if(query){
+  const candidates=registered.filter(x=>x.name.toLowerCase().includes(query)&&!listed.some(y=>y.generation_id===x.generation_id));
+  if(filter==='all'||filter==='liquid'||filter==='ev'){
+   for(const car of candidates.slice(0,20)){
+    const card=document.createElement('article');card.className='vehicle unranked-car';
+    const title=document.createElement('h3');title.textContent=car.name;
+    const flag=document.createElement('span');flag.className='data-status';flag.textContent='연간 비용 순위 산정 대기';
+    const note=document.createElement('p');note.textContent='등록된 차량입니다. 현재 공식 복합연비와 사양별 근거가 확인되지 않아 비용 순위에 표시하지 않습니다.';
+    card.append(title,flag,note);missing.append(card);
+   }
+  }
+ }
+
+ if(!items.length){const p=document.createElement('p');p.textContent=missing.children.length?'연간 비용을 계산할 수 있는 차량은 없습니다. 아래에서 등록 차량의 자료 확보 상태를 확인하세요.':'검색 조건에 맞는 차량이 없습니다. 다른 검색어나 연료 종류를 선택해 주세요.';container.append(p);return;}
  items.forEach((item,i)=>{
   const card=document.createElement('article');card.className='vehicle '+(i===0?'rank-first':i===1?'rank-second':i===2?'rank-third':'rank-other');
   const head=document.createElement('h3');
@@ -68,6 +83,7 @@ $('search').addEventListener('input',render);$('fuelFilter').addEventListener('c
    get('web_vehicle_detail?select=generation_id,brand,model,generation_code&limit=1000')
   ]);
   const labels=new Map(details.map(v=>[String(v.generation_id),[v.brand,v.model,v.generation_code].filter(Boolean).join(' ')]));
+  registered=[...labels].map(([generation_id,name])=>({generation_id,name}));
   const ids=new Map(powers.map(p=>[String(p.id),p]));
   listed=specs.map(s=>{const p=ids.get(String(s.powertrain_id));return p&&String(p.generation_id)===String(s.generation_id)?buildRow(s,p,labels.get(String(s.generation_id))):null;}).filter(Boolean).sort((a,b)=>a.total-b.total||a.name.localeCompare(b.name,'ko'));
   render();
