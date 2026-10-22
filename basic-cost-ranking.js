@@ -4,6 +4,7 @@ const prices={gas:1700,diesel:1550,lpg:1000,ev:300};
 let officialPriceDate=null;
 let listed=[];
 let registered=[];
+let officialVariants=[];
 function parseRated(s){
  const text=String(s||'');
  if(/최대\s*복합|최소\s*복합/i.test(text))return null;
@@ -38,6 +39,27 @@ function render(){
  $('status').textContent='공식 연비·배기량 조건을 충족하는 차량 '+listed.length+'건 · 검색 결과 '+items.length+'건 · '+(officialPriceDate?'오피넷 공식 유가 '+officialPriceDate+' 기준 (전기요금은 예시)':'예시 단가 기준');
  const container=$('cards');container.replaceChildren();
  const missing=$('unranked');missing.replaceChildren();
+ const certified=$('officialCatalog');if(certified){certified.replaceChildren();
+  if(query){
+   const eligible=officialVariants.filter(v=>(v.manufacturer+' '+v.model_detail).toLowerCase().includes(query)&&(filter==='all'||(filter==='ev'?v.fuel_type==='ev':v.fuel_type!=='ev')));
+   if(eligible.length){
+    const title=document.createElement('h2');title.textContent='한국에너지공단 공식 인증자료 · '+eligible.length+'건';certified.append(title);
+    const intro=document.createElement('p');intro.textContent='인증연도와 세부모델 기준 자료이며 현재 판매 중인 차량을 뜻하지 않습니다. 기존 차량 순위와 구분하여 표시합니다.';certified.append(intro);
+    for(const v of eligible.slice(0,40)){
+     const cc=Number(v.displacement_cc),energy=Number(v.combined_efficiency),fuel=v.fuel_type;
+     if(!energy||!prices[fuel]||(fuel!=='ev'&&(!cc||cc<500)))continue;
+     const tax=fuel==='ev'?130000:cc*(cc<=1000?80:cc<=1600?140:200)*1.3;
+     const cost=15000/energy*prices[fuel]+tax;
+     const item=document.createElement('article');item.className='vehicle';
+     const heading=document.createElement('h3');heading.textContent=v.manufacturer+' '+v.model_detail+' · '+v.certification_year+'년 인증';item.append(heading);
+     const price=document.createElement('div');price.className='cost';price.textContent=won(cost)+' / 년 (추정)';item.append(price);
+     const desc=document.createElement('p');desc.textContent='공식 '+(fuel==='ev'?'전비 ':'연비 ')+energy+(fuel==='ev'?'km/kWh':'km/L')+' · 연료비·자동차세만 포함 · '+(officialPriceDate&&fuel!=='ev'?'오피넷 유가 '+officialPriceDate:'예시 단가')+' 적용';item.append(desc);
+     const link=document.createElement('a');link.href='https://www.data.go.kr/data/15139827/openapi.do';link.target='_blank';link.rel='noopener noreferrer';link.textContent='한국에너지공단 원자료 안내 ↗';item.append(link);certified.append(item);
+    }
+   }
+  }
+ }
+
  if(query){
   const candidates=registered.filter(x=>x.name.toLowerCase().includes(query)&&!listed.some(y=>y.generation_id===x.generation_id)&&(filter==='all'||x.fuels.includes(filter==='ev'?'ev':'liquid')));
   if(filter==='all'||filter==='liquid'||filter==='ev'){
@@ -88,6 +110,13 @@ $('search').addEventListener('input',render);$('fuelFilter').addEventListener('c
     officialPriceDate=dated[0].price_date;
    }
   }catch(e){console.warn('Official fuel prices unavailable: example prices retained',e)}
+  try{
+   const [first,second]=await Promise.all([
+    get('kea_official_vehicle_specs?select=manufacturer,model_detail,certification_year,fuel_type,displacement_cc,combined_efficiency&certification_year=gte.2023&order=certification_year.desc&limit=1000&offset=0'),
+    get('kea_official_vehicle_specs?select=manufacturer,model_detail,certification_year,fuel_type,displacement_cc,combined_efficiency&certification_year=gte.2023&order=certification_year.desc&limit=1000&offset=1000')
+   ]);
+   officialVariants=first.concat(second);
+  }catch(e){console.warn('Official KEA vehicle catalog unavailable',e)}
   const [specs,powers,details]=await Promise.all([
    get('vehicle_specs?select=generation_id,powertrain_id,combined_efficiency,source_url&limit=1000'),
    get('powertrains?select=id,generation_id,name,fuel_type,displacement_cc&limit=1000'),
