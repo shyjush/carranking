@@ -25,6 +25,11 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
    await page.fill('#search','GV80');
    const gv80Result=await page.locator('#cards').innerText();
    assert(gv80Result.includes('GV80')&&gv80Result.includes('연료·전력비')&&gv80Result.includes('자동차세'),'Official GV80 efficiency is not included in ranking: '+gv80Result);
+   for(const model of ['K8','니로','모닝']){
+    await page.fill('#search',model);
+    const found=await page.locator('#cards').innerText();
+    assert(found.includes(model)&&found.includes('연료·전력비')&&found.includes('자동차세'),'New manufacturer-sourced efficiency missing for '+model+': '+found);
+   }
    await page.fill('#search','G80');
    const results=await page.locator('#cards').innerText();
    assert(results.includes('G80')&&!results.includes('K5'),'Vehicle search incorrect');
