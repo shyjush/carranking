@@ -124,6 +124,14 @@ $('search').addEventListener('input',render);$('fuelFilter').addEventListener('c
   ]);
   const labels=new Map(details.map(v=>[String(v.generation_id),[v.brand,v.model,v.generation_code].filter(Boolean).join(' ')]));
   registered=[...labels].map(([generation_id,name])=>({generation_id,name,fuels:powers.filter(p=>String(p.generation_id)===generation_id).map(p=>classified(p.fuel_type)==='ev'?'ev':classified(p.fuel_type)?'liquid':null).filter(Boolean)}));
+  const suggestions=$('vehicleSearchSuggestions');
+  if(suggestions){
+   suggestions.replaceChildren();
+   const names=[...new Set(registered.map(v=>v.name))].sort((a,b)=>a.localeCompare(b,'ko'));
+   for(const name of names){
+    const option=document.createElement('option');option.value=name;suggestions.append(option);
+   }
+  }
   const ids=new Map(powers.map(p=>[String(p.id),p]));
   listed=specs.map(s=>{const p=ids.get(String(s.powertrain_id));return p&&String(p.generation_id)===String(s.generation_id)?buildRow(s,p,labels.get(String(s.generation_id))):null;}).filter(Boolean).sort((a,b)=>a.total-b.total||a.name.localeCompare(b.name,'ko'));
   render();
