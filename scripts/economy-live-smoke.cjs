@@ -37,10 +37,12 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
    await page.fill('#search','G80');
    const results=await page.locator('#cards').innerText();
    assert(results.includes('G80')&&!results.includes('K5'),'Vehicle search incorrect');
-   await page.locator('.vehicle button').first().click();
-   assert(await page.locator('.vehicle .detail').first().isVisible(),'Evidence toggle broken');
+   await page.locator('#cards .vehicle button').first().click();
+   assert(await page.locator('#cards .vehicle .detail').first().isVisible(),'Evidence toggle broken');
    await page.selectOption('#fuelFilter','ev');
-   assert.equal(await page.locator('.vehicle').count(),0,'EV filter ignored');
+   assert.equal(await page.locator('#cards .vehicle').count(),0,'EV filter ignored in ranked cars');
+   const evOfficial=await page.locator('#officialCatalog').innerText();
+   assert(!evOfficial.includes('G80')||evOfficial.includes('전비'),'Official catalog EV filtering broken');
    const widthInfo=await page.evaluate(()=>[document.documentElement.scrollWidth,innerWidth]);
    assert(widthInfo[0]<=widthInfo[1]+24,'Mobile horizontal overflow');
    await page.goto('https://carranking.kr/economy.html',{waitUntil:'domcontentloaded',timeout:45000});
