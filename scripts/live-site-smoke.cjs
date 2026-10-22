@@ -67,6 +67,15 @@ async function testViewport(name,width,height){
     assert(dom.hero.includes('예시 연료 단가'),'Economy homepage missing partial-cost disclaimer');
     assert.equal(dom.bestWorstCards,0,'Unverified BEST/WORST content leaked into public site');
   }
+  const compareReset=await page.evaluate(()=>{
+    const selectors=['compare1','compare2','compare3'].map(id=>document.getElementById(id));
+    selectors[0].value=selectors[0].options[1].value;
+    selectors[1].value=selectors[1].options[2].value;
+    document.getElementById('compareResult').textContent='Previously compared';
+    document.getElementById('compareResetBtn').click();
+    return {values:selectors.map(e=>e.value),result:document.getElementById('compareResult').textContent};
+  });
+  assert(compareReset.values.every(v=>v==='')&&compareReset.result==='','Comparison reset failed: '+JSON.stringify(compareReset));
   const reviewFormState=await page.evaluate(()=>{
     const form=document.querySelector('#reviewForm'),toggle=document.querySelector('#reviewFormToggle');
     return {initiallyHidden:form?.hidden,button:toggle?.getAttribute('aria-expanded'),redundantCard:!!document.querySelector('.cr-cost-explainer,.cr-service-cards'),bottomRankButton:[...document.querySelectorAll('section[aria-label="자동차 정보 안내"] a')].some(a=>a.href.includes('basic-cost-ranking.html'))};
