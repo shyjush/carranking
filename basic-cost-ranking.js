@@ -73,7 +73,7 @@ function render(){
   }
  }
 
- if(!items.length){const p=document.createElement('p');p.textContent=missing.children.length?'연간 비용을 계산할 수 있는 차량은 없습니다. 아래에서 등록 차량의 자료 확보 상태를 확인하세요.':'검색 조건에 맞는 차량이 없습니다. 다른 검색어나 연료 종류를 선택해 주세요.';container.append(p);return;}
+ if(!items.length){const p=document.createElement('p');p.textContent=missing.children.length?'연간 비용을 계산할 수 있는 차량은 없습니다. 아래에서 등록 차량의 자료 확보 상태를 확인하세요.':(certified?.children.length?'기존 등록차량 랭킹에는 해당 사양이 없습니다. 아래 공식 인증차량 자료를 참고하세요.':'검색 조건에 맞는 차량이 없습니다. 다른 검색어나 연료 종류를 선택해 주세요.');container.append(p);return;}
  items.forEach((item,i)=>{
   const card=document.createElement('article');card.className='vehicle '+(i===0?'rank-first':i===1?'rank-second':i===2?'rank-third':'rank-other');
   const head=document.createElement('h3');
