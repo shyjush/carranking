@@ -59,8 +59,10 @@ if url and service_key:
             raise ValueError('KEA API host not allowlisted')
         qs=urllib.parse.parse_qsl(urllib.parse.urlparse(url).query,keep_blank_values=True)
         parsed_url=urllib.parse.urlparse(url)
+        if parsed_url.path.rstrip('/').endswith('/CAREFF'):
+            parsed_url=parsed_url._replace(path=parsed_url.path.rstrip('/')+'/CAREFF_LIST')
         qs=[(k,v) for k,v in qs if k.lower() not in ('servicekey','service_key')]
-        qs.extend([('serviceKey',service_key),('pageNo','1'),('numOfRows','100'),('_type','json')])
+        qs.extend([('serviceKey',service_key),('pageNo','1'),('numOfRows','100'),('apiType','json')])
         address=urllib.parse.urlunparse(parsed_url._replace(query=urllib.parse.urlencode(qs)))
         data=request_json(address)
         if not isinstance(data,dict):raise ValueError('unexpected energy API response')
