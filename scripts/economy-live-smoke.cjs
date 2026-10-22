@@ -20,8 +20,8 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
    assert.equal(await page.getByText('합산 범위',{exact:true}).count(),0,'Unnecessary scope column remains');
    assert.equal(await page.locator('details summary').count(),0,'Manual advanced input still advertised');
    await page.fill('#search','Gv80');
-   const gv=await page.locator('#unranked').innerText();
-   assert(gv.includes('GV80')&&gv.includes('순위 산정 대기'),'GV80 search does not disclose missing official efficiency: '+gv);
+   const initialGv=await page.locator('#cards').innerText();
+   assert(initialGv.includes('GV80'),'GV80 not searchable in verified ranking');
    await page.fill('#search','GV80');
    const gv80Result=await page.locator('#cards').innerText();
    assert(gv80Result.includes('GV80')&&gv80Result.includes('연료·전력비')&&gv80Result.includes('자동차세'),'Official GV80 efficiency is not included in ranking: '+gv80Result);
