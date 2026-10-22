@@ -30,6 +30,10 @@ const {chromium}=require(path.join(process.env.RUNNER_TEMP||'/tmp','carranking-p
     const found=await page.locator('#cards').innerText();
     assert(found.includes(model)&&found.includes('연료·전력비')&&found.includes('자동차세'),'New manufacturer-sourced efficiency missing for '+model+': '+found);
    }
+   await page.fill('#search','EV3');
+   await page.waitForFunction(()=>document.querySelector('#officialCatalog')?.innerText.includes('한국에너지공단 공식 인증자료'),{timeout:20000});
+   const officialResults=await page.locator('#officialCatalog').innerText();
+   assert(officialResults.includes('EV3')&&officialResults.includes('인증')&&officialResults.includes('연비')||officialResults.includes('전비'),'New KEA vehicle catalog EV3 search missing: '+officialResults);
    await page.fill('#search','G80');
    const results=await page.locator('#cards').innerText();
    assert(results.includes('G80')&&!results.includes('K5'),'Vehicle search incorrect');
