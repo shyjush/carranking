@@ -9,6 +9,7 @@ on:
       - 'scripts/official-api-sync.py'
       - 'scripts/kea-auto-import.py'
       - 'scripts/kea-catalog-sync.py'
+      - 'scripts/ai-kea-match.py'
   workflow_dispatch:
   schedule:
     # Every Sunday 04:10 KST (Saturday 19:10 UTC), after weekly 03:50 DB audit.
@@ -24,6 +25,9 @@ jobs:
       OPINET_API_KEY: ${{ secrets.OPINET_API_KEY }}
       KEA_SERVICE_KEY: ${{ secrets.KEA_SERVICE_KEY }}
       KEA_API_URL: ${{ vars.KEA_API_URL }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MATCH_MODEL: gpt-4o-mini
+      AI_MATCH_MAX_CALLS: '8'
     steps:
       - name: Checkout CarRanking
         uses: actions/checkout@v4
@@ -39,6 +43,8 @@ jobs:
         run: python3 scripts/kea-auto-import.py
       - name: Update official KEA vehicle catalog without changing existing vehicle generations
         run: python3 scripts/kea-catalog-sync.py
+      - name: Analyze unresolved official variants with bounded AI suggestions
+        run: python3 scripts/ai-kea-match.py
       - name: Add workflow summary
         if: always()
         run: |
