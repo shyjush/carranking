@@ -6,6 +6,7 @@ on:
       - 'scripts/weekly-official-efficiency-monitor.py'
       - 'scripts/import-reviewed-official-efficiency.py'
       - 'data/reviewed-official-efficiency.csv'
+      - 'scripts/official-api-sync.py'
   workflow_dispatch:
   schedule:
     # Every Sunday 04:10 KST (Saturday 19:10 UTC), after weekly 03:50 DB audit.
@@ -18,6 +19,9 @@ jobs:
     timeout-minutes: 12
     env:
       PGPASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+      OPINET_API_KEY: ${{ secrets.OPINET_API_KEY }}
+      KEA_SERVICE_KEY: ${{ secrets.KEA_SERVICE_KEY }}
+      KEA_API_URL: ${{ vars.KEA_API_URL }}
     steps:
       - name: Checkout CarRanking
         uses: actions/checkout@v4
@@ -27,11 +31,18 @@ jobs:
         run: python3 scripts/weekly-official-efficiency-monitor.py
       - name: Safely insert any manually verified manufacturer efficiency records
         run: python3 scripts/import-reviewed-official-efficiency.py
+      - name: Ingest verified official nationwide fuel prices and stage official energy API
+        run: python3 scripts/official-api-sync.py
       - name: Add workflow summary
         if: always()
         run: |
           if [ -f official-economy-reports/summary.md ]; then
             cat official-economy-reports/summary.md >> "$GITHUB_STEP_SUMMARY"
+            echo '' >> "$GITHUB_STEP_SUMMARY"
+            echo '### Official API status' >> "$GITHUB_STEP_SUMMARY"
+            if [ -f official-economy-reports/official-api-status.json ]; then
+              cat official-economy-reports/official-api-status.json >> "$GITHUB_STEP_SUMMARY"
+            fi
           else
             echo "Official efficiency monitor could not complete; inspect logs." >> "$GITHUB_STEP_SUMMARY"
           fi
