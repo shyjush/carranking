@@ -71,11 +71,26 @@ if url and service_key:
         qs=[(k,v) for k,v in qs if k.lower() not in ('servicekey','service_key')]
         qs.extend([('serviceKey',service_key),('pageNo','1'),('numOfRows','100'),('apiType','json')])
         address=urllib.parse.urlunparse(parsed_url._replace(query=urllib.parse.urlencode(qs)))
-        data=request_json(address)
-        if not isinstance(data,dict):raise ValueError('unexpected energy API response')
-        # Do not store API keys, request URLs, or personal information in reports.
-        (out/'kea-first-page-staging.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)[:200000],encoding='utf-8')
-        status['kea']='staged first page; needs schema review and exact trim matching'
+        first=request_json(address)
+        if not isinstance(first,dict):raise ValueError('unexpected energy API response')
+        body=first.get('response',{}).get('body',{})
+        first_items=body.get('items',{}).get('item',[])
+        if not isinstance(first_items,list):raise ValueError('expected official list response')
+        total=int(body.get('totalCount',0))
+        if total<1 or total>100000:raise ValueError('invalid official totalCount')
+        all_items=list(first_items)
+        per_page=100
+        for page in range(2,min(1+(total+per_page-1)//per_page,1001)):
+            params=[(k,str(page) if k=='pageNo' else v) for k,v in qs]
+            next_url=urllib.parse.urlunparse(parsed_url._replace(query=urllib.parse.urlencode(params)))
+            response=request_json(next_url)
+            chunk=response.get('response',{}).get('body',{}).get('items',{}).get('item',[])
+            if not isinstance(chunk,list):raise ValueError('unexpected subsequent official page')
+            all_items.extend(chunk)
+        if len(all_items)!=total:raise ValueError(f'incomplete official pages: {len(all_items)} of {total}')
+        (out/'kea-all-pages-staging.json').write_text(json.dumps({'items':all_items,'totalCount':total},ensure_ascii=False),encoding='utf-8')
+        status['kea']='all official pages staged for strict model/trim matching'
+        status['kea_records']=len(all_items)
     except Exception as exc:
         status['kea']='failed'
         status['kea_error']=str(exc)[:250]
