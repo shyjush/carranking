@@ -4,17 +4,24 @@ OPINET: verified national product prices persisted only with supplied official c
 KEA: raw response is staged for review; no guessed vehicle-to-powertrain mapping.
 """
 import datetime as dt
-import json, os, pathlib, re, subprocess, sys, urllib.request, urllib.parse, urllib.error
+import json, os, pathlib, re, subprocess, sys, time, urllib.request, urllib.parse, urllib.error
 out=pathlib.Path('official-economy-reports')
 out.mkdir(exist_ok=True)
 today=dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date()
 status={'date_kst':today.isoformat(),'opinet':'not configured','kea':'not configured'}
 def request_json(url):
     req=urllib.request.Request(url,headers={'User-Agent':'CarRanking/1.0 (+https://carranking.kr)','Accept':'application/json'})
-    with urllib.request.urlopen(req,timeout=25) as resp:
-        if resp.status!=200:raise ValueError(f'HTTP {resp.status}')
-        raw=resp.read(2_000_000)
-    return json.loads(raw.decode('utf-8-sig'))
+    last=None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req,timeout=35) as resp:
+                if resp.status!=200:raise ValueError(f'HTTP {resp.status}')
+                raw=resp.read(2_000_000)
+            return json.loads(raw.decode('utf-8-sig'))
+        except (TimeoutError,urllib.error.URLError) as exc:
+            last=exc
+            if attempt<2:time.sleep(2*(attempt+1))
+    raise last
 def run_psql(sql):
     if not os.getenv('PGPASSWORD'):raise RuntimeError('missing SUPABASE_DB_PASSWORD')
     conn='host=aws-0-ap-northeast-2.pooler.supabase.com port=5432 dbname=postgres user=postgres.ikhyadzboorscjwcrhcz sslmode=require'
