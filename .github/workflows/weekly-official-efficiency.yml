@@ -1,0 +1,37 @@
+name: CarRanking official efficiency coverage monitor
+on:
+  workflow_dispatch:
+  schedule:
+    # Every Sunday 04:10 KST (Saturday 19:10 UTC), after weekly 03:50 DB audit.
+    - cron: '10 19 * * 6'
+permissions:
+  contents: read
+jobs:
+  audit-official-efficiency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PGPASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+    steps:
+      - name: Checkout CarRanking
+        uses: actions/checkout@v4
+      - name: Install PostgreSQL command-line client
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client
+      - name: Check missing official fuel economy and official manufacturer pages
+        run: python3 scripts/weekly-official-efficiency-monitor.py
+      - name: Add workflow summary
+        if: always()
+        run: |
+          if [ -f official-economy-reports/summary.md ]; then
+            cat official-economy-reports/summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Official efficiency monitor could not complete; inspect logs." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Preserve weekly coverage evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-efficiency-coverage
+          path: official-economy-reports/
+          if-no-files-found: warn
+          retention-days: 30
