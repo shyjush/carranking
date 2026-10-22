@@ -1,5 +1,11 @@
 name: CarRanking official efficiency coverage monitor
 on:
+  push:
+    paths:
+      - '.github/workflows/weekly-official-efficiency.yml'
+      - 'scripts/weekly-official-efficiency-monitor.py'
+      - 'scripts/import-reviewed-official-efficiency.py'
+      - 'data/reviewed-official-efficiency.csv'
   workflow_dispatch:
   schedule:
     # Every Sunday 04:10 KST (Saturday 19:10 UTC), after weekly 03:50 DB audit.
