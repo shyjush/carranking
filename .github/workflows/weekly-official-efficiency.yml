@@ -19,6 +19,8 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client
       - name: Check missing official fuel economy and official manufacturer pages
         run: python3 scripts/weekly-official-efficiency-monitor.py
+      - name: Safely insert any manually verified manufacturer efficiency records
+        run: python3 scripts/import-reviewed-official-efficiency.py
       - name: Add workflow summary
         if: always()
         run: |
