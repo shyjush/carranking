@@ -1,6 +1,7 @@
 'use strict';
 const $=id=>document.getElementById(id);
 const prices={gas:1700,diesel:1550,lpg:1000,ev:300};
+let officialPriceDate=null;
 let listed=[];
 let registered=[];
 function parseRated(s){
@@ -34,7 +35,7 @@ function buildRow(spec,power,label){
 function render(){
  const query=$('search').value.trim().toLowerCase(),filter=$('fuelFilter').value;
  const items=listed.filter(x=>(!query||x.name.toLowerCase().includes(query))&&(filter==='all'||(filter==='ev'?x.fuel==='ev':x.fuel!=='ev')));
- $('status').textContent='공식 연비·배기량 조건을 충족하는 차량 '+listed.length+'건 · 검색 결과 '+items.length+'건 · 예시 단가 기준';
+ $('status').textContent='공식 연비·배기량 조건을 충족하는 차량 '+listed.length+'건 · 검색 결과 '+items.length+'건 · '+(officialPriceDate?'오피넷 공식 유가 '+officialPriceDate+' 기준 (전기요금은 예시)':'예시 단가 기준');
  const container=$('cards');container.replaceChildren();
  const missing=$('unranked');missing.replaceChildren();
  if(query){
@@ -63,7 +64,7 @@ function render(){
   }card.append(d);
   const btn=document.createElement('button');btn.type='button';btn.textContent='산출 근거 확인';btn.setAttribute('aria-expanded','false');
   const detail=document.createElement('div');detail.className='detail';detail.hidden=true;
-  const text=document.createElement('p');text.textContent='공식자료 표기 연비: '+item.raw+' / '+(item.cc?('DB 배기량: '+item.cc+'cc'):'전기차 정액 자동차세')+' / 연간 15,000km · 예시 단가 '+prices[item.fuel].toLocaleString('ko-KR')+(item.fuel==='ev'?'원/kWh':'원/L');
+  const text=document.createElement('p');text.textContent='공식자료 표기 연비: '+item.raw+' / '+(item.cc?('DB 배기량: '+item.cc+'cc'):'전기차 정액 자동차세')+' / 연간 15,000km · '+(officialPriceDate&&item.fuel!=='ev'?'오피넷 유가('+officialPriceDate+') ':'예시 단가 ')+prices[item.fuel].toLocaleString('ko-KR')+(item.fuel==='ev'?'원/kWh':'원/L');
   const source=document.createElement('a');source.href=item.source;source.target='_blank';source.rel='noopener noreferrer';source.textContent='연비 원자료 열기 ↗';
   const note=document.createElement('p');note.textContent='표시된 특정 제원·연비 조건에 따른 기본 운영비 추정치입니다.';
   detail.append(text,source,note);btn.addEventListener('click',()=>{detail.hidden=!detail.hidden;btn.setAttribute('aria-expanded',String(!detail.hidden));});
@@ -77,6 +78,16 @@ $('search').addEventListener('input',render);$('fuelFilter').addEventListener('c
   if(!c?.useSupabase||!c.supabaseUrl||!c.supabasePublishableKey)throw Error('DB 설정을 사용할 수 없습니다.');
   const h={apikey:c.supabasePublishableKey,Authorization:'Bearer '+c.supabasePublishableKey};
   async function get(path){const r=await fetch(c.supabaseUrl+'/rest/v1/'+path,{headers:h});if(!r.ok)throw Error('자료 조회 HTTP '+r.status);return r.json();}
+  try {
+   const latest=await get('official_fuel_prices?select=fuel_type,price_krw,price_date&limit=4');
+   const byType=new Map(latest.map(x=>[x.fuel_type,x]));
+   const dated=latest.filter(x=>['gas','diesel','lpg'].includes(x.fuel_type));
+   const valid=dated.length===3&&new Set(dated.map(x=>x.fuel_type)).size===3&&dated.every(x=>x.price_date===dated[0].price_date&&Number(x.price_krw)>=200&&Number(x.price_krw)<=5000);
+   if(valid){
+    for(const kind of ['gas','diesel','lpg'])prices[kind]=Number(byType.get(kind).price_krw);
+    officialPriceDate=dated[0].price_date;
+   }
+  }catch(e){console.warn('Official fuel prices unavailable: example prices retained',e)}
   const [specs,powers,details]=await Promise.all([
    get('vehicle_specs?select=generation_id,powertrain_id,combined_efficiency,source_url&limit=1000'),
    get('powertrains?select=id,generation_id,name,fuel_type,displacement_cc&limit=1000'),
