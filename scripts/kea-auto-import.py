@@ -6,7 +6,7 @@ import csv, datetime as dt, json, os, pathlib, re, subprocess, unicodedata
 from urllib.parse import urlparse
 root=pathlib.Path('official-economy-reports');root.mkdir(exist_ok=True)
 stage=root/'kea-all-pages-staging.json'
-report={'mode':'strict automatic KEA official match','scanned':0,'matched':0,'inserted':0,'ambiguous':0,'unmatched':0,'status':'not configured'}
+report={'mode':'strict automatic KEA official match','scanned':0,'matched':0,'inserted':0,'ambiguous':0,'unmatched':0,'status':'not configured','candidate_file':'kea-pending-review.csv'}
 def finish():
  (root/'kea-auto-import.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8')
  print(json.dumps(report,ensure_ascii=False))
@@ -45,6 +45,7 @@ records=staged.get('items',[]) if isinstance(staged,dict) else []
 if not isinstance(records,list):raise RuntimeError('KEA staged items must be a list')
 report['scanned']=len(records)
 matches={}
+pending=[]
 for row in records:
  model=get(row,'MODEL_NM','modelNm','modelName','모델명','차명','차종명')
  maker=get(row,'COMP_NM','makerNm','companyNm','manufacturer','제조사','업체명')
@@ -71,11 +72,17 @@ for row in records:
   drive=re.search(r'(2wd|4wd|awd)',label)
   if drive and drive.group(1) not in normalize(variant):continue
   possible.append(p)
- if len(possible)!=1:report['ambiguous' if possible else 'unmatched']+=1;continue
+ if len(possible)!=1:
+  report['ambiguous' if possible else 'unmatched']+=1
+  pending.append({'manufacturer':maker,'official_model':model,'year':year,'fuel':energy,'displacement':cc,'efficiency':combined,'reason':'multiple_matching_powertrains' if possible else 'new_or_unmatched_model'})
+  continue
  p=possible[0]
  # Multiple official trims for one powertrain differ by wheel/drive/option; never arbitrarily pick one.
  matches.setdefault(p['powertrain_id'],[]).append((p,row,value,energy,variant,year))
 approved=[v[0] for v in matches.values() if len(v)==1]
+with (root/'kea-pending-review.csv').open('w',newline='',encoding='utf-8-sig') as fh:
+ writer=csv.DictWriter(fh,fieldnames=['manufacturer','official_model','year','fuel','displacement','efficiency','reason']);writer.writeheader();writer.writerows(pending)
+report['new_or_unmatched_candidates']=sum(x['reason']=='new_or_unmatched_model' for x in pending)
 report['matched']=len(approved);report['ambiguous']+=sum(len(v) for v in matches.values() if len(v)>1)
 if approved:
  entries=[]
