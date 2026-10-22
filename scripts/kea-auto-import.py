@@ -5,7 +5,7 @@ Reads the fetched public energy data staged by official-api-sync.py. No credenti
 import csv, datetime as dt, json, os, pathlib, re, subprocess, unicodedata
 from urllib.parse import urlparse
 root=pathlib.Path('official-economy-reports');root.mkdir(exist_ok=True)
-stage=root/'kea-first-page-staging.json'
+stage=root/'kea-all-pages-staging.json'
 report={'mode':'strict automatic KEA official match','scanned':0,'matched':0,'inserted':0,'ambiguous':0,'unmatched':0,'status':'not configured'}
 def finish():
  (root/'kea-auto-import.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8')
@@ -40,17 +40,19 @@ def query(sql):
  return list(csv.DictReader(p.stdout.splitlines()))
 if not os.getenv('PGPASSWORD'):raise SystemExit('Missing database secret')
 db=query("""select p.id as powertrain_id,p.generation_id,d.brand,d.model,coalesce(d.generation_code,'') as generation_code,p.name as powertrain,p.fuel_type,coalesce(p.displacement_cc::text,'') as cc from public.powertrains p join public.web_vehicle_detail d on d.generation_id=p.generation_id where not exists(select 1 from public.vehicle_specs s where s.powertrain_id=p.id and coalesce(s.combined_efficiency,'')<>'')""")
-records=list(recurse(json.loads(stage.read_text(encoding='utf8'))))
+staged=json.loads(stage.read_text(encoding='utf8'))
+records=staged.get('items',[]) if isinstance(staged,dict) else []
+if not isinstance(records,list):raise RuntimeError('KEA staged items must be a list')
 report['scanned']=len(records)
 matches={}
 for row in records:
- model=get(row,'modelNm','modelName','모델명','차명','차종명')
- maker=get(row,'makerNm','companyNm','manufacturer','제조사','업체명')
- combined=get(row,'combEff','combinedEfficiency','combinedFuelEfficiency','복합연비','복합전비','연비')
- cc=get(row,'displacement','배기량','engineSize','배기량(cc)')
- variant=get(row,'trimName','차량세부명','세부모델명','차종상세명','modelDetail')
- year=get(row,'year','연식','modelYear','모델연도')
- energy=fuel(get(row,'fuelType','fuelNm','연료','유종'))
+ model=get(row,'MODEL_NM','modelNm','modelName','모델명','차명','차종명')
+ maker=get(row,'COMP_NM','makerNm','companyNm','manufacturer','제조사','업체명')
+ combined=get(row,'DISPLAY_EFF','combEff','combinedEfficiency','combinedFuelEfficiency','복합연비','복합전비','연비')
+ cc=get(row,'ENGINE_DISPLACEMENT','displacement','배기량','engineSize','배기량(cc)')
+ variant=get(row,'MODEL_NM','trimName','차량세부명','세부모델명','차종상세명','modelDetail')
+ year=get(row,'YEAR','year','연식','modelYear','모델연도')
+ energy=fuel(get(row,'FUEL_NM','fuelType','fuelNm','연료','유종'))
  matchnumber=re.search(r'\d+(?:\.\d+)?',combined.replace(',',''))
  if not maker or not model or not matchnumber or not energy or not variant or not year:
   report['unmatched']+=1;continue
@@ -58,11 +60,16 @@ for row in records:
  if not 0.5<=value<=40:report['unmatched']+=1;continue
  possible=[]
  for p in db:
-  if normalize(p['brand'])!=normalize(maker) or normalize(p['model'])!=normalize(model):continue
+  brand=normalize(p['brand']);official=normalize(maker);name=normalize(model)
+  brand_ok=(brand==official or (brand=='기아' and ('기아' in official or 'kia' in official)) or (brand=='현대' and ('현대' in official or 'hyundai' in official)) or (brand=='제네시스' and ('현대' in official or '제네시스' in official or 'genesis' in official)))
+  if not brand_ok or not name.startswith(normalize(p['model'])):continue
   if fuel(p['fuel_type'])!=energy:continue
   if energy!='ev' and (not cc.isdigit() or abs(int(cc)-int(p['cc'] or 0))>3):continue
   # Exact registered powertrain label must appear in official variant, not a broad model-only match.
-  if normalize(p['powertrain']) not in normalize(variant):continue
+  label=normalize(p['powertrain'])
+  # Every drive or drivetrain trait registered in DB must be explicitly supported by the official name.
+  drive=re.search(r'(2wd|4wd|awd)',label)
+  if drive and drive.group(1) not in normalize(variant):continue
   possible.append(p)
  if len(possible)!=1:report['ambiguous' if possible else 'unmatched']+=1;continue
  p=possible[0]
