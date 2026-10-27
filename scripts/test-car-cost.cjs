@@ -1,0 +1,16 @@
+'use strict';
+const assert=require('node:assert/strict'),C=require('../car-cost-core.js');
+const p={id:'p',generation_id:'g',name:'K5(DL3) 1.6T 17인치 · 2020년 인증',fuel_type:'가솔린',displacement_cc:1598};
+const s={id:'s',generation_id:'g',powertrain_id:'p',source_url:'https://www.data.go.kr/data/15139827/openapi.do',combined_efficiency:'13.6 km/L (K5 DL3)',verified_at:'2026-10-27'};
+const v=C.variant(s,p);assert(v);assert.equal(v.certificationYear,'2020');assert.equal(v.efficiency,13.6);
+for(const spec of [{...s,generation_id:'other'},{...s,powertrain_id:'other'},{...s,source_url:'https://data.go.kr.evil.test/x'},{...s,source_url:'https://auto.danawa.com/x'},{...s,combined_efficiency:'최대 복합 15 km/L'},{...s,combined_efficiency:'13 km/L / 14 km/L'},{...s,combined_efficiency:'5 km/kWh'}])assert.equal(C.variant(spec,p),null);
+assert.equal(C.source('javascript:alert(1)').url,null);assert.equal(C.source('https://www.kia.com/kr').kind,'manufacturer');
+const approx=(a,b)=>assert(Math.abs(a-b)<0.00001,`${a} != ${b}`);
+for(const [cc,total] of [[1000,104000],[1001,182182],[1600,291200],[1601,416260]])approx(C.tax({...v,cc},1).total,total);
+approx(C.tax(v,3).total,1598*140*.95*1.3);approx(C.tax(v,12).total,1598*140*.5*1.3);approx(C.tax(v,40).total,C.tax(v,12).total);
+approx(C.tax({...v,fuel:'ev',cc:null},12).total,130000);
+const conditions={km:15000,prices:{gas:1700}};const k=C.calculate(v,conditions,{age:1,insurance:'',maintenance:''});approx(k.basic,15000/13.6*1700+1598*140*1.3);assert.equal(k.insurance,null);assert.equal(k.optionalComplete,false);
+const extras=C.calculate(v,conditions,{age:1,insurance:800000,maintenance:300000});approx(extras.total,k.basic+1100000);approx(extras.monthly,extras.total/12);
+const zero=C.calculate(v,{km:0,prices:{gas:0}},{age:1,insurance:0,maintenance:0});assert.equal(zero.optionalComplete,true);assert.equal(zero.energy,0);
+for(const km of ['',-1,200001,'NaN'])assert.throws(()=>C.calculate(v,{...conditions,km}));assert.throws(()=>C.calculate(v,{km:15000,prices:{gas:''}}));assert.throws(()=>C.calculate(v,conditions,{age:2.5}));assert.throws(()=>C.calculate(v,conditions,{insurance:-1}));
+console.log('PASS exact-spec evidence, fuel-unit, cc-tax boundaries, age cap, EV tax, missing versus zero, annual/monthly costs and invalid inputs');

@@ -23,6 +23,8 @@ function classified(value){
 }
 const won=n=>Math.round(n).toLocaleString('ko-KR')+'원';
 function buildRow(spec,power,label){
+ const checked=window.CarCostCore.variant(spec,power);
+ if(!checked)return null;
  const rated=parseRated(spec.combined_efficiency),fuel=classified(power.fuel_type);
  if(!rated||!fuel||(rated.unit==='ev')!==(fuel==='ev'))return null;
  if(!/^https:\/\//.test(spec.source_url||'')||!label)return null;
@@ -31,7 +33,7 @@ function buildRow(spec,power,label){
  const annualFuel=15000/rated.eff*prices[fuel];
  const base=fuel==='ev'?100000:cc*(cc<=1000?80:cc<=1600?140:200);
  const annualTax=base*1.3;
- return {generation_id:String(spec.generation_id),name:label+' · '+power.name,raw:String(spec.combined_efficiency),fuel,cc: fuel==='ev'?null:cc,eff:rated.eff,source:spec.source_url,fuelCost:annualFuel,taxCost:annualTax,total:annualFuel+annualTax};
+ return {generation_id:String(spec.generation_id),name:label+' · '+power.name,raw:String(spec.combined_efficiency),fuel,cc: fuel==='ev'?null:cc,eff:rated.eff,source:spec.source_url,sourceLabel:checked.evidence.label,verifiedAt:checked.verifiedAt,certificationYear:checked.certificationYear,fuelCost:annualFuel,taxCost:annualTax,total:annualFuel+annualTax};
 }
 function render(){
  const query=$('search').value.trim().toLowerCase(),filter=$('fuelFilter').value;
@@ -88,8 +90,9 @@ function render(){
   const detail=document.createElement('div');detail.className='detail';detail.hidden=true;
   const text=document.createElement('p');text.textContent='공식자료 표기 연비: '+item.raw+' / '+(item.cc?('DB 배기량: '+item.cc+'cc'):'전기차 정액 자동차세')+' / 연간 15,000km · '+(officialPriceDate&&item.fuel!=='ev'?'오피넷 유가('+officialPriceDate+') ':'예시 단가 ')+prices[item.fuel].toLocaleString('ko-KR')+(item.fuel==='ev'?'원/kWh':'원/L');
   const source=document.createElement('a');source.href=item.source;source.target='_blank';source.rel='noopener noreferrer';source.textContent='연비 원자료 열기 ↗';
-  const note=document.createElement('p');note.textContent='표시된 특정 제원·연비 조건에 따른 기본 운영비 추정치입니다.';
-  detail.append(text,source,note);btn.addEventListener('click',()=>{detail.hidden=!detail.hidden;btn.setAttribute('aria-expanded',String(!detail.hidden));});
+  const note=document.createElement('p');note.textContent=item.sourceLabel+' · 자료 확인일 '+(item.verifiedAt||'미기록')+' · 인증연도 '+(item.certificationYear||'미기록')+'. 실제 연식·현재 판매 여부는 별도 확인이 필요합니다. 표시 사양에 따른 기본 운영비 추정치입니다.';
+  const compare=document.createElement('a');compare.href='/vehicle-tools.html?generation='+encodeURIComponent(item.generation_id);compare.textContent='이 차량 사양 선택·내 유지비 비교 ↗';
+  detail.append(text,source,note,compare);btn.addEventListener('click',()=>{detail.hidden=!detail.hidden;btn.setAttribute('aria-expanded',String(!detail.hidden));});
   card.append(btn,detail);container.append(card);
  });
 }
@@ -118,7 +121,7 @@ $('search').addEventListener('input',render);$('fuelFilter').addEventListener('c
    }
   }catch(e){console.warn('Official KEA vehicle catalog unavailable',e)}
   const [specs,powers,details]=await Promise.all([
-   get('vehicle_specs?select=generation_id,powertrain_id,combined_efficiency,source_url&limit=1000'),
+   get('vehicle_specs?select=id,generation_id,powertrain_id,combined_efficiency,source_url,verified_at&limit=1000'),
    get('powertrains?select=id,generation_id,name,fuel_type,displacement_cc&limit=1000'),
    get('web_vehicle_detail?select=generation_id,brand,model,generation_code&limit=1000')
   ]);
