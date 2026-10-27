@@ -2,14 +2,15 @@
 """Publish transparent review status without republishing unverified prices."""
 import html,json,pathlib
 R=pathlib.Path('research/followup-20261027');rows=json.loads((R/'depreciation-audit.json').read_text());targets=(R/'target-specs.txt').read_text().splitlines();assert len(rows)==len(targets)==63
-price_files=[R/'original-price-evidence.json',pathlib.Path('research/phase3-20261028/original-price-evidence.json'),pathlib.Path('research/phase4-20261028/original-price-evidence.json')]
+price_files=[R/'original-price-evidence.json',pathlib.Path('research/phase3-20261028/original-price-evidence.json'),pathlib.Path('research/phase4-20261028/original-price-evidence.json'),pathlib.Path('research/phase5-20261028/original-price-evidence.json')]
 prices={r['depreciation_id']:r for f in price_files if f.exists() for r in json.loads(f.read_text())}
 db={d['id']:d for d in json.loads((R/'before-depreciation.json').read_text())}
 esc=html.escape;articles=[]
 review_file=pathlib.Path('research/phase2-20261028/listing-review.json')
 listing_reviews={r['depreciation_id']:r for r in json.loads(review_file.read_text())} if review_file.exists() else {}
 price_review_file=pathlib.Path('research/phase4-20261028/price-review.json')
-price_reviews={r['depreciation_id']:r for r in json.loads(price_review_file.read_text())} if price_review_file.exists() else {}
+price_review_files=[price_review_file,pathlib.Path('research/phase5-20261028/price-review.json')]
+price_reviews={r['depreciation_id']:r for f in price_review_files if f.exists() for r in json.loads(f.read_text())}
 for r,target in zip(rows,targets):
  r['target_spec']=target;r['generation_id']=db[r['depreciation_id']]['generation_id'];p=prices.get(r['depreciation_id'])
  if p:r['partial_original_price']=p;r['missing'][-1]='공식 기본가격 일부 확보. 개별 차량 계약월의 세율·선택 옵션 및 매물 가격과의 일치 확인 필요'

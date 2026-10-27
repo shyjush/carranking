@@ -1,0 +1,38 @@
+[
+  {
+    "depreciation_id": "72954872-d2af-4144-95c5-b3f12c6dde1d",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=947962",
+    "source_date": "2022-07-15",
+    "stored_price_krw": 56980000,
+    "reference_price_krw": 54100000,
+    "scope": "2023 아이오닉 5 NE 롱레인지 익스클루시브 세제혜택 후",
+    "reason": "저장 가격 5698만원과 원문 세제혜택 후 5410만원의 세금 기준 일치가 확인되지 않았습니다. 세제혜택 전후 가격표·계약월 및 2WD 옵션을 확인해야 합니다. 차이를 오류로 단정하지 않습니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "held_price_or_year_scope",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "b9c8e2f6-07e0-4c0e-9a5c-dc6bee0e8039",
+    "source_url": "https://www.hyundaimotorgroup.com/ko/news/CONT0000000000104767",
+    "source_date": "2023-08-14",
+    "stored_price_krw": 41790000,
+    "reference_price_krw": 37940000,
+    "scope": "싼타페 MX5 출시형 2.5 가솔린 터보 프레스티지 개소세 5%",
+    "reason": "저장 2024년 4179만원과 2023년 출시 원문의 가솔린 프레스티지 3794만원은 일치하지 않습니다. 5인승·2WD·연식별 가격표와 옵션을 확인해야 합니다. 하이브리드 프레스티지 4279만원으로 대체하지 않습니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "held_price_or_year_scope",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "46a20a04-0259-4f65-85e3-a2c1d726b3cb",
+    "source_url": "https://www.press.bmwgroup.com/korea/article/detail/T0306205KO/",
+    "source_date": "2020-03-03",
+    "stored_price_krw": 54600000,
+    "reference_price_krw": 53200000,
+    "scope": "BMW G20 320i M 스포츠 패키지 출시형 개소세 인하·VAT 포함",
+    "reason": "2020년 출시 원문 5320만원은 저장 2021년 5460만원의 직접 근거가 아닙니다. 2021년형 옵션 구성 및 계약월 세율·가격표 확인 전 기존 가격을 변경하지 않습니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "held_price_or_year_scope",
+    "does_not_verify_depreciation": true
+  }
+]

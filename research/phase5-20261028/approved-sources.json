@@ -1,0 +1,56 @@
+[
+  {
+    "id": "3670feb4-ce46-5421-af70-e021339700f4",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "3a1de851-6f42-4684-a2be-f5271072a01a",
+    "source_url": "https://newsroom.genesis.com/ko-ko/%EC%A0%9C%EB%84%A4%EC%8B%9C%EC%8A%A4-%252C-G80-2018%EB%85%84%ED%98%95-%EC%B6%9C%EC%8B%9C/"
+  },
+  {
+    "id": "7b3ce574-8186-5e66-981c-d2087d4c95ce",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "40da5525-e795-4bd5-bb3b-012bbd24347f",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=898766"
+  },
+  {
+    "id": "5751dc73-17f7-5296-9ddc-d7137f6df060",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "641adc00-9116-4c02-b612-22b4f69f5876",
+    "source_url": "https://www.volkswagen.co.kr/ko/promotion_news/news/2020/2020-12-16.html"
+  },
+  {
+    "id": "2d89964b-bf3e-596c-a619-8ceafc4a8b9f",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "57849365-b837-47bf-b73d-ded8dd7767e9",
+    "source_url": "https://www.volkswagen.co.kr/ko/promotion_news/news/news-2022/2022-10-14.html"
+  },
+  {
+    "id": "eba7826b-db33-5fdd-b802-abe53a9b9dce",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "a305920d-690b-499a-9b07-575ed23fbc09",
+    "source_url": "https://www.volkswagen.co.kr/ko/promotion_news/news/2021/2021-07-23.html"
+  },
+  {
+    "id": "3a42b1bc-f133-57bb-b5e6-9b831cc01404",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "9e71101b-12f6-4748-a707-979f74ab8bae",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=802888"
+  },
+  {
+    "id": "066ff56d-30a5-5b62-854e-91d559615a29",
+    "entity_type": "depreciation_price_review",
+    "entity_id": "72954872-d2af-4144-95c5-b3f12c6dde1d",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=947962"
+  },
+  {
+    "id": "4368204d-2914-5b70-88e0-eb22f6266914",
+    "entity_type": "depreciation_price_review",
+    "entity_id": "b9c8e2f6-07e0-4c0e-9a5c-dc6bee0e8039",
+    "source_url": "https://www.hyundaimotorgroup.com/ko/news/CONT0000000000104767"
+  },
+  {
+    "id": "e6d782d9-d4b0-5372-b712-37dbc1dda2b6",
+    "entity_type": "depreciation_price_review",
+    "entity_id": "46a20a04-0259-4f65-85e3-a2c1d726b3cb",
+    "source_url": "https://www.press.bmwgroup.com/korea/article/detail/T0306205KO/"
+  }
+]
