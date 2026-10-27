@@ -1,0 +1,40 @@
+{
+  "initial": [
+    {
+      "entity_type": "depreciation_price_review",
+      "inserted": 6,
+      "ids": [
+        "0d336573-a7e2-5287-8d5f-7cfc2cfae965",
+        "00f24a86-b0fb-5643-a8f5-a6171e774174",
+        "353627b3-9e43-58aa-a61b-85bddfd9b0b4",
+        "40613035-be58-5fc7-a44a-2a7e89e9258c",
+        "0109c96e-26d5-5fc8-b7c1-74a8a449e882",
+        "3a433093-5405-5fed-811d-449d8b6cec21"
+      ]
+    },
+    {
+      "entity_type": "depreciation_original_price",
+      "inserted": 8,
+      "ids": [
+        "592d7907-b84b-5650-8984-e5b3634984d5",
+        "7248ef75-bf5b-5baf-b639-40aad93c9fa1",
+        "8a946fd6-7acf-5249-bb92-bb5c8d5a5304",
+        "15295853-c112-5245-9a14-5e5aa7e3aa09",
+        "8dae6c42-4a0b-5a78-89da-0252de499118",
+        "27df78fe-fa58-5002-abbf-1eb831f0a776",
+        "65790bc0-81a6-56ac-acb5-7e8763ebed40",
+        "198145f2-1959-5360-8521-5e13dff341be"
+      ]
+    }
+  ],
+  "repeated": [
+    {
+      "pg_advisory_xact_lock": ""
+    }
+  ],
+  "updates": 0,
+  "checks": {
+    "depreciationUnchanged": true,
+    "cronUnchanged": true
+  }
+}

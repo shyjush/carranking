@@ -1,0 +1,128 @@
+[
+  {
+    "id": "592d7907-b84b-5650-8984-e5b3634984d5",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "87d1689e-1f76-473c-be02-d5a206a0d03b",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=904799",
+    "confidence": "A",
+    "verified_at": "2026-10-28",
+    "note": "{\"depreciation_id\": \"87d1689e-1f76-473c-be02-d5a206a0d03b\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=904799\", \"source_date\": \"2020-05-12\", \"price_krw\": 13500000, \"scope\": \"모닝 JA 어반 프레스티지 기본가격, 경차 개별소비세 비과세\", \"limitations\": \"2020년 출시자료입니다. 저장 2021 모델연도 전체 적용은 확정하지 않았습니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"partial_original_price_only\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "7248ef75-bf5b-5baf-b639-40aad93c9fa1",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "45183f39-c17f-4d6a-a535-f4fd25107319",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=921237",
+    "confidence": "A",
+    "verified_at": "2026-10-28",
+    "note": "{\"depreciation_id\": \"45183f39-c17f-4d6a-a535-f4fd25107319\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=921237\", \"source_date\": \"2021-04-08\", \"price_krw\": 35100000, \"scope\": \"K8 GL3 출시형 2.5 가솔린 노블레스, 개소세 3.5%\", \"limitations\": \"2021년 출시자료이며 저장 2022 모델연도의 계약월·옵션 가격표를 별도 확인해야 합니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"partial_original_price_only\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "8a946fd6-7acf-5249-bb92-bb5c8d5a5304",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "71101d19-0b34-4fe7-9666-8a62a7793753",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=909345",
+    "confidence": "A",
+    "verified_at": "2026-10-28",
+    "note": "{\"depreciation_id\": \"71101d19-0b34-4fe7-9666-8a62a7793753\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=909345\", \"source_date\": \"2020-08-18\", \"price_krw\": 31600000, \"scope\": \"카니발 KA4 3.5 가솔린 9인승 프레스티지, 개별소비세 비과세\", \"limitations\": \"2020년 출시형, 9/11인승 가격입니다. 7인승·디젤·하이리무진과 혼합하지 않습니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"partial_original_price_only\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "15295853-c112-5245-9a14-5e5aa7e3aa09",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "5dbcc126-469d-40ac-a357-fe282aa22b06",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=912184",
+    "confidence": "A",
+    "verified_at": "2026-10-28",
+    "note": "{\"depreciation_id\": \"5dbcc126-469d-40ac-a357-fe282aa22b06\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=912184\", \"source_date\": \"2020-10-15\", \"price_krw\": 22440000, \"scope\": \"더 뉴 코나 OS 1.6 가솔린 터보 모던, 개소세 3.5%\", \"limitations\": \"2020년 발표된 OS 부분변경 모델입니다. SX2 2.0 및 하이브리드와 구분하며 저장 2021 적용 확인이 남았습니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"partial_original_price_only\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "8dae6c42-4a0b-5a78-89da-0252de499118",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "8a74ee09-b515-4d92-92e5-2329860bdc28",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=913448",
+    "confidence": "A",
+    "verified_at": "2026-10-28",
+    "note": "{\"depreciation_id\": \"8a74ee09-b515-4d92-92e5-2329860bdc28\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=913448\", \"source_date\": \"2020-11-04\", \"price_krw\": 36950000, \"scope\": \"올 뉴 렉스턴 Y400 럭셔리 기본가격\", \"limitations\": \"2020년 출시자료입니다. 저장 2021 및 2WD·좌석수·세율·옵션 범위를 계약월 가격표로 확인해야 합니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"partial_original_price_only\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "27df78fe-fa58-5002-abbf-1eb831f0a776",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "18b2ce20-7caa-4a03-b509-e088f9a37ae7",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=923084",
+    "confidence": "A",
+    "verified_at": "2026-10-28",
+    "note": "{\"depreciation_id\": \"18b2ce20-7caa-4a03-b509-e088f9a37ae7\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=923084\", \"source_date\": \"2021-05-11\", \"price_krw\": 33030000, \"scope\": \"2021 그랜저 IG 2.5 가솔린 프리미엄, 개소세 3.5%\", \"limitations\": \"2021년형 가격을 확인했습니다. 르블랑·3.3·하이브리드와 구분합니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"partial_original_price_only\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "65790bc0-81a6-56ac-acb5-7e8763ebed40",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "7e2e86a9-7790-4e93-91c2-5a942cde49f2",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=968959",
+    "confidence": "A",
+    "verified_at": "2026-10-28",
+    "note": "{\"depreciation_id\": \"7e2e86a9-7790-4e93-91c2-5a942cde49f2\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=968959\", \"source_date\": \"2023-06-18\", \"price_krw\": 73370000, \"scope\": \"EV9 MV 출시형 에어 2WD, 친환경차 세제혜택 후 기본가격\", \"limitations\": \"2023-06 출시자료. 7월 이후 개소세 5% 과세표준 특례 가격도 7337만원으로 명시. 저장 2024 적용·좌석/휠/옵션·보조금은 별도 확인합니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"partial_original_price_only\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "198145f2-1959-5360-8521-5e13dff341be",
+    "entity_type": "depreciation_original_price",
+    "entity_id": "8beb2f91-4080-4d4e-a74c-e682e126f18a",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=743071",
+    "confidence": "A",
+    "verified_at": "2026-10-28",
+    "note": "{\"depreciation_id\": \"8beb2f91-4080-4d4e-a74c-e682e126f18a\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=743071\", \"source_date\": \"2014-03-24\", \"price_krw\": 22550000, \"scope\": \"쏘나타 LF 출시형 2.0 CVVL 스타일 자동변속기 기본가격\", \"limitations\": \"수동변속기 및 2.4 GDi와 구분합니다. 출시 후 세율 변경·옵션은 계약월 가격표 확인이 남았습니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"partial_original_price_only\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "0d336573-a7e2-5287-8d5f-7cfc2cfae965",
+    "entity_type": "depreciation_price_review",
+    "entity_id": "c4057536-9d18-4407-a1b1-d95a1438d090",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=821677",
+    "confidence": "C",
+    "verified_at": null,
+    "note": "{\"depreciation_id\": \"c4057536-9d18-4407-a1b1-d95a1438d090\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=821677\", \"source_date\": \"2016-03-29\", \"stored_price_krw\": 24780000, \"reference_price_krw\": 23270000, \"scope\": \"2016 니로 DE 1.6 HEV 럭셔리\", \"reason\": \"원문 표시가격은 개소세·교육세 혜택 후 2327만원이며 별도 보조금 등을 반영한 실구매 예시 2235만원과도 구분됩니다. 저장 2478만원의 세금·옵션·시점 근거가 일치하지 않아 가격 검증 보류. 원래 가격을 자동 변경하지 않았습니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"held_price_or_year_scope\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "00f24a86-b0fb-5643-a8f5-a6171e774174",
+    "entity_type": "depreciation_price_review",
+    "entity_id": "05775ad4-0e37-4898-802a-f29c6e37c089",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=959964",
+    "confidence": "C",
+    "verified_at": null,
+    "note": "{\"depreciation_id\": \"05775ad4-0e37-4898-802a-f29c6e37c089\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=959964\", \"source_date\": \"2023-01-18\", \"stored_price_krw\": 30020000, \"reference_price_krw\": 24680000, \"scope\": \"2023 코나 SX2 2.0 가솔린 모던\", \"reason\": \"출시자료의 2.0 모던 기본가격은 개소세 3.5% 기준 2468만원입니다. 저장 3002만원은 같은 조건으로 확인되지 않습니다. 다른 트림·엔진이나 옵션 가격을 가져오지 않고 당시 계약월 가격표 대조까지 보류합니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"held_price_or_year_scope\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "353627b3-9e43-58aa-a61b-85bddfd9b0b4",
+    "entity_type": "depreciation_price_review",
+    "entity_id": "3f14ad54-d975-46c3-9439-7391199e8cfa",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=948485",
+    "confidence": "C",
+    "verified_at": null,
+    "note": "{\"depreciation_id\": \"3f14ad54-d975-46c3-9439-7391199e8cfa\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=948485\", \"source_date\": \"2022-07-25\", \"stored_price_krw\": 26700000, \"reference_price_krw\": 26510000, \"scope\": \"2023 스포티지 NQ5 1.6 가솔린 터보 프레스티지\", \"reason\": \"2022년 발표된 2023년형 기본가격은 개소세 3.5% 기준 2651만원으로 저장 2670만원과 다릅니다. 후속 가격 변경·세율·옵션 적용 여부를 확인하기 전에는 저장값을 확정하거나 원문 가격으로 덮어쓰지 않습니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"held_price_or_year_scope\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "40613035-be58-5fc7-a44a-2a7e89e9258c",
+    "entity_type": "depreciation_price_review",
+    "entity_id": "1c2c3de0-a227-49ea-b0eb-c80509aa2b72",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=797762",
+    "confidence": "C",
+    "verified_at": null,
+    "note": "{\"depreciation_id\": \"1c2c3de0-a227-49ea-b0eb-c80509aa2b72\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=797762\", \"source_date\": \"2015-07-15\", \"stored_price_krw\": 23410000, \"reference_price_krw\": 23850000, \"scope\": \"K5 JF 출시형 2.0 가솔린 럭셔리 MX/SX\", \"reason\": \"2015-07 출시가격은 2385만원으로 저장 2341만원과 다릅니다. 후속 개소세 인하 가격일 가능성은 있으나 이를 추정으로 확정하지 않습니다. 계약월 공식 가격표·모델연도 확인이 필요합니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"held_price_or_year_scope\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "0109c96e-26d5-5fc8-b7c1-74a8a449e882",
+    "entity_type": "depreciation_price_review",
+    "entity_id": "2d2daea5-5d2e-4339-ba86-c0150bb3bda3",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=926392",
+    "confidence": "C",
+    "verified_at": null,
+    "note": "{\"depreciation_id\": \"2d2daea5-5d2e-4339-ba86-c0150bb3bda3\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=926392\", \"source_date\": \"2021-07-01\", \"stored_price_krw\": 34240000, \"reference_price_krw\": 33510000, \"scope\": \"The 2022 쏘렌토 MQ4 2.2 디젤 프레스티지\", \"reason\": \"2022년형 출시자료의 개소세 3.5% 기준 기본가격은 3351만원으로 저장 3424만원과 다릅니다. 좌석수·구동·옵션·후속 가격 변경 적용을 계약월 가격표로 확인하기 전까지 보류합니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"held_price_or_year_scope\", \"does_not_verify_depreciation\": true}"
+  },
+  {
+    "id": "3a433093-5405-5fed-811d-449d8b6cec21",
+    "entity_type": "depreciation_price_review",
+    "entity_id": "b7d2bcc2-4e82-4cae-81a4-348f20e6b828",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=926556",
+    "confidence": "C",
+    "verified_at": null,
+    "note": "{\"depreciation_id\": \"b7d2bcc2-4e82-4cae-81a4-348f20e6b828\", \"source_url\": \"https://www.newswire.co.kr/newsRead.php?no=926556\", \"source_date\": \"2021-07-05\", \"stored_price_krw\": 15700000, \"reference_price_krw\": 15800000, \"scope\": \"The 2022 레이 TAM 시그니처\", \"reason\": \"2021년 발표됐지만 모델명은 2022년형이고 시그니처 1580만원입니다. 저장 2021·1570만원의 검증자료로 쓸 수 없습니다. 발표연도를 모델연도로 바꾸지 않고 2021년형 가격표를 추가 확보해야 합니다.\", \"reviewed_on\": \"2026-10-28\", \"status\": \"held_price_or_year_scope\", \"does_not_verify_depreciation\": true}"
+  }
+]

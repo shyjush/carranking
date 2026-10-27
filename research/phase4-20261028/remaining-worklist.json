@@ -1,0 +1,492 @@
+[
+  {
+    "depreciation_id": "f4e54188-65af-415f-9279-3d6da95bbd30",
+    "model": "911",
+    "generation": "992",
+    "stored_year": 2021,
+    "target": "Carrera Coupe",
+    "stored_price_krw": 149900000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "1c2c3de0-a227-49ea-b0eb-c80509aa2b72",
+    "model": "K5",
+    "generation": "JF",
+    "stored_year": 2015,
+    "target": "2.0 가솔린 MX 럭셔리",
+    "stored_price_krw": 23410000,
+    "status": "held_price_or_year_scope",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=797762"
+  },
+  {
+    "depreciation_id": "05775ad4-0e37-4898-802a-f29c6e37c089",
+    "model": "코나",
+    "generation": "SX2",
+    "stored_year": 2023,
+    "target": "2.0 가솔린 2WD 모던",
+    "stored_price_krw": 30020000,
+    "status": "held_price_or_year_scope",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=959964"
+  },
+  {
+    "depreciation_id": "3f14ad54-d975-46c3-9439-7391199e8cfa",
+    "model": "스포티지",
+    "generation": "NQ5",
+    "stored_year": 2023,
+    "target": "1.6 가솔린 터보 2WD 프레스티지",
+    "stored_price_krw": 26700000,
+    "status": "held_price_or_year_scope",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=948485"
+  },
+  {
+    "depreciation_id": "72954872-d2af-4144-95c5-b3f12c6dde1d",
+    "model": "아이오닉 5",
+    "generation": "NE",
+    "stored_year": 2023,
+    "target": "롱레인지 2WD 익스클루시브",
+    "stored_price_krw": 56980000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "ead77b5a-a050-4944-9696-95734dce4549",
+    "model": "타이칸",
+    "generation": "J1",
+    "stored_year": 2021,
+    "target": "4S",
+    "stored_price_krw": 145600000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "b9c8e2f6-07e0-4c0e-9a5c-dc6bee0e8039",
+    "model": "싼타페",
+    "generation": "MX5",
+    "stored_year": 2024,
+    "target": "2.5 가솔린 터보 2WD 프레스티지 5인승",
+    "stored_price_krw": 41790000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "4093dc75-5e67-466d-9a1e-825e527fc857",
+    "model": "XC90",
+    "generation": "SPA",
+    "stored_year": 2021,
+    "target": "B6 AWD Inscription",
+    "stored_price_krw": 92900000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "b7d2bcc2-4e82-4cae-81a4-348f20e6b828",
+    "model": "레이",
+    "generation": "TAM",
+    "stored_year": 2021,
+    "target": "1.0 가솔린 시그니처",
+    "stored_price_krw": 15700000,
+    "status": "held_price_or_year_scope",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=926556"
+  },
+  {
+    "depreciation_id": "a305920d-690b-499a-9b07-575ed23fbc09",
+    "model": "티구안",
+    "generation": "AD1",
+    "stored_year": 2021,
+    "target": "2.0 TDI Prestige",
+    "stored_price_krw": 43805000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "c80d88ac-f7f4-43c2-88da-bad3ca7e424a",
+    "model": "트레일블레이저",
+    "generation": "1세대",
+    "stored_year": 2021,
+    "target": "E-터보 2WD 프리미어",
+    "stored_price_krw": 24450000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "40da5525-e795-4bd5-bb3b-012bbd24347f",
+    "model": "K5",
+    "generation": "DL3",
+    "stored_year": 2020,
+    "target": "2.0 가솔린 프레스티지",
+    "stored_price_krw": 25920000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "1f66afd8-9314-4acb-b0cc-8bc223ab1b65",
+    "model": "S60",
+    "generation": "SPA",
+    "stored_year": 2022,
+    "target": "B5 Inscription",
+    "stored_price_krw": 54100000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "80ec48ad-ce52-44f8-8d8c-62ae2c63707c",
+    "model": "5시리즈",
+    "generation": "G30",
+    "stored_year": 2022,
+    "target": "520i Luxury",
+    "stored_price_krw": 63700000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "2d2daea5-5d2e-4339-ba86-c0150bb3bda3",
+    "model": "쏘렌토",
+    "generation": "MQ4",
+    "stored_year": 2022,
+    "target": "2.2 디젤 2WD 프레스티지 5인승",
+    "stored_price_krw": 34240000,
+    "status": "held_price_or_year_scope",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=926392"
+  },
+  {
+    "depreciation_id": "8be8a989-e0cb-448a-b166-7b889aace115",
+    "model": "G80",
+    "generation": "RG3",
+    "stored_year": 2023,
+    "target": "2.5 가솔린 터보 2WD",
+    "stored_price_krw": 55480000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "b16a039a-ceae-4517-b0ff-04af61924b71",
+    "model": "셀토스",
+    "generation": "SP2",
+    "stored_year": 2023,
+    "target": "1.6 가솔린 터보 2WD 프레스티지",
+    "stored_price_krw": 26090000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "45183f39-c17f-4d6a-a535-f4fd25107319",
+    "model": "K8",
+    "generation": "GL3",
+    "stored_year": 2022,
+    "target": "2.5 가솔린 노블레스",
+    "stored_price_krw": 35100000,
+    "status": "partial_original_price_only",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=921237"
+  },
+  {
+    "depreciation_id": "6a77d339-c0d6-445b-81ee-9ea7df834303",
+    "model": "E-클래스",
+    "generation": "W213",
+    "stored_year": 2020,
+    "target": "E250 Avantgarde",
+    "stored_price_krw": 63600000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "3a1de851-6f42-4684-a2be-f5271072a01a",
+    "model": "G80",
+    "generation": "DH",
+    "stored_year": 2018,
+    "target": "3.3 가솔린 럭셔리",
+    "stored_price_krw": 48800000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "9cfb3978-3b4b-4b7e-98ae-5ef4130d834b",
+    "model": "QM6",
+    "generation": "HZG",
+    "stored_year": 2020,
+    "target": "2.0 GDe RE Signature",
+    "stored_price_krw": 30140000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "b79aa9e9-f9c7-404c-8d7f-ac2fdd9197a7",
+    "model": "캠리",
+    "generation": "XV70",
+    "stored_year": 2021,
+    "target": "Hybrid XLE",
+    "stored_price_krw": 42290000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "78db9d3f-ec44-45c3-b82a-0b164403c333",
+    "model": "쏘렌토",
+    "generation": "MQ4",
+    "stored_year": 2021,
+    "target": "2.2 디젤 2WD 노블레스",
+    "stored_price_krw": 36470000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "87d1689e-1f76-473c-be02-d5a206a0d03b",
+    "model": "모닝",
+    "generation": "JA",
+    "stored_year": 2021,
+    "target": "1.0 가솔린 프레스티지",
+    "stored_price_krw": 13500000,
+    "status": "partial_original_price_only",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=904799"
+  },
+  {
+    "depreciation_id": "5dbcc126-469d-40ac-a357-fe282aa22b06",
+    "model": "코나",
+    "generation": "OS",
+    "stored_year": 2021,
+    "target": "1.6 T-GDi 모던",
+    "stored_price_krw": 22440000,
+    "status": "partial_original_price_only",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=912184"
+  },
+  {
+    "depreciation_id": "752e4a24-85e4-4dc2-bb11-dbf302a40457",
+    "model": "RX",
+    "generation": "AL20",
+    "stored_year": 2021,
+    "target": "450h Supreme",
+    "stored_price_krw": 81200000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "e0b745c4-a52a-4c21-a926-a658b8d28016",
+    "model": "투싼",
+    "generation": "TL",
+    "stored_year": 2015,
+    "target": "R2.0 디젤 2WD 스타일 자동",
+    "stored_price_krw": 23760000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "25b51ee8-b11d-40b3-af82-2486c534dd3f",
+    "model": "투싼",
+    "generation": "NX4",
+    "stored_year": 2021,
+    "target": "1.6 가솔린 터보 2WD 모던",
+    "stored_price_krw": 24350000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "f5283e68-7d78-4575-9e6b-1dff368494ba",
+    "model": "스파크",
+    "generation": "M400",
+    "stored_year": 2021,
+    "target": "프리미어 C-TECH CVT",
+    "stored_price_krw": 14480000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "641adc00-9116-4c02-b612-22b4f69f5876",
+    "model": "투아렉",
+    "generation": "CR",
+    "stored_year": 2021,
+    "target": "3.0 TDI Premium",
+    "stored_price_krw": 83900000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "71101d19-0b34-4fe7-9666-8a62a7793753",
+    "model": "카니발",
+    "generation": "KA4",
+    "stored_year": 2021,
+    "target": "3.5 가솔린 9인승 프레스티지",
+    "stored_price_krw": 31600000,
+    "status": "partial_original_price_only",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=909345"
+  },
+  {
+    "depreciation_id": "8beb2f91-4080-4d4e-a74c-e682e126f18a",
+    "model": "쏘나타",
+    "generation": "LF",
+    "stored_year": 2014,
+    "target": "2.0 CVVL 스타일",
+    "stored_price_krw": 22550000,
+    "status": "partial_original_price_only",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=743071"
+  },
+  {
+    "depreciation_id": "7e2e86a9-7790-4e93-91c2-5a942cde49f2",
+    "model": "EV9",
+    "generation": "MV",
+    "stored_year": 2024,
+    "target": "롱레인지 에어 2WD",
+    "stored_price_krw": 73370000,
+    "status": "partial_original_price_only",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=968959"
+  },
+  {
+    "depreciation_id": "8a74ee09-b515-4d92-92e5-2329860bdc28",
+    "model": "렉스턴",
+    "generation": "Y400",
+    "stored_year": 2021,
+    "target": "럭셔리 2WD",
+    "stored_price_krw": 36950000,
+    "status": "partial_original_price_only",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=913448"
+  },
+  {
+    "depreciation_id": "156439eb-90f6-4ba6-8999-fdb1c31eb465",
+    "model": "셀토스",
+    "generation": "SP2",
+    "stored_year": 2021,
+    "target": "1.6 가솔린 터보 4WD 프레스티지",
+    "stored_price_krw": 24280000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "57849365-b837-47bf-b73d-ded8dd7767e9",
+    "model": "제타",
+    "generation": "A7",
+    "stored_year": 2023,
+    "target": "1.5 TSI Premium",
+    "stored_price_krw": 32329000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "9a1d719e-dd9e-492b-8b95-445ba273d783",
+    "model": "그랜저",
+    "generation": "GN7",
+    "stored_year": 2024,
+    "target": "2.5 가솔린 2WD 프리미엄",
+    "stored_price_krw": 37430000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "993bd590-f927-4dcc-bc80-f157d14e7cbc",
+    "model": "XC60",
+    "generation": "SPA",
+    "stored_year": 2021,
+    "target": "B5 AWD Inscription",
+    "stored_price_krw": 66160000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "43ae6f4f-3c59-4d4f-9057-4bd2f5c55454",
+    "model": "NX",
+    "generation": "AZ20",
+    "stored_year": 2023,
+    "target": "NX350h Premium",
+    "stored_price_krw": 65430000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "c4057536-9d18-4407-a1b1-d95a1438d090",
+    "model": "니로",
+    "generation": "DE",
+    "stored_year": 2016,
+    "target": "1.6 HEV 럭셔리",
+    "stored_price_krw": 24780000,
+    "status": "held_price_or_year_scope",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=821677"
+  },
+  {
+    "depreciation_id": "03933456-170c-4279-9530-53666f5d7a76",
+    "model": "GV80",
+    "generation": "JX1",
+    "stored_year": 2023,
+    "target": "2.5 가솔린 터보 2WD",
+    "stored_price_krw": 64780000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "61db01df-19ad-4bae-bd8b-d1334b46d93e",
+    "model": "스포티지",
+    "generation": "QL",
+    "stored_year": 2015,
+    "target": "2.0 디젤 2WD 트렌디 자동",
+    "stored_price_krw": 23610000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "c74fe7f7-ea75-47b5-b0f3-8fe4c9c7a6e1",
+    "model": "아반떼",
+    "generation": "CN7",
+    "stored_year": 2021,
+    "target": "1.6 가솔린 모던",
+    "stored_price_krw": 19480000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "d2bda55f-e18f-46d7-b2cc-c300ade8f1d7",
+    "model": "말리부",
+    "generation": "E2XX",
+    "stored_year": 2021,
+    "target": "1.35 E-Turbo 프리미어",
+    "stored_price_krw": 28950000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "348231f8-2af8-48d2-9a2b-b52267611238",
+    "model": "Q5",
+    "generation": "FY",
+    "stored_year": 2021,
+    "target": "45 TFSI quattro Premium",
+    "stored_price_krw": 70638000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "46a20a04-0259-4f65-85e3-a2c1d726b3cb",
+    "model": "3시리즈",
+    "generation": "G20",
+    "stored_year": 2021,
+    "target": "320i M 스포츠 패키지",
+    "stored_price_krw": 54600000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "18b2ce20-7caa-4a03-b509-e088f9a37ae7",
+    "model": "그랜저",
+    "generation": "IG",
+    "stored_year": 2021,
+    "target": "2.5 가솔린 프리미엄",
+    "stored_price_krw": 33030000,
+    "status": "partial_original_price_only",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=923084"
+  },
+  {
+    "depreciation_id": "0e3fe0e0-67a1-4c03-bbc4-a688932ee981",
+    "model": "ES",
+    "generation": "XV70",
+    "stored_year": 2019,
+    "target": "300h Luxury CVT",
+    "stored_price_krw": 57100000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  },
+  {
+    "depreciation_id": "9e71101b-12f6-4748-a707-979f74ab8bae",
+    "model": "아반떼",
+    "generation": "AD",
+    "stored_year": 2015,
+    "target": "1.6 GDi 스타일",
+    "stored_price_krw": 15310000,
+    "status": "not_yet_source_matched",
+    "source_url": null
+  }
+]

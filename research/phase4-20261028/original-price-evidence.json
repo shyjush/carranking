@@ -1,0 +1,90 @@
+[
+  {
+    "depreciation_id": "87d1689e-1f76-473c-be02-d5a206a0d03b",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=904799",
+    "source_date": "2020-05-12",
+    "price_krw": 13500000,
+    "scope": "모닝 JA 어반 프레스티지 기본가격, 경차 개별소비세 비과세",
+    "limitations": "2020년 출시자료입니다. 저장 2021 모델연도 전체 적용은 확정하지 않았습니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "45183f39-c17f-4d6a-a535-f4fd25107319",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=921237",
+    "source_date": "2021-04-08",
+    "price_krw": 35100000,
+    "scope": "K8 GL3 출시형 2.5 가솔린 노블레스, 개소세 3.5%",
+    "limitations": "2021년 출시자료이며 저장 2022 모델연도의 계약월·옵션 가격표를 별도 확인해야 합니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "71101d19-0b34-4fe7-9666-8a62a7793753",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=909345",
+    "source_date": "2020-08-18",
+    "price_krw": 31600000,
+    "scope": "카니발 KA4 3.5 가솔린 9인승 프레스티지, 개별소비세 비과세",
+    "limitations": "2020년 출시형, 9/11인승 가격입니다. 7인승·디젤·하이리무진과 혼합하지 않습니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "5dbcc126-469d-40ac-a357-fe282aa22b06",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=912184",
+    "source_date": "2020-10-15",
+    "price_krw": 22440000,
+    "scope": "더 뉴 코나 OS 1.6 가솔린 터보 모던, 개소세 3.5%",
+    "limitations": "2020년 발표된 OS 부분변경 모델입니다. SX2 2.0 및 하이브리드와 구분하며 저장 2021 적용 확인이 남았습니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "8a74ee09-b515-4d92-92e5-2329860bdc28",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=913448",
+    "source_date": "2020-11-04",
+    "price_krw": 36950000,
+    "scope": "올 뉴 렉스턴 Y400 럭셔리 기본가격",
+    "limitations": "2020년 출시자료입니다. 저장 2021 및 2WD·좌석수·세율·옵션 범위를 계약월 가격표로 확인해야 합니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "18b2ce20-7caa-4a03-b509-e088f9a37ae7",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=923084",
+    "source_date": "2021-05-11",
+    "price_krw": 33030000,
+    "scope": "2021 그랜저 IG 2.5 가솔린 프리미엄, 개소세 3.5%",
+    "limitations": "2021년형 가격을 확인했습니다. 르블랑·3.3·하이브리드와 구분합니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "7e2e86a9-7790-4e93-91c2-5a942cde49f2",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=968959",
+    "source_date": "2023-06-18",
+    "price_krw": 73370000,
+    "scope": "EV9 MV 출시형 에어 2WD, 친환경차 세제혜택 후 기본가격",
+    "limitations": "2023-06 출시자료. 7월 이후 개소세 5% 과세표준 특례 가격도 7337만원으로 명시. 저장 2024 적용·좌석/휠/옵션·보조금은 별도 확인합니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "8beb2f91-4080-4d4e-a74c-e682e126f18a",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=743071",
+    "source_date": "2014-03-24",
+    "price_krw": 22550000,
+    "scope": "쏘나타 LF 출시형 2.0 CVVL 스타일 자동변속기 기본가격",
+    "limitations": "수동변속기 및 2.4 GDi와 구분합니다. 출시 후 세율 변경·옵션은 계약월 가격표 확인이 남았습니다. 발표 당시 기본가격의 부분 근거입니다. 저장 연도 전체 적용, 계약월·옵션 및 실매물 일치는 미검증이며 감가율 검증 완료가 아닙니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true
+  }
+]

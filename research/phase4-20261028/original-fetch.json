@@ -1,0 +1,143 @@
+[
+  {
+    "id": "904799",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=904799",
+    "source_date": "2020-05-12",
+    "price_context": "△스탠다드 1195만원 △프레스티지 1350만원 △시그니처 1480만원이다(경차는 ",
+    "expected_price_manwon": 1350,
+    "sha256": "1f2c6654a9cefc28d3aac59e4c254a266a152b3c5cb3d256c002a81b1c2a935f",
+    "retrieved_at": "2026-10-27T22:22:18.891865+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "921237",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=921237",
+    "source_date": "2021-04-08",
+    "price_context": "레스 라이트 3279만원, 노블레스 3510만원, 시그니처 3868만원 △3.5 가",
+    "expected_price_manwon": 3510,
+    "sha256": "719865d024b2c8164dd5fd6fa562d274117b47e16356e428923c617004c3f77b",
+    "retrieved_at": "2026-10-27T22:22:18.932389+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "909345",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=909345",
+    "source_date": "2020-08-18",
+    "price_context": "동력성능을 갖췄다. ◇9인승 가솔린 3160만원부터… 14일간 사전계약 3.2만대 ",
+    "expected_price_manwon": 3160,
+    "sha256": "63083a365077103c047876993c2525d57a9b37553f6ddd10684081fd630fbae1",
+    "retrieved_at": "2026-10-27T22:22:19.304533+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "912184",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=912184",
+    "source_date": "2020-10-15",
+    "price_context": "가격은 △스마트 2031만원 △모던 2244만원 △인스퍼레이션 2716만원이며 가솔",
+    "expected_price_manwon": 2244,
+    "sha256": "4d6362c1d318201247cdbf0434c42c1bb6b0cd1638d1b3427d653cd2ec3f2bc4",
+    "retrieved_at": "2026-10-27T22:22:24.337381+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "913448",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=913448",
+    "source_date": "2020-11-04",
+    "price_context": " 경우 중형 SUV 수준의 △럭셔리 3695만원 △프레스티지 4175만원으로 스페셜",
+    "expected_price_manwon": 3695,
+    "sha256": "d471376876026418f09a78a90cbff851b9d8ff758d56613811863639f6d1d3f2",
+    "retrieved_at": "2026-10-27T22:22:24.267481+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "923084",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=923084",
+    "source_date": "2021-05-11",
+    "price_context": "격은 가솔린 2.5 모델 △프리미엄 3303만원 △르블랑 3534만원 △익스클루시브",
+    "expected_price_manwon": 3303,
+    "sha256": "f3c26633360d0e72c0861740ac6f528053047d72697cee6d8f6e47b8828a6720",
+    "retrieved_at": "2026-10-27T22:22:24.630471+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "968959",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=968959",
+    "source_date": "2023-06-18",
+    "price_context": " 3.5% 기준[1] △에어 2WD 7337만원 △에어 4WD 7685만원 △어스 ",
+    "expected_price_manwon": 7337,
+    "sha256": "237f208bdc582578ab94413fd52b2f1c65728795a7245b79bf255fc6cb08ccfb",
+    "retrieved_at": "2026-10-27T22:22:29.693462+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "743071",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=743071",
+    "source_date": "2014-03-24",
+    "price_context": "2.0 CVVL 모델이 ▲스타일 2천255만원",
+    "expected_price_manwon": 2255,
+    "sha256": "e77f78de582b685e34de0aac65dbfe52396e53ba82e6de7e0fb0bcfbc1f314e3",
+    "retrieved_at": "2026-10-27T22:22:29.656866+00:00",
+    "http_status": 200,
+    "numeric_notation": "Korean thousands: 2천255만원 = 22,550,000 KRW; source text manually reviewed"
+  },
+  {
+    "id": "821677",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=821677",
+    "source_date": "2016-03-29",
+    "price_context": "도 합리적인 가격 정책으로 ▲럭셔리 2,327만원 ▲프레스티지 2,524만원 ▲노블레",
+    "expected_price_manwon": 2327,
+    "sha256": "3495e8072b8f4904f0741837be09030701b215188c7af126215579d3ddece8d1",
+    "retrieved_at": "2026-10-27T22:22:29.622171+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "959964",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=959964",
+    "source_date": "2023-01-18",
+    "price_context": "원이며, 가솔린 2.0 모델 △모던 2468만원 △프리미엄 2690만원 △인스퍼레이",
+    "expected_price_manwon": 2468,
+    "sha256": "dca41c1af30e3d335b1798f7af04a920f6466f9d423f8f0c2dffdcd3e54c75ac",
+    "retrieved_at": "2026-10-27T22:22:35.114650+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "948485",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=948485",
+    "source_date": "2022-07-25",
+    "price_context": " △트렌디 2474만원 △프레스티지 2651만원 △노블레스 2901만원 △시그니처 ",
+    "expected_price_manwon": 2651,
+    "sha256": "c13ef987f6681d45fe094209cab69607c910d0b9c75a48a9367c8972b5804946",
+    "retrieved_at": "2026-10-27T22:22:35.076757+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "797762",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=797762",
+    "source_date": "2015-07-15",
+    "price_context": "준 ▲디럭스 2,245만원 ▲럭셔리 2,385만원 ▲프레스티지 2,520만원 ▲노블레",
+    "expected_price_manwon": 2385,
+    "sha256": "6ef4c20a1aabce375785312243a9a4d66c6df84bbdf9b1d1f1c92f8c224d03e8",
+    "retrieved_at": "2026-10-27T22:22:35.072839+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "926392",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=926392",
+    "source_date": "2021-07-01",
+    "price_context": "은 트렌디 3056만원, 프레스티지 3351만원, 노블레스 3650만원, 시그니처 ",
+    "expected_price_manwon": 3351,
+    "sha256": "e6249675b9ca8ebccb0cc2f6838ca9e65547009d97f24c9e71bd4384560e2a4a",
+    "retrieved_at": "2026-10-27T22:22:40.560831+00:00",
+    "http_status": 200
+  },
+  {
+    "id": "926556",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=926556",
+    "source_date": "2021-07-05",
+    "price_context": "△프레스티지 1475만원 △시그니처 1580만원 밴 △스탠다드 1275만원 △프레스",
+    "expected_price_manwon": 1580,
+    "sha256": "6ba84301986752084fb09e9b19122983656f3cb5ace137b5c369f4a92b47b0cf",
+    "retrieved_at": "2026-10-27T22:22:40.595515+00:00",
+    "http_status": 200
+  }
+]

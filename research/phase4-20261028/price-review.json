@@ -1,0 +1,74 @@
+[
+  {
+    "depreciation_id": "c4057536-9d18-4407-a1b1-d95a1438d090",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=821677",
+    "source_date": "2016-03-29",
+    "stored_price_krw": 24780000,
+    "reference_price_krw": 23270000,
+    "scope": "2016 니로 DE 1.6 HEV 럭셔리",
+    "reason": "원문 표시가격은 개소세·교육세 혜택 후 2327만원이며 별도 보조금 등을 반영한 실구매 예시 2235만원과도 구분됩니다. 저장 2478만원의 세금·옵션·시점 근거가 일치하지 않아 가격 검증 보류. 원래 가격을 자동 변경하지 않았습니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "held_price_or_year_scope",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "05775ad4-0e37-4898-802a-f29c6e37c089",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=959964",
+    "source_date": "2023-01-18",
+    "stored_price_krw": 30020000,
+    "reference_price_krw": 24680000,
+    "scope": "2023 코나 SX2 2.0 가솔린 모던",
+    "reason": "출시자료의 2.0 모던 기본가격은 개소세 3.5% 기준 2468만원입니다. 저장 3002만원은 같은 조건으로 확인되지 않습니다. 다른 트림·엔진이나 옵션 가격을 가져오지 않고 당시 계약월 가격표 대조까지 보류합니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "held_price_or_year_scope",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "3f14ad54-d975-46c3-9439-7391199e8cfa",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=948485",
+    "source_date": "2022-07-25",
+    "stored_price_krw": 26700000,
+    "reference_price_krw": 26510000,
+    "scope": "2023 스포티지 NQ5 1.6 가솔린 터보 프레스티지",
+    "reason": "2022년 발표된 2023년형 기본가격은 개소세 3.5% 기준 2651만원으로 저장 2670만원과 다릅니다. 후속 가격 변경·세율·옵션 적용 여부를 확인하기 전에는 저장값을 확정하거나 원문 가격으로 덮어쓰지 않습니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "held_price_or_year_scope",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "1c2c3de0-a227-49ea-b0eb-c80509aa2b72",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=797762",
+    "source_date": "2015-07-15",
+    "stored_price_krw": 23410000,
+    "reference_price_krw": 23850000,
+    "scope": "K5 JF 출시형 2.0 가솔린 럭셔리 MX/SX",
+    "reason": "2015-07 출시가격은 2385만원으로 저장 2341만원과 다릅니다. 후속 개소세 인하 가격일 가능성은 있으나 이를 추정으로 확정하지 않습니다. 계약월 공식 가격표·모델연도 확인이 필요합니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "held_price_or_year_scope",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "2d2daea5-5d2e-4339-ba86-c0150bb3bda3",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=926392",
+    "source_date": "2021-07-01",
+    "stored_price_krw": 34240000,
+    "reference_price_krw": 33510000,
+    "scope": "The 2022 쏘렌토 MQ4 2.2 디젤 프레스티지",
+    "reason": "2022년형 출시자료의 개소세 3.5% 기준 기본가격은 3351만원으로 저장 3424만원과 다릅니다. 좌석수·구동·옵션·후속 가격 변경 적용을 계약월 가격표로 확인하기 전까지 보류합니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "held_price_or_year_scope",
+    "does_not_verify_depreciation": true
+  },
+  {
+    "depreciation_id": "b7d2bcc2-4e82-4cae-81a4-348f20e6b828",
+    "source_url": "https://www.newswire.co.kr/newsRead.php?no=926556",
+    "source_date": "2021-07-05",
+    "stored_price_krw": 15700000,
+    "reference_price_krw": 15800000,
+    "scope": "The 2022 레이 TAM 시그니처",
+    "reason": "2021년 발표됐지만 모델명은 2022년형이고 시그니처 1580만원입니다. 저장 2021·1570만원의 검증자료로 쓸 수 없습니다. 발표연도를 모델연도로 바꾸지 않고 2021년형 가격표를 추가 확보해야 합니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "held_price_or_year_scope",
+    "does_not_verify_depreciation": true
+  }
+]
