@@ -20,7 +20,7 @@ if(isAdminPage){
   adminRecovery.src='../admin-login-fix-v3.js?v=3';
   adminRecovery.defer=true;
   document.head.appendChild(adminRecovery);
-}else{
+}else if(!/^\/vehicle-tools\.html$/.test(location.pathname)){
 
   const engagementScript=document.createElement('script');
   engagementScript.src='car-engagement-v120.js?v=1.20';
