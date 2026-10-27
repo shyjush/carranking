@@ -94,5 +94,4 @@ for i in range(0,len(allrows),150):
 report["upserted"]=report["new"]+report["updated"]
 if report["new"]+report["updated"]+report["unchanged"]!=report["unique"]:raise SystemExit("Catalog counts do not add up")
 report["status"]="complete"
-report["upserted"]=len(rows)
 finish()
