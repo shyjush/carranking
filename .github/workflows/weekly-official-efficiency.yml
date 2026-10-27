@@ -52,6 +52,14 @@ jobs:
             cat official-economy-reports/summary.md >> "$GITHUB_STEP_SUMMARY"
             echo '' >> "$GITHUB_STEP_SUMMARY"
             echo '### Official API status' >> "$GITHUB_STEP_SUMMARY"
+            if [ -f official-economy-reports/kea-catalog-import.json ]; then
+              echo '### Official catalog changes (new / updated / unchanged)' >> "$GITHUB_STEP_SUMMARY"
+              cat official-economy-reports/kea-catalog-import.json >> "$GITHUB_STEP_SUMMARY"
+            fi
+            if [ -f official-economy-reports/kea-auto-import.json ]; then
+              echo '### Existing car spec matches' >> "$GITHUB_STEP_SUMMARY"
+              cat official-economy-reports/kea-auto-import.json >> "$GITHUB_STEP_SUMMARY"
+            fi
             if [ -f official-economy-reports/official-api-status.json ]; then
               cat official-economy-reports/official-api-status.json >> "$GITHUB_STEP_SUMMARY"
             fi
