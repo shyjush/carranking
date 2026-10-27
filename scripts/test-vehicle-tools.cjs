@@ -9,6 +9,11 @@ if(process.env.FOLLOWUP_FIXTURE){specs.push(...JSON.parse(fs.readFileSync(path.j
 const manufacturers=new Map(read('before-manufacturers.json').map(x=>[x.id,x.name])),models=new Map(read('before-models.json').map(x=>[x.id,x]));
 const vehicles=read('before-generations.json').map(g=>{const m=models.get(g.car_model_id);return {generation_id:g.id,brand:manufacturers.get(m.manufacturer_id),model:m.name,generation:g.name,generation_code:g.generation_code};});
 const tables={web_search_index:vehicles,vehicle_specs:specs,powertrains:powers,trims:read('before-trims.json'),official_fuel_prices:[]};
+// Synthetic regression fixture: one different-year trim sharing a powertrain is insufficient.
+const priceModel=vehicles.find(x=>x.model==='아이오닉 5'&&x.generation_code==='NE');
+const priceSpec=specs.find(x=>x.generation_id===priceModel.generation_id&&x.powertrain_id&&x.combined_efficiency);
+tables.trims=tables.trims.filter(t=>t.powertrain_id!==priceSpec.powertrain_id);
+tables.trims.push({id:'synthetic-price-regression',powertrain_id:priceSpec.powertrain_id,name:'Synthetic unmatched trim',model_year:2099,price_krw:99999999,source_url:'https://www.hyundai.com/kr/ko/e/vehicles/ioniq5/intro'});
 const wait=()=>new Promise(r=>setTimeout(r,5));
 (async()=>{
  const html=fs.readFileSync(path.join(root,'vehicle-tools.html'),'utf8');
@@ -31,6 +36,10 @@ const wait=()=>new Promise(r=>setTimeout(r,5));
  change('km','0','input');assert.equal(d.querySelector('#inputError').textContent,'');
  change('modelSearch','존재하지않는차량','input');assert.equal(d.querySelector('#model0').value,k5.generation_id,'Filtering must preserve a selected model');assert.equal(d.querySelector('#spec0').value,opts[0].value);
  d.querySelector('#reset').click();assert.equal(d.querySelector('#model0').value,'');assert.equal(d.querySelector('#km').value,'15000');assert.equal(d.querySelector('#insurance0').value,'');
+ change('model0',priceModel.generation_id);change('spec0',priceSpec.id);
+ assert.match(d.querySelector('#results').textContent,/연식·트림·옵션까지 일치하는 공식 가격 미확보/);
+ assert.match(d.querySelector('#results').textContent,/선택 연비 사양과 연식·트림·옵션 일치 미확인/);
+ assert(!d.querySelector('#results').textContent.includes('99,999,999'),'Never use a sole powertrain-linked trim as the selected specification price');
  assert(calls.every(x=>!x.opts.method||x.opts.method==='GET'),'No data writes or personal cost uploads');assert(!calls.some(x=>/ratings|reviews|profiles|cron/.test(x.url)));
  const ids=[...d.querySelectorAll('[id]')].map(x=>x.id);assert.equal(new Set(ids).size,ids.length);
  dom.window.close();console.log('PASS complete 179-generation fixture: explicit selection, two same-model variants, evidence, cost edits, invalid inputs, reset, filter preservation and read-only API access');
