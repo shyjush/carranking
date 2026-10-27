@@ -9,7 +9,7 @@ from decimal import Decimal, InvalidOperation
 p=pathlib.Path("official-economy-reports")
 p.mkdir(exist_ok=True)
 stage=p/"kea-all-pages-staging.json"
-report={"status":"not configured","read":0,"eligible":0,"unique":0,"upserted":0,"rejected":{}}
+report={"status":"not configured","read":0,"eligible":0,"unique":0,"upserted":0,"new":0,"updated":0,"unchanged":0,"rejected":{}}
 def finish():
  (p/"kea-catalog-import.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
  print(json.dumps(report,ensure_ascii=False))
@@ -59,14 +59,40 @@ for i in range(0,len(allrows),150):
  for key,(maker,model,year,fuel_type,cc,eff,fuel) in batch:
   values=[q(key),q(maker),q(model),str(year),q(fuel_type),str(cc) if cc is not None else "NULL",str(eff),q(fuel)]
   parts.append("("+",".join(values)+")")
- sql="""INSERT INTO public.kea_official_vehicle_specs(source_key,manufacturer,model_detail,certification_year,fuel_type,displacement_cc,combined_efficiency,official_fuel_name)
- VALUES %s
- ON CONFLICT (source_key) DO UPDATE SET refreshed_at=now()
- WHERE public.kea_official_vehicle_specs.manufacturer=excluded.manufacturer
- AND public.kea_official_vehicle_specs.model_detail=excluded.model_detail
- AND public.kea_official_vehicle_specs.combined_efficiency=excluded.combined_efficiency;"""%(",".join(parts))
- result=subprocess.run(["psql",conn,"-X","-v","ON_ERROR_STOP=1","-c",sql],capture_output=True,text=True,timeout=70)
+ sql="""WITH incoming(source_key,manufacturer,model_detail,certification_year,fuel_type,displacement_cc,combined_efficiency,official_fuel_name) AS (VALUES %s),
+ existing AS (
+   SELECT i.source_key, e.source_key AS existing_key,
+    (e.manufacturer,e.model_detail,e.certification_year,e.fuel_type,e.displacement_cc,e.combined_efficiency,e.official_fuel_name)
+    IS DISTINCT FROM
+    (i.manufacturer,i.model_detail,i.certification_year,i.fuel_type,i.displacement_cc,i.combined_efficiency,i.official_fuel_name) AS changed
+   FROM incoming i LEFT JOIN public.kea_official_vehicle_specs e ON e.source_key=i.source_key
+ ),
+ applied AS (
+  INSERT INTO public.kea_official_vehicle_specs(source_key,manufacturer,model_detail,certification_year,fuel_type,displacement_cc,combined_efficiency,official_fuel_name)
+  SELECT * FROM incoming
+  ON CONFLICT (source_key) DO UPDATE
+  SET manufacturer=excluded.manufacturer,model_detail=excluded.model_detail,
+  certification_year=excluded.certification_year,fuel_type=excluded.fuel_type,
+  displacement_cc=excluded.displacement_cc,combined_efficiency=excluded.combined_efficiency,
+  official_fuel_name=excluded.official_fuel_name,refreshed_at=now()
+  WHERE (public.kea_official_vehicle_specs.manufacturer,public.kea_official_vehicle_specs.model_detail,public.kea_official_vehicle_specs.certification_year,public.kea_official_vehicle_specs.fuel_type,public.kea_official_vehicle_specs.displacement_cc,public.kea_official_vehicle_specs.combined_efficiency,public.kea_official_vehicle_specs.official_fuel_name)
+   IS DISTINCT FROM
+   (excluded.manufacturer,excluded.model_detail,excluded.certification_year,excluded.fuel_type,excluded.displacement_cc,excluded.combined_efficiency,excluded.official_fuel_name)
+  RETURNING source_key
+ )
+ SELECT
+ (SELECT count(*) FROM existing WHERE existing_key IS NULL) AS new,
+ (SELECT count(*) FROM existing WHERE existing_key IS NOT NULL AND changed) AS updated,
+ (SELECT count(*) FROM existing WHERE existing_key IS NOT NULL AND NOT changed) AS unchanged,
+ (SELECT count(*) FROM applied) AS written;"""%(",".join(parts))
+ result=subprocess.run(["psql",conn,"-X","-v","ON_ERROR_STOP=1","--csv","-c",sql],capture_output=True,text=True,timeout=70)
  if result.returncode:raise SystemExit("KEA catalog DB write rejected: "+result.stderr[-280:])
+ counts=list(csv.DictReader(result.stdout.splitlines()))
+ if len(counts)!=1:raise SystemExit("Missing catalog write counts")
+ for field in ("new","updated","unchanged"):report[field]+=int(counts[0][field])
+ if int(counts[0]["written"])!=int(counts[0]["new"])+int(counts[0]["updated"]):raise SystemExit("Catalog write counts inconsistent")
+report["upserted"]=report["new"]+report["updated"]
+if report["new"]+report["updated"]+report["unchanged"]!=report["unique"]:raise SystemExit("Catalog counts do not add up")
 report["status"]="complete"
 report["upserted"]=len(rows)
 finish()
