@@ -1,0 +1,14 @@
+[
+  {
+    "mutation": {
+      "spec_ids": [
+        "7fce2f44-dc43-5de4-b10c-66e94e40841a"
+      ],
+      "source_ids": [
+        "e00a4b9d-9686-515a-9313-02976792d5d4"
+      ],
+      "spec_inserted": 1,
+      "source_inserted": 1
+    }
+  }
+]

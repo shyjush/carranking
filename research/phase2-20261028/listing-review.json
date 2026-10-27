@@ -1,0 +1,72 @@
+[
+  {
+    "depreciation_id": "a5e6ad05-9cb7-4f8c-ba6e-578e43b478fa",
+    "model": "G70 IK",
+    "target": "2018년형 2.0T 어드밴스드",
+    "url": "https://www.chatocha.co.kr/detail/index.php?c_no=7077472",
+    "listing_id": "7077472",
+    "status": "held",
+    "reason": "2018.01 등록·2.0T 어드밴스드 단일 후보. 모델연도 별도 표기, 구동·옵션·사고/수리 이력과 동일 관측일의 유효 가격 및 판매중 여부 확인이 부족합니다. 동일 조건 독립 차량 5대에 미달합니다.",
+    "retrieved_on_utc": "2026-10-27",
+    "method": "web indexed page; not direct live-price observation",
+    "observed_on": null,
+    "confidence": "C",
+    "snapshot_eligible": false
+  },
+  {
+    "depreciation_id": "f8f1e2ce-b58e-415c-a673-4a510586c224",
+    "model": "GV80 JX1",
+    "target": "2020년형 2.5 가솔린 터보 2WD 기본형",
+    "url": "https://m.kbchachacha.com/public/web/car/detail.kbc?carSeq=28756586",
+    "listing_id": "28756586",
+    "status": "held",
+    "reason": "2020년형·2.5 터보 2WD 후보에 파퓰러 패키지가 포함됩니다. 저장된 기본가격과 옵션 가격 기준이 다르며, 동일 관측일의 유효 가격·판매중 여부·중복 제거를 완료하지 못했습니다.",
+    "retrieved_on_utc": "2026-10-27",
+    "method": "web indexed page; not direct live-price observation",
+    "observed_on": null,
+    "confidence": "C",
+    "snapshot_eligible": false
+  },
+  {
+    "depreciation_id": "6ca20527-0cc7-4e8f-83ac-6157b5c44336",
+    "model": "G80 RG3",
+    "target": "2020년형 2.5 가솔린 터보 2WD",
+    "url": "https://www.kbchachacha.com/public/car/detail.kbc?carSeq=27697760",
+    "listing_id": "27697760",
+    "status": "rejected",
+    "reason": "2020년 7월 최초등록이지만 2021년형으로 표기되어 저장된 2020 모델연도와 불일치합니다. 판매자 무사고 설명과 보험사고 표기도 구분 확인이 필요합니다.",
+    "retrieved_on_utc": "2026-10-27",
+    "method": "web indexed page; not direct live-price observation",
+    "observed_on": null,
+    "confidence": "C",
+    "snapshot_eligible": false
+  },
+  {
+    "depreciation_id": "b578a85e-8a60-4cf4-a945-b497377c1a50",
+    "model": "EV6 CV",
+    "target": "2021년형 77.4kWh 롱레인지 2WD 에어",
+    "url": "https://m.bobaedream.co.kr/mycar/mview/2250166",
+    "listing_id": "2250166",
+    "status": "rejected",
+    "reason": "2021년 11월 최초등록이지만 2022년형으로 표기됩니다. 저장된 2021 모델연도와 동일하지 않아 비교에서 제외했습니다. 기존 모델연도의 정의 및 해당 연식 공식 가격표부터 재확인해야 합니다.",
+    "retrieved_on_utc": "2026-10-27",
+    "method": "web indexed page; not direct live-price observation",
+    "observed_on": null,
+    "confidence": "C",
+    "snapshot_eligible": false
+  },
+  {
+    "depreciation_id": "141e1d65-6aa4-404c-971f-d5bb4496e9a2",
+    "model": "캐스퍼 AX1",
+    "target": "2021년형 1.0 자연흡기 스마트",
+    "url": "https://www.kbchachacha.com/public/car/detail.kbc?carSeq=28449740",
+    "listing_id": "28449740",
+    "status": "rejected",
+    "reason": "2022년 1월 등록·2022년형으로 저장 연식과 다르고, 액티브 II 터보 선택사양이 있어 자연흡기 스마트와 동일 사양으로 인정할 수 없습니다.",
+    "retrieved_on_utc": "2026-10-27",
+    "method": "web indexed page; not direct live-price observation",
+    "observed_on": null,
+    "confidence": "C",
+    "snapshot_eligible": false
+  }
+]
