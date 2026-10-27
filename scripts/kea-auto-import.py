@@ -11,7 +11,7 @@ if not stage.exists():finish();raise SystemExit(0)
 if not os.getenv('PGPASSWORD'):raise SystemExit('Missing database secret')
 conn='host=aws-0-ap-northeast-2.pooler.supabase.com port=5432 dbname=postgres user=postgres.ikhyadzboorscjwcrhcz sslmode=require'
 def query(sql):
- p=subprocess.run(['psql',conn,'-X','-v','ON_ERROR_STOP=1','-At','-c',sql],capture_output=True,text=True,timeout=100)
+ p=subprocess.run(['psql',conn,'-X','-v','ON_ERROR_STOP=1','-At'],input=sql,capture_output=True,text=True,timeout=100)
  if p.returncode:raise RuntimeError('Database query rejected')
  return p.stdout
 module=importlib.util.spec_from_file_location('verified',pathlib.Path(__file__).with_name('kea-verified-variants.py'))
