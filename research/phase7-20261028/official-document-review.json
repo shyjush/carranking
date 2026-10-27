@@ -1,0 +1,18 @@
+[
+  {
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "document_date": "2021-04-05",
+    "sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "bytes": 14729772,
+    "page": 1,
+    "visual_table_review": true
+  },
+  {
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "document_date": "2021-10-05",
+    "sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "bytes": 5500670,
+    "page": 1,
+    "visual_table_review": true
+  }
+]

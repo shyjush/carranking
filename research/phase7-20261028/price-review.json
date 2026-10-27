@@ -1,0 +1,14 @@
+[
+  {
+    "depreciation_id": "993bd590-f927-4dcc-bc80-f157d14e7cbc",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "stored_price_krw": 66160000,
+    "reference_price_krw": 67000000,
+    "scope": "XC60 MY21 B5 AWD Inscription 공식 가격표 1쪽",
+    "reason": "저장 6616만원과 공식 MY21 가격표의 개소세 인하분 미적용 6700만원은 가격 기준이 다릅니다. 세금 인하분 적용 가격일 가능성만으로 동일 가격으로 확정하거나 저장값을 변경하지 않습니다. 계약월 공식 세금 적용 견적과 옵션 대조가 필요합니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "held_price_or_year_scope",
+    "does_not_verify_depreciation": true
+  }
+]

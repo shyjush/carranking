@@ -1,0 +1,694 @@
+[
+  {
+    "model": "S60",
+    "model_year": 2021,
+    "engine": "B5",
+    "trim": "Momentum",
+    "price_krw": 48100000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "6950dc57-1bd8-4d5f-b37c-a4751b7a64f7",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "S60",
+    "model_year": 2021,
+    "engine": "B5",
+    "trim": "Inscription",
+    "price_krw": 54100000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "6950dc57-1bd8-4d5f-b37c-a4751b7a64f7",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "S90",
+    "model_year": 2021,
+    "engine": "B5",
+    "trim": "Momentum",
+    "price_krw": 60300000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "ce8d1411-73a0-4e58-a18c-0e37cc6315c3",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      },
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "S90",
+    "model_year": 2021,
+    "engine": "B5",
+    "trim": "Inscription",
+    "price_krw": 66900000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "ce8d1411-73a0-4e58-a18c-0e37cc6315c3",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      },
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "S90",
+    "model_year": 2021,
+    "engine": "B6 AWD",
+    "trim": "Inscription",
+    "price_krw": 70900000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "ce8d1411-73a0-4e58-a18c-0e37cc6315c3",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      },
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "S90",
+    "model_year": 2021,
+    "engine": "T8 AWD",
+    "trim": "Inscription",
+    "price_krw": 85400000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "ce8d1411-73a0-4e58-a18c-0e37cc6315c3",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      },
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC40",
+    "model_year": 2021,
+    "engine": "B4 AWD",
+    "trim": "Momentum",
+    "price_krw": 46700000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "2fa86b7a-f3a7-438b-94e9-c5e6203f286e",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      },
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC40",
+    "model_year": 2021,
+    "engine": "B4 AWD",
+    "trim": "R-Design",
+    "price_krw": 49300000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "2fa86b7a-f3a7-438b-94e9-c5e6203f286e",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      },
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC40",
+    "model_year": 2021,
+    "engine": "B4 AWD",
+    "trim": "Inscription",
+    "price_krw": 51300000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "2fa86b7a-f3a7-438b-94e9-c5e6203f286e",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      },
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC60",
+    "model_year": 2021,
+    "engine": "B5 AWD",
+    "trim": "Momentum",
+    "price_krw": 60900000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "39aa3cc7-44c6-4010-83b3-3e52d5a03f1c",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC60",
+    "model_year": 2021,
+    "engine": "B5 AWD",
+    "trim": "Inscription",
+    "price_krw": 67000000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "39aa3cc7-44c6-4010-83b3-3e52d5a03f1c",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC60",
+    "model_year": 2021,
+    "engine": "B6 AWD",
+    "trim": "Inscription",
+    "price_krw": 71000000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "39aa3cc7-44c6-4010-83b3-3e52d5a03f1c",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC60",
+    "model_year": 2021,
+    "engine": "T8 AWD",
+    "trim": "Inscription",
+    "price_krw": 83200000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "39aa3cc7-44c6-4010-83b3-3e52d5a03f1c",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC90",
+    "model_year": 2021,
+    "engine": "B6 AWD",
+    "trim": "Momentum",
+    "price_krw": 82600000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "77e8c0a3-02da-43f4-bff3-759faa064598",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC90",
+    "model_year": 2021,
+    "engine": "B6 AWD",
+    "trim": "Inscription",
+    "price_krw": 92900000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "77e8c0a3-02da-43f4-bff3-759faa064598",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC90",
+    "model_year": 2021,
+    "engine": "T8 AWD",
+    "trim": "Inscription",
+    "price_krw": 110200000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1,
+    "generation_id": "77e8c0a3-02da-43f4-bff3-759faa064598",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+        "source_date": "2021-04-05",
+        "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "S60",
+    "model_year": 2022,
+    "engine": "B5",
+    "trim": "Momentum",
+    "price_krw": 48100000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1,
+    "generation_id": "6950dc57-1bd8-4d5f-b37c-a4751b7a64f7",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "S60",
+    "model_year": 2022,
+    "engine": "B5",
+    "trim": "Inscription",
+    "price_krw": 54100000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1,
+    "generation_id": "6950dc57-1bd8-4d5f-b37c-a4751b7a64f7",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC60",
+    "model_year": 2022,
+    "engine": "B5 AWD",
+    "trim": "Momentum",
+    "price_krw": 61900000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1,
+    "generation_id": "39aa3cc7-44c6-4010-83b3-3e52d5a03f1c",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC60",
+    "model_year": 2022,
+    "engine": "B5 AWD",
+    "trim": "Inscription",
+    "price_krw": 68000000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1,
+    "generation_id": "39aa3cc7-44c6-4010-83b3-3e52d5a03f1c",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC60",
+    "model_year": 2022,
+    "engine": "B6 AWD",
+    "trim": "R-Design",
+    "price_krw": 69000000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1,
+    "generation_id": "39aa3cc7-44c6-4010-83b3-3e52d5a03f1c",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC60",
+    "model_year": 2022,
+    "engine": "B6 AWD",
+    "trim": "Inscription",
+    "price_krw": 72000000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1,
+    "generation_id": "39aa3cc7-44c6-4010-83b3-3e52d5a03f1c",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC60",
+    "model_year": 2022,
+    "engine": "T8 AWD",
+    "trim": "Inscription",
+    "price_krw": 83700000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1,
+    "generation_id": "39aa3cc7-44c6-4010-83b3-3e52d5a03f1c",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC90",
+    "model_year": 2022,
+    "engine": "B6 AWD",
+    "trim": "Momentum",
+    "price_krw": 82800000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1,
+    "generation_id": "77e8c0a3-02da-43f4-bff3-759faa064598",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC90",
+    "model_year": 2022,
+    "engine": "B6 AWD",
+    "trim": "Inscription",
+    "price_krw": 93100000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1,
+    "generation_id": "77e8c0a3-02da-43f4-bff3-759faa064598",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  },
+  {
+    "model": "XC90",
+    "model_year": 2022,
+    "engine": "T8 AWD",
+    "trim": "Inscription",
+    "price_krw": 110700000,
+    "price_basis": "VAT 포함·개별소비세 인하분 미적용",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1,
+    "generation_id": "77e8c0a3-02da-43f4-bff3-759faa064598",
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "evidence": [
+      {
+        "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+        "source_date": "2021-10-05",
+        "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+        "page": 1
+      }
+    ],
+    "status": "historical_official_price_only"
+  }
+]

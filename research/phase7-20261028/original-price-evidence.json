@@ -1,0 +1,28 @@
+[
+  {
+    "depreciation_id": "1f66afd8-9314-4acb-b0cc-8bc223ab1b65",
+    "source_url": "https://assets.volvocars.co.kr/common/211005_pricelist.pdf",
+    "source_date": "2021-10-05",
+    "price_krw": 54100000,
+    "scope": "볼보 S60 SPA 2022년형 B5 Inscription, VAT 포함·개소세 인하분 미적용",
+    "limitations": "MY22로 명시된 공식 가격표 1쪽의 엔진·트림·기본가격 일치. 계약월 세금 인하분·옵션 및 동일 사양 중고차 대응은 미완료. 감가율 검증 완료가 아닙니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true,
+    "document_sha256": "7d8039fa3f18676f226035ebe0d132fe5e51a96564f3a2b54d794edc16a2648b",
+    "page": 1
+  },
+  {
+    "depreciation_id": "4093dc75-5e67-466d-9a1e-825e527fc857",
+    "source_url": "https://assets.volvocars.co.kr/media/row/korea/pdf/210402_pricelist.pdf",
+    "source_date": "2021-04-05",
+    "price_krw": 92900000,
+    "scope": "볼보 XC90 SPA 2021년형 B6 AWD Inscription, VAT 포함·개소세 인하분 미적용",
+    "limitations": "MY21 공식 가격표 1쪽의 구동·엔진·트림·기본가격 일치. MY22의 9310만원과 혼합하지 않습니다. 계약월 세금 인하분·옵션 및 중고차 대응은 미완료. 감가율 검증 완료가 아닙니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true,
+    "document_sha256": "e3acb61d92ca75b7d84671d47e27175f1993304d51bd357e434e86bcc65a1cd6",
+    "page": 1
+  }
+]
