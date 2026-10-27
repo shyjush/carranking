@@ -1,0 +1,27 @@
+[
+  {
+    "depreciation_id": "72954872-d2af-4144-95c5-b3f12c6dde1d",
+    "source_url": "https://www.hyundai.com/contents/repn-car/catalog/ioniq5-price.pdf",
+    "source_date": "2022-07-15 (문서에 명시된 현 모델 출시일)",
+    "price_krw": 56980000,
+    "scope": "아이오닉 5 NE 롱레인지 익스클루시브 · 후륜 77.4kWh · 세제혜택 전 기본가격",
+    "limitations": "공식 PDF 1쪽에서 세제혜택 전 5698만원과 후 5410만원을 함께 확인했습니다. 기본 19인치와 20인치/HTRAC 선택가격을 구분합니다. 문서 출시일을 MY2023 확정으로 사용하지 않으며 계약월·옵션·보조금과 동일 사양 중고차 대조는 미완료입니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true,
+    "document_sha256": "0cf614576b73c0ce701b7c44973c035fa461a42cc8d80a817ce41437e08525b9",
+    "page": 1
+  },
+  {
+    "depreciation_id": "ead77b5a-a050-4944-9696-95734dce4549",
+    "source_url": "https://newsroom.porsche.com/christophorus/ko/2020/396/market-korea-porsche-korea-mid-year-press-conference-2020.html",
+    "source_date": "2020-09 (원문 작성 기준월)",
+    "price_krw": 145600000,
+    "scope": "포르쉐 타이칸 J1 4S · 국내 출시 예정 발표가격",
+    "limitations": "공식 2020년 9월 원문에서 국내 출시 예정 1억4560만원을 확인했습니다. 원문은 국내 인증 전 자료로 명시되어 있습니다. MY2021 실제 계약가격·배터리 종류·선택 옵션·세금 적용은 미확정이며 WLTP 수치를 국내 공인 전비로 사용하지 않습니다.",
+    "reviewed_on": "2026-10-28",
+    "status": "partial_original_price_only",
+    "does_not_verify_depreciation": true,
+    "document_sha256": "2de4e10b9c5800ca63c793d259251fced3e61a2266c8af2a76119eaaf9e0ad1d"
+  }
+]

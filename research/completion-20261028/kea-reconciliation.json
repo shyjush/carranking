@@ -1,0 +1,27 @@
+{
+  "source_file_sha256": "41c836fbbb1a39133b504fa67e8558fe07f8328e4afe530a27dee30f666c315c",
+  "source_origin": "2026-10-27 successful complete API run, retained staging; reused without re-triggering Actions",
+  "received": 3732,
+  "catalog_reviewed": 3185,
+  "catalog_unchanged": 3185,
+  "catalog_conflicts": [],
+  "explicit_generation_passed": 328,
+  "existing_variant_unchanged": 328,
+  "new_explicit_variants": [],
+  "existing_variant_conflicts": [],
+  "source_rules": {
+    "collected": 3732,
+    "validated": 328,
+    "duplicates": 110,
+    "held": 3294,
+    "reasons": {
+      "no_explicit_generation": 2615,
+      "unsupported_or_conversion": 447,
+      "indistinguishable_variants": 135,
+      "invalid_or_unsupported": 97
+    },
+    "new_models": 0,
+    "new_generations": 0
+  },
+  "writes": 0
+}

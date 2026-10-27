@@ -1,0 +1,618 @@
+[
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.35 E-Turbo · VT40 CVT",
+    "trim": "Premier",
+    "price_krw": 29490000,
+    "price_basis": "VAT 포함·개소세 인하 전",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 9,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.35 E-Turbo · VT40 CVT",
+    "trim": "Premier",
+    "price_krw": 28950000,
+    "price_basis": "VAT 포함·개소세 인하 후",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 9,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.35 E-Turbo · VT40 CVT",
+    "trim": "Premier 프라임 세이프티",
+    "price_krw": 31790000,
+    "price_basis": "VAT 포함·개소세 인하 전",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 9,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.35 E-Turbo · VT40 CVT",
+    "trim": "Premier 프라임 세이프티",
+    "price_krw": 31210000,
+    "price_basis": "VAT 포함·개소세 인하 후",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 9,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.35 E-Turbo · VT40 CVT",
+    "trim": "레드라인 Premier",
+    "price_krw": 30450000,
+    "price_basis": "VAT 포함·개소세 인하 전",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 9,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.35 E-Turbo · VT40 CVT",
+    "trim": "레드라인 Premier",
+    "price_krw": 29900000,
+    "price_basis": "VAT 포함·개소세 인하 후",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 9,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.35 E-Turbo · VT40 CVT",
+    "trim": "레드라인 Premier 프라임 세이프티",
+    "price_krw": 32750000,
+    "price_basis": "VAT 포함·개소세 인하 전",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 9,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.35 E-Turbo · VT40 CVT",
+    "trim": "레드라인 Premier 프라임 세이프티",
+    "price_krw": 32160000,
+    "price_basis": "VAT 포함·개소세 인하 후",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 9,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 9
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "2.0 Turbo · 6단 자동",
+    "trim": "LT 스페셜",
+    "price_krw": 30770000,
+    "price_basis": "VAT 포함·개소세 인하 전",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 10,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 10
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "2.0 Turbo · 6단 자동",
+    "trim": "LT 스페셜",
+    "price_krw": 30220000,
+    "price_basis": "VAT 포함·개소세 인하 후",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 10,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 10
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "2.0 Turbo · 6단 자동",
+    "trim": "Premier 스페셜",
+    "price_krw": 33430000,
+    "price_basis": "VAT 포함·개소세 인하 전",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 10,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 10
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "2.0 Turbo · 6단 자동",
+    "trim": "Premier 스페셜",
+    "price_krw": 32830000,
+    "price_basis": "VAT 포함·개소세 인하 후",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 10,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 10
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "2.0 Turbo · 6단 자동",
+    "trim": "레드라인",
+    "price_krw": 33830000,
+    "price_basis": "VAT 포함·개소세 인하 전",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 10,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 10
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "말리부",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "2.0 Turbo · 6단 자동",
+    "trim": "레드라인",
+    "price_krw": 33230000,
+    "price_basis": "VAT 포함·개소세 인하 후",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 10,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 10
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "스파크",
+    "generation_id": "e29c18db-9c4e-4392-bd80-f4a34be06649",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.0 가솔린 · 5단 수동",
+    "trim": "LS Basic",
+    "price_krw": 9820000,
+    "price_basis": "VAT 포함·공식 판매가격",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 11,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 11
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "스파크",
+    "generation_id": "e29c18db-9c4e-4392-bd80-f4a34be06649",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.0 가솔린 · C-Tech CVT",
+    "trim": "LS Basic",
+    "price_krw": 11560000,
+    "price_basis": "VAT 포함·공식 판매가격",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 11,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 11
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "스파크",
+    "generation_id": "e29c18db-9c4e-4392-bd80-f4a34be06649",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.0 가솔린 · 5단 수동",
+    "trim": "LS",
+    "price_krw": 10600000,
+    "price_basis": "VAT 포함·공식 판매가격",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 11,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 11
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "스파크",
+    "generation_id": "e29c18db-9c4e-4392-bd80-f4a34be06649",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.0 가솔린 · C-Tech CVT",
+    "trim": "LS",
+    "price_krw": 12340000,
+    "price_basis": "VAT 포함·공식 판매가격",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 11,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 11
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "스파크",
+    "generation_id": "e29c18db-9c4e-4392-bd80-f4a34be06649",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.0 가솔린 · 5단 수동",
+    "trim": "LT",
+    "price_krw": 11250000,
+    "price_basis": "VAT 포함·공식 판매가격",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 11,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 11
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "스파크",
+    "generation_id": "e29c18db-9c4e-4392-bd80-f4a34be06649",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.0 가솔린 · C-Tech CVT",
+    "trim": "LT",
+    "price_krw": 12990000,
+    "price_basis": "VAT 포함·공식 판매가격",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 11,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 11
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "스파크",
+    "generation_id": "e29c18db-9c4e-4392-bd80-f4a34be06649",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.0 가솔린 · 5단 수동",
+    "trim": "Premier",
+    "price_krw": 12740000,
+    "price_basis": "VAT 포함·공식 판매가격",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 11,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 11
+      }
+    ]
+  },
+  {
+    "brand": "쉐보레",
+    "model": "스파크",
+    "generation_id": "e29c18db-9c4e-4392-bd80-f4a34be06649",
+    "model_year": null,
+    "document_period": "2022-11",
+    "engine": "1.0 가솔린 · C-Tech CVT",
+    "trim": "Premier",
+    "price_krw": 14480000,
+    "price_basis": "VAT 포함·공식 판매가격",
+    "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+    "source_date": "2022-11",
+    "date_precision": "month",
+    "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+    "page": 11,
+    "reviewed_on": "2026-10-28",
+    "current_sale_verified": false,
+    "does_not_verify_depreciation": true,
+    "status": "historical_official_price_only",
+    "evidence": [
+      {
+        "source_url": "https://www.chevrolet.co.kr/content/dam/chevrolet/as/kr/ko/index/finance/type-price/02-pdfs/2022%EB%85%84%2011%EC%9B%94%20%EC%A0%84%EC%B0%A8%EC%A2%85%20%EA%B0%80%EA%B2%A9%ED%91%9C.pdf",
+        "source_date": "2022-11",
+        "document_sha256": "1d396e6154ab8d99d490a319b2b90fcc02e2a1161e7b594942750d1d77b69f65",
+        "page": 11
+      }
+    ]
+  }
+]

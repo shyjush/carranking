@@ -1,0 +1,15 @@
+{
+  "targets_reviewed": 63,
+  "unique_individual_candidates": 167,
+  "originals_received": 145,
+  "original_errors": 22,
+  "sold_or_contracted": 99,
+  "new_official_price_points": 22,
+  "new_partial_price_evidence": 2,
+  "resolved_price_basis": 1,
+  "verified_snapshots": 0,
+  "verified_depreciation": 0,
+  "grade_changes": 0,
+  "source_records_expected": 88,
+  "remaining_without_partial_price": 31
+}

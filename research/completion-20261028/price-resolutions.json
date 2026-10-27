@@ -1,0 +1,12 @@
+[
+  {
+    "depreciation_id": "72954872-d2af-4144-95c5-b3f12c6dde1d",
+    "supersedes_source_id": "066ff56d-30a5-5b62-854e-91d559615a29",
+    "status": "resolved_tax_basis_only",
+    "source_url": "https://www.hyundai.com/contents/repn-car/catalog/ioniq5-price.pdf",
+    "reviewed_on": "2026-10-28",
+    "reason": "이전 가격 차이 보류는 세제혜택 전 5698만원/후 5410만원의 기준 차이로 원문 확인했습니다. 기본가격 기준만 해소했으며 모델연도·계약월·옵션·실매물 대조와 감가율 검증은 계속 보류합니다.",
+    "document_sha256": "0cf614576b73c0ce701b7c44973c035fa461a42cc8d80a817ce41437e08525b9",
+    "does_not_verify_depreciation": true
+  }
+]
