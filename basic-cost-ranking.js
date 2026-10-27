@@ -111,11 +111,11 @@ $('search').addEventListener('input',render);$('fuelFilter').addEventListener('c
    }
   }catch(e){console.warn('Official fuel prices unavailable: example prices retained',e)}
   try{
-   const [first,second]=await Promise.all([
-    get('kea_official_vehicle_specs?select=manufacturer,model_detail,certification_year,fuel_type,displacement_cc,combined_efficiency&certification_year=gte.2023&order=certification_year.desc&limit=1000&offset=0'),
-    get('kea_official_vehicle_specs?select=manufacturer,model_detail,certification_year,fuel_type,displacement_cc,combined_efficiency&certification_year=gte.2023&order=certification_year.desc&limit=1000&offset=1000')
-   ]);
-   officialVariants=first.concat(second);
+   officialVariants=[];
+   for(let offset=0;offset<100000;offset+=1000){
+    const page=await get('kea_official_vehicle_specs?select=manufacturer,model_detail,certification_year,fuel_type,displacement_cc,combined_efficiency&order=certification_year.desc,source_key.asc&limit=1000&offset='+offset);
+    officialVariants.push(...page);if(page.length<1000)break;
+   }
   }catch(e){console.warn('Official KEA vehicle catalog unavailable',e)}
   const [specs,powers,details]=await Promise.all([
    get('vehicle_specs?select=generation_id,powertrain_id,combined_efficiency,source_url&limit=1000'),

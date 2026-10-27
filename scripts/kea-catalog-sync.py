@@ -25,6 +25,7 @@ def q(x):return "'"+str(x).replace("'","''")+"'"
 def rejected(reason):
  report["rejected"][reason]=report["rejected"].get(reason,0)+1
 rows={}
+eligible=0
 for item in items:
  if not isinstance(item,dict):rejected("bad_record");continue
  if item.get("CAR_KIND","").strip()!="승용차":rejected("non_passenger");continue
@@ -48,8 +49,10 @@ for item in items:
  # Distinct year/model/fuel/cc/eff are distinct manufacturer-certified versions.
  identity="\x1f".join([maker,model,str(year),fuel,str(cc),str(eff)])
  key=hashlib.sha256(identity.encode("utf-8")).hexdigest()
+ eligible+=1
  rows[key]=(maker,model,year,fuel_type,cc,eff,fuel)
-report["eligible"]=sum(report["rejected"].values())+len(rows)
+report["eligible"]=eligible
+report["duplicates"]=eligible-len(rows)
 report["unique"]=len(rows)
 conn="host=aws-0-ap-northeast-2.pooler.supabase.com port=5432 dbname=postgres user=postgres.ikhyadzboorscjwcrhcz sslmode=require"
 allrows=list(rows.items())

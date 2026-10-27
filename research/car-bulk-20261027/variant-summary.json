@@ -1,0 +1,14 @@
+{
+  "collected": 3732,
+  "validated": 328,
+  "duplicates": 110,
+  "held": 3294,
+  "reasons": {
+    "no_explicit_generation": 2615,
+    "unsupported_or_conversion": 447,
+    "indistinguishable_variants": 135,
+    "invalid_or_unsupported": 97
+  },
+  "new_models": 0,
+  "new_generations": 0
+}
