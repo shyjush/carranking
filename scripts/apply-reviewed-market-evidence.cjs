@@ -7,24 +7,15 @@ const originalById=new Map(originalAudit.verified.map(x=>[String(x.id),x]));
 const raw=fs.existsSync('evidence/inbox/value-listings.json')?JSON.parse(fs.readFileSync('evidence/inbox/value-listings.json','utf8')):[];
 const byId=new Map(raw.map(x=>[String(x.candidate_id),x]));
 const q=x=>"'"+String(x).replace(/'/g,"''")+"'";
-const approved=report.approved.filter(a=>{
- const r=byId.get(String(a.candidate_id));
- const audit=originalById.get(String(a.candidate_id));
- return audit?.originals?.length===a.sample_size &&
- audit.originals.every((doc,i)=>doc.year_trim_price_confirmed===true&&doc.url===r?.listings?.[i]?.url) &&
- r?.independent_source_review?.status==='approved' &&
- r.independent_source_review.original_content_verified===true &&
- r.independent_source_review.cross_channel_dedupe_verified===true &&
- /^https:\/\/[^ ]+/.test(String(r.independent_source_review.evidence_report_url||'')) &&
- String(r.independent_source_review.reviewer||'').trim().length>=3;
-});
+const {isReviewed}=require('./market-evidence-review.cjs');
+const approved=report.approved.filter(a=>isReviewed(a,byId.get(String(a.candidate_id)),originalById.get(String(a.candidate_id))));
 const summary={submitted:report.checked,structurallyEligible:report.approved.length,independentlyApproved:approved.length,held:report.held.length+report.approved.length-approved.length};
 if(!approved.length){console.log(JSON.stringify({...summary,result:'no approved evidence: no changes'}));process.exit(0)}
 if(!process.env.PGPASSWORD)throw Error('Missing GitHub DB secret');
 const sql=['BEGIN;'];
 for(const a of approved){
  const r=byId.get(String(a.candidate_id));
- const note=['dedupe_verified=true','trim_matched=true','trim_id='+a.trim_id,'evidence_sha256='+a.evidence_sha256,'review='+r.independent_source_review.evidence_report_url].join(';');
+ const note=['dedupe_verified=true','trim_matched=true','trim_id='+a.trim_id,'evidence_sha256='+a.evidence_sha256,'review='+r.independent_source_review.evidence_report_url,'cohort='+JSON.stringify(a.cohort)].join(';');
  // Any missing exact reference price aborts the entire transaction.
  sql.push('DO $block$ DECLARE n integer; BEGIN SELECT count(*) INTO n FROM public.trims t JOIN public.powertrains p ON p.id=t.powertrain_id WHERE t.id='+q(a.trim_id)+'::uuid AND p.generation_id='+q(a.generation_id)+'::uuid AND t.model_year='+a.model_year+' AND t.price_krw='+a.original_price_krw+" AND t.source_url LIKE 'https://%'; IF n<>1 THEN RAISE EXCEPTION 'trim/source mismatch'; END IF; END $block$;");
  const cols='generation_id,model_year,as_of_date,listing_count,avg_price_krw,source_name,source_url,confidence,note';

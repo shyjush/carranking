@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://www.bobaedream.co.kr/mycar/mycar_view.php?gubun=K&no=2265920",
+    "status": 200,
+    "sha256": "2e8aa2cbcb0b15313024893b11583abc269247a2d07382e200a5f4efaff4321a",
+    "fetched_at": "2026-10-27T22:52:57.775680+00:00"
+  },
+  {
+    "url": "https://m.bobaedream.co.kr/mycar/mview/2265651",
+    "status": 200,
+    "sha256": "e1d4f6177a932bb271a1d408e06d698f4381531490187769f34f4c0f81d6d1b1",
+    "fetched_at": "2026-10-27T22:52:57.715768+00:00"
+  },
+  {
+    "url": "https://www.m-park.co.kr/buy/detail/6061501672",
+    "status": 200,
+    "sha256": "0b58672fd84237bb36217fc30473e0dc1057fa564e37c8b6a6a15b8b265ac8ee",
+    "fetched_at": "2026-10-27T22:53:00.984773+00:00"
+  },
+  {
+    "url": "https://bobaedream.co.kr/mycar/mycar_view.php?gubun=K&no=2265093",
+    "status": 200,
+    "sha256": "c2d4cf3f14c153cf8f52d0b4b945d15a521e323ab7eb2604ba90b3e7982ed387",
+    "fetched_at": "2026-10-27T22:52:59.068099+00:00"
+  },
+  {
+    "url": "https://www.bobaedream.co.kr/cyber/CyberCar_view.php?gubun=K&no=784138",
+    "status": 200,
+    "sha256": "40bc6c83ffc9e561fcc7625aebfdf5e0e0c8b0302fb5e262dc236ea3d0fb6036",
+    "fetched_at": "2026-10-27T22:53:05.421786+00:00"
+  },
+  {
+    "url": "https://www.bobaedream.co.kr/cyber/CyberCar_view.php?no=771464",
+    "status": 200,
+    "sha256": "26d4c7fdb7b3e1a282b44a8910a7a2efa6ba85c2a5ec358fb468a639e59528d2",
+    "fetched_at": "2026-10-27T22:53:05.171910+00:00"
+  },
+  {
+    "url": "https://m.bobaedream.co.kr/mycar/mview/2263131",
+    "status": 200,
+    "sha256": "978a5ac5e1edc70a0203be8c423db2ffc9444d83af5da4bb8f3766c78b2c7f61",
+    "fetched_at": "2026-10-27T22:53:04.250447+00:00"
+  },
+  {
+    "url": "https://m.bobaedream.co.kr/cyber/cview/751157/I/1/1/",
+    "status": 200,
+    "sha256": "e414b8ed9c3344d00e3db74825d753d96bfae4b07eb72e0a746581b0bf137daa",
+    "fetched_at": "2026-10-27T22:53:04.467165+00:00"
+  }
+]

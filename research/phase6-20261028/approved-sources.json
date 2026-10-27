@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1cfec467-8043-5687-bb1c-5e4a100253cd",
+    "entity_type": "depreciation_listing_review",
+    "entity_id": "f5283e68-7d78-4575-9e6b-1dff368494ba",
+    "source_url": "https://www.bobaedream.co.kr/mycar/mycar_view.php?gubun=K&no=2265920"
+  },
+  {
+    "id": "1aadcbe1-f924-5eba-bf8e-4a990b8c1b0b",
+    "entity_type": "depreciation_listing_review",
+    "entity_id": "f5283e68-7d78-4575-9e6b-1dff368494ba",
+    "source_url": "https://m.bobaedream.co.kr/mycar/mview/2265651"
+  },
+  {
+    "id": "4c7a32e0-6e72-5063-a028-9a0b012b3057",
+    "entity_type": "depreciation_listing_review",
+    "entity_id": "f5283e68-7d78-4575-9e6b-1dff368494ba",
+    "source_url": "https://www.m-park.co.kr/buy/detail/6061501672"
+  },
+  {
+    "id": "ac896e69-f546-552a-baa0-fd0c73509444",
+    "entity_type": "depreciation_listing_review",
+    "entity_id": "3a1de851-6f42-4684-a2be-f5271072a01a",
+    "source_url": "https://bobaedream.co.kr/mycar/mycar_view.php?gubun=K&no=2265093"
+  },
+  {
+    "id": "f3a2cf83-918c-55a1-be5a-9ac02d366ab1",
+    "entity_type": "depreciation_listing_review",
+    "entity_id": "40da5525-e795-4bd5-bb3b-012bbd24347f",
+    "source_url": "https://www.bobaedream.co.kr/cyber/CyberCar_view.php?gubun=K&no=784138"
+  },
+  {
+    "id": "c35c687b-0a9d-5913-9dce-9061545b31a3",
+    "entity_type": "depreciation_listing_review",
+    "entity_id": "40da5525-e795-4bd5-bb3b-012bbd24347f",
+    "source_url": "https://www.bobaedream.co.kr/cyber/CyberCar_view.php?no=771464"
+  },
+  {
+    "id": "06a69549-e86a-5e81-9989-eef56e38172e",
+    "entity_type": "depreciation_listing_review",
+    "entity_id": "40da5525-e795-4bd5-bb3b-012bbd24347f",
+    "source_url": "https://m.bobaedream.co.kr/mycar/mview/2263131"
+  },
+  {
+    "id": "d57dcf81-042f-598c-9739-3643aad98f5e",
+    "entity_type": "depreciation_listing_review",
+    "entity_id": "a305920d-690b-499a-9b07-575ed23fbc09",
+    "source_url": "https://m.bobaedream.co.kr/cyber/cview/751157/I/1/1/"
+  }
+]
