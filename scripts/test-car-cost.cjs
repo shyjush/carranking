@@ -5,6 +5,7 @@ const s={id:'s',generation_id:'g',powertrain_id:'p',source_url:'https://www.data
 const v=C.variant(s,p);assert(v);assert.equal(v.certificationYear,'2020');assert.equal(v.efficiency,13.6);
 for(const spec of [{...s,generation_id:'other'},{...s,powertrain_id:'other'},{...s,source_url:'https://data.go.kr.evil.test/x'},{...s,source_url:'https://auto.danawa.com/x'},{...s,combined_efficiency:'최대 복합 15 km/L'},{...s,combined_efficiency:'13 km/L / 14 km/L'},{...s,combined_efficiency:'5 km/kWh'}])assert.equal(C.variant(spec,p),null);
 assert.equal(C.source('javascript:alert(1)').url,null);assert.equal(C.source('https://www.kia.com/kr').kind,'manufacturer');
+assert.equal(C.variant({...s,source_url:'https://www.kia.com/kr/vehicles/ev3/specification',combined_efficiency:'5.2 km/L (17인치)'},p).specificationLabel,p.name+' · 17인치');
 const approx=(a,b)=>assert(Math.abs(a-b)<0.00001,`${a} != ${b}`);
 for(const [cc,total] of [[1000,104000],[1001,182182],[1600,291200],[1601,416260]])approx(C.tax({...v,cc},1).total,total);
 approx(C.tax(v,3).total,1598*140*.95*1.3);approx(C.tax(v,12).total,1598*140*.5*1.3);approx(C.tax(v,40).total,C.tax(v,12).total);
