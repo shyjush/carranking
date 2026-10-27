@@ -1,0 +1,5627 @@
+[
+  {
+    "depreciation_id": "a5e6ad05-9cb7-4f8c-ba6e-578e43b478fa",
+    "model": "G70",
+    "generation": "IK",
+    "model_year": 2018,
+    "stored_note": "제네시스 공식 G70 2.0T 어드밴스드 신차가 3,750만원 / 2026-07-08 중고 실매물 평균 2,161만원(동일 등급 10건)\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/G70/2018",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "공식 기본가격 일부 확보. 개별 차량 계약월의 세율·선택 옵션 및 매물 가격과의 일치 확인 필요"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "98c0772c861507c82d392b13f51f5e0d8d941e491f5df8693c622b92a8e28341",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.2D 어드밴스드",
+          "14",
+          "1,773",
+          "2,000",
+          "2,186"
+        ],
+        [
+          "2.0T 스포츠 패키지",
+          "14",
+          "2,144",
+          "2,317",
+          "2,498"
+        ],
+        [
+          "2.0T 어드밴스드",
+          "14",
+          "1,950",
+          "2,104",
+          "2,276"
+        ],
+        [
+          "3.3T 스포츠 엘리트",
+          "9",
+          "2,173",
+          "2,370",
+          "2,502"
+        ],
+        [
+          "2.2D 슈프림",
+          "9",
+          "1,859",
+          "2,082",
+          "2,260"
+        ],
+        [
+          "3.3T 스포츠 어드밴스드",
+          "9",
+          "2,150",
+          "2,313",
+          "2,499"
+        ],
+        [
+          "2.0T 엘리트",
+          "9",
+          "2,031",
+          "2,199",
+          "2,350"
+        ],
+        [
+          "2.2D 엘리트",
+          "9",
+          "1,882",
+          "2,140",
+          "2,300"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.0T 어드밴스드",
+    "generation_id": "dbf8bc0f-5043-4ee2-9b65-5fd63340d327",
+    "partial_original_price": {
+      "depreciation_id": "a5e6ad05-9cb7-4f8c-ba6e-578e43b478fa",
+      "source_url": "https://newsroom.genesis.com/ko-ko/제네시스-G70-출시/",
+      "source_date": "2017-09-15",
+      "price_krw": 37500000,
+      "scope": "G70 IK 출시형 2.0T 어드밴스드 기본가격",
+      "limitations": "출시자료와 저장 가격 일치. 2018년식의 월별 세율·옵션 및 실매물 대응은 미완료. 감가율 검증 완료 아님."
+    }
+  },
+  {
+    "depreciation_id": "0fe8876a-db65-4f30-9206-c20bc9d67199",
+    "model": "토레스",
+    "generation": "J100",
+    "model_year": 2022,
+    "stored_note": "2022 KGM Torres J100 1.5 gasoline 2WD T7. Launch MSRP 30,200,000 KRW (tax-reduction basis). 2026 public-market cross-check used five same-year/same-trim 2WD T7 listings at 12.28m, 15.18m, 16.30m, 18.50m and 23.40m KRW; broad mileage dispersion. Representative normalized used value set to 19.20m KRW after cross-check with published 2022 T7 market guides around 21.5m-23.0m. Confidence B; keep monitoring due mileage/condition dispersion. QA 2026-09-07: downgraded B to C. Five observed listings show very wide mileage/condition dispersion and the stored normalized used value is not the direct mean of those exact-trim observations; excluded from public A/B ranking pending a stronger exact-trim aggregate.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%ED%86%A0%EB%A0%88%EC%8A%A4/2022",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "reason": "집계 원문 접근 실패: HTTP Error 404: Not Found",
+    "target_spec": "1.5 가솔린 2WD T7",
+    "generation_id": "9c4e09a0-52d6-4ed4-8e17-b6e7379cbdc5"
+  },
+  {
+    "depreciation_id": "f8f1e2ce-b58e-415c-a673-4a510586c224",
+    "model": "GV80",
+    "generation": "JX1",
+    "model_year": 2020,
+    "stored_note": "제네시스 공식 GV80 2.5 터보 출시가 6,037만원 / 2026-07-08 중고 실매물 평균 4,453만원(동일 등급 7건)\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/GV80/2020",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "공식 기본가격 일부 확보. 개별 차량 계약월의 세율·선택 옵션 및 매물 가격과의 일치 확인 필요"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "e18dca5b85a12e4df4256042d8078e104f5916b563ff9d79ec1dd094b7fee7a8",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "3.0 디젤 AWD",
+          "17",
+          "4,419",
+          "4,780",
+          "5,340"
+        ],
+        [
+          "3.0 디젤",
+          "14",
+          "4,245",
+          "4,499",
+          "4,846"
+        ],
+        [
+          "2.5 터보",
+          "9",
+          "4,019",
+          "4,362",
+          "4,643"
+        ],
+        [
+          "3.5 터보",
+          "9",
+          "4,245",
+          "4,663",
+          "4,956"
+        ],
+        [
+          "3.5 터보 AWD",
+          "9",
+          "4,391",
+          "4,822",
+          "5,050"
+        ],
+        [
+          "2.5 터보 AWD",
+          "9",
+          "4,175",
+          "4,589",
+          "4,911"
+        ],
+        [
+          "2.5 터보 가솔린 AWD",
+          "5",
+          "4,440",
+          "4,762",
+          "5,020"
+        ],
+        [
+          "3.0 디젤 2WD",
+          "5",
+          "4,070",
+          "4,428",
+          "4,850"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.5 가솔린 터보 기본형",
+    "generation_id": "7fed9a3a-af86-41e5-8c7f-0f278a3a210c",
+    "partial_original_price": {
+      "depreciation_id": "f8f1e2ce-b58e-415c-a673-4a510586c224",
+      "source_url": "https://www.genesis.com/kr/ko/support/pr-center/detail.html?seq=0000000224",
+      "source_date": "2020-03-30",
+      "price_krw": 60370000,
+      "scope": "GV80 JX1 가솔린 2.5 터보 출시 기본가격",
+      "limitations": "공식 페이지 표시일은 2020-03-30, 본문은 9일 출시로 기술. 가격 확인용으로만 보존하며 정확한 계약일·세율·옵션·개별 매물 대응은 미완료."
+    }
+  },
+  {
+    "depreciation_id": "f4e54188-65af-415f-9279-3d6da95bbd30",
+    "model": "911",
+    "generation": "992",
+    "model_year": 2021,
+    "stored_note": "2021 Porsche 911 Carrera Coupe (992). Historical Korean new price 149,900,000 KRW; BigValue 2021 Carrera Coupe average 114,500,000 KRW from 14 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/911/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "f5e66be84d654fd10a28b81fe87c59a228b4aa5df8cc617edbc2022b8cf49dfb",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "카레라 4S 카브리올레",
+          "19",
+          "10,016",
+          "12,300",
+          "14,657"
+        ],
+        [
+          "터보 S 카브리올레",
+          "16",
+          "15,247",
+          "17,465",
+          "19,848"
+        ],
+        [
+          "카레라 카브리올레",
+          "16",
+          "11,128",
+          "12,480",
+          "14,012"
+        ],
+        [
+          "카레라 쿠페",
+          "16",
+          "10,237",
+          "11,361",
+          "12,668"
+        ],
+        [
+          "터보 S",
+          "16",
+          "14,437",
+          "16,538",
+          "18,794"
+        ],
+        [
+          "카레라 4 쿠페",
+          "16",
+          "10,678",
+          "11,976",
+          "13,445"
+        ],
+        [
+          "카레라 S 카브리올레",
+          "16",
+          "9,499",
+          "11,406",
+          "13,956"
+        ],
+        [
+          "카레라 4 카브리올레",
+          "16",
+          "9,078",
+          "11,591",
+          "13,338"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "Carrera Coupe",
+    "generation_id": "8744ef6d-0fc7-4f4f-99af-58fca5abb474"
+  },
+  {
+    "depreciation_id": "1c2c3de0-a227-49ea-b0eb-c80509aa2b72",
+    "model": "K5",
+    "generation": "JF",
+    "model_year": 2015,
+    "stored_note": "2015 Kia K5 JF 2.0 gasoline MX Luxury. Original MSRP 23,410,000 KRW. Exact-trim KB ChaChaCha live listing cross-check: 8,300,000 KRW. Additional market guides place 2015 MX Luxury around 9-11m KRW; retained exact-trim observed price with sample_size=1 and B only as a provisional exact-trim normalization pending multi-listing aggregation. QA 2026-09-07: downgraded to C because exact-trim evidence is only a single observed listing; excluded from public A/B ranking until multi-listing evidence is secured.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/K5/2015",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "850be8a6cc23964b63ea0f96afb9d2835fa1f9c91eff4339f052bf620e8652a6",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.0 LPi 디럭스",
+          "36",
+          "568",
+          "678",
+          "811"
+        ],
+        [
+          "2.0 LPi 럭셔리",
+          "23",
+          "660",
+          "771",
+          "893"
+        ],
+        [
+          "2.0 디럭스",
+          "22",
+          "643",
+          "736",
+          "896"
+        ],
+        [
+          "2.0 LPi 프레스티지",
+          "22",
+          "707",
+          "823",
+          "955"
+        ],
+        [
+          "2.0 LPi 노블레스",
+          "18",
+          "743",
+          "846",
+          "965"
+        ],
+        [
+          "2.0 노블레스",
+          "17",
+          "795",
+          "976",
+          "1,310"
+        ],
+        [
+          "프레스티지",
+          "14",
+          "890",
+          "999",
+          "1,256"
+        ],
+        [
+          "2.0 프레스티지",
+          "14",
+          "776",
+          "946",
+          "1,230"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.0 가솔린 MX 럭셔리",
+    "generation_id": "08b5f537-ac39-4139-b080-80e6e3f67eb9"
+  },
+  {
+    "depreciation_id": "d9a820d1-b72b-4887-953d-44aa5691e4b6",
+    "model": "싼타페",
+    "generation": "TM",
+    "model_year": 2018,
+    "stored_note": "2018 Hyundai Santa Fe TM e-VGT R2.0 2WD Modern. Historical MSRP 28,950,000 KRW. Exact year/trim market reference 17,900,000 KRW; replaced prior year-wide average to align trim basis. Cross-checked 2026-09-07. QA 2026-09-07: previous sample_size=627 was year-wide/non-exact-trim and removed. Downgraded to C until an exact-trim sample count is verified.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%8B%BC%ED%83%80%ED%8E%98/2018",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "a624f42a0509531fdcffbcdbd90095ecd2369813cfd76d17d9c75ee8628e65da",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "e-VGT R2.0 2WD 익스클루시브 스페셜",
+          "27",
+          "1,694",
+          "1,979",
+          "2,275"
+        ],
+        [
+          "e-VGT R2.0 4WD 익스클루시브 스페셜",
+          "27",
+          "1,785",
+          "2,066",
+          "2,304"
+        ],
+        [
+          "e-VGT R2.0 4WD 프리미엄",
+          "27",
+          "1,655",
+          "1,936",
+          "2,236"
+        ],
+        [
+          "e-VGT R2.0 2WD 프리미엄",
+          "27",
+          "1,575",
+          "1,839",
+          "2,133"
+        ],
+        [
+          "e-VGT R2.0 2WD 밀리언 스타일",
+          "15",
+          "1,694",
+          "1,838",
+          "2,077"
+        ],
+        [
+          "2.0 터보 GDI 2WD 프리미엄",
+          "15",
+          "1,837",
+          "1,973",
+          "2,119"
+        ],
+        [
+          "e-VGT R2.2 4WD 인스퍼레이션",
+          "15",
+          "2,350",
+          "2,530",
+          "2,788"
+        ],
+        [
+          "e-VGT R2.2 4WD 익스클루시브 스페셜",
+          "15",
+          "1,844",
+          "2,007",
+          "2,286"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "R2.0 디젤 2WD 모던",
+    "generation_id": "bf43acab-651c-4bff-95f8-8ea453e3b9b2"
+  },
+  {
+    "depreciation_id": "dfe4f2a1-11a3-4ec9-b400-ab849ed8ec05",
+    "model": "스포티지",
+    "generation": "NQ5",
+    "model_year": 2021,
+    "stored_note": "2021 Kia Sportage NQ5 1.6 gasoline turbo 2WD Trendy. Historical base MSRP 24,420,000 KRW. Published 2021 same-trim used-price guide: 19,780,000 KRW. Cross-check also found current same-year/same-trim listings around 17.1-18.5m KRW at ~98k-119k km. Upgraded to B after published exact year/trim guide plus multi-source market cross-check.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%8A%A4%ED%8F%AC%ED%8B%B0%EC%A7%80/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "16ec25c2aad63d23e5c015f0700f486d558dc1fa50893ea5b1a0d0fd5c5476fa",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "스마트스트림 D 1.6 2WD 프레스티지 그래비티",
+          "16",
+          "2,022",
+          "2,157",
+          "2,284"
+        ],
+        [
+          "스마트스트림 D 1.6 4WD 프레스티지 그래비티",
+          "16",
+          "2,160",
+          "2,293",
+          "2,460"
+        ],
+        [
+          "스마트스트림 D 1.6 2WD 프레스티지",
+          "16",
+          "1,998",
+          "2,137",
+          "2,256"
+        ],
+        [
+          "스마트스트림 D 1.6 2WD 시그니처 그래비티",
+          "16",
+          "2,169",
+          "2,337",
+          "2,552"
+        ],
+        [
+          "스마트스트림 D 1.6 4WD 프레스티지",
+          "16",
+          "2,137",
+          "2,272",
+          "2,432"
+        ],
+        [
+          "스마트스트림 D 1.6 4WD 시그니처 그래비티",
+          "16",
+          "2,309",
+          "2,488",
+          "2,718"
+        ],
+        [
+          "누우 가솔린 2.0 MPi 2WD 시그니처 그래비티",
+          "16",
+          "2,237",
+          "2,366",
+          "2,589"
+        ],
+        [
+          "스마트스트림 D 1.6 4WD 시그니처",
+          "16",
+          "2,289",
+          "2,463",
+          "2,690"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 가솔린 터보 2WD 트렌디",
+    "generation_id": "70cfb23e-e6ab-43a3-a982-03b91f83880a"
+  },
+  {
+    "depreciation_id": "05775ad4-0e37-4898-802a-f29c6e37c089",
+    "model": "코나",
+    "generation": "SX2",
+    "model_year": 2023,
+    "stored_note": "BigValue 2023 동일연식 가솔린 2.0 모던 2WD 10건 평균 2,446만원; Danawa 동일 트림 신차가 3,002만원.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%BD%94%EB%82%98/2023",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "c4035a2cfc7d2ed3282e7b0db1a773137282d845de8ef50d25f81f427264ce9d",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "가솔린 2.0 인스퍼레이션 2WD",
+          "13",
+          "2,424",
+          "2,824",
+          "3,149"
+        ],
+        [
+          "가솔린 1.6 터보 인스퍼레이션 4WD",
+          "13",
+          "2,606",
+          "3,032",
+          "3,361"
+        ],
+        [
+          "가솔린 1.6 터보 인스퍼레이션 2WD",
+          "13",
+          "2,473",
+          "2,875",
+          "3,207"
+        ],
+        [
+          "가솔린 2.0 모던 2WD",
+          "13",
+          "2,193",
+          "2,410",
+          "2,638"
+        ],
+        [
+          "인스퍼레이션",
+          "13",
+          "2,721",
+          "3,150",
+          "3,490"
+        ],
+        [
+          "가솔린 1.6 터보 모던 2WD",
+          "13",
+          "2,245",
+          "2,464",
+          "2,696"
+        ],
+        [
+          "모던",
+          "12",
+          "2,510",
+          "2,804",
+          "3,091"
+        ],
+        [
+          "가솔린 1.6 터보 프리미엄 2WD",
+          "10",
+          "2,551",
+          "2,700",
+          "2,926"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.0 가솔린 2WD 모던",
+    "generation_id": "35fc0521-5cdd-4380-b568-c1120638e4c2"
+  },
+  {
+    "depreciation_id": "3f14ad54-d975-46c3-9439-7391199e8cfa",
+    "model": "스포티지",
+    "generation": "NQ5",
+    "model_year": 2023,
+    "stored_note": "2023 Kia Sportage NQ5 1.6 gasoline turbo 2WD Prestige. MSRP normalized to 26,700,000 KRW from 2023 model reference; BigValue exact year/trim 14 listings avg 27,540,000 KRW (2026-07-08). Retention above 100% reflects observed listing-market average; exact trim and multi-channel sample are matched. QA 2026-09-07: downgraded to C. Although exact-trim listing averages are documented, observed used asking-price average exceeds historical new MSRP; exclude from public A/B ranking pending normalization for options/mileage/transaction-price basis.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%8A%A4%ED%8F%AC%ED%8B%B0%EC%A7%80/2023",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "4912c7f97824aa09ee32c23bc110249bb9ce7f05b0072fd87dbc5d93fe4870f3",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "1.6 가솔린 터보 4WD 프레스티지",
+          "16",
+          "2,682",
+          "2,899",
+          "3,208"
+        ],
+        [
+          "1.6 가솔린 터보 2WD 프레스티지",
+          "16",
+          "2,518",
+          "2,730",
+          "3,021"
+        ],
+        [
+          "노블레스 그래비티 4WD",
+          "16",
+          "3,357",
+          "3,506",
+          "3,882"
+        ],
+        [
+          "2.0 LPG 2WD 노블레스 그래비티",
+          "16",
+          "2,863",
+          "3,030",
+          "3,341"
+        ],
+        [
+          "2.0 디젤 4WD 노블레스",
+          "16",
+          "3,068",
+          "3,301",
+          "3,729"
+        ],
+        [
+          "2.0 디젤 4WD 노블레스 그래비티",
+          "16",
+          "3,172",
+          "3,407",
+          "3,844"
+        ],
+        [
+          "노블레스 그래비티 2WD",
+          "16",
+          "3,165",
+          "3,320",
+          "3,677"
+        ],
+        [
+          "노블레스 4WD",
+          "16",
+          "3,274",
+          "3,425",
+          "3,791"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 가솔린 터보 2WD 프레스티지",
+    "generation_id": "70cfb23e-e6ab-43a3-a982-03b91f83880a"
+  },
+  {
+    "depreciation_id": "11f37f44-990a-4df5-b4a0-d5617ac26ef7",
+    "model": "K3",
+    "generation": "BD",
+    "model_year": 2023,
+    "stored_note": "2023 Kia K3 BD 1.6 gasoline Prestige. Official Kia Sep-2022 price list: MSRP 21,100,000 KRW; individual consumption tax 3.5% price 20,710,000 KRW. BigValue 2023 Prestige: 12 listings, avg 21,280,000 KRW across 6 used-car channels as of 2026-07-08. Retention above 100% is retained as an observed market snapshot, not treated as a data error. QA 2026-09-07: downgraded to C. Although exact-trim listing averages are documented, observed used asking-price average exceeds historical new MSRP; exclude from public A/B ranking pending normalization for options/mileage/transaction-price basis.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/K3/2023",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "c0fcecc1c364b906532ee98718d76a67676e274ca2369d7348840aa5474e2d4c",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "GT 시그니처",
+          "16",
+          "2,422",
+          "2,552",
+          "2,867"
+        ],
+        [
+          "시그니처",
+          "16",
+          "2,230",
+          "2,346",
+          "2,614"
+        ],
+        [
+          "트렌디",
+          "15",
+          "1,791",
+          "1,872",
+          "2,104"
+        ],
+        [
+          "프레스티지",
+          "14",
+          "2,046",
+          "2,126",
+          "2,312"
+        ],
+        [
+          "1.6 가솔린 트렌디",
+          "3",
+          "1,880",
+          "1,933",
+          "1,990"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 가솔린 프레스티지",
+    "generation_id": "07a3b3db-4126-42c0-893f-b630674dd10a"
+  },
+  {
+    "depreciation_id": "6ca20527-0cc7-4e8f-83ac-6157b5c44336",
+    "model": "G80",
+    "generation": "RG3",
+    "model_year": 2020,
+    "stored_note": "G80 RG3 2020: 신차 기준가 2.5T 5,247만원(제네시스 공식 출시자료), 중고가는 2026-07-08 2020년식 실매물 189건 전체 평균 3,365만원(BigValue). 트림 혼합 평균이므로 B. QA 2026-09-07: sample_size cleared because the prior count was an overall model/year inventory count rather than the exact trim sample used for the valuation; confidence B retained for the cross-checked trim-level price benchmark. QA 2026-09-07: downgraded to C because the valuation still relies on a model/year-wide or trim-mixed market average rather than a verified exact-trim aggregate; excluded from public A/B ranking pending exact-trim evidence.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/G80/2020",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "공식 기본가격 일부 확보. 개별 차량 계약월의 세율·선택 옵션 및 매물 가격과의 일치 확인 필요"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "2ce7658dcae1e87475b67b58e0b49ba49fe655ca79c3f77da214d09fab6da542",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "3.5T",
+          "15",
+          "3,688",
+          "3,897",
+          "4,116"
+        ],
+        [
+          "2.5T",
+          "15",
+          "3,395",
+          "3,583",
+          "3,751"
+        ],
+        [
+          "디젤 2.2",
+          "14",
+          "3,645",
+          "3,929",
+          "4,186"
+        ],
+        [
+          "2.2D 럭셔리",
+          "11",
+          "2,700",
+          "3,050",
+          "3,400"
+        ],
+        [
+          "2.2D 프리미엄 럭셔리",
+          "9",
+          "2,840",
+          "3,384",
+          "3,721"
+        ],
+        [
+          "3.3 럭셔리",
+          "8",
+          "2,704",
+          "2,854",
+          "2,995"
+        ],
+        [
+          "3.8 파이니스트",
+          "8",
+          "3,352",
+          "3,591",
+          "3,805"
+        ],
+        [
+          "3.3T 스포츠",
+          "8",
+          "3,319",
+          "3,534",
+          "3,722"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.5 가솔린 터보 2WD",
+    "generation_id": "d9a90a22-2a07-402a-98f3-1f19442cc142",
+    "partial_original_price": {
+      "depreciation_id": "6ca20527-0cc7-4e8f-83ac-6157b5c44336",
+      "source_url": "https://newsroom.genesis.com/ko-ko/제네시스-『The-All-new-G80-』출시/",
+      "source_date": "2020-03-30",
+      "price_krw": 52470000,
+      "scope": "G80 RG3 가솔린 2.5 터보 출시 기본가격, 개별소비세 1.5% 기준",
+      "limitations": "저장 가격과 출시 기본가격 일치. 선택 옵션과 동일 트림 개별 중고차 관측자료 미확보. 감가율 검증 완료 아님."
+    }
+  },
+  {
+    "depreciation_id": "72954872-d2af-4144-95c5-b3f12c6dde1d",
+    "model": "아이오닉 5",
+    "generation": "NE",
+    "model_year": 2023,
+    "stored_note": "아이오닉5 2023 2WD 롱레인지 익스클루시브 기준. 공개 신차가 5,698만원, 중고가 3,600만원. 당시 엔카/KB차차차/K카 등록 합계 519대(전체 차종 표본)로 교차검증. QA 2026-09-07: sample_size cleared because the prior count represented year/model-wide inventory rather than the exact trim basis used for the valuation; B confidence retained for the cross-checked trim-level price benchmark. QA 2026-09-07: downgraded to C because the valuation still relies on a model/year-wide or trim-mixed market average rather than a verified exact-trim aggregate; excluded from public A/B ranking pending exact-trim evidence.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%95%84%EC%9D%B4%EC%98%A4%EB%8B%89%205/2023",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "reason": "집계 원문 접근 실패: HTTP Error 404: Not Found",
+    "target_spec": "롱레인지 2WD 익스클루시브",
+    "generation_id": "77c32d2d-ea62-484b-a93c-c26c5a3aabd0"
+  },
+  {
+    "depreciation_id": "ead77b5a-a050-4944-9696-95734dce4549",
+    "model": "타이칸",
+    "generation": "J1",
+    "model_year": 2021,
+    "stored_note": "2021 Porsche Taycan 4S (J1). Historical Korean base price 145,600,000 KRW. Revalidated 2026-09-07 using current public Encar exact 2021-model-year 4S asking-price examples: 92.0m, 83.9m, 99.0m, 88.9m, 126.0m KRW; simple mean 97.96m KRW. BigValue 2026-07-08 snapshot separately reports 3 exact 4S listings avg 104.10m KRW. Upgraded to B after current multi-listing cross-check; asking-price/mileage dispersion remains noted. QA 2026-09-07: low-sample review passed; exact trim/powertrain basis and multi-listing or independent market cross-check support retaining B confidence.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%ED%83%80%EC%9D%B4%EC%B9%B8/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "5a783b7e33fc78e352a8c115cea07bbbca1c02b17144eab80b70ddb94d44ffe1",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "Base",
+          "4",
+          "8,690",
+          "9,515",
+          "10,460"
+        ],
+        [
+          "4S",
+          "4",
+          "9,960",
+          "10,435",
+          "11,050"
+        ],
+        [
+          "Turbo",
+          "4",
+          "11,670",
+          "12,958",
+          "14,690"
+        ],
+        [
+          "Turbo S",
+          "3",
+          "13,260",
+          "13,437",
+          "13,730"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "4S",
+    "generation_id": "1a343bbb-c289-498d-a14c-9e191a60e3d3"
+  },
+  {
+    "depreciation_id": "b9c8e2f6-07e0-4c0e-9a5c-dc6bee0e8039",
+    "model": "싼타페",
+    "generation": "MX5",
+    "model_year": 2024,
+    "stored_note": "현대 싼타페 MX5 2024 가솔린 2.5 터보 2WD 프레스티지 5인승 기준. 신차가 41,790,000원(2023-08-14 출시형 가격표), BigValue 2024 동일 트림 실매물 8건 평균 38,270,000원, 데이터 기준 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%8B%BC%ED%83%80%ED%8E%98/2024",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "643ad8cdf7dcfba161d03188d5ea6d3bf01cd938ee2a444f2f162c007ab47c6c",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "프레스티지 2WD",
+          "10",
+          "3,817",
+          "4,069",
+          "4,447"
+        ],
+        [
+          "캘리그래피 2WD",
+          "10",
+          "4,220",
+          "4,522",
+          "4,959"
+        ],
+        [
+          "캘리그래피 4WD",
+          "10",
+          "4,509",
+          "4,831",
+          "5,262"
+        ],
+        [
+          "가솔린 2.5 터보 프레스티지 4WD",
+          "10",
+          "3,678",
+          "3,943",
+          "4,299"
+        ],
+        [
+          "가솔린 2.5 터보 캘리그래피 2WD",
+          "10",
+          "3,982",
+          "4,256",
+          "4,650"
+        ],
+        [
+          "가솔린 2.5 터보 프레스티지 2WD",
+          "10",
+          "3,516",
+          "3,765",
+          "4,091"
+        ],
+        [
+          "가솔린 2.5 터보 익스클루시브 4WD",
+          "10",
+          "3,470",
+          "3,728",
+          "4,032"
+        ],
+        [
+          "가솔린 2.5 터보 익스클루시브 2WD",
+          "10",
+          "3,288",
+          "3,544",
+          "3,817"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.5 가솔린 터보 2WD 프레스티지 5인승",
+    "generation_id": "9be6ecf1-1425-40c4-97d6-6ce704931daf"
+  },
+  {
+    "depreciation_id": "4093dc75-5e67-466d-9a1e-825e527fc857",
+    "model": "XC90",
+    "generation": "SPA",
+    "model_year": 2021,
+    "stored_note": "2021 Volvo XC90 B6 AWD Inscription. Volvo Cars Korea MY21 price list MSRP 92,900,000 KRW; BigValue 2021 exact B6 AWD Inscription average 69,480,000 KRW from 12 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/XC90/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "b3abbc5613bdd814fbb67b0b7080d323950919f5c7fa7ddb1a4bb36aef15e4a5",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "T8 AWD 인스크립션",
+          "17",
+          "6,048",
+          "6,921",
+          "8,169"
+        ],
+        [
+          "B6 AWD 모멘텀",
+          "15",
+          "5,279",
+          "6,119",
+          "7,213"
+        ],
+        [
+          "B6 AWD 인스크립션",
+          "14",
+          "5,998",
+          "6,941",
+          "8,107"
+        ],
+        [
+          "T8 AWD R-디자인",
+          "13",
+          "5,230",
+          "5,761",
+          "6,460"
+        ],
+        [
+          "D5 R-Design",
+          "4",
+          "5,470",
+          "5,680",
+          "6,000"
+        ],
+        [
+          "T8 Inscription",
+          "4",
+          "5,790",
+          "6,395",
+          "6,850"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "B6 AWD Inscription",
+    "generation_id": "77e8c0a3-02da-43f4-bff3-759faa064598"
+  },
+  {
+    "depreciation_id": "b7d2bcc2-4e82-4cae-81a4-348f20e6b828",
+    "model": "레이",
+    "generation": "TAM",
+    "model_year": 2021,
+    "stored_note": "2021 Kia Ray TAM 1.0 gasoline Signature. New price 15,700,000 KRW; BigValue 2021 exact 1.0 gasoline Signature average 14,060,000 KRW from 8 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EB%A0%88%EC%9D%B4/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "5087b985ee6a6ed8486aa732b369673293874a1b4d2574eac6679922c4478b14",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "1.0 가솔린 스탠다드",
+          "17",
+          "980",
+          "1,206",
+          "1,310"
+        ],
+        [
+          "1.0 가솔린 프레스티지",
+          "11",
+          "1,060",
+          "1,337",
+          "1,530"
+        ],
+        [
+          "1.0 가솔린 시그니처",
+          "11",
+          "1,150",
+          "1,420",
+          "1,550"
+        ],
+        [
+          "1.0 가솔린 밴 스탠다드",
+          "9",
+          "1,038",
+          "1,102",
+          "1,212"
+        ],
+        [
+          "1.0 가솔린 시그니처 (변경)",
+          "7",
+          "1,312",
+          "1,380",
+          "1,469"
+        ],
+        [
+          "1.0 가솔린 밴 프레스티지 스페셜 (변경)",
+          "7",
+          "1,084",
+          "1,171",
+          "1,262"
+        ],
+        [
+          "1.0 가솔린 밴 프레스티지 (변경)",
+          "7",
+          "1,045",
+          "1,126",
+          "1,218"
+        ],
+        [
+          "1.0 가솔린 프레스티지 (변경)",
+          "7",
+          "1,229",
+          "1,292",
+          "1,377"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.0 가솔린 시그니처",
+    "generation_id": "081493f1-c413-4186-9b0b-5182cf191379"
+  },
+  {
+    "depreciation_id": "a305920d-690b-499a-9b07-575ed23fbc09",
+    "model": "티구안",
+    "generation": "AD1",
+    "model_year": 2021,
+    "stored_note": "2021 Volkswagen Tiguan AD1 2.0 TDI Prestige. Korea MSRP 43,805,000 KRW (tax 3.5%); BigValue 2021 exact trim average 31,090,000 KRW from 15 listings as of 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%ED%8B%B0%EA%B5%AC%EC%95%88/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "ca450c1191b63e517efb4b1e534533be848a743e8c106111d8d2eab394e25092",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.0 TDI 프레스티지",
+          "18",
+          "2,676",
+          "3,058",
+          "3,245"
+        ],
+        [
+          "2.0 TDI 프리미엄",
+          "18",
+          "2,674",
+          "2,909",
+          "3,175"
+        ],
+        [
+          "2.0 TDI 4모션 프레스티지",
+          "18",
+          "2,844",
+          "3,164",
+          "3,346"
+        ],
+        [
+          "2.0 TDI 4모션 프리미엄",
+          "13",
+          "2,857",
+          "3,008",
+          "3,237"
+        ],
+        [
+          "2.0 TDI 올스페이스 7인승",
+          "7",
+          "2,887",
+          "3,221",
+          "3,406"
+        ],
+        [
+          "2.0 TDI Prestige",
+          "6",
+          "2,810",
+          "2,872",
+          "2,910"
+        ],
+        [
+          "2.0 TDI 4Motion Prestige",
+          "4",
+          "3,060",
+          "3,200",
+          "3,440"
+        ],
+        [
+          "2.0 TDI Premium",
+          "4",
+          "2,640",
+          "2,682",
+          "2,740"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.0 TDI Prestige",
+    "generation_id": "07af81dd-289a-4855-9260-ffac1ad4de04"
+  },
+  {
+    "depreciation_id": "c80d88ac-f7f4-43c2-88da-bad3ca7e424a",
+    "model": "트레일블레이저",
+    "generation": "1세대",
+    "model_year": 2021,
+    "stored_note": "쉐보레 트레일블레이저 2021 프리미어 E-터보 2WD. 신차가 24,450,000원(2021년형 출고가), 중고가 18,990,000원(2026-07-08 실매물 12대 평균; 엔카·K Car·KB차차차 등 6개 채널 집계).\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%ED%8A%B8%EB%A0%88%EC%9D%BC%EB%B8%94%EB%A0%88%EC%9D%B4%EC%A0%80/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "11db9dafb8de52d0c6a8f03a1ce13393622323cff65746728998ad1d2b10b4b0",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "액티브 E-터보 AWD",
+          "14",
+          "1,881",
+          "2,058",
+          "2,156"
+        ],
+        [
+          "액티브 E-터보 2WD",
+          "14",
+          "1,806",
+          "1,937",
+          "2,173"
+        ],
+        [
+          "RS E-터보 2WD",
+          "14",
+          "1,820",
+          "1,965",
+          "2,173"
+        ],
+        [
+          "프리미어 E-터보 AWD",
+          "14",
+          "1,812",
+          "1,980",
+          "2,207"
+        ],
+        [
+          "프리미어 E-터보 2WD",
+          "14",
+          "1,775",
+          "1,886",
+          "2,125"
+        ],
+        [
+          "LT E-터보 2WD",
+          "14",
+          "1,626",
+          "1,734",
+          "1,960"
+        ],
+        [
+          "LT E-터보 프라임 2WD",
+          "13",
+          "1,491",
+          "1,627",
+          "1,776"
+        ],
+        [
+          "LS E-터보 프라임 2WD",
+          "12",
+          "1,453",
+          "1,567",
+          "1,705"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "E-터보 2WD 프리미어",
+    "generation_id": "62eccf76-2e10-4524-a154-51b5bf45fd6c"
+  },
+  {
+    "depreciation_id": "40da5525-e795-4bd5-bb3b-012bbd24347f",
+    "model": "K5",
+    "generation": "DL3",
+    "model_year": 2020,
+    "stored_note": "2020 Kia K5 DL3 2.0 gasoline Prestige. New price 25,920,000 KRW confirmed by 2020 K5 DL3 price references; BigValue exact 2020 DL3 2.0 gasoline Prestige average 18,780,000 KRW from 27 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/K5/2020",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "d72bde1d7a755c7355baed30dcc58c34d7e93093ff55b44078c05165bc96800d",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.0 LPI 프레스티지",
+          "41",
+          "1,399",
+          "1,731",
+          "2,165"
+        ],
+        [
+          "2.0 LPI 노블레스",
+          "36",
+          "1,508",
+          "1,863",
+          "2,249"
+        ],
+        [
+          "1.6 가솔린 터보 프레스티지",
+          "34",
+          "1,525",
+          "1,938",
+          "2,286"
+        ],
+        [
+          "1.6 가솔린 터보 노블레스",
+          "32",
+          "1,619",
+          "2,033",
+          "2,425"
+        ],
+        [
+          "2.0 가솔린 프레스티지",
+          "30",
+          "1,530",
+          "1,868",
+          "2,233"
+        ],
+        [
+          "2.0 가솔린 노블레스",
+          "29",
+          "1,627",
+          "1,989",
+          "2,343"
+        ],
+        [
+          "노블레스",
+          "29",
+          "1,711",
+          "2,095",
+          "2,485"
+        ],
+        [
+          "프레스티지",
+          "28",
+          "1,624",
+          "1,997",
+          "2,365"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.0 가솔린 프레스티지",
+    "generation_id": "363b0c53-8b71-4811-ba58-4e93d1e3905f"
+  },
+  {
+    "depreciation_id": "1f66afd8-9314-4acb-b0cc-8bc223ab1b65",
+    "model": "S60",
+    "generation": "SPA",
+    "model_year": 2022,
+    "stored_note": "Volvo S60 SPA 2022 B5 Inscription. MY22 Volvo Cars Korea official MSRP 54,100,000 KRW (price list dated 2021-10-05); BigValue 2022 exact B5 Inscription used listing average 41,930,000 KRW, 11 listings as of 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/S60/2022",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "73cbc5cd2340eec60a7631e308b85a162b7b3892543fc56b428c019fed4f9797",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "B5 인스크립션",
+          "12",
+          "3,698",
+          "4,152",
+          "4,604"
+        ],
+        [
+          "B5 모멘텀",
+          "12",
+          "3,468",
+          "3,860",
+          "4,272"
+        ],
+        [
+          "B5 얼티메이트 브라이트",
+          "6",
+          "3,924",
+          "4,572",
+          "5,208"
+        ],
+        [
+          "2.0 B5 Momentum",
+          "4",
+          "3,440",
+          "3,672",
+          "3,910"
+        ],
+        [
+          "2.0 B5 Inscription",
+          "4",
+          "3,600",
+          "3,812",
+          "4,000"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "B5 Inscription",
+    "generation_id": "6950dc57-1bd8-4d5f-b37c-a4751b7a64f7"
+  },
+  {
+    "depreciation_id": "141e1d65-6aa4-404c-971f-d5bb4496e9a2",
+    "model": "캐스퍼",
+    "generation": "AX1",
+    "model_year": 2021,
+    "stored_note": "2021 Hyundai Casper AX1 1.0 gasoline Smart. Launch price 13,850,000 KRW; BigValue exact 2021 1.0 gasoline Smart average 13,770,000 KRW from 7 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%BA%90%EC%8A%A4%ED%8D%BC/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "공식 기본가격 일부 확보. 개별 차량 계약월의 세율·선택 옵션 및 매물 가격과의 일치 확인 필요"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "d1bdc1d77204ec886ff5a84d547f16aa60907702b3f4c6881e136f66c89996e0",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "1.0 가솔린 스마트",
+          "9",
+          "1,277",
+          "1,358",
+          "1,480"
+        ],
+        [
+          "1.0 가솔린 모던",
+          "7",
+          "1,441",
+          "1,522",
+          "1,662"
+        ],
+        [
+          "1.0 가솔린 터보 스마트",
+          "7",
+          "1,357",
+          "1,432",
+          "1,554"
+        ],
+        [
+          "1.0 가솔린 터보 모던",
+          "7",
+          "1,518",
+          "1,603",
+          "1,744"
+        ],
+        [
+          "1.0 가솔린 인스퍼레이션",
+          "7",
+          "1,645",
+          "1,740",
+          "1,902"
+        ],
+        [
+          "1.0 가솔린 터보 인스퍼레이션",
+          "7",
+          "1,719",
+          "1,815",
+          "1,982"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.0 가솔린 스마트",
+    "generation_id": "74ad9eec-1076-4461-8000-7caeef588c98",
+    "partial_original_price": {
+      "depreciation_id": "141e1d65-6aa4-404c-971f-d5bb4496e9a2",
+      "source_url": "https://www.newswire.co.kr/newsRead.php?no=930456",
+      "source_date": "2021-09-14",
+      "price_krw": 13850000,
+      "scope": "현대자동차 제공 보도자료: 캐스퍼 AX1 1.0 가솔린 스마트 기본가격",
+      "limitations": "제조사 배포 원문으로 기본형 가격 확인. 터보 액티브 옵션 95만원 제외. 개별 실매물·옵션 대응 미완료. 감가율 검증 완료 아님."
+    }
+  },
+  {
+    "depreciation_id": "80ec48ad-ce52-44f8-8d8c-62ae2c63707c",
+    "model": "5시리즈",
+    "generation": "G30",
+    "model_year": 2022,
+    "stored_note": "BMW 5시리즈 G30 2022 520i Luxury 기준. 신차 기본가격 6,370만원, 2026-07-08 동일 연식/트림 실매물 8대 평균 5,133만원 비교.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/5%EC%8B%9C%EB%A6%AC%EC%A6%88/2022",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "ada27242d789d822bf996200c80e229bdcd716058374145e5c709fd6e2aed842",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "523d 럭셔리",
+          "11",
+          "4,700",
+          "5,264",
+          "5,892"
+        ],
+        [
+          "530e 럭셔리",
+          "11",
+          "5,212",
+          "5,863",
+          "6,475"
+        ],
+        [
+          "530i 럭셔리",
+          "11",
+          "4,634",
+          "5,414",
+          "6,399"
+        ],
+        [
+          "530i x드라이브 럭셔리",
+          "10",
+          "4,775",
+          "5,621",
+          "6,455"
+        ],
+        [
+          "520i 럭셔리",
+          "10",
+          "4,404",
+          "4,991",
+          "5,523"
+        ],
+        [
+          "M550i x드라이브",
+          "10",
+          "7,055",
+          "8,091",
+          "9,095"
+        ],
+        [
+          "530i M 스포츠 패키지",
+          "7",
+          "4,775",
+          "5,350",
+          "5,616"
+        ],
+        [
+          "520i M 스포츠 패키지",
+          "7",
+          "4,381",
+          "4,999",
+          "5,256"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "520i Luxury",
+    "generation_id": "49eb41ea-3a86-45a2-bba2-d7e6255144fd"
+  },
+  {
+    "depreciation_id": "2d2daea5-5d2e-4339-ba86-c0150bb3bda3",
+    "model": "쏘렌토",
+    "generation": "MQ4",
+    "model_year": 2022,
+    "stored_note": "2022 Kia Sorento MQ4 2.2 diesel 2WD Prestige 5-seat. New price 34.24m KRW (3.5% individual consumption tax basis); used listing snapshot average 32.50m KRW across 14 same-year/engine/drivetrain/trim listings. Sources cross-checked: BigValue 2026-07-08 snapshot; 2022 Sorento price references.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%8F%98%EB%A0%8C%ED%86%A0/2022",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "d61c3b826620ce79a3c27e73b69d5b0b371f24d8c05646b9729797a085bf8220",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.2 디젤 2WD 시그니처",
+          "18",
+          "3,366",
+          "3,675",
+          "4,197"
+        ],
+        [
+          "2.2 디젤 2WD 트렌디",
+          "18",
+          "2,718",
+          "2,970",
+          "3,409"
+        ],
+        [
+          "2.2 디젤 2WD 프레스티지",
+          "17",
+          "2,928",
+          "3,241",
+          "3,675"
+        ],
+        [
+          "2.2 디젤 4WD 트렌디",
+          "17",
+          "2,893",
+          "3,184",
+          "3,612"
+        ],
+        [
+          "2WD 프레스티지",
+          "16",
+          "3,129",
+          "3,348",
+          "3,775"
+        ],
+        [
+          "2.5T 가솔린 4WD 트렌디",
+          "16",
+          "2,853",
+          "3,049",
+          "3,399"
+        ],
+        [
+          "2.2 디젤 4WD 노블레스",
+          "16",
+          "3,317",
+          "3,627",
+          "4,129"
+        ],
+        [
+          "2.2 디젤 2WD 노블레스",
+          "16",
+          "3,163",
+          "3,446",
+          "3,934"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.2 디젤 2WD 프레스티지 5인승",
+    "generation_id": "5e315a1a-a428-4d4c-8958-f3ea291553f9"
+  },
+  {
+    "depreciation_id": "b578a85e-8a60-4cf4-a945-b497377c1a50",
+    "model": "EV6",
+    "generation": "CV",
+    "model_year": 2021,
+    "stored_note": "기아 EV6 CV 2021 출시형 롱레인지 에어 2WD 기준. 세제혜택 후 신차가 51,200,000원(2021년 출시 가격), BigValue 2021 동일 롱 레인지 에어 2WD 실매물 6건 평균 31,590,000원, 데이터 기준 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/EV6/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "공식 기본가격 일부 확보. 개별 차량 계약월의 세율·선택 옵션 및 매물 가격과의 일치 확인 필요"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "a63e5883d8b4fc5599a88ee5948bd36a86a2e31ef418c5fb507203badcfaff9a",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "롱 레인지 라이트 4WD",
+          "8",
+          "3,054",
+          "3,257",
+          "3,578"
+        ],
+        [
+          "스탠다드 에어 2WD",
+          "8",
+          "2,798",
+          "2,920",
+          "3,092"
+        ],
+        [
+          "롱 레인지 라이트 2WD",
+          "8",
+          "2,915",
+          "3,091",
+          "3,388"
+        ],
+        [
+          "스탠다드 어스 4WD",
+          "8",
+          "3,126",
+          "3,319",
+          "3,540"
+        ],
+        [
+          "스탠다드 어스 2WD",
+          "8",
+          "2,976",
+          "3,148",
+          "3,351"
+        ],
+        [
+          "롱 레인지 어스 4WD",
+          "8",
+          "3,352",
+          "3,561",
+          "3,806"
+        ],
+        [
+          "롱 레인지 에어 2WD",
+          "8",
+          "2,956",
+          "3,130",
+          "3,328"
+        ],
+        [
+          "스탠다드 라이트 4WD",
+          "8",
+          "2,900",
+          "3,049",
+          "3,327"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "77.4kWh 롱레인지 에어 2WD",
+    "generation_id": "785ccd2a-332d-4adf-815d-290608a8fb9d",
+    "partial_original_price": {
+      "depreciation_id": "b578a85e-8a60-4cf4-a945-b497377c1a50",
+      "source_url": "https://www.kia.com/content/dam/kwcms/kr/ko/files/all_price/price_hybrid-combine.pdf",
+      "source_date": "2021-07-16",
+      "price_krw": 51200000,
+      "scope": "EV6 CV 롱레인지 에어 기본가격, 세제혜택 후, PDF 1쪽",
+      "limitations": "77.4kWh 출시형이며 이번 등록한 84kWh 연비와 연결하지 않음. 해당 문서 세제혜택 후 가격을 보존. 옵션·개별 중고차 관측자료 미확보."
+    }
+  },
+  {
+    "depreciation_id": "8be8a989-e0cb-448a-b166-7b889aace115",
+    "model": "G80",
+    "generation": "RG3",
+    "model_year": 2023,
+    "stored_note": "2023 Genesis G80 RG3 2.5 turbo 2WD. Danawa 2023.07.01 new price 55,480,000 KRW. BigValue exact 2023 2.5 turbo average 49,720,000 KRW from 13 listings; AWD listed separately, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/G80/2023",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "537e42a148f8995cdad139c3aba691d9ef7950f24cf8d4f8a99fa9d3f9048013",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.5 터보 스포츠 패키지",
+          "17",
+          "4,740",
+          "5,222",
+          "6,163"
+        ],
+        [
+          "3.5 터보 스포츠 패키지",
+          "17",
+          "5,039",
+          "5,638",
+          "6,799"
+        ],
+        [
+          "3.5 터보",
+          "17",
+          "4,885",
+          "5,377",
+          "6,315"
+        ],
+        [
+          "2.5 터보",
+          "16",
+          "4,457",
+          "4,937",
+          "5,803"
+        ],
+        [
+          "e-AWD",
+          "15",
+          "5,174",
+          "5,925",
+          "6,558"
+        ],
+        [
+          "2.5 T-GDi AWD",
+          "4",
+          "4,940",
+          "5,145",
+          "5,500"
+        ],
+        [
+          "3.5 T-GDi AWD",
+          "4",
+          "5,280",
+          "5,512",
+          "5,880"
+        ],
+        [
+          "2.5 T-GDi 2WD",
+          "4",
+          "4,670",
+          "4,860",
+          "5,200"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.5 가솔린 터보 2WD",
+    "generation_id": "d9a90a22-2a07-402a-98f3-1f19442cc142"
+  },
+  {
+    "depreciation_id": "b16a039a-ceae-4517-b0ff-04af61924b71",
+    "model": "셀토스",
+    "generation": "SP2",
+    "model_year": 2023,
+    "stored_note": "BigValue 2023 동일연식 1.6 가솔린 터보 2WD 프레스티지 22건 평균 2,447만원; Danawa 동일 트림 신차가 2,609만원.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%85%80%ED%86%A0%EC%8A%A4/2023",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "73705ae80e801173e0415c09e21f89ffadac808b2597c23b6bc1f8288a7206ad",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "1.6 가솔린 터보 2WD 트렌디",
+          "26",
+          "2,006",
+          "2,240",
+          "2,540"
+        ],
+        [
+          "1.6 가솔린 터보 4WD 트렌디",
+          "25",
+          "2,112",
+          "2,377",
+          "2,705"
+        ],
+        [
+          "1.6 가솔린 터보 2WD 프레스티지",
+          "25",
+          "2,136",
+          "2,450",
+          "2,835"
+        ],
+        [
+          "1.6 가솔린 터보 2WD 시그니처",
+          "25",
+          "2,282",
+          "2,617",
+          "2,991"
+        ],
+        [
+          "1.6 가솔린 터보 4WD 프레스티지",
+          "23",
+          "2,260",
+          "2,604",
+          "2,997"
+        ],
+        [
+          "1.6 가솔린 터보 4WD 그래비티",
+          "23",
+          "2,444",
+          "2,793",
+          "3,196"
+        ],
+        [
+          "1.6 가솔린 터보 2WD 그래비티",
+          "23",
+          "2,326",
+          "2,645",
+          "3,028"
+        ],
+        [
+          "1.6 가솔린 터보 4WD 시그니처",
+          "23",
+          "2,397",
+          "2,759",
+          "3,154"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 가솔린 터보 2WD 프레스티지",
+    "generation_id": "0ee14aa0-1281-450e-bc5d-3eea5d91a41d"
+  },
+  {
+    "depreciation_id": "45183f39-c17f-4d6a-a535-f4fd25107319",
+    "model": "K8",
+    "generation": "GL3",
+    "model_year": 2022,
+    "stored_note": "2022 Kia K8 GL3 2.5 gasoline Noblesse. Korean MY2022 base price 35,100,000 KRW; BigValue exact 2022 2.5 gasoline Noblesse average 30,860,000 KRW from 7 listings, snapshot 2026-07-08. Exact year/powertrain/trim match.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/K8/2022",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "55a1bc01082c94bfba4cd0511aaae37e316b34f3aa32da8f21fac6adabb30073",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "3.5 LPG 프레스티지",
+          "17",
+          "2,609",
+          "2,901",
+          "3,152"
+        ],
+        [
+          "2.5 가솔린 노블레스 라이트",
+          "11",
+          "2,656",
+          "2,892",
+          "3,100"
+        ],
+        [
+          "3.5 가솔린 노블레스 라이트",
+          "11",
+          "2,750",
+          "3,046",
+          "3,213"
+        ],
+        [
+          "3.5 LPG 트렌디",
+          "9",
+          "2,437",
+          "2,601",
+          "2,742"
+        ],
+        [
+          "노블레스 라이트",
+          "9",
+          "2,898",
+          "3,120",
+          "3,278"
+        ],
+        [
+          "2.5 가솔린 노블레스",
+          "9",
+          "2,775",
+          "3,031",
+          "3,172"
+        ],
+        [
+          "3.5 가솔린 플래티넘",
+          "9",
+          "3,323",
+          "3,623",
+          "3,782"
+        ],
+        [
+          "3.5 가솔린 시그니처",
+          "9",
+          "3,119",
+          "3,413",
+          "3,553"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.5 가솔린 노블레스",
+    "generation_id": "1f953dca-e28a-481c-ae1c-a0918940a7bd"
+  },
+  {
+    "depreciation_id": "6a77d339-c0d6-445b-81ee-9ea7df834303",
+    "model": "E-클래스",
+    "generation": "W213",
+    "model_year": 2020,
+    "stored_note": "Mercedes-Benz E250 Avantgarde W213 2020 기준. 신차가 6,360만원과 2026-07-08 동일 연식/트림 실매물 15대 평균 3,515만원 비교.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/E-%ED%81%B4%EB%9E%98%EC%8A%A4/2020",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "02837e49b324ccdecb398a27b7da765b10cf6d65c0799d9f1f91009bf0f91ef8",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "AMG E 53 4매틱+",
+          "21",
+          "4,810",
+          "5,565",
+          "6,147"
+        ],
+        [
+          "E 350 4매틱 AMG 라인",
+          "17",
+          "3,956",
+          "4,289",
+          "4,570"
+        ],
+        [
+          "E 300 e 4매틱 익스클루시브",
+          "17",
+          "3,729",
+          "4,130",
+          "4,508"
+        ],
+        [
+          "E 220 d 4매틱 익스클루시브",
+          "17",
+          "3,512",
+          "3,863",
+          "4,252"
+        ],
+        [
+          "E 450 4매틱 익스클루시브",
+          "17",
+          "4,349",
+          "4,862",
+          "5,657"
+        ],
+        [
+          "E 250 아방가르드",
+          "17",
+          "3,103",
+          "3,491",
+          "4,032"
+        ],
+        [
+          "E 300 4매틱 AMG 라인",
+          "13",
+          "3,694",
+          "4,098",
+          "4,408"
+        ],
+        [
+          "E 300 4매틱 익스클루시브",
+          "13",
+          "3,490",
+          "3,966",
+          "4,408"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "E250 Avantgarde",
+    "generation_id": "ac60ca2b-352e-43ee-ada3-13a6a3d8140c"
+  },
+  {
+    "depreciation_id": "3a1de851-6f42-4684-a2be-f5271072a01a",
+    "model": "G80",
+    "generation": "DH",
+    "model_year": 2018,
+    "stored_note": "제네시스 공식 2018 G80 3.3 럭셔리 신차가 4,880만원 / 2026-07-08 중고 실매물 평균 2,274만원(동일 등급 14건)\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/G80/2018",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "5ca33a987b07b7a16961ff3649f0be7775c77a1c60b7d51d395b3a7f09aa24af",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.2D 럭셔리",
+          "22",
+          "2,278",
+          "2,481",
+          "2,729"
+        ],
+        [
+          "2.2D 프리미엄 럭셔리",
+          "19",
+          "2,470",
+          "2,670",
+          "2,978"
+        ],
+        [
+          "3.8 파이니스트",
+          "19",
+          "2,417",
+          "2,741",
+          "3,096"
+        ],
+        [
+          "3.3 프리미엄 럭셔리",
+          "19",
+          "2,220",
+          "2,458",
+          "2,637"
+        ],
+        [
+          "3.3T 스포츠",
+          "19",
+          "2,395",
+          "2,714",
+          "3,038"
+        ],
+        [
+          "3.3 럭셔리",
+          "18",
+          "2,125",
+          "2,258",
+          "2,424"
+        ],
+        [
+          "3.3 프레스티지",
+          "18",
+          "2,311",
+          "2,553",
+          "2,787"
+        ],
+        [
+          "3.8 프레스티지",
+          "16",
+          "2,398",
+          "2,662",
+          "2,912"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "3.3 가솔린 럭셔리",
+    "generation_id": "ac80f5f3-5f40-4e92-bb06-9953a1e1ec4a"
+  },
+  {
+    "depreciation_id": "9cfb3978-3b4b-4b7e-98ae-5ef4130d834b",
+    "model": "QM6",
+    "generation": "HZG",
+    "model_year": 2020,
+    "stored_note": "2020 QM6 2.0 GDe RE Signature; original price and comparable used-listing average, verified 2026-09-04\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/QM6/2020",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "8518005a498609e2ba8adeb7054131d8d900405af2249a1d7ff63764377203e0",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.0 LPe RE 2WD CVT",
+          "15",
+          "1,647",
+          "1,816",
+          "2,077"
+        ],
+        [
+          "2.0 LPe LE 2WD CVT",
+          "15",
+          "1,599",
+          "1,740",
+          "1,947"
+        ],
+        [
+          "2.0 GDe RE 시그니처 2WD CVT",
+          "15",
+          "1,661",
+          "1,867",
+          "2,130"
+        ],
+        [
+          "2.0 GDe LE 2WD CVT",
+          "15",
+          "1,590",
+          "1,759",
+          "2,002"
+        ],
+        [
+          "2.0 GDe RE 2WD CVT",
+          "15",
+          "1,655",
+          "1,832",
+          "2,101"
+        ],
+        [
+          "2.0 GDe SE 2WD CVT",
+          "15",
+          "1,526",
+          "1,679",
+          "1,935"
+        ],
+        [
+          "2.0 LPe SE 2WD CVT",
+          "15",
+          "1,544",
+          "1,644",
+          "1,879"
+        ],
+        [
+          "2.0 GDe 프리미에르 2WD CVT",
+          "15",
+          "1,736",
+          "1,929",
+          "2,201"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.0 GDe RE Signature",
+    "generation_id": "5ff23462-cda3-4124-a704-9723da7642e7"
+  },
+  {
+    "depreciation_id": "b79aa9e9-f9c7-404c-8d7f-ac2fdd9197a7",
+    "model": "캠리",
+    "generation": "XV70",
+    "model_year": 2021,
+    "stored_note": "2021 Toyota Camry Hybrid XLE. Korean launch price 42.29m KRW; BigValue 2021 Hybrid XLE average 34.01m KRW from 7 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%BA%A0%EB%A6%AC/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "6d9227db038ad975f174110699ff2ae561d5f52a03c6728dd83e50bd4a08b9d4",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "하이브리드 LE",
+          "10",
+          "2,761",
+          "3,119",
+          "3,289"
+        ],
+        [
+          "하이브리드 XLE",
+          "9",
+          "3,061",
+          "3,385",
+          "3,581"
+        ],
+        [
+          "스포츠 에디션 모노톤",
+          "7",
+          "3,241",
+          "3,514",
+          "3,749"
+        ],
+        [
+          "스포츠 에디션 투톤",
+          "7",
+          "3,322",
+          "3,560",
+          "3,851"
+        ],
+        [
+          "2.5",
+          "7",
+          "3,215",
+          "3,457",
+          "3,697"
+        ],
+        [
+          "가솔린 XLE",
+          "6",
+          "3,333",
+          "3,605",
+          "3,844"
+        ],
+        [
+          "하이브리드 XSE",
+          "6",
+          "3,066",
+          "3,469",
+          "3,666"
+        ],
+        [
+          "2.5 하이브리드 XLE",
+          "4",
+          "3,210",
+          "3,395",
+          "3,560"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "Hybrid XLE",
+    "generation_id": "915f96b3-4e4b-4c83-ac66-aab28bba630d"
+  },
+  {
+    "depreciation_id": "78db9d3f-ec44-45c3-b82a-0b164403c333",
+    "model": "쏘렌토",
+    "generation": "MQ4",
+    "model_year": 2021,
+    "stored_note": "2021 Kia Sorento MQ4 2.2 diesel 2WD Noblesse. New price 36.47m KRW; BigValue exact trim average 31.80m KRW from 10 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%8F%98%EB%A0%8C%ED%86%A0/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "48858b1290401281a94c26f13bee3a6e2731851fb0f55ba01a278723f81a3a38",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.2 디젤 2WD 트렌디",
+          "14",
+          "2,380",
+          "2,736",
+          "3,080"
+        ],
+        [
+          "2.2 디젤 2WD 노블레스",
+          "13",
+          "2,650",
+          "3,096",
+          "3,561"
+        ],
+        [
+          "2.2 디젤 2WD 시그니처",
+          "12",
+          "2,960",
+          "3,393",
+          "3,801"
+        ],
+        [
+          "2.2 디젤 4WD 트렌디",
+          "12",
+          "2,571",
+          "2,944",
+          "3,278"
+        ],
+        [
+          "4WD 프레스티지",
+          "10",
+          "3,063",
+          "3,399",
+          "3,696"
+        ],
+        [
+          "2WD 프레스티지",
+          "10",
+          "2,923",
+          "3,172",
+          "3,408"
+        ],
+        [
+          "2.5T 가솔린 4WD 트렌디",
+          "10",
+          "2,621",
+          "2,879",
+          "3,113"
+        ],
+        [
+          "2.5T 가솔린 2WD 트렌디",
+          "10",
+          "2,476",
+          "2,705",
+          "2,932"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.2 디젤 2WD 노블레스",
+    "generation_id": "5e315a1a-a428-4d4c-8958-f3ea291553f9"
+  },
+  {
+    "depreciation_id": "87d1689e-1f76-473c-be02-d5a206a0d03b",
+    "model": "모닝",
+    "generation": "JA",
+    "model_year": 2021,
+    "stored_note": "Kia Morning JA 2021 1.0 gasoline Prestige. Historical new price 13,500,000 KRW; BigValue exact 2021 1.0 gasoline Prestige average 11,520,000 KRW across 9 listings, data as of 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EB%AA%A8%EB%8B%9D/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "a7c0430590e1978692fe78cf2e6eb871aa9e2487a1a0c98594fae6e7e0a3bdc7",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "1.0 가솔린 프레스티지",
+          "12",
+          "1,064",
+          "1,144",
+          "1,240"
+        ],
+        [
+          "1.0 가솔린 밴 스페셜",
+          "10",
+          "978",
+          "1,039",
+          "1,138"
+        ],
+        [
+          "1.0 가솔린 스탠다드",
+          "10",
+          "956",
+          "1,013",
+          "1,102"
+        ],
+        [
+          "1.0 가솔린 시그니처",
+          "10",
+          "1,143",
+          "1,228",
+          "1,352"
+        ],
+        [
+          "1.0 가솔린 스탠다드 마이너스",
+          "9",
+          "940",
+          "1,022",
+          "1,140"
+        ],
+        [
+          "1.0 가솔린 밴",
+          "9",
+          "944",
+          "1,002",
+          "1,093"
+        ],
+        [
+          "1.0 가솔린 시그니처 엣지-업",
+          "7",
+          "1,171",
+          "1,240",
+          "1,326"
+        ],
+        [
+          "1.0 가솔린 베스트 셀렉션",
+          "6",
+          "1,166",
+          "1,242",
+          "1,393"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.0 가솔린 프레스티지",
+    "generation_id": "8952df02-99e2-4ebe-b8f4-72fc3891c0b9"
+  },
+  {
+    "depreciation_id": "5dbcc126-469d-40ac-a357-fe282aa22b06",
+    "model": "코나",
+    "generation": "OS",
+    "model_year": 2021,
+    "stored_note": "2021 Hyundai Kona OS 1.6 T-GDi Modern. The New Kona launch price 22,440,000 KRW with tax reduction applied; BigValue 2021 exact 1.6 T-GDi Modern average 20,560,000 KRW from 11 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%BD%94%EB%82%98/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "422d4e3b298acd9311aa44546f31717c11132b589fb86d21a6a629af034d8de7",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "모던",
+          "19",
+          "2,146",
+          "2,254",
+          "2,470"
+        ],
+        [
+          "2.0 터보",
+          "13",
+          "2,690",
+          "2,846",
+          "3,010"
+        ],
+        [
+          "스마트",
+          "12",
+          "2,037",
+          "2,108",
+          "2,155"
+        ],
+        [
+          "N 라인 모던",
+          "12",
+          "2,078",
+          "2,181",
+          "2,242"
+        ],
+        [
+          "1.6 T-GDi 모던",
+          "12",
+          "1,935",
+          "2,046",
+          "2,205"
+        ],
+        [
+          "1.6 T-GDi 스마트 4WD",
+          "12",
+          "1,917",
+          "2,027",
+          "2,182"
+        ],
+        [
+          "1.6 T-GDi 인스퍼레이션",
+          "12",
+          "2,143",
+          "2,302",
+          "2,433"
+        ],
+        [
+          "N 라인 인스퍼레이션",
+          "12",
+          "2,207",
+          "2,371",
+          "2,502"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 T-GDi 모던",
+    "generation_id": "3e404574-b778-4c12-bec8-2de8c9ee18c8"
+  },
+  {
+    "depreciation_id": "752e4a24-85e4-4dc2-bb11-dbf302a40457",
+    "model": "RX",
+    "generation": "AL20",
+    "model_year": 2021,
+    "stored_note": "2021 Lexus RX 450h Supreme. New price 81,200,000 KRW; BigValue 2021 exact trim 450h Supreme average 63,750,000 KRW, 12 listings as of 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/RX/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "073243247738f132d417375a30672e223d0b06acf81fd57211bc956cca3952e1",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "450h F 스포츠",
+          "16",
+          "5,441",
+          "7,119",
+          "8,409"
+        ],
+        [
+          "450hL 이그제큐티브",
+          "16",
+          "5,607",
+          "7,677",
+          "8,883"
+        ],
+        [
+          "450h 이그제큐티브",
+          "15",
+          "5,432",
+          "7,135",
+          "8,091"
+        ],
+        [
+          "450h 슈프림",
+          "13",
+          "5,238",
+          "6,418",
+          "7,253"
+        ],
+        [
+          "350 이그제큐티브",
+          "13",
+          "4,671",
+          "5,376",
+          "5,810"
+        ],
+        [
+          "450hL 럭셔리+",
+          "6",
+          "7,671",
+          "8,242",
+          "8,631"
+        ],
+        [
+          "450h 슈프림+",
+          "6",
+          "7,169",
+          "7,435",
+          "7,937"
+        ],
+        [
+          "450h EXECUTIVE",
+          "4",
+          "5,620",
+          "5,955",
+          "6,230"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "450h Supreme",
+    "generation_id": "81ff7763-bf36-47e6-92c6-6e46a7767def"
+  },
+  {
+    "depreciation_id": "e0b745c4-a52a-4c21-a926-a658b8d28016",
+    "model": "투싼",
+    "generation": "TL",
+    "model_year": 2015,
+    "stored_note": "2015 Hyundai Tucson TL R2.0 diesel 2WD Style A/T; trim-specific benchmark verified 2026-09-07. QA 2026-09-07: sample_size cleared because the prior count represented year/model-wide inventory rather than the exact trim basis used for the valuation; B confidence retained for the cross-checked trim-level price benchmark.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%ED%88%AC%EC%8B%BC/2015",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "832a87ad96f3f551429b8a07e213bc05ba1712022d030e64f4a5deede1deb979",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "디젤 R2.0 2WD 스타일",
+          "22",
+          "931",
+          "1,040",
+          "1,196"
+        ],
+        [
+          "디젤 R2.0 2WD 모던",
+          "21",
+          "866",
+          "1,070",
+          "1,301"
+        ],
+        [
+          "디젤 R2.0 2WD 스마트",
+          "19",
+          "757",
+          "857",
+          "1,024"
+        ],
+        [
+          "디젤 R2.0 4WD 스마트",
+          "19",
+          "793",
+          "895",
+          "1,081"
+        ],
+        [
+          "디젤 R2.0 4WD 모던",
+          "13",
+          "913",
+          "1,037",
+          "1,200"
+        ],
+        [
+          "디젤 R2.0 2WD 프리미엄",
+          "13",
+          "1,152",
+          "1,276",
+          "1,408"
+        ],
+        [
+          "디젤 R2.0 4WD 스마트 스페셜",
+          "12",
+          "865",
+          "985",
+          "1,142"
+        ],
+        [
+          "디젤 R2.0 2WD 스마트 스페셜",
+          "12",
+          "827",
+          "936",
+          "1,079"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "R2.0 디젤 2WD 스타일 자동",
+    "generation_id": "1bec8f53-9bea-43c1-90c2-fc87f1639f7a"
+  },
+  {
+    "depreciation_id": "25b51ee8-b11d-40b3-af82-2486c534dd3f",
+    "model": "투싼",
+    "generation": "NX4",
+    "model_year": 2021,
+    "stored_note": "2021 Hyundai Tucson NX4 1.6 gasoline turbo 2WD Modern. Historical base MSRP 24,350,000 KRW. Current public listings cross-check: 20.30m, 21.50m, 22.99m, 22.49m, 22.99m KRW; simple mean 22.056m KRW. Upgraded to B after exact powertrain/drivetrain/trim multi-listing cross-check; individual mileage/options may vary. QA 2026-09-07: low-sample review passed; exact trim/powertrain basis and multi-listing or independent market cross-check support retaining B confidence.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%ED%88%AC%EC%8B%BC/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "aafc037086fec4dda0c6eaf8737b19bf01ffacbae5f9fc24d08c5afdfd42ab22",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "디젤 2.0 4WD 모던",
+          "14",
+          "2,330",
+          "2,524",
+          "2,699"
+        ],
+        [
+          "디젤 2.0 2WD 모던",
+          "14",
+          "2,178",
+          "2,343",
+          "2,502"
+        ],
+        [
+          "디젤 2.0 2WD 인스퍼레이션",
+          "13",
+          "2,676",
+          "2,887",
+          "3,088"
+        ],
+        [
+          "가솔린 1.6 터보 4WD 인스퍼레이션",
+          "12",
+          "2,712",
+          "2,896",
+          "3,084"
+        ],
+        [
+          "디젤 2.0 4WD 프리미엄",
+          "12",
+          "2,485",
+          "2,678",
+          "2,845"
+        ],
+        [
+          "가솔린 1.6 터보 2WD 프리미엄",
+          "12",
+          "2,275",
+          "2,412",
+          "2,585"
+        ],
+        [
+          "디젤 2.0 4WD 인스퍼레이션",
+          "12",
+          "2,846",
+          "3,069",
+          "3,266"
+        ],
+        [
+          "가솔린 1.6 터보 4WD 프리미엄",
+          "12",
+          "2,404",
+          "2,558",
+          "2,737"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 가솔린 터보 2WD 모던",
+    "generation_id": "8577c34f-334d-4650-a2b3-5e09c7658363"
+  },
+  {
+    "depreciation_id": "f5283e68-7d78-4575-9e6b-1dff368494ba",
+    "model": "스파크",
+    "generation": "M400",
+    "model_year": 2021,
+    "stored_note": "2021 Chevrolet Spark M400 Premier C-TECH CVT. MY2021 Premier manual MSRP 12,740,000 KRW plus C-TECH CVT 1,740,000 KRW = 14,480,000 KRW; BigValue 2021 Premier used listing average 9,240,000 KRW / 13 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%8A%A4%ED%8C%8C%ED%81%AC/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "c02deed3abb5eae5beab90d3d9b4c7c26bf85a337efd3c903311395f6dd98eb7",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "프리미어",
+          "14",
+          "805",
+          "924",
+          "1,058"
+        ],
+        [
+          "LS",
+          "14",
+          "716",
+          "832",
+          "999"
+        ],
+        [
+          "LT",
+          "14",
+          "740",
+          "863",
+          "1,045"
+        ],
+        [
+          "LS 베이직",
+          "14",
+          "670",
+          "853",
+          "1,050"
+        ],
+        [
+          "레드픽",
+          "14",
+          "888",
+          "1,012",
+          "1,246"
+        ],
+        [
+          "LT C-테크",
+          "14",
+          "815",
+          "957",
+          "1,113"
+        ],
+        [
+          "마이핏",
+          "14",
+          "889",
+          "1,013",
+          "1,246"
+        ],
+        [
+          "프리미어 C-테크",
+          "13",
+          "968",
+          "1,024",
+          "1,107"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "프리미어 C-TECH CVT",
+    "generation_id": "e29c18db-9c4e-4392-bd80-f4a34be06649"
+  },
+  {
+    "depreciation_id": "08d34168-08a3-4ac7-b8bc-50676f99e0e3",
+    "model": "K5",
+    "generation": "DL3",
+    "model_year": 2023,
+    "stored_note": "2023 Kia K5 DL3 1.6 gasoline turbo Prestige. Danawa 2023 model 1.6T Prestige new price 27,680,000 KRW. BigValue exact 2023 1.6 gasoline turbo Prestige average 27,070,000 KRW from 17 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/K5/2023",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "2d41c33d0ce7f63dc2fc4dcf20401ea688d4f2f486d631fcfd4fc539b9881ec5",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.0 LPG 프레스티지",
+          "21",
+          "2,291",
+          "2,560",
+          "2,920"
+        ],
+        [
+          "1.6 가솔린 터보 프레스티지",
+          "20",
+          "2,426",
+          "2,697",
+          "3,100"
+        ],
+        [
+          "1.6 가솔린 터보 노블레스",
+          "19",
+          "2,590",
+          "2,879",
+          "3,424"
+        ],
+        [
+          "2.0 가솔린 노블레스",
+          "19",
+          "2,498",
+          "2,779",
+          "3,306"
+        ],
+        [
+          "1.6 가솔린 터보 시그니처",
+          "19",
+          "2,830",
+          "3,109",
+          "3,638"
+        ],
+        [
+          "2.0 가솔린 시그니처",
+          "19",
+          "2,768",
+          "3,034",
+          "3,568"
+        ],
+        [
+          "2.0 LPG 노블레스",
+          "16",
+          "2,500",
+          "2,768",
+          "3,194"
+        ],
+        [
+          "프레스티지",
+          "16",
+          "2,503",
+          "2,741",
+          "3,239"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 가솔린 터보 프레스티지",
+    "generation_id": "363b0c53-8b71-4811-ba58-4e93d1e3905f"
+  },
+  {
+    "depreciation_id": "641adc00-9116-4c02-b612-22b4f69f5876",
+    "model": "투아렉",
+    "generation": "CR",
+    "model_year": 2021,
+    "stored_note": "2021 Volkswagen Touareg 3.0 TDI Premium. Official VW Korea MSRP 83,900,000 KRW; BigValue exact trim average 44,390,000 KRW from 12 listings as of 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%ED%88%AC%EC%95%84%EB%A0%89/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "32ce4cf960fb6c04e01cd51df28599efe33ddc55506004ecd4eeb46ac9871f0d",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "4.0 TDI 프레스티지",
+          "16",
+          "6,098",
+          "6,761",
+          "7,504"
+        ],
+        [
+          "3.0 TDI 프레스티지",
+          "13",
+          "4,290",
+          "4,682",
+          "5,005"
+        ],
+        [
+          "3.0 TDI 프리미엄",
+          "13",
+          "4,175",
+          "4,418",
+          "4,672"
+        ],
+        [
+          "3.0 TDI R-Line",
+          "13",
+          "4,674",
+          "5,102",
+          "5,454"
+        ],
+        [
+          "4.0 TDI R-라인",
+          "12",
+          "6,296",
+          "6,718",
+          "7,041"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "3.0 TDI Premium",
+    "generation_id": "56c4bb69-6507-43a3-8ee6-858974e6aec1"
+  },
+  {
+    "depreciation_id": "399b0540-444d-4c10-a23c-8f8771646a31",
+    "model": "팰리세이드",
+    "generation": "LX2",
+    "model_year": 2019,
+    "stored_note": "2019 Hyundai Palisade LX2 3.8 gasoline Exclusive 2WD. BigValue 2019 exact grade: 10 listings, avg 23.17m KRW, snapshot 2026-07-08; replaces prior all-2019 average 27.09m. Original price 34.75m retained.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%ED%8C%B0%EB%A6%AC%EC%84%B8%EC%9D%B4%EB%93%9C/2019",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "0de627cc5a45851a1ec3c8be538e868a84aad87dc45830efe4aa033d03257d1b",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "2.2 디젤 익스클루시브 2WD",
+          "13",
+          "2,373",
+          "2,576",
+          "2,766"
+        ],
+        [
+          "2.2 디젤 익스클루시브 4WD",
+          "13",
+          "2,503",
+          "2,719",
+          "2,917"
+        ],
+        [
+          "3.8 가솔린 프레스티지 4WD",
+          "13",
+          "2,416",
+          "2,634",
+          "2,830"
+        ],
+        [
+          "3.8 가솔린 익스클루시브 4WD",
+          "13",
+          "2,235",
+          "2,407",
+          "2,556"
+        ],
+        [
+          "2.2 디젤 프레스티지 4WD",
+          "13",
+          "2,812",
+          "3,066",
+          "3,314"
+        ],
+        [
+          "2.2 디젤 프레스티지 2WD",
+          "13",
+          "2,681",
+          "2,926",
+          "3,147"
+        ],
+        [
+          "3.8 가솔린 프레스티지 2WD",
+          "12",
+          "2,350",
+          "2,540",
+          "2,693"
+        ],
+        [
+          "3.8 가솔린 익스클루시브 2WD",
+          "12",
+          "2,147",
+          "2,294",
+          "2,436"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "3.8 가솔린 2WD 익스클루시브",
+    "generation_id": "015e92b8-0371-4dbc-90cc-e412d37e39d7"
+  },
+  {
+    "depreciation_id": "71101d19-0b34-4fe7-9666-8a62a7793753",
+    "model": "카니발",
+    "generation": "KA4",
+    "model_year": 2021,
+    "stored_note": "2021 Kia Carnival KA4 3.5 gasoline 9-seat Prestige. Historical base MSRP 31,600,000 KRW; 2026-03 used-market guide reports 15 same-year/same-engine/seat/trim listings with representative average 23,000,000 KRW.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%B9%B4%EB%8B%88%EB%B0%9C/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "69100a2f28da7c572571ffcca1ce9c7be29a7926857e7298f2cc56eea086cfbc",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "스마트스트림 디젤 2.2 시그니처 9인승",
+          "14",
+          "3,114",
+          "3,382",
+          "3,734"
+        ],
+        [
+          "스마트스트림 가솔린 3.5 노블레스 11인승",
+          "14",
+          "2,657",
+          "2,937",
+          "3,179"
+        ],
+        [
+          "스마트스트림 디젤 2.2 노블레스 11인승",
+          "14",
+          "2,854",
+          "3,082",
+          "3,406"
+        ],
+        [
+          "스마트스트림 가솔린 3.5 시그니처 9인승",
+          "14",
+          "2,857",
+          "3,170",
+          "3,421"
+        ],
+        [
+          "스마트스트림 디젤 2.2 하이리무진 시그니처 7인승",
+          "14",
+          "3,927",
+          "4,294",
+          "4,770"
+        ],
+        [
+          "스마트스트림 가솔린 3.5 노블레스 9인승",
+          "14",
+          "2,657",
+          "2,937",
+          "3,179"
+        ],
+        [
+          "스마트스트림 가솔린 3.5 하이리무진 시그니처 9인승",
+          "14",
+          "3,586",
+          "4,067",
+          "4,493"
+        ],
+        [
+          "스마트스트림 디젤 2.2 노블레스 9인승",
+          "14",
+          "2,854",
+          "3,082",
+          "3,406"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "3.5 가솔린 9인승 프레스티지",
+    "generation_id": "712d3b5c-d9fc-4fe7-8a03-32387e9e59ff"
+  },
+  {
+    "depreciation_id": "8beb2f91-4080-4d4e-a74c-e682e126f18a",
+    "model": "쏘나타",
+    "generation": "LF",
+    "model_year": 2014,
+    "stored_note": "2014 Hyundai Sonata LF 2.0 CVVL Style. New-price baseline retained at 22,550,000 KRW. BigValue 2026-07-08 exact-grade market snapshot: CVVL Style, 18 listings, average 5,980,000 KRW (range 5,240,000-7,320,000). Replaced prior 2014 model-year-wide average 7,150,000 KRW; exact-grade alignment supports confidence B.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%8F%98%EB%82%98%ED%83%80/2014",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "e5c1133ddbd416c83fccfaa8632e1624b0f415638a6ed2d7483d8c50331a5d59",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "CVVL 스타일",
+          "18",
+          "524",
+          "598",
+          "732"
+        ],
+        [
+          "2.0 프리미엄",
+          "13",
+          "595",
+          "849",
+          "1,172"
+        ],
+        [
+          "CVVL 스마트",
+          "13",
+          "595",
+          "670",
+          "778"
+        ],
+        [
+          "2.0 모던",
+          "13",
+          "575",
+          "806",
+          "1,141"
+        ],
+        [
+          "CVVL 프리미엄",
+          "13",
+          "628",
+          "753",
+          "962"
+        ],
+        [
+          "CVVL 모던",
+          "13",
+          "621",
+          "700",
+          "809"
+        ],
+        [
+          "2.0 스마트",
+          "12",
+          "580",
+          "798",
+          "1,111"
+        ],
+        [
+          "CVVL 어트랙션",
+          "12",
+          "615",
+          "702",
+          "815"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.0 CVVL 스타일",
+    "generation_id": "4be47c31-a157-4cb7-8b52-13b1566dca5e"
+  },
+  {
+    "depreciation_id": "7e2e86a9-7790-4e93-91c2-5a942cde49f2",
+    "model": "EV9",
+    "generation": "MV",
+    "model_year": 2024,
+    "stored_note": "BigValue 2024 동일연식 에어 2WD 5건 평균 5,781만원; Danawa/기아 동일 트림 신차가 7,337만원. QA 2026-09-07: low-sample review passed; exact trim/powertrain basis and multi-listing or independent market cross-check support retaining B confidence.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/EV9/2024",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "cff88aeb47f02cf87af6ee6ba8550aabd107d86fea394239856abe9d99f91bcf",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "어스 4WD",
+          "7",
+          "6,021",
+          "6,282",
+          "6,643"
+        ],
+        [
+          "GT-라인 롱 레인지 4WD",
+          "7",
+          "5,850",
+          "6,121",
+          "6,586"
+        ],
+        [
+          "에어 2WD",
+          "7",
+          "5,458",
+          "5,698",
+          "6,029"
+        ],
+        [
+          "에어 4WD",
+          "7",
+          "5,671",
+          "5,933",
+          "6,277"
+        ],
+        [
+          "GT-라인 4WD",
+          "7",
+          "6,176",
+          "6,445",
+          "6,816"
+        ],
+        [
+          "에어 롱 레인지 2WD",
+          "7",
+          "5,136",
+          "5,370",
+          "5,782"
+        ],
+        [
+          "어스 롱 레인지 4WD",
+          "7",
+          "5,674",
+          "5,954",
+          "6,409"
+        ],
+        [
+          "에어 롱 레인지 4WD",
+          "7",
+          "5,368",
+          "5,621",
+          "6,051"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "롱레인지 에어 2WD",
+    "generation_id": "d3ad6db7-08af-44a9-b586-db1fd3d12f28"
+  },
+  {
+    "depreciation_id": "8a74ee09-b515-4d92-92e5-2329860bdc28",
+    "model": "렉스턴",
+    "generation": "Y400",
+    "model_year": 2021,
+    "stored_note": "2021 올 뉴 렉스턴 럭셔리 2WD 기준. 출시가 3,695만원과 2026-07-08 동일 연식/등급 실매물 15건 평균 2,796만원 비교.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EB%A0%89%EC%8A%A4%ED%84%B4/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "79eec914a1f90b9c29e6aa293c745d1830b0a58a77aafc85a388c52a03835bb4",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "럭셔리 4WD",
+          "17",
+          "2,334",
+          "2,849",
+          "3,159"
+        ],
+        [
+          "럭셔리 2WD",
+          "17",
+          "2,328",
+          "2,762",
+          "3,054"
+        ],
+        [
+          "프레스티지 2WD",
+          "15",
+          "2,378",
+          "2,940",
+          "3,255"
+        ],
+        [
+          "프레스티지 4WD",
+          "14",
+          "2,465",
+          "3,013",
+          "3,333"
+        ],
+        [
+          "더 블랙 4WD",
+          "13",
+          "3,057",
+          "3,366",
+          "3,600"
+        ],
+        [
+          "마스터 4WD",
+          "12",
+          "3,023",
+          "3,342",
+          "3,619"
+        ],
+        [
+          "마제스티 4WD",
+          "7",
+          "2,360",
+          "2,543",
+          "2,788"
+        ],
+        [
+          "헤리티지 2WD",
+          "7",
+          "2,525",
+          "2,740",
+          "2,977"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "럭셔리 2WD",
+    "generation_id": "25907880-b05a-482a-b07d-e90b1761a116"
+  },
+  {
+    "depreciation_id": "156439eb-90f6-4ba6-8999-fdb1c31eb465",
+    "model": "셀토스",
+    "generation": "SP2",
+    "model_year": 2021,
+    "stored_note": "2021 Kia Seltos SP2 1.6 gasoline turbo 4WD Prestige. 2021 trim price cross-check: 1.6 gasoline turbo Prestige 22,480,000 KRW plus 4WD configuration, exact 4WD Prestige listed at 24,280,000 KRW. Used market exact trim sample 21,550,000 KRW / 13 listings. MSRP normalization corrected; promoted to B.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%85%80%ED%86%A0%EC%8A%A4/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "1a35ab23b65fa7c271867e26cd060915d6a57ca841870390ff4dd4f71ea10f5f",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "1.6 디젤 4WD 트렌디",
+          "23",
+          "1,770",
+          "1,938",
+          "2,201"
+        ],
+        [
+          "1.6 디젤 4WD 시그니처",
+          "21",
+          "2,123",
+          "2,261",
+          "2,541"
+        ],
+        [
+          "1.6 디젤 4WD 프레스티지",
+          "20",
+          "1,997",
+          "2,124",
+          "2,362"
+        ],
+        [
+          "1.6 디젤 4WD 그래비티",
+          "17",
+          "2,171",
+          "2,298",
+          "2,479"
+        ],
+        [
+          "1.6 디젤 시그니처",
+          "15",
+          "2,015",
+          "2,137",
+          "2,270"
+        ],
+        [
+          "1.6 가솔린 4WD 터보 프레스티지",
+          "15",
+          "2,014",
+          "2,142",
+          "2,286"
+        ],
+        [
+          "1.6 가솔린 4WD 터보 그래비티",
+          "15",
+          "2,158",
+          "2,293",
+          "2,476"
+        ],
+        [
+          "1.6 디젤 트렌디",
+          "15",
+          "1,689",
+          "1,833",
+          "2,078"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 가솔린 터보 4WD 프레스티지",
+    "generation_id": "0ee14aa0-1281-450e-bc5d-3eea5d91a41d"
+  },
+  {
+    "depreciation_id": "57849365-b837-47bf-b73d-ded8dd7767e9",
+    "model": "제타",
+    "generation": "A7",
+    "model_year": 2023,
+    "stored_note": "2023 Volkswagen Jetta A7 1.5 TSI Premium. New price: Danawa 32,329,000 KRW. Used: BigValue 2023 exact trim, 11 listings, avg 26.37m KRW, 6 channels, data 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%A0%9C%ED%83%80/2023",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "7ae3076dcee61f5ce8455dfc7c4f7376c03754fa1a5b4deb5aa428d684d1cf67",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "1.5 TSI 프리미엄",
+          "12",
+          "2,457",
+          "2,629",
+          "2,826"
+        ],
+        [
+          "1.5 TSI 프레스티지",
+          "11",
+          "2,591",
+          "2,755",
+          "2,992"
+        ],
+        [
+          "1.4 TSI 프리미엄",
+          "6",
+          "2,372",
+          "2,482",
+          "2,550"
+        ],
+        [
+          "1.4 TSI 프레스티지",
+          "6",
+          "2,408",
+          "2,534",
+          "2,683"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.5 TSI Premium",
+    "generation_id": "cbd68d96-8815-44c6-8a6c-5a86bf00874e"
+  },
+  {
+    "depreciation_id": "9a1d719e-dd9e-492b-8b95-445ba273d783",
+    "model": "그랜저",
+    "generation": "GN7",
+    "model_year": 2024,
+    "stored_note": "GN7 2024 2.5 가솔린 2WD 프리미엄 기준. 신차가 3,743만원, 공개 중고시세 동일 트림 3,522만원; BigValue 2024년식 전체 실매물 117건 교차검증. QA 2026-09-07: sample_size cleared because the prior count was an overall model/year inventory count rather than the exact trim sample used for the valuation; confidence B retained for the cross-checked trim-level price benchmark.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EA%B7%B8%EB%9E%9C%EC%A0%80/2024",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "c308bd6192fe878358a350e5ec44371b781066a176a153eda442641899530ec1",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "LPi 3.5 프리미엄",
+          "9",
+          "3,598",
+          "3,777",
+          "3,959"
+        ],
+        [
+          "가솔린 3.5 익스클루시브",
+          "9",
+          "3,950",
+          "4,154",
+          "4,378"
+        ],
+        [
+          "익스클루시브",
+          "9",
+          "4,171",
+          "4,382",
+          "4,596"
+        ],
+        [
+          "가솔린 3.5 프리미엄",
+          "9",
+          "3,576",
+          "3,767",
+          "3,977"
+        ],
+        [
+          "가솔린 2.5 프리미엄",
+          "9",
+          "3,431",
+          "3,628",
+          "3,841"
+        ],
+        [
+          "가솔린 2.5 익스클루시브",
+          "9",
+          "3,781",
+          "3,973",
+          "4,190"
+        ],
+        [
+          "프리미엄",
+          "9",
+          "3,818",
+          "4,016",
+          "4,209"
+        ],
+        [
+          "LPi 3.5 익스클루시브",
+          "9",
+          "3,958",
+          "4,182",
+          "4,394"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.5 가솔린 2WD 프리미엄",
+    "generation_id": "789762c8-c467-423a-b5f7-4f8ed67681ea"
+  },
+  {
+    "depreciation_id": "993bd590-f927-4dcc-bc80-f157d14e7cbc",
+    "model": "XC60",
+    "generation": "SPA",
+    "model_year": 2021,
+    "stored_note": "2021 Volvo XC60 B5 AWD Inscription. New price KRW 66.16m; BigValue 2026-07-08 used listing average KRW 49.56m from 13 listings.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/XC60/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "a8455ca5f6c63c5d686b2e7fd2a4016d256f3ab0d9a0cd7b65787bef53e1cbdd",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "B5 AWD 인스크립션",
+          "15",
+          "4,319",
+          "4,875",
+          "5,524"
+        ],
+        [
+          "T8 AWD 인스크립션",
+          "15",
+          "4,747",
+          "5,333",
+          "6,297"
+        ],
+        [
+          "B5 AWD 모멘텀",
+          "15",
+          "3,993",
+          "4,610",
+          "5,132"
+        ],
+        [
+          "B6 AWD 인스크립션",
+          "15",
+          "4,456",
+          "5,045",
+          "5,693"
+        ],
+        [
+          "T8 AWD R-디자인",
+          "13",
+          "4,187",
+          "4,615",
+          "5,068"
+        ],
+        [
+          "B6 AWD R-디자인",
+          "6",
+          "4,383",
+          "5,153",
+          "5,518"
+        ],
+        [
+          "T6 Momentum",
+          "4",
+          "4,800",
+          "5,012",
+          "5,410"
+        ],
+        [
+          "T8 Inscription",
+          "4",
+          "4,740",
+          "4,872",
+          "5,050"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "B5 AWD Inscription",
+    "generation_id": "39aa3cc7-44c6-4010-83b3-3e52d5a03f1c"
+  },
+  {
+    "depreciation_id": "43ae6f4f-3c59-4d4f-9057-4bd2f5c55454",
+    "model": "NX",
+    "generation": "AZ20",
+    "model_year": 2023,
+    "stored_note": "BigValue 2023 동일연식 NX350h Premium 7건 평균 5,965만원; Danawa 동일 트림 신차가 6,543만원.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/NX/2023",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "496adaed2a40d3a90fe5c62a148e650b06af1e32c046537bc010f4a31e6ee648",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "350h 프리미엄",
+          "9",
+          "5,518",
+          "5,906",
+          "6,348"
+        ],
+        [
+          "450h+ F 스포츠",
+          "9",
+          "6,621",
+          "6,994",
+          "7,451"
+        ],
+        [
+          "450h+ 프리미엄",
+          "9",
+          "6,027",
+          "6,539",
+          "7,088"
+        ],
+        [
+          "350h 럭셔리",
+          "9",
+          "6,316",
+          "6,716",
+          "7,220"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "NX350h Premium",
+    "generation_id": "0e32c8ba-bf22-48b1-b4ca-16a78ee96655"
+  },
+  {
+    "depreciation_id": "c4057536-9d18-4407-a1b1-d95a1438d090",
+    "model": "니로",
+    "generation": "DE",
+    "model_year": 2016,
+    "stored_note": "2016 Kia Niro DE 1.6 HEV Luxury. 2016 Luxury reference price 24.78m KRW; 2026-08 market review reports 131 DE listings and a 2016 Luxury market guide around 8.57m KRW. Replaced prior adjacent-2017 comparison; normalized to 2016 exact year/trim market guide. QA 2026-09-07: sample_size cleared because the prior count was an overall model/year inventory count rather than the exact trim sample used for the valuation; confidence B retained for the cross-checked trim-level price benchmark.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EB%8B%88%EB%A1%9C/2016",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "6e28917186e1c5ff4275c6b094464b8716c663bb9c8447728bd7cbde9a0956db",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "1.6 HEV 럭셔리",
+          "15",
+          "1,175",
+          "1,227",
+          "1,331"
+        ],
+        [
+          "1.6 HEV 프레스티지",
+          "14",
+          "1,239",
+          "1,298",
+          "1,399"
+        ],
+        [
+          "1.6 HEV 노블레스",
+          "14",
+          "1,313",
+          "1,384",
+          "1,484"
+        ],
+        [
+          "1.6 럭셔리",
+          "5",
+          "1,230",
+          "1,284",
+          "1,330"
+        ],
+        [
+          "1.6 프레스티지",
+          "3",
+          "1,350",
+          "1,420",
+          "1,460"
+        ],
+        [
+          "1.6 노블레스",
+          "3",
+          "1,450",
+          "1,493",
+          "1,530"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 HEV 럭셔리",
+    "generation_id": "b8deee26-4ca1-49ed-8dff-b5a3db314482"
+  },
+  {
+    "depreciation_id": "03933456-170c-4279-9530-53666f5d7a76",
+    "model": "GV80",
+    "generation": "JX1",
+    "model_year": 2023,
+    "stored_note": "BigValue 2023 동일연식 2.5 터보 2WD 15건 평균 6,092만원; Danawa 동일 트림 신차가 6,478만원.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/GV80/2023",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "5b6072654059fcf5ea398aaa0d320cc40725b913f2dae6066f50098bab9a4f34",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "3.5 터보 AWD",
+          "23",
+          "5,563",
+          "6,941",
+          "8,709"
+        ],
+        [
+          "2.5 터보 AWD",
+          "23",
+          "5,219",
+          "6,551",
+          "8,573"
+        ],
+        [
+          "3.0 디젤 2WD",
+          "22",
+          "5,400",
+          "6,159",
+          "7,030"
+        ],
+        [
+          "2.5 터보 2WD",
+          "20",
+          "4,937",
+          "5,936",
+          "7,265"
+        ],
+        [
+          "3.5 터보 2WD",
+          "20",
+          "5,343",
+          "6,378",
+          "7,841"
+        ],
+        [
+          "3.0 디젤 AWD",
+          "19",
+          "5,689",
+          "6,567",
+          "7,620"
+        ],
+        [
+          "3.5 터보 48V AWD",
+          "6",
+          "8,009",
+          "8,454",
+          "8,764"
+        ],
+        [
+          "2.5 터보 가솔린 AWD",
+          "5",
+          "6,430",
+          "6,774",
+          "7,160"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.5 가솔린 터보 2WD",
+    "generation_id": "7fed9a3a-af86-41e5-8c7f-0f278a3a210c"
+  },
+  {
+    "depreciation_id": "61db01df-19ad-4bae-bd8b-d1334b46d93e",
+    "model": "스포티지",
+    "generation": "QL",
+    "model_year": 2015,
+    "stored_note": "2015 Kia Sportage QL 2.0 diesel 2WD Trendy A/T normalized to exact trim. Historical A/T MSRP 23,610,000 KRW (Danawa specification). 2015 exact-trim used-market reference 9,560,000 KRW; cross-check sources place exact trim around 9.56m-10.0m KRW. Upgraded to B after trim-level normalization. QA 2026-09-07: sample_size cleared because the prior count represented year/model-wide inventory rather than the exact trim basis used for the valuation; B confidence retained for the cross-checked trim-level price benchmark.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%8A%A4%ED%8F%AC%ED%8B%B0%EC%A7%80/2015",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "557bffdbb0a55021b0f10a42afd7a714ac4f6ae9c702b93717c648266bffb6b0",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "R2.0 디젤 2WD 럭셔리",
+          "22",
+          "790",
+          "885",
+          "1,018"
+        ],
+        [
+          "R2.0 디젤 2WD 트렌디",
+          "18",
+          "862",
+          "969",
+          "1,143"
+        ],
+        [
+          "R2.0 디젤 2WD 노블레스",
+          "14",
+          "998",
+          "1,106",
+          "1,222"
+        ],
+        [
+          "2.0 가솔린 T-GDI 럭셔리",
+          "14",
+          "926",
+          "1,014",
+          "1,127"
+        ],
+        [
+          "R2.0 디젤 4WD 에이스",
+          "14",
+          "999",
+          "1,088",
+          "1,183"
+        ],
+        [
+          "R2.0 디젤 4WD 프레스티지",
+          "14",
+          "991",
+          "1,098",
+          "1,213"
+        ],
+        [
+          "R2.0 디젤 2WD 프레스티지",
+          "13",
+          "935",
+          "1,031",
+          "1,147"
+        ],
+        [
+          "R2.0 디젤 4WD 노블레스",
+          "13",
+          "1,053",
+          "1,171",
+          "1,287"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.0 디젤 2WD 트렌디 자동",
+    "generation_id": "2ec69181-b7c8-4a99-9f52-2d63758ea16f"
+  },
+  {
+    "depreciation_id": "c74fe7f7-ea75-47b5-b0f3-8fe4c9c7a6e1",
+    "model": "아반떼",
+    "generation": "CN7",
+    "model_year": 2021,
+    "stored_note": "2021 Hyundai Avante CN7 1.6 gasoline Modern. Historical new-price basis retained at KRW 19,480,000. 2026 review: multi-channel market evidence replaces prior single-vehicle KB basis; BigValue CN7 2021 has 123 listings overall and external trim-level guide reports 2021 1.6 gasoline Modern around KRW 14.8m. Promoted from C after multi-source normalization. QA 2026-09-07: sample_size cleared because the prior count was an overall model/year inventory count rather than the exact trim sample used for the valuation; confidence B retained for the cross-checked trim-level price benchmark.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%95%84%EB%B0%98%EB%96%BC/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "7af5bfda772bd0f16d4cfb3944b34de7b2bd0bc3073a41cc9aa062a0b83cdab8",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "스마트스트림 가솔린 1.6 스마트",
+          "11",
+          "1,429",
+          "1,559",
+          "1,712"
+        ],
+        [
+          "2.0 터보",
+          "11",
+          "2,400",
+          "2,550",
+          "2,732"
+        ],
+        [
+          "N 라인 스포츠",
+          "11",
+          "1,876",
+          "2,031",
+          "2,141"
+        ],
+        [
+          "LPi 1.6 스타일",
+          "10",
+          "1,510",
+          "1,602",
+          "1,733"
+        ],
+        [
+          "LPi 1.6 스마트",
+          "10",
+          "1,652",
+          "1,758",
+          "1,904"
+        ],
+        [
+          "스마트",
+          "9",
+          "1,730",
+          "1,926",
+          "2,108"
+        ],
+        [
+          "모던",
+          "9",
+          "1,910",
+          "2,034",
+          "2,125"
+        ],
+        [
+          "2.0 터보 N DCT 패키지",
+          "9",
+          "2,434",
+          "2,626",
+          "2,820"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 가솔린 모던",
+    "generation_id": "5e8c226b-40d6-4b70-b23d-3843ca2b347b"
+  },
+  {
+    "depreciation_id": "25aba713-f015-4b29-b870-e8333a3acf61",
+    "model": "베뉴",
+    "generation": "QX",
+    "model_year": 2021,
+    "stored_note": "2021 Hyundai Venue QX Smartstream G1.6 Modern. Official launch price 18,610,000 KRW; BigValue exact 2021 Smartstream G1.6 Modern average 16,690,000 KRW from 12 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EB%B2%A0%EB%89%B4/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "b1dafe224b7d9a609dd4325ed259f2466fde88411462e80d7e84e64836bbf60c",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "스마트스트림 G1.6 모던",
+          "14",
+          "1,578",
+          "1,663",
+          "1,809"
+        ],
+        [
+          "스마트스트림 G1.6 스마트",
+          "14",
+          "1,424",
+          "1,527",
+          "1,669"
+        ],
+        [
+          "스마트스트림 G1.6 플럭스",
+          "13",
+          "1,780",
+          "1,870",
+          "2,038"
+        ],
+        [
+          "가솔린 1.6 스마트",
+          "12",
+          "1,547",
+          "1,616",
+          "1,747"
+        ],
+        [
+          "가솔린 1.6 모던",
+          "8",
+          "1,620",
+          "1,734",
+          "1,886"
+        ],
+        [
+          "가솔린 1.6 모던 플러스",
+          "8",
+          "1,640",
+          "1,835",
+          "2,015"
+        ],
+        [
+          "가솔린 1.6 플럭스",
+          "7",
+          "1,896",
+          "2,004",
+          "2,186"
+        ],
+        [
+          "가솔린 1.6 FLUX",
+          "3",
+          "1,680",
+          "1,770",
+          "1,840"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "Smartstream G1.6 모던",
+    "generation_id": "3723e5bd-181b-4187-bb03-c0aff61098e1"
+  },
+  {
+    "depreciation_id": "d2bda55f-e18f-46d7-b2cc-c300ade8f1d7",
+    "model": "말리부",
+    "generation": "E2XX",
+    "model_year": 2021,
+    "stored_note": "2021 Chevrolet Malibu 1.35 E-Turbo Premier. Original price 28,950,000 KRW; BigValue exact 2021 1.35 E-Turbo Premier average 18,350,000 KRW from 15 listings across six used-car channels, snapshot 2026-07-08; normalized exact year/trim comparison.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EB%A7%90%EB%A6%AC%EB%B6%80/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "e4578aa70448815969a04fa29149036220df6a461e874813507e1e7e084b7e69",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "1.35 E-터보 프리미어",
+          "17",
+          "1,663",
+          "1,820",
+          "2,058"
+        ],
+        [
+          "1.35 E-터보 레드라인 프리미어 프라임 세이프티",
+          "17",
+          "1,697",
+          "1,896",
+          "2,198"
+        ],
+        [
+          "1.35 E-터보 프리미어 프라임 세이프티",
+          "17",
+          "1,666",
+          "1,874",
+          "2,140"
+        ],
+        [
+          "1.35 E-터보 LT 디럭스",
+          "17",
+          "1,615",
+          "1,753",
+          "1,979"
+        ],
+        [
+          "2.0 터보 LT 스페셜",
+          "17",
+          "1,649",
+          "1,854",
+          "2,087"
+        ],
+        [
+          "1.35 E-터보 레드라인 프리미어",
+          "17",
+          "1,649",
+          "1,842",
+          "2,073"
+        ],
+        [
+          "1.35 E-터보 LS",
+          "17",
+          "1,467",
+          "1,633",
+          "1,846"
+        ],
+        [
+          "1.35 E-터보 LT",
+          "17",
+          "1,526",
+          "1,673",
+          "1,924"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.35 E-Turbo 프리미어",
+    "generation_id": "55e486ae-d9ac-43a0-8e70-a71062237f7a"
+  },
+  {
+    "depreciation_id": "348231f8-2af8-48d2-9a2b-b52267611238",
+    "model": "Q5",
+    "generation": "FY",
+    "model_year": 2021,
+    "stored_note": "2021 Audi Q5 FY 45 TFSI quattro Premium. Korea launch MSRP 70,638,000 KRW; BigValue 2021 exact trim average 41,950,000 KRW from 13 listings as of 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/Q5/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "0b0be0c3b127963d3c4e7a89e7dbb188e0ea795355b7b3ee557b68f21f548463",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "40 TDI 콰트로 프리미엄",
+          "19",
+          "3,517",
+          "4,314",
+          "4,875"
+        ],
+        [
+          "40 TDI 콰트로",
+          "19",
+          "3,363",
+          "4,002",
+          "4,495"
+        ],
+        [
+          "45 TFSI 콰트로 프리미엄",
+          "15",
+          "3,285",
+          "4,108",
+          "4,467"
+        ],
+        [
+          "45 TFSI 콰트로",
+          "15",
+          "3,134",
+          "3,809",
+          "4,128"
+        ],
+        [
+          "스포트백 40 TDI 콰트로 프리미엄",
+          "11",
+          "4,132",
+          "4,695",
+          "5,077"
+        ],
+        [
+          "스포트백 40 TDI 콰트로",
+          "11",
+          "3,808",
+          "4,336",
+          "4,685"
+        ],
+        [
+          "50 TDI 콰트로 프리미엄",
+          "7",
+          "4,015",
+          "4,495",
+          "4,721"
+        ],
+        [
+          "스포트백 45 TFSI 콰트로 프리미엄",
+          "5",
+          "4,596",
+          "4,826",
+          "5,018"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "45 TFSI quattro Premium",
+    "generation_id": "32f33d45-d51f-4172-b88e-73073cf0d233"
+  },
+  {
+    "depreciation_id": "46a20a04-0259-4f65-85e3-a2c1d726b3cb",
+    "model": "3시리즈",
+    "generation": "G20",
+    "model_year": 2021,
+    "stored_note": "BMW 320i M 스포츠 패키지 기준. 2021년형 신차가 5,460만원과 2026-07-08 동일 연식/등급 실매물 9대 평균 3,969만원 비교.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/3%EC%8B%9C%EB%A6%AC%EC%A6%88/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "70a123f88c2a48633cce3cccbd26213a06b32583d0cf47a8c623098032a6d814",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "320i M 스포츠 패키지",
+          "11",
+          "3,287",
+          "3,868",
+          "4,353"
+        ],
+        [
+          "330e M 스포츠 패키지",
+          "11",
+          "3,686",
+          "4,103",
+          "4,578"
+        ],
+        [
+          "320i 투어링 럭셔리 라인",
+          "11",
+          "3,547",
+          "3,981",
+          "4,417"
+        ],
+        [
+          "320d 투어링 M 스포츠 패키지",
+          "11",
+          "3,787",
+          "4,259",
+          "4,716"
+        ],
+        [
+          "330e 럭셔리 라인",
+          "11",
+          "3,573",
+          "3,982",
+          "4,446"
+        ],
+        [
+          "320d 럭셔리 라인",
+          "11",
+          "3,726",
+          "4,085",
+          "4,390"
+        ],
+        [
+          "M340i",
+          "11",
+          "4,118",
+          "4,839",
+          "5,631"
+        ],
+        [
+          "320d GT M 스포츠 프리미엄 패키지",
+          "8",
+          "3,817",
+          "4,069",
+          "4,418"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "320i M 스포츠 패키지",
+    "generation_id": "70a3a75d-b530-4f2b-9ab3-97122b73c2d5"
+  },
+  {
+    "depreciation_id": "497e6a7c-e3dd-46bb-b928-bd578ddce241",
+    "model": "니로",
+    "generation": "SG2",
+    "model_year": 2022,
+    "stored_note": "2022 Kia Niro SG2 1.6 HEV Trendy. Kia official February 2022 price list: tax-reduced eco-benefit price 26,600,000 KRW. BigValue exact 2022 1.6 HEV Trendy average 23,910,000 KRW / 26 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EB%8B%88%EB%A1%9C/2022",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "43182c76b6c17ea5fc8947ae0e608198a2c34f6317a676c859488545a932cf8e",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "에어",
+          "31",
+          "2,697",
+          "2,863",
+          "3,267"
+        ],
+        [
+          "1.6 HEV 프레스티지",
+          "30",
+          "2,119",
+          "2,508",
+          "3,026"
+        ],
+        [
+          "1.6 HEV 트렌디",
+          "30",
+          "2,029",
+          "2,390",
+          "2,805"
+        ],
+        [
+          "어스",
+          "30",
+          "2,762",
+          "2,957",
+          "3,437"
+        ],
+        [
+          "1.6 HEV 시그니처",
+          "27",
+          "2,368",
+          "2,801",
+          "3,293"
+        ],
+        [
+          "1.6 HEV 노블레스",
+          "15",
+          "2,257",
+          "2,380",
+          "2,630"
+        ],
+        [
+          "1.6 PHEV 시그니처",
+          "14",
+          "2,680",
+          "3,025",
+          "3,284"
+        ],
+        [
+          "프레스티지",
+          "10",
+          "2,560",
+          "2,700",
+          "2,870"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 HEV 트렌디",
+    "generation_id": "8b71e854-3d3d-4ca3-8084-fb4800ee6b95"
+  },
+  {
+    "depreciation_id": "18b2ce20-7caa-4a03-b509-e088f9a37ae7",
+    "model": "그랜저",
+    "generation": "IG",
+    "model_year": 2021,
+    "stored_note": "2021 Hyundai Grandeur IG Smartstream Gasoline 2.5 Premium. New price 33,030,000 KRW; BigValue 2021 exact Smartstream gasoline 2.5 Premium average 27,240,000 KRW from 14 listings, snapshot 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EA%B7%B8%EB%9E%9C%EC%A0%80/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "a58d727ddd511b33057b0250290060268c5e5292b09eba1953707f3a07362697",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "LPi 3.0 프리미엄",
+          "31",
+          "2,400",
+          "2,715",
+          "2,925"
+        ],
+        [
+          "LPi 3.0 익스클루시브",
+          "29",
+          "2,785",
+          "2,989",
+          "3,189"
+        ],
+        [
+          "가솔린 3.3 캘리그래피",
+          "17",
+          "3,049",
+          "3,310",
+          "3,456"
+        ],
+        [
+          "가솔린 3.3 익스클루시브",
+          "17",
+          "2,813",
+          "3,055",
+          "3,177"
+        ],
+        [
+          "프리미엄",
+          "17",
+          "2,786",
+          "2,947",
+          "3,070"
+        ],
+        [
+          "익스클루시브",
+          "16",
+          "2,917",
+          "3,128",
+          "3,273"
+        ],
+        [
+          "LPi 3.0 모던",
+          "16",
+          "2,292",
+          "2,423",
+          "2,563"
+        ],
+        [
+          "스마트스트림 가솔린 2.5 프리미엄",
+          "16",
+          "2,551",
+          "2,707",
+          "2,861"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.5 가솔린 프리미엄",
+    "generation_id": "ca5f40f6-d1bf-49d8-b140-c0208541637c"
+  },
+  {
+    "depreciation_id": "c040e093-5f35-4d65-93bd-5e366832b4fa",
+    "model": "GV70",
+    "generation": "JK1",
+    "model_year": 2021,
+    "stored_note": "GV70 JK1 2021: 초기 2.5T 2WD 기준 신차가 4,880만원, 중고가는 2026-07-08 가솔린 2.5 터보 2WD 실매물 7건 평균 3,990만원(BigValue). 동일 엔진/구동 기준.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/GV70/2021",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "96cf70b456fcbc057e47fcfd753c16deaefeb00a35aa4e09e91651512f362f73",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "디젤 2.2 AWD",
+          "11",
+          "3,929",
+          "4,327",
+          "4,700"
+        ],
+        [
+          "가솔린 3.5 터보 AWD",
+          "9",
+          "4,095",
+          "4,475",
+          "4,692"
+        ],
+        [
+          "디젤 2.2",
+          "9",
+          "3,804",
+          "4,126",
+          "4,350"
+        ],
+        [
+          "가솔린 2.5 터보 AWD",
+          "9",
+          "3,771",
+          "4,090",
+          "4,270"
+        ],
+        [
+          "가솔린 2.5 터보",
+          "9",
+          "3,606",
+          "3,919",
+          "4,109"
+        ],
+        [
+          "가솔린 2.5T 스포츠패키지 AWD",
+          "4",
+          "4,120",
+          "4,348",
+          "4,570"
+        ],
+        [
+          "가솔린 2.5T 2WD",
+          "4",
+          "3,920",
+          "4,115",
+          "4,350"
+        ],
+        [
+          "가솔린 2.5T 스포츠패키지 2WD",
+          "4",
+          "4,030",
+          "4,248",
+          "4,480"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "2.5 가솔린 터보 2WD 기본형",
+    "generation_id": "66c57398-6ebb-4d2b-9d04-c2ce37053fe0"
+  },
+  {
+    "depreciation_id": "0e3fe0e0-67a1-4c03-bbc4-a688932ee981",
+    "model": "ES",
+    "generation": "XV70",
+    "model_year": 2019,
+    "stored_note": "2019 Lexus ES 300h Luxury CVT. Historical Korean MSRP 57,100,000 KRW; BigValue exact trim average 35,360,000 KRW from 6 listings as of 2026-07-08.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/ES/2019",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "62331b1eb8befdb8bbd37aa7e9976d5cc9f4624b76ea9914558a0554a288777e",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "300h 이그제큐티브 CVT",
+          "7",
+          "3,595",
+          "3,707",
+          "3,950"
+        ],
+        [
+          "300h 럭셔리 CVT",
+          "7",
+          "3,397",
+          "3,516",
+          "3,682"
+        ],
+        [
+          "300h 수프림 CVT",
+          "7",
+          "3,436",
+          "3,510",
+          "3,617"
+        ],
+        [
+          "300h 럭셔리 플러스 CVT",
+          "7",
+          "3,506",
+          "3,633",
+          "3,849"
+        ],
+        [
+          "300h 이그제큐티브",
+          "5",
+          "3,250",
+          "3,644",
+          "4,200"
+        ],
+        [
+          "300h 슈프림",
+          "5",
+          "3,150",
+          "3,378",
+          "3,620"
+        ],
+        [
+          "300h Luxury+",
+          "4",
+          "3,620",
+          "3,905",
+          "4,320"
+        ],
+        [
+          "300h Luxury",
+          "4",
+          "3,600",
+          "3,842",
+          "4,190"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "300h Luxury CVT",
+    "generation_id": "e46df07c-7475-4b32-baae-6fe8580ad3a2"
+  },
+  {
+    "depreciation_id": "9e71101b-12f6-4748-a707-979f74ab8bae",
+    "model": "아반떼",
+    "generation": "AD",
+    "model_year": 2015,
+    "stored_note": "2015 Hyundai Avante AD 1.6 GDi Style. Original price 15,310,000 KRW. BigValue AD market snapshot (2026-07-08) exact trim 1.6 GDi Style: 88 listings, average 8,910,000 KRW. Replaced prior year-wide 2015 average 7,740,000 KRW with exact-trim aggregate; confidence upgraded to B.\n2026-10-27 evidence audit: held pending original MSRP source and dated exact-generation/year/powertrain/trim individual listings with duplicate verification. No matching market snapshot; stored prices, sample and observation date are preserved.",
+    "stored_confidence": "C",
+    "aggregate_url": "https://lgeal-agent.bigvalue.ai/dashboard/car/%EC%95%84%EB%B0%98%EB%96%BC/2015",
+    "checked_on": "2026-10-27",
+    "decision": "held",
+    "missing": [
+      "동일 세대·연식·엔진·구동·트림의 개별 매물 URL 및 매물 ID",
+      "주행거리·사고/수리 이력·옵션 차이",
+      "동일 관측일의 매물 가격 및 차량 중복 확인",
+      "해당 연식 공식 가격표와 세금·옵션 조건"
+    ],
+    "aggregate_fetch": {
+      "status": 200,
+      "sha256": "5a42d78499efe1de722a5b42cdc7f455180b4b4e03c7252407cf01f8985e78dc",
+      "table_rows": [
+        [
+          "등급 ↕",
+          "매물 ▼",
+          "최저(만원) ↕",
+          "평균(만원) ↕",
+          "최고(만원) ↕"
+        ],
+        [
+          "1.6 GDi 스타일",
+          "32",
+          "531",
+          "676",
+          "892"
+        ],
+        [
+          "1.6 VGT 스타일",
+          "27",
+          "524",
+          "622",
+          "839"
+        ],
+        [
+          "1.6 VGT 스마트",
+          "23",
+          "544",
+          "661",
+          "883"
+        ],
+        [
+          "1.6 GDi 스마트",
+          "20",
+          "620",
+          "772",
+          "957"
+        ],
+        [
+          "1.6 GDi 모던",
+          "19",
+          "644",
+          "817",
+          "1,040"
+        ],
+        [
+          "1.6 VGT 모던",
+          "14",
+          "595",
+          "691",
+          "800"
+        ],
+        [
+          "1.6 GDi 프리미엄",
+          "13",
+          "667",
+          "945",
+          "1,080"
+        ],
+        [
+          "스타일 M/T",
+          "12",
+          "554",
+          "610",
+          "683"
+        ]
+      ],
+      "date_labels": [
+        "데이터 기준 2026.09.01",
+        "업데이트 2026.09.18",
+        "기준일 2026.09.01"
+      ]
+    },
+    "reason": "집계 원문을 조회했으나 개별 매물의 사양·중복·상태를 확인할 수 없어 감가율 검증에 사용하지 않음",
+    "target_spec": "1.6 GDi 스타일",
+    "generation_id": "06de6602-8656-4a24-8231-88ecbd58cc5f"
+  }
+]

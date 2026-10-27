@@ -1,0 +1,23 @@
+{
+  "cron": [
+    {
+      "id": 1,
+      "hash": "ab69d9d284c8f46c62dd43a55a13f516",
+      "active": true,
+      "schedule": "50 22 * * *"
+    }
+  ],
+  "specs": 463,
+  "linked": 369,
+  "models": 132,
+  "catalog": 3185,
+  "unlinked": 0,
+  "generations": 179,
+  "powertrains": 369,
+  "depreciation_c": 63,
+  "efficiency_specs": 414,
+  "market_snapshots": 0,
+  "specs_old_rows_changed_or_missing": 0,
+  "powertrains_old_rows_changed_or_missing": 0,
+  "depreciation_old_rows_changed_or_missing": 0
+}

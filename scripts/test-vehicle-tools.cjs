@@ -5,6 +5,7 @@ const root=path.join(__dirname,'..'),dir=path.join(root,'research/car-bulk-20261
 const read=n=>JSON.parse(fs.readFileSync(path.join(dir,n),'utf8'));
 const powers=read('before-powertrains.json'),specs=read('before-specs.json');
 for(const r of read('approved-variants.json')){powers.push({id:r.powertrain_id,generation_id:r.generation_id,name:r.name,fuel_type:r.fuel_type,displacement_cc:r.displacement_cc});specs.push({id:r.spec_id,generation_id:r.generation_id,powertrain_id:r.powertrain_id,combined_efficiency:r.efficiency,source_url:r.source_url,verified_at:'2026-10-27'});}
+if(process.env.FOLLOWUP_FIXTURE){specs.push(...JSON.parse(fs.readFileSync(path.join(root,'research/followup-20261027/approved-manufacturer-specs.json'),'utf8')));}
 const manufacturers=new Map(read('before-manufacturers.json').map(x=>[x.id,x.name])),models=new Map(read('before-models.json').map(x=>[x.id,x]));
 const vehicles=read('before-generations.json').map(g=>{const m=models.get(g.car_model_id);return {generation_id:g.id,brand:manufacturers.get(m.manufacturer_id),model:m.name,generation:g.name,generation_code:g.generation_code};});
 const tables={web_search_index:vehicles,vehicle_specs:specs,powertrains:powers,trims:read('before-trims.json'),official_fuel_prices:[]};
@@ -16,7 +17,7 @@ const wait=()=>new Promise(r=>setTimeout(r,5));
  const calls=[];w.fetch=async(url,opts)=>{calls.push({url,opts});const u=new URL(url),table=u.pathname.split('/').pop();assert(Object.hasOwn(tables,table));const offset=Number(u.searchParams.get('offset'));return {ok:true,json:async()=>tables[table].slice(offset,offset+1000)};};
  for(const p of ['car-cost-core.js','vehicle-tools.js'])w.eval(fs.readFileSync(path.join(root,p),'utf8'));
  for(let i=0;i<100&&d.querySelector('#model0').disabled;i++)await wait();
- assert.match(d.querySelector('#loadStatus').textContent,/179개 세대.*348건/);
+ assert.match(d.querySelector('#loadStatus').textContent,new RegExp('179개 세대.*'+(process.env.FOLLOWUP_FIXTURE?'410':'348')+'건'));
  assert.equal(d.querySelector('#spec0').options.length,1,'No representative specification selected silently');
  const change=(id,value,event='change')=>{const e=d.getElementById(id);e.value=value;e.dispatchEvent(new w.Event(event,{bubbles:true}));};
  const k5=vehicles.find(x=>x.model==='K5'&&x.generation_code==='DL3');
@@ -32,5 +33,5 @@ const wait=()=>new Promise(r=>setTimeout(r,5));
  d.querySelector('#reset').click();assert.equal(d.querySelector('#model0').value,'');assert.equal(d.querySelector('#km').value,'15000');assert.equal(d.querySelector('#insurance0').value,'');
  assert(calls.every(x=>!x.opts.method||x.opts.method==='GET'),'No data writes or personal cost uploads');assert(!calls.some(x=>/ratings|reviews|profiles|cron/.test(x.url)));
  const ids=[...d.querySelectorAll('[id]')].map(x=>x.id);assert.equal(new Set(ids).size,ids.length);
- dom.window.close();console.log('PASS complete 179-generation/348-variant fixture: explicit selection, two same-model variants, evidence, cost edits, invalid inputs, reset, filter preservation and read-only API access');
+ dom.window.close();console.log('PASS complete 179-generation fixture: explicit selection, two same-model variants, evidence, cost edits, invalid inputs, reset, filter preservation and read-only API access');
 })();

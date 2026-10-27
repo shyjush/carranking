@@ -1,0 +1,1 @@
+DELETE FROM public.source_records WHERE id IN ('3947e32e-65a4-5e54-beeb-bcb2623083aa','d87fab4b-361f-578b-a712-7e2168b4acb9','c90ec881-2a80-5e3d-87f8-1b39c50ed09f','cc269187-6eae-5de6-8a78-2af5c0bbf72c','16427bfe-0ee4-5fd0-a0c1-3c8e7e56aac8');

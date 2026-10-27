@@ -1,0 +1,11 @@
+{
+  "vehicle_specs_inserted": 62,
+  "spec_sources_inserted": 62,
+  "partial_original_price_sources_inserted": 5,
+  "existing_rows_updated": 0,
+  "idempotent_replay_specs_inserted": 0,
+  "idempotent_replay_sources_inserted": 0,
+  "depreciation_grades_changed": 0,
+  "market_snapshots_inserted": 0,
+  "schedule_changes": 0
+}
