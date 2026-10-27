@@ -1,0 +1,94 @@
+[
+  {
+    "id": "938557",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=938557",
+    "date": "2022-01-24",
+    "price_context": [
+      "위기를 연출했다. 판매 가격은 △트렌디 2660만원 △프레스티지 2895만원 △시그니처 3"
+    ],
+    "bytes": 103129,
+    "http_status": 200
+  },
+  {
+    "id": "927337",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=927337",
+    "date": "2021-07-20",
+    "price_context": [
+      "알림 등이 있다. ◇1.6 터보 가솔린 2442만원부터… 다양한 마케팅 활동 진행 신형 스",
+      "택 후), 1.6 터보 가솔린 △트렌디 2442만원 △프레스티지 2624만원 △노블레스 2"
+    ],
+    "bytes": 104139,
+    "http_status": 200
+  },
+  {
+    "id": "916002",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=916002",
+    "date": "2020-12-16",
+    "price_context": [
+      " 판매가격은 △가솔린 2.5 터보 모델 4880만원 △가솔린 3.5터보 모델 5830만원 ",
+      " GV70 가솔린 2.5 터보(기본가격 4880만원) 모델에 선호도가 높은 △AWD(300"
+    ],
+    "bytes": 100522,
+    "http_status": 200
+  },
+  {
+    "id": "947396",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=947396",
+    "date": "2022-07-05",
+    "price_context": [
+      "트림에 따라 △T5 2740만원 △T7 3020만원이며, 신차 관련 자세한 정보는 쌍용자동"
+    ],
+    "bytes": 110291,
+    "http_status": 200
+  },
+  {
+    "id": "864820",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=864820",
+    "date": "2018-02-21",
+    "price_context": [
+      "판매 가격은 디젤 2.0 모델이 △모던 2895만원 △프리미엄 3095만원 △익스클루시브 "
+    ],
+    "bytes": 102114,
+    "http_status": 200
+  },
+  {
+    "id": "948077",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=948077",
+    "date": "2022-07-18",
+    "price_context": [
+      "모델 △트렌디 2479만원 △프레스티지 2768만원 △노블레스 2979만원 △시그니처 32"
+    ],
+    "bytes": 100182,
+    "http_status": 200
+  },
+  {
+    "id": "950604",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=950604",
+    "date": "2022-09-02",
+    "price_context": [
+      "격은 △트렌디 1752만원 △프레스티지 2071만원 △시그니처 2449만원이며, 단일 트림"
+    ],
+    "bytes": 99633,
+    "http_status": 200
+  },
+  {
+    "id": "912623",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=912623",
+    "date": "2020-10-22",
+    "price_context": [
+      "662만원(IVT, 무단변속기) △모던 1861만원 △플럭스(FLUX) 2148만원이다(개"
+    ],
+    "bytes": 99683,
+    "http_status": 200
+  },
+  {
+    "id": "880464",
+    "url": "https://www.newswire.co.kr/newsRead.php?no=880464",
+    "date": "2018-12-11",
+    "price_context": [
+      ", 가솔린 3.8 모델은 △익스클루시브 3475만원 △프레스티지 4030만원이다(2WD 7"
+    ],
+    "bytes": 105407,
+    "http_status": 200
+  }
+]

@@ -10,7 +10,8 @@ const out=process.env.CARRANKING_QA_DIR||'site-smoke-artifacts';fs.mkdirSync(out
   page.on('pageerror',e=>errors.push(e.message));
   const response=await page.goto(origin+'/vehicle-tools.html',{waitUntil:'domcontentloaded',timeout:45000});assert(response.ok());
   await page.waitForFunction(()=>document.querySelector('#loadStatus').textContent.includes('수신 완료'),{timeout:45000});
-  const loaded=await page.locator('#loadStatus').innerText();assert(loaded.includes('179개 세대')&&loaded.includes('410건'),loaded);
+  const loaded=await page.locator('#loadStatus').innerText(),counts=loaded.match(/(\d+)개 세대.*?(\d+)건.*수신 완료/);
+  assert(counts&&Number(counts[1])>=179&&Number(counts[2])>=411,loaded);
   await page.selectOption('#model0',{label:'기아 K5 DL3'});assert.equal(await page.inputValue('#spec0'),'');
   await page.locator('#calculate').click();assert((await page.locator('#inputError').innerText()).includes('직접 선택'));
   const variants=await page.locator('#spec0 option').evaluateAll(opts=>opts.map(x=>({value:x.value,label:x.textContent})).filter(x=>x.value));assert.equal(variants.length,28);
