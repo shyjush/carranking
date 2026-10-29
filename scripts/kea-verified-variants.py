@@ -62,16 +62,33 @@ def plan(data, manufacturers, models, generations):
  return result,summary
 
 def sql(rows):
- # Lock scoped tables, prevent races against regular imports; never replace legacy rows.
- statements=['BEGIN;','LOCK TABLE public.powertrains, public.vehicle_specs IN SHARE ROW EXCLUSIVE MODE;', 'CREATE TEMP TABLE variant_counts(kind text,n bigint);']
- for r in rows:
-  p=r['powertrain_id'];s=r['spec_id'];g=r['generation_id'];cc=str(r['displacement_cc']) if r['displacement_cc'] else 'NULL'
-  vals=','.join([quote(p)+'::uuid',quote(g)+'::uuid',quote(r['name']),quote(r['fuel_type']),cc])
-  statements.append(f"WITH a AS (INSERT INTO public.powertrains(id,generation_id,name,fuel_type,displacement_cc) SELECT {vals} WHERE EXISTS(SELECT 1 FROM public.generations WHERE id={quote(g)}::uuid) ON CONFLICT(id) DO NOTHING RETURNING id) INSERT INTO variant_counts SELECT 'powertrains',count(*) FROM a;")
-  vals=','.join([quote(s)+'::uuid',quote(g)+'::uuid',quote(p)+'::uuid',quote(r['efficiency']),quote(SOURCE),"CURRENT_DATE"])
-  statements.append(f"WITH a AS (INSERT INTO public.vehicle_specs(id,generation_id,powertrain_id,combined_efficiency,source_url,verified_at) SELECT {vals} WHERE EXISTS(SELECT 1 FROM public.powertrains WHERE id={quote(p)}::uuid AND generation_id={quote(g)}::uuid) ON CONFLICT(id) DO NOTHING RETURNING id) INSERT INTO variant_counts SELECT 'specs',count(*) FROM a;")
- statements+=['SELECT kind,sum(n) AS inserted FROM variant_counts GROUP BY kind;','COMMIT;']
- return '\n'.join(statements)
+ # Set-based inserts avoid 600+ sequential SQL statements in one psql call.
+ # All writes are INSERT-only and happen atomically; old rows are never replaced.
+ statements=['BEGIN;', 'SET LOCAL lock_timeout = \'10s\';',
+  'CREATE TEMP TABLE kea_stage (generation_id uuid, powertrain_id uuid, spec_id uuid, name text, fuel_type text, displacement_cc integer, efficiency text) ON COMMIT DROP;']
+ for i in range(0,len(rows),200):
+  values=[]
+  for r in rows[i:i+200]:
+   cc=str(r['displacement_cc']) if r['displacement_cc'] is not None else 'NULL'
+   values.append('('+','.join((quote(r['generation_id'])+'::uuid',quote(r['powertrain_id'])+'::uuid',quote(r['spec_id'])+'::uuid',quote(r['name']),quote(r['fuel_type']),cc,quote(r['efficiency'])))+')')
+  statements.append('INSERT INTO kea_stage VALUES '+','.join(values)+';')
+ statements.extend([
+  """WITH inserted AS (
+   INSERT INTO public.powertrains(id,generation_id,name,fuel_type,displacement_cc)
+   SELECT DISTINCT s.powertrain_id,s.generation_id,s.name,s.fuel_type,s.displacement_cc
+   FROM kea_stage s JOIN public.generations g ON g.id=s.generation_id
+   ON CONFLICT(id) DO NOTHING RETURNING id
+  ) SELECT 'powertrains|'||count(*) FROM inserted;""",
+  """WITH inserted AS (
+   INSERT INTO public.vehicle_specs(id,generation_id,powertrain_id,combined_efficiency,source_url,verified_at)
+   SELECT DISTINCT s.spec_id,s.generation_id,s.powertrain_id,s.efficiency,"""+quote(SOURCE)+""",CURRENT_DATE
+   FROM kea_stage s JOIN public.powertrains p ON p.id=s.powertrain_id AND p.generation_id=s.generation_id
+   ON CONFLICT(id) DO NOTHING RETURNING id
+  ) SELECT 'specs|'||count(*) FROM inserted;""",
+  'COMMIT;'
+ ])
+ return '\\n'.join(statements)
+
 if __name__=='__main__':
  stage,dbdir,out=sys.argv[1:]; db=pathlib.Path(dbdir);out=pathlib.Path(out);out.mkdir(parents=True,exist_ok=True)
  rows,summary=plan(json.load(open(stage)),*[json.load(open(db/(t+'.json'))) for t in ('manufacturers','models','generations')])
