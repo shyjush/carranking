@@ -42,7 +42,7 @@ def plan(data, manufacturers, models, generations):
    if re.search(pattern,name,re.I): possible.append(g)
   # Exception for verified single-generation models without a factory code.
   # Keep it allowlisted: most trim names do not uniquely identify a generation.
-  if not possible and re.fullmatch(r'(?:EV4|EV5)(?:\\s+(?:기본형|항속형|2WD|4WD|스탠다드|롱레인지|Standard|Long Range|[0-9]+인치|[0-9]+MY))*',name,re.I):
+  if not possible and re.fullmatch(r'(?:EV4|EV5)(?:\s+(?:기본형|항속형|2WD|4WD|스탠다드|롱레인지|Standard|Long Range|[0-9]+인치|[0-9]+MY))*',name,re.I):
    for g0 in generations:
     m0=ms[g0['car_model_id']]
     if m0['name']!=name or g0.get('generation_code'): continue
