@@ -37,6 +37,15 @@ def plan(data, manufacturers, models, generations):
    # Require model immediately followed by an explicit factory generation code.
    pattern=r'^'+re.escape(m['name'])+r'\s*\(\s*'+re.escape(code)+r'(?:\s|\))'
    if re.search(pattern,name,re.I): possible.append(g)
+  # Exception for verified single-generation models without a factory code.
+  # Keep it allowlisted: most trim names do not uniquely identify a generation.
+  if not possible and name in ('EV4','EV5'):
+   for g0 in generations:
+    m0=ms[g0['car_model_id']]
+    if m0['name']!=name or g0.get('generation_code'): continue
+    if maker!=aliases.get(makers[m0['manufacturer_id']]): continue
+    same_model=[x for x in generations if x['car_model_id']==g0['car_model_id']]
+    if len(same_model)==1: possible.append(g0)
   if len(possible)!=1: reasons['no_explicit_generation']+=1;continue
   g=possible[0]
   if year<g['start_year']-1 or (g.get('end_year') and year>g['end_year']+1): reasons['generation_year_conflict']+=1;continue
