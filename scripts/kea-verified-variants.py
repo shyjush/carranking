@@ -87,7 +87,7 @@ def sql(rows):
   ) SELECT 'specs|'||count(*) FROM inserted;""",
   'COMMIT;'
  ])
- return '\\n'.join(statements)
+ return chr(10).join(statements)
 
 if __name__=='__main__':
  stage,dbdir,out=sys.argv[1:]; db=pathlib.Path(dbdir);out=pathlib.Path(out);out.mkdir(parents=True,exist_ok=True)
