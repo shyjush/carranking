@@ -32,7 +32,7 @@ for item in json.loads(stage.read_text())['items']:
  maker=str(item.get('COMP_NM') or '').strip()
  label=str(item.get('MODEL_NM') or '').strip()
  # Extract only names followed by an explicit factory generation code in parentheses.
- hit=re.match(r'^([가-힣A-Za-z0-9][가-힣A-Za-z0-9 -]{1,45}?)\\s*\\(([A-Za-z][A-Za-z0-9 -]{1,12})\\)',label)
+ hit=re.match(r'^([가-힣A-Za-z0-9][가-힣A-Za-z0-9 -]{1,45}?)\s*\(([A-Za-z][A-Za-z0-9 -]{1,12})\)',label)
  if not hit or maker not in ('현대','기아'):continue
  model=hit.group(1).strip()
  if (maker,model.casefold()) in known_by_maker:continue
