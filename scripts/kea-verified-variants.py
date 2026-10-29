@@ -21,7 +21,10 @@ def plan(data, manufacturers, models, generations):
  result=[]; reasons=collections.Counter(); duplicate=0
  for identity,rs in groups.items():
   r=rs[0]; name=norm(r.get('MODEL_NM')); maker=norm(r.get('COMP_NM'))
-  if len({(x.get('DISPLAY_EFF'),x.get('URBAN_EFF'),x.get('HIGHWAY_EFF'),x.get('RANGE_PER_CHARGE')) for x in rs})!=1:
+  variant_efficiencies={(norm(x.get('DISPLAY_EFF')),norm(x.get('URBAN_EFF')),norm(x.get('HIGHWAY_EFF')),norm(x.get('RANGE_PER_CHARGE'))) for x in rs}
+  if len(variant_efficiencies)!=1:
+   # These official records have identical labels but different certified efficiency.
+   # A tyre/option discriminator is absent; never collapse into a misleading single value.
    reasons['indistinguishable_variants']+=len(rs);continue
   duplicate+=len(rs)-1
   if r.get('CAR_KIND')!='승용차' or re.search(r'개조|플러그인|PHEV',name,re.I): reasons['unsupported_or_conversion']+=1;continue
@@ -39,7 +42,7 @@ def plan(data, manufacturers, models, generations):
    if re.search(pattern,name,re.I): possible.append(g)
   # Exception for verified single-generation models without a factory code.
   # Keep it allowlisted: most trim names do not uniquely identify a generation.
-  if not possible and name in ('EV4','EV5'):
+  if not possible and re.fullmatch(r'(?:EV4|EV5)(?:\\s+(?:기본형|항속형|2WD|4WD|스탠다드|롱레인지|Standard|Long Range|[0-9]+인치|[0-9]+MY))*',name,re.I):
    for g0 in generations:
     m0=ms[g0['car_model_id']]
     if m0['name']!=name or g0.get('generation_code'): continue
