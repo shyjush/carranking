@@ -48,24 +48,20 @@ jobs:
       - name: Add workflow summary
         if: always()
         run: |
-          if [ -f official-economy-reports/summary.md ]; then
-            cat official-economy-reports/summary.md >> "$GITHUB_STEP_SUMMARY"
+          echo '## CarRanking official efficiency audit' >> "$GITHUB_STEP_SUMMARY"
+          for item in summary.md official-api-status.json kea-auto-import.json kea-catalog-import.json; do
+            path="official-economy-reports/$item"
             echo '' >> "$GITHUB_STEP_SUMMARY"
-            echo '### Official API status' >> "$GITHUB_STEP_SUMMARY"
-            if [ -f official-economy-reports/kea-catalog-import.json ]; then
-              echo '### Official catalog changes (new / updated / unchanged)' >> "$GITHUB_STEP_SUMMARY"
-              cat official-economy-reports/kea-catalog-import.json >> "$GITHUB_STEP_SUMMARY"
+            echo "### $item" >> "$GITHUB_STEP_SUMMARY"
+            if [ -f "$path" ]; then
+              echo '\`\`\`text' >> "$GITHUB_STEP_SUMMARY"
+              cat "$path" >> "$GITHUB_STEP_SUMMARY"
+              echo '' >> "$GITHUB_STEP_SUMMARY"
+              echo '\`\`\`' >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo 'Not produced (prior step may have failed or been skipped).' >> "$GITHUB_STEP_SUMMARY"
             fi
-            if [ -f official-economy-reports/kea-auto-import.json ]; then
-              echo '### Existing car spec matches' >> "$GITHUB_STEP_SUMMARY"
-              cat official-economy-reports/kea-auto-import.json >> "$GITHUB_STEP_SUMMARY"
-            fi
-            if [ -f official-economy-reports/official-api-status.json ]; then
-              cat official-economy-reports/official-api-status.json >> "$GITHUB_STEP_SUMMARY"
-            fi
-          else
-            echo "Official efficiency monitor could not complete; inspect logs." >> "$GITHUB_STEP_SUMMARY"
-          fi
+          done
       - name: Preserve weekly coverage evidence
         if: always()
         uses: actions/upload-artifact@v4
