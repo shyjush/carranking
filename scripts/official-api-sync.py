@@ -115,7 +115,10 @@ if url and service_key:
     except Exception as exc:
         status['kea']='failed'
         status['kea_error']=str(exc)[:250]
-else:status['kea']='skipped: KEA_API_URL / KEA_SERVICE_KEY missing'
+else:
+    status['kea']='failed'
+    status['kea_error']='Missing KEA_API_URL or KEA_SERVICE_KEY; official vehicle data cannot refresh'
+    (out/'kea-all-pages-staging.json').unlink(missing_ok=True)
 (out/'official-api-status.json').write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(status,ensure_ascii=False))
 if status['opinet']=='failed' or status['kea']=='failed':sys.exit(1)
