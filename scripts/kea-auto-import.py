@@ -7,8 +7,14 @@ def finish():
  (root/'kea-auto-import.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
  print(json.dumps(report,ensure_ascii=False))
 stage=root/'kea-all-pages-staging.json'
-if not stage.exists():finish();raise SystemExit(0)
-if not os.getenv('PGPASSWORD'):raise SystemExit('Missing database secret')
+if not stage.exists():
+ report.update(status='skipped_missing_staging',errors=1,reason='KEA staging JSON unavailable; no database writes')
+ finish()
+ raise SystemExit(1)
+if not os.getenv('PGPASSWORD'):
+ report.update(status='failed_missing_database_secret',errors=1)
+ finish()
+ raise SystemExit('Missing database secret')
 conn='host=aws-0-ap-northeast-2.pooler.supabase.com port=5432 dbname=postgres user=postgres.ikhyadzboorscjwcrhcz sslmode=require'
 def query(sql):
  p=subprocess.run(['psql',conn,'-X','-v','ON_ERROR_STOP=1','-At'],input=sql,capture_output=True,text=True,timeout=180)
@@ -41,10 +47,22 @@ for item in json.loads(stage.read_text())['items']:
 discovered=[{'manufacturer':maker,'model_candidate':model,'source':'KEA','records':c['records'],'certification_years':sorted(c['years']),'examples':sorted(c['examples'])[:3],'status':'review_required_not_published'} for (maker,model),c in sorted(candidates.items())]
 (root/'kea-new-model-candidates.json').write_text(json.dumps({'count':len(discovered),'candidates':discovered},ensure_ascii=False,indent=2))
 report['new_model_candidates']=len(discovered)
+report['candidate_status']='review_required_not_published'
 
 report.update(scanned=summary['collected'],matched=summary['validated'],duplicates=summary['duplicates'],held=summary['held'],reasons=summary['reasons'])
 output=query(verified.sql(rows))
 counts=dict((kind,int(n)) for kind,n in re.findall(r'^(powertrains|specs)\|(\d+)$',output,re.M))
 if rows and set(counts)!= {'powertrains','specs'}:raise RuntimeError('Missing actual INSERT counts')
-report.update(inserted=counts.get('specs',0),powertrains_inserted=counts.get('powertrains',0),unchanged=len(rows)-counts.get('specs',0),status='complete')
+inserted=counts.get('specs',0)
+if inserted > len(rows): raise RuntimeError('Unexpected inserted count')
+# Verify committed rows using deterministic IDs, rather than trusting SQL output alone.
+if rows:
+ ids=','.join("'"+x['spec_id']+"'" for x in rows)
+ verified_count=int(query('select count(*) from public.vehicle_specs where id in ('+ids+');').strip())
+ if verified_count != len(rows):
+  report.update(status='failed_postcommit_verification',errors=1,verified_rows=verified_count,expected_rows=len(rows))
+  finish()
+  raise RuntimeError('Post-commit spec count mismatch')
+else: verified_count=0
+report.update(inserted=inserted,powertrains_inserted=counts.get('powertrains',0),unchanged=len(rows)-inserted,verified_rows=verified_count,held=summary['held'],duplicates=summary['duplicates'],status='complete')
 finish()
