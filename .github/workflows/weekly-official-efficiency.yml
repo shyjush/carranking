@@ -54,10 +54,10 @@ jobs:
             echo '' >> "$GITHUB_STEP_SUMMARY"
             echo "### $item" >> "$GITHUB_STEP_SUMMARY"
             if [ -f "$path" ]; then
-              echo '\`\`\`text' >> "$GITHUB_STEP_SUMMARY"
+              echo '~~~text' >> "$GITHUB_STEP_SUMMARY"
               cat "$path" >> "$GITHUB_STEP_SUMMARY"
               echo '' >> "$GITHUB_STEP_SUMMARY"
-              echo '\`\`\`' >> "$GITHUB_STEP_SUMMARY"
+              echo '~~~' >> "$GITHUB_STEP_SUMMARY"
             else
               echo 'Not produced (prior step may have failed or been skipped).' >> "$GITHUB_STEP_SUMMARY"
             fi
