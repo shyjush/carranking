@@ -1,11 +1,22 @@
 #!/usr/bin/env python3
 """INSERT-only exact-generation certified variants; no AI or broad year matching."""
-import importlib.util,json,os,pathlib,re,subprocess
+import importlib.util,json,os,pathlib,re,subprocess,sys
 root=pathlib.Path('official-economy-reports');root.mkdir(exist_ok=True)
 report={'status':'not configured','scanned':0,'matched':0,'inserted':0,'updated':0,'unchanged':0,'new_models':0,'new_generations':0,'errors':0}
 def finish():
  (root/'kea-auto-import.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
  print(json.dumps(report,ensure_ascii=False))
+
+# Always preserve a machine-readable failure report on unexpected exceptions.
+def report_unhandled_error(exc_type, exc, tb):
+ if not str(report.get('status','')).startswith('failed_'):
+  report['status']='failed_unhandled_exception'
+ report['errors']=max(1,int(report.get('errors',0)))
+ report['error_type']=exc_type.__name__
+ report['error_message']=str(exc)[:300]
+ finish()
+ sys.__excepthook__(exc_type,exc,tb)
+sys.excepthook=report_unhandled_error
 stage=root/'kea-all-pages-staging.json'
 if not stage.exists():
  report.update(status='skipped_missing_staging',errors=1,reason='KEA staging JSON unavailable; no database writes')
