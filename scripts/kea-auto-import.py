@@ -34,7 +34,16 @@ def query(sql):
 module=importlib.util.spec_from_file_location('verified',pathlib.Path(__file__).with_name('kea-verified-variants.py'))
 verified=importlib.util.module_from_spec(module);module.loader.exec_module(verified)
 db=json.loads(query("select jsonb_build_object('manufacturers',(select jsonb_agg(x) from public.manufacturers x),'models',(select jsonb_agg(x) from public.car_models x),'generations',(select jsonb_agg(x) from public.generations x));"))
-rows,summary=verified.plan(json.loads(stage.read_text()),db['manufacturers'],db['models'],db['generations'])
+stage_data=json.loads(stage.read_text())
+years=[]
+for item in stage_data.get('items',[]):
+ try: years.append(int(item.get('YEAR')))
+ except (ValueError,TypeError): pass
+latest_certification_year=max(years) if years else None
+report['latest_certification_year']=latest_certification_year
+report['source_freshness']='needs_review' if latest_certification_year is None or latest_certification_year < __import__('datetime').date.today().year-1 else 'within_recent_years'
+report['source_freshness_note']='Certification year is not a publication or model year; check API freshness independently'
+rows,summary=verified.plan(stage_data,db['manufacturers'],db['models'],db['generations'])
 (root/'kea-variant-plan.json').write_text(json.dumps({'summary':summary,'approved':rows},ensure_ascii=False,indent=2))
 # Discover missing official model names separately; never auto-publish inferred generations.
 # Only manufacturer-supported KEA rows with a safe model-name prefix are candidates.
