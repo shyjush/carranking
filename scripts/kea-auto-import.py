@@ -116,6 +116,6 @@ if safe_rows:
   finish()
   raise RuntimeError('Post-commit spec count mismatch')
 else: verified_count=0
-report.update(inserted=inserted,powertrains_inserted=counts.get('powertrains',0),unchanged=len(rows)-inserted,verified_rows=verified_count,held=summary['held'],duplicates=summary['duplicates'],status='complete')
+report.update(inserted=inserted,powertrains_inserted=counts.get('powertrains',0),unchanged=semantic_matches+(len(safe_rows)-inserted),held_semantic_conflicts=len(semantic_conflicts),held_batch_label_rows=sum(c['variants'] for c in batch_collisions),verified_rows=verified_count,held=summary['held'],duplicates=summary['duplicates'],status='complete')
 finish()
 
