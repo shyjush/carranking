@@ -81,22 +81,38 @@ for row in rows:
   semantic_matches+=1
  else:
   semantic_conflicts.append(row['name'])
+# An official response can contain different certified efficiencies sharing
+# the exact same display label. Never create ambiguous duplicates within a
+# single import batch; retain these candidates for manual source review.
+batch_by_label={}
+for row in new_rows:
+ batch_by_label.setdefault((str(row['generation_id']),row['name']),[]).append(row)
+batch_collisions=[]
+safe_rows=[]
+for key,items in batch_by_label.items():
+ signatures={(r['fuel_type'],r['displacement_cc'],efficiency_value(r['efficiency'])) for r in items}
+ if len(items)>1:
+  batch_collisions.append({'name':key[1],'variants':len(items),'distinct_specs':len(signatures)})
+ else:
+  safe_rows.extend(items)
 report['semantic_existing']=semantic_matches
 report['semantic_conflicts']=len(semantic_conflicts)
 report['semantic_conflict_examples']=semantic_conflicts[:10]
-report['eligible_for_insert']=len(new_rows)
-# Never add entries that collide with existing vehicle labels.
-output=query(verified.sql(new_rows))
+report['batch_label_collisions']=len(batch_collisions)
+report['batch_collision_examples']=batch_collisions[:10]
+report['eligible_for_insert']=len(safe_rows)
+# Never add entries that collide with existing or fellow incoming labels.
+output=query(verified.sql(safe_rows))
 counts=dict((kind,int(n)) for kind,n in re.findall(r'^(powertrains|specs)\|(\d+)$',output,re.M))
-if new_rows and set(counts)!= {'powertrains','specs'}:raise RuntimeError('Missing actual INSERT counts')
+if safe_rows and set(counts)!= {'powertrains','specs'}:raise RuntimeError('Missing actual INSERT counts')
 inserted=counts.get('specs',0)
-if inserted > len(new_rows): raise RuntimeError('Unexpected inserted count')
+if inserted > len(safe_rows): raise RuntimeError('Unexpected inserted count')
 # Verify committed rows using deterministic IDs, rather than trusting SQL output alone.
-if new_rows:
- ids=','.join("'"+x['spec_id']+"'" for x in new_rows)
+if safe_rows:
+ ids=','.join("'"+x['spec_id']+"'" for x in safe_rows)
  verified_count=int(query('select count(*) from public.vehicle_specs where id in ('+ids+');').strip())
- if verified_count != len(new_rows):
-  report.update(status='failed_postcommit_verification',errors=1,verified_rows=verified_count,expected_rows=len(new_rows))
+ if verified_count != len(safe_rows):
+  report.update(status='failed_postcommit_verification',errors=1,verified_rows=verified_count,expected_rows=len(safe_rows))
   finish()
   raise RuntimeError('Post-commit spec count mismatch')
 else: verified_count=0
