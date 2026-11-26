@@ -69,7 +69,7 @@ by_label={}
 for item in existing:
  by_label.setdefault((str(item['generation_id']),item['name']),[]).append(item)
 def efficiency_value(value):
- match=re.match(r'^([0-9]+(?:\\.[0-9]+)?)\\s+(km/L|km/kWh)(?:\\s|$)',str(value or ''))
+ match=re.match(r'^([0-9]+(?:\.[0-9]+)?)\s+(km/L|km/kWh)(?:\s|$)',str(value or ''))
  return (float(match.group(1)),match.group(2)) if match else None
 new_rows=[];semantic_matches=0;semantic_conflicts=[]
 for row in rows:
