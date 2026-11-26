@@ -56,17 +56,47 @@ report['new_model_candidates']=discovered['count']
 report['candidate_status']='review_required_not_published'
 
 report.update(scanned=summary['collected'],matched=summary['validated'],duplicates=summary['duplicates'],held=summary['held'],reasons=summary['reasons'])
-output=query(verified.sql(rows))
+# The historical/manual imports may have different UUIDs than this script's
+# uuid5 IDs. Never re-insert the same generation + exact certified label.
+# A matching label with conflicting engine/fuel/efficiency is held, not overwritten.
+existing=json.loads(query("""select coalesce(jsonb_agg(jsonb_build_object(
+ 'generation_id',p.generation_id,'name',p.name,'fuel_type',p.fuel_type,
+ 'displacement_cc',p.displacement_cc,'efficiency',v.combined_efficiency
+)), '[]'::jsonb)
+from public.powertrains p
+left join public.vehicle_specs v on v.powertrain_id=p.id;"""))
+by_label={}
+for item in existing:
+ by_label.setdefault((str(item['generation_id']),item['name']),[]).append(item)
+def efficiency_value(value):
+ match=re.match(r'^([0-9]+(?:\\.[0-9]+)?)\\s+(km/L|km/kWh)(?:\\s|$)',str(value or ''))
+ return (float(match.group(1)),match.group(2)) if match else None
+new_rows=[];semantic_matches=0;semantic_conflicts=[]
+for row in rows:
+ prior=by_label.get((str(row['generation_id']),row['name']),[])
+ if not prior:
+  new_rows.append(row);continue
+ expected=(row['fuel_type'],row['displacement_cc'],efficiency_value(row['efficiency']))
+ if any((p['fuel_type'],p['displacement_cc'],efficiency_value(p['efficiency']))==expected for p in prior):
+  semantic_matches+=1
+ else:
+  semantic_conflicts.append(row['name'])
+report['semantic_existing']=semantic_matches
+report['semantic_conflicts']=len(semantic_conflicts)
+report['semantic_conflict_examples']=semantic_conflicts[:10]
+report['eligible_for_insert']=len(new_rows)
+# Never add entries that collide with existing vehicle labels.
+output=query(verified.sql(new_rows))
 counts=dict((kind,int(n)) for kind,n in re.findall(r'^(powertrains|specs)\|(\d+)$',output,re.M))
-if rows and set(counts)!= {'powertrains','specs'}:raise RuntimeError('Missing actual INSERT counts')
+if new_rows and set(counts)!= {'powertrains','specs'}:raise RuntimeError('Missing actual INSERT counts')
 inserted=counts.get('specs',0)
-if inserted > len(rows): raise RuntimeError('Unexpected inserted count')
+if inserted > len(new_rows): raise RuntimeError('Unexpected inserted count')
 # Verify committed rows using deterministic IDs, rather than trusting SQL output alone.
-if rows:
- ids=','.join("'"+x['spec_id']+"'" for x in rows)
+if new_rows:
+ ids=','.join("'"+x['spec_id']+"'" for x in new_rows)
  verified_count=int(query('select count(*) from public.vehicle_specs where id in ('+ids+');').strip())
- if verified_count != len(rows):
-  report.update(status='failed_postcommit_verification',errors=1,verified_rows=verified_count,expected_rows=len(rows))
+ if verified_count != len(new_rows):
+  report.update(status='failed_postcommit_verification',errors=1,verified_rows=verified_count,expected_rows=len(new_rows))
   finish()
   raise RuntimeError('Post-commit spec count mismatch')
 else: verified_count=0
